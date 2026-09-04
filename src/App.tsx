@@ -51,30 +51,90 @@ function App() {
 
 function Home({ onNavigate }: { onNavigate: (page: Page) => void }) {
   return (
-    <>
-      <section className="hero">
-        <span className="badge">NO ACCOUNT · OFFLINE CORE</span>
-        <h2>Your Muslim companion.</h2>
-        <p>Quran, prayer, duas, Qibla and Islamic knowledge — designed for a simple, focused experience.</p>
-        <div className="hero-actions">
-          <button onClick={() => onNavigate('quran')}>Open Quran</button>
-          <button className="secondary" onClick={() => onNavigate('prayer')}>Prayer Times</button>
+    <div className="home-dashboard">
+      <section className="home-intro">
+        <span className="eyebrow">YOUR MUSLIM COMPANION</span>
+        <h2>Make today meaningful.</h2>
+        <p>Everything you need for a more intentional Muslim day, gathered in one place.</p>
+      </section>
+
+      <section className="dashboard-prayer card">
+        <div>
+          <span className="eyebrow">PRAYER</span>
+          <h3>Prayer Times</h3>
+          <p>Open Prayer Times to check your Salah schedule and prepare for the next prayer.</p>
+        </div>
+        <button className="dashboard-action" onClick={() => onNavigate('prayer')}>
+          Open Prayer →
+        </button>
+      </section>
+
+      <section className="continue-card card" onClick={() => onNavigate('quran')} role="button" tabIndex={0}>
+        <div>
+          <span className="eyebrow">THE QURAN</span>
+          <h3>Read the Noble Qur’an</h3>
+          <p>Open the verified Uthmani Arabic text and choose a surah to begin reading.</p>
+        </div>
+        <span className="continue-arrow">→</span>
+      </section>
+
+      <section className="dashboard-section">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">FOR YOUR DAY</span>
+            <h3>Small moments, lasting benefit.</h3>
+          </div>
+        </div>
+
+        <div className="content-rail">
+          <button className="content-card" onClick={() => onNavigate('duas')}>
+            <span className="content-icon">✦</span>
+            <span className="eyebrow">DAILY DUA</span>
+            <strong>Pause and remember Allah.</strong>
+            <small>Explore Duas →</small>
+          </button>
+
+          <button className="content-card" onClick={() => onNavigate('knowledge')}>
+            <span className="content-icon">▤</span>
+            <span className="eyebrow">REFLECTION</span>
+            <strong>Learn something beneficial today.</strong>
+            <small>Open Learn →</small>
+          </button>
+
+          <button className="content-card" onClick={() => onNavigate('qibla')}>
+            <span className="content-icon">◎</span>
+            <span className="eyebrow">QIBLA</span>
+            <strong>Find the direction for Salah.</strong>
+            <small>Open Qibla →</small>
+          </button>
         </div>
       </section>
 
-      <section className="grid">
-        <Feature title="Quran" icon="☾" onClick={() => onNavigate('quran')} />
-        <Feature title="Prayer" icon="◷" onClick={() => onNavigate('prayer')} />
-        <Feature title="Duas" icon="✦" onClick={() => onNavigate('duas')} />
-        <Feature title="Qibla" icon="◎" onClick={() => onNavigate('qibla')} />
+      <section className="dashboard-section">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">QUICK ACCESS</span>
+            <h3>Your essentials.</h3>
+          </div>
+        </div>
+
+        <div className="quick-grid">
+          <Feature title="Quran" icon="☾" onClick={() => onNavigate('quran')} />
+          <Feature title="Prayer" icon="◷" onClick={() => onNavigate('prayer')} />
+          <Feature title="Duas" icon="✦" onClick={() => onNavigate('duas')} />
+          <Feature title="Qibla" icon="◎" onClick={() => onNavigate('qibla')} />
+        </div>
       </section>
 
-      <section className="card">
-        <span className="eyebrow">TODAY</span>
-        <h3>Build your day around prayer.</h3>
-        <p>The clean architecture keeps each feature modular so we can add production functionality without rebuilding the app shell.</p>
+      <section className="journey-card card">
+        <span className="eyebrow">YOUR DEEN LIFE</span>
+        <h3>A companion that grows with you.</h3>
+        <p>As DEEN LIFE connects more of its features, this space will become a personal place for your worship, learning and daily progress.</p>
+        <button className="secondary dashboard-wide-action" onClick={() => onNavigate('knowledge')}>
+          Explore Islamic Knowledge →
+        </button>
       </section>
-    </>
+    </div>
   )
 }
 
