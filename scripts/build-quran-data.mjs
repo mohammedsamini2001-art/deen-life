@@ -19,7 +19,13 @@ const runtimeDir = path.join(
   'public/quran/surahs'
 );
 
+const metadataFile = path.join(
+  projectRoot,
+  'src/features/quran/data/metadata/surahs.json'
+);
+
 const xml = fs.readFileSync(sourceFile, 'utf8');
+const metadataSource = JSON.parse(fs.readFileSync(metadataFile, 'utf8'));
 
 const parser = new XMLParser({
   ignoreAttributes: false,
