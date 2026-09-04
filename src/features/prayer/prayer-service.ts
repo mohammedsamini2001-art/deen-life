@@ -105,7 +105,11 @@ export function calculatePrayerSchedule(
   const prayerTimes = new PrayerTimes(coordinates, date, parameters)
 
   return {
-    date: date.toISOString().slice(0, 10),
+    date: [
+      date.getFullYear(),
+      String(date.getMonth() + 1).padStart(2, '0'),
+      String(date.getDate()).padStart(2, '0'),
+    ].join('-'),
     latitude: location.latitude,
     longitude: location.longitude,
     calculationMethod: method,
