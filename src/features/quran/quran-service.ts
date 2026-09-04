@@ -34,7 +34,18 @@ function assertRuntimeIndex(value: unknown): asserts value is QuranRuntimeIndex 
     index.totalSurahs !== TOTAL_SURAHS ||
     index.totalAyahs !== TOTAL_AYAHS ||
     !Array.isArray(index.surahs) ||
-    index.surahs.length !== TOTAL_SURAHS
+    index.surahs.length !== TOTAL_SURAHS ||
+    !index.surahs.every((surah) =>
+      surah &&
+      typeof surah === 'object' &&
+      typeof surah.index === 'number' &&
+      typeof surah.nameArabic === 'string' &&
+      typeof surah.nameEnglish === 'string' &&
+      typeof surah.nameEnglishTranslation === 'string' &&
+      typeof surah.ayahCount === 'number' &&
+      (surah.revelationType === 'Meccan' || surah.revelationType === 'Medinan') &&
+      typeof surah.file === 'string'
+    )
   ) {
     throw new Error('Invalid Qur’an runtime index metadata.');
   }

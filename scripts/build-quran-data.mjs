@@ -64,12 +64,25 @@ fs.rmSync(runtimeDir, { recursive: true, force: true });
 fs.mkdirSync(generatedDir, { recursive: true });
 fs.mkdirSync(runtimeDir, { recursive: true });
 
-const index = surahs.map((surah) => ({
-  index: surah.index,
-  nameArabic: surah.nameArabic,
-  ayahCount: surah.ayahs.length,
-  file: `${String(surah.index).padStart(3, '0')}.json`,
-}));
+const index = surahs.map((surah) => {
+  const metadata = metadataSource.surahs.find(
+    (item) => item.index === surah.index
+  );
+
+  if (!metadata) {
+    throw new Error(`Missing metadata for surah ${surah.index}.`);
+  }
+
+  return {
+    index: surah.index,
+    nameArabic: surah.nameArabic,
+    nameEnglish: metadata.nameEnglish,
+    nameEnglishTranslation: metadata.nameEnglishTranslation,
+    ayahCount: surah.ayahs.length,
+    revelationType: metadata.revelationType,
+    file: `${String(surah.index).padStart(3, '0')}.json`,
+  };
+});
 
 for (const surah of surahs) {
   const filename = `${String(surah.index).padStart(3, '0')}.json`;
