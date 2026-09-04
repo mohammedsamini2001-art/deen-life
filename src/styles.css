@@ -961,3 +961,147 @@ button.secondary {
     min-height: 118px;
   }
 }
+
+/* Prayer */
+.prayer-page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.prayer-status-card,
+.prayer-fallback-card,
+.prayer-settings-card,
+.prayer-schedule-card,
+.prayer-next-card {
+  margin-top: 18px;
+}
+
+.prayer-next-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px;
+}
+
+.prayer-next-card h3 {
+  margin: 6px 0 4px;
+  font-size: 1.6rem;
+}
+
+.prayer-next-time {
+  display: block;
+  font-size: 2.2rem;
+  line-height: 1.1;
+  margin-top: 8px;
+}
+
+.prayer-current {
+  min-width: 130px;
+  text-align: right;
+}
+
+.prayer-current strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.05rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.section-heading h3 {
+  margin: 5px 0 0;
+}
+
+.prayer-list {
+  display: grid;
+  gap: 8px;
+}
+
+.prayer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-soft);
+}
+
+.prayer-row span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prayer-row strong {
+  font-size: 0.98rem;
+}
+
+.prayer-row small {
+  padding: 3px 7px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.prayer-row time {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.prayer-row.is-current {
+  border-color: var(--accent);
+}
+
+.prayer-settings-card p {
+  max-width: 650px;
+}
+
+.prayer-settings-card select {
+  width: 100%;
+  max-width: 420px;
+  margin-top: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+}
+
+.prayer-method-note {
+  margin: 14px 4px;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 640px) {
+  .prayer-next-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .prayer-current {
+    min-width: 0;
+    text-align: left;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .section-heading .secondary {
+    width: 100%;
+  }
+}

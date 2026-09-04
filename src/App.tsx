@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import QuranReader from './features/quran/QuranReader'
+import PrayerTimes from './features/prayer/PrayerTimes'
 
 type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium'
 
@@ -28,7 +29,7 @@ function App() {
       <main className="content">
         {page === 'home' && <Home onNavigate={setPage} />}
         {page === 'quran' && <QuranReader onBack={() => setPage('home')} />}
-        {page === 'prayer' && <Section title="Prayer Times" text="Prayer calculations and location services will live in this isolated module." />}
+        {page === 'prayer' && <PrayerTimes onBack={() => setPage('home')} />}
         {page === 'duas' && <Section title="Daily Duas" text="Duas will be stored locally so the core experience remains available offline." />}
         {page === 'qibla' && <Section title="Qibla" text="The Qibla compass module will use device orientation when available." />}
         {page === 'knowledge' && <Section title="Islamic Knowledge" text="Lessons and educational content will become searchable offline modules." />}

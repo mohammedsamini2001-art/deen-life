@@ -11,6 +11,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "adhan": "^4.4.6",
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",
     "express": "^5.2.1",
