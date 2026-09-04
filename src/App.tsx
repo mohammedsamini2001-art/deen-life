@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import QuranReader from './features/quran/QuranReader'
 import PrayerTimes from './features/prayer/PrayerTimes'
 
@@ -12,6 +12,34 @@ const pages: { id: Page; label: string; icon: string }[] = [
   { id: 'qibla', label: 'Qibla', icon: '◎' },
   { id: 'knowledge', label: 'Learn', icon: '▤' },
 ]
+
+const DAILY_MESSAGES = [
+  'Make today meaningful.',
+  'Guard your prayers.',
+  'Begin your day with remembrance of Allah.',
+  'Seek knowledge that benefits you.',
+  'Be grateful for the blessings you already have.',
+  'Do one good deed quietly.',
+  'Let your character reflect your faith.',
+  'Keep your heart connected to Allah.',
+  'Choose patience when things become difficult.',
+  'Make time for the Qur’an today.',
+  'Speak with kindness.',
+  'Trust Allah while doing your part.',
+  'Small consistent deeds can become great deeds.',
+  'Remember Allah in the moments between your plans.',
+  'Use today as an opportunity to grow.',
+  'Forgive where forgiveness brings goodness.',
+  'Protect your tongue and purify your intention.',
+  'Give someone hope today.',
+  'Turn your worries into sincere dua.',
+  'Let your actions carry your values.',
+]
+
+function getRandomMessage(current: string): string {
+  const choices = DAILY_MESSAGES.filter(message => message !== current)
+  return choices[Math.floor(Math.random() * choices.length)]
+}
 
 function App() {
   const [page, setPage] = useState<Page>('home')
@@ -51,6 +79,17 @@ function App() {
 }
 
 function Home({ onNavigate }: { onNavigate: (page: Page) => void }) {
+  const [dailyMessage, setDailyMessage] = useState(DAILY_MESSAGES[0])
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setDailyMessage(current => getRandomMessage(current))
+    }, 30_000)
+
+    return () => window.clearInterval(interval)
+  }, [])
+
+
   return (
     <div className="home-dashboard">
       <section className="home-hero">
@@ -123,7 +162,7 @@ function Home({ onNavigate }: { onNavigate: (page: Page) => void }) {
         </div>
         <div className="home-hero-content">
           <span className="eyebrow">ASSALAMU ALAIKUM</span>
-          <h2>Make today meaningful.</h2>
+          <h2 key={dailyMessage}>{dailyMessage}</h2>
           <p>Read, pray, remember and learn — one beautiful Muslim day at a time.</p>
           <button className="home-hero-action" onClick={() => onNavigate('quran')}>
             Continue your Qur’an journey →
