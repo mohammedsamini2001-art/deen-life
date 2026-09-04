@@ -53,19 +53,10 @@ function App() {
 function Home({ onNavigate }: { onNavigate: (page: Page) => void }) {
   return (
     <div className="home-dashboard">
-      <section className="home-hero">
-        <div className="home-hero-art" aria-hidden="true">
-          <div className="home-hero-glow" />
-          <div className="home-hero-pattern" />
-        </div>
-        <div className="home-hero-content">
-          <span className="eyebrow">ASSALAMU ALAIKUM</span>
-          <h2>Make today meaningful.</h2>
-          <p>Read, pray, remember and learn — one beautiful Muslim day at a time.</p>
-          <button className="home-hero-action" onClick={() => onNavigate('quran')}>
-            Continue your Qur’an journey →
-          </button>
-        </div>
+      <section className="home-intro">
+        <span className="eyebrow">YOUR MUSLIM COMPANION</span>
+        <h2>Make today meaningful.</h2>
+        <p>Everything you need for a more intentional Muslim day, gathered in one place.</p>
       </section>
 
       <section className="dashboard-prayer card">
