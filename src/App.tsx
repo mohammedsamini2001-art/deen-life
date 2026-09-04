@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import QuranReader from './features/quran/QuranReader'
 
 type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium'
 
@@ -26,7 +27,7 @@ function App() {
 
       <main className="content">
         {page === 'home' && <Home onNavigate={setPage} />}
-        {page === 'quran' && <Section title="Quran" text="Full Quran reading will be delivered as an offline-first feature module." />}
+        {page === 'quran' && <QuranReader onBack={() => setPage('home')} />}
         {page === 'prayer' && <Section title="Prayer Times" text="Prayer calculations and location services will live in this isolated module." />}
         {page === 'duas' && <Section title="Daily Duas" text="Duas will be stored locally so the core experience remains available offline." />}
         {page === 'qibla' && <Section title="Qibla" text="The Qibla compass module will use device orientation when available." />}
