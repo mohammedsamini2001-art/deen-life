@@ -9,9 +9,14 @@ const sourceFile = path.join(
   'src/features/quran/data/quran-tanzil.xml'
 );
 
-const outputDir = path.join(
+const generatedDir = path.join(
   projectRoot,
   'src/features/quran/data/generated/surahs'
+);
+
+const runtimeDir = path.join(
+  projectRoot,
+  'public/quran/surahs'
 );
 
 const xml = fs.readFileSync(sourceFile, 'utf8');
@@ -47,8 +52,11 @@ const totalAyahs = surahs.reduce(
   0
 );
 
-fs.rmSync(outputDir, { recursive: true, force: true });
-fs.mkdirSync(outputDir, { recursive: true });
+fs.rmSync(generatedDir, { recursive: true, force: true });
+fs.rmSync(runtimeDir, { recursive: true, force: true });
+
+fs.mkdirSync(generatedDir, { recursive: true });
+fs.mkdirSync(runtimeDir, { recursive: true });
 
 const index = surahs.map((surah) => ({
   index: surah.index,
@@ -60,14 +68,21 @@ const index = surahs.map((surah) => ({
 for (const surah of surahs) {
   const filename = `${String(surah.index).padStart(3, '0')}.json`;
 
+  const json = JSON.stringify(surah);
+
   fs.writeFileSync(
-    path.join(outputDir, filename),
-    JSON.stringify(surah)
+    path.join(generatedDir, filename),
+    json
+  );
+
+  fs.writeFileSync(
+    path.join(runtimeDir, filename),
+    json
   );
 }
 
 fs.writeFileSync(
-  path.join(outputDir, 'index.json'),
+  path.join(generatedDir, 'index.json'),
   JSON.stringify({
     source: 'tanzil',
     version: '1.1',
@@ -78,9 +93,15 @@ fs.writeFileSync(
   })
 );
 
+fs.copyFileSync(
+  path.join(generatedDir, 'index.json'),
+  path.join(runtimeDir, 'index.json')
+);
+
 console.log('=== QURAN DATA GENERATION ===');
 console.log(`Source: ${sourceFile}`);
-console.log(`Output: ${outputDir}`);
+console.log(`Generated output: ${generatedDir}`);
+console.log(`Runtime output: ${runtimeDir}`);
 console.log(`Surahs: ${surahs.length}`);
 console.log(`Ayahs: ${totalAyahs}`);
 console.log(`Generated files: ${surahs.length + 1}`);
