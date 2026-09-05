@@ -82,10 +82,18 @@ function QuranReader({ onBack }: QuranReaderProps) {
   return (
     <section className="quran-reader">
       <header className="quran-library-header">
-        <button className="back" onClick={onBack}>← Back</button>
-        <span className="eyebrow">THE NOBLE QUR’AN</span>
-        <h2>Qur’an</h2>
-        <p>Read the verified Uthmani Arabic text, with surahs loaded on demand for an offline-first experience.</p>
+        <img
+          className="quran-library-scene"
+          src="/images/deen-life/quran-hero.jpg"
+          alt=""
+        />
+        <div className="quran-library-overlay" />
+        <div className="quran-library-content">
+          <button className="back" onClick={onBack}>← Back</button>
+          <span className="eyebrow">THE NOBLE QUR’AN</span>
+          <h2>Qur’an</h2>
+          <p>Read the verified Uthmani Arabic text, with surahs loaded on demand for an offline-first experience.</p>
+        </div>
       </header>
 
       {loading && <div className="quran-state">Loading Qur’an…</div>}
