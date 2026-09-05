@@ -139,7 +139,7 @@ export default function PrayerTimes({ onBack }: PrayerTimesProps) {
         <div className="prayer-hero-art" aria-hidden="true">
           <img
             className="prayer-hero-image"
-            src="/images/deen-life/prayer/prayer-hero.svg"
+            src="/images/deen-life/prayer/prayer-hero.jpg"
             alt=""
             aria-hidden="true"
           />
