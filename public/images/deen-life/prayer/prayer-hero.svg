@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#061b18"/>
+    <stop offset=".58" stop-color="#0b332b"/>
+    <stop offset="1" stop-color="#03100e"/>
+  </linearGradient>
+  <radialGradient id="glow">
+    <stop stop-color="#e7d39a" stop-opacity=".28"/>
+    <stop offset="1" stop-color="#d4a84f" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#123d34"/>
+    <stop offset="1" stop-color="#041310"/>
+  </linearGradient>
+  <linearGradient id="robe" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#174338"/>
+    <stop offset=".6" stop-color="#0a211c"/>
+    <stop offset="1" stop-color="#020b09"/>
+  </linearGradient>
+  <pattern id="pattern" width="96" height="96" patternUnits="userSpaceOnUse">
+    <path d="M48 5L91 48 48 91 5 48Z M48 20L76 48 48 76 20 48Z"
+          fill="none" stroke="#d4a84f" stroke-opacity=".07" stroke-width="2"/>
+  </pattern>
+</defs>
+
+<!-- cinematic sky -->
+<rect width="1536" height="1024" fill="url(#sky)"/>
+<circle cx="1200" cy="230" r="300" fill="url(#glow)"/>
+
+<!-- crescent -->
+<path d="M1200 120c-70 18-100 94-68 154 25 48 83 69 135 43-44 7-86-17-103-57-22-51-2-108 36-140z"
+      fill="#eadcae" fill-opacity=".86"/>
+
+<!-- distant atmosphere -->
+<path d="M0 575 Q280 505 530 570 T1040 555 T1536 535 V760 H0Z"
+      fill="#0e4035" fill-opacity=".5"/>
+
+<!-- mosque -->
+<g fill="#04110f">
+  <rect x="190" y="475" width="560" height="245"/>
+  <path d="M175 480 Q470 265 765 480Z"/>
+  <path d="M355 468 Q470 365 585 468Z" fill="#0a2923"/>
+  <rect x="115" y="355" width="48" height="365"/>
+  <path d="M106 357L139 285 172 357Z"/>
+  <rect x="778" y="355" width="48" height="365"/>
+  <path d="M769 357L802 285 835 357Z"/>
+</g>
+
+<!-- mosque details -->
+<g fill="#d4a84f" fill-opacity=".13">
+  <path d="M430 520h80v200h-80z"/>
+  <path d="M225 515h54v205h-54z"/>
+  <path d="M650 515h54v205h-54z"/>
+</g>
+
+<g stroke="#d4a84f" stroke-opacity=".16" fill="none">
+  <path d="M245 530h450 M275 575h390 M300 620h340"/>
+  <path d="M325 485v210 M395 445v250 M545 445v250 M615 485v210"/>
+</g>
+
+<!-- floor -->
+<path d="M0 690 Q768 615 1536 690 V1024 H0Z" fill="url(#floor)"/>
+<rect y="690" width="1536" height="334" fill="url(#pattern)"/>
+
+<!-- subtle qibla direction -->
+<path d="M1090 790h120l-60-88z" fill="#d4a84f" fill-opacity=".09"/>
+<path d="M1150 710v125" stroke="#d4a84f" stroke-opacity=".14" stroke-width="2"/>
+
+<!-- prayer rug -->
+<g transform="translate(700 720) rotate(-2)">
+  <path d="M0 55Q0 35 20 25L170 0 320 25Q340 35 340 55V250Q340 270 320 276L170 302 20 276Q0 270 0 250Z"
+        fill="#09241e" stroke="#d4a84f" stroke-opacity=".36" stroke-width="4"/>
+  <path d="M18 65L170 40 322 65M35 92L170 68 305 92M35 235L170 258 305 235"
+        fill="none" stroke="#d4a84f" stroke-opacity=".18" stroke-width="2"/>
+  <path d="M170 42l42 55-42 55-42-55z"
+        fill="none" stroke="#d4a84f" stroke-opacity=".22" stroke-width="3"/>
+</g>
+
+<!-- person in sujud, head toward qibla -->
+<g transform="translate(850 720)">
+  <!-- torso -->
+  <path d="M42 64Q90 38 155 55L238 105Q258 119 244 142L183 170Q160 180 139 164L78 126 30 112Q8 104 14 84Z"
+        fill="url(#robe)"/>
+
+  <!-- shoulder folds -->
+  <path d="M76 69Q120 45 166 70L205 103"
+        fill="none" stroke="#2b6658" stroke-opacity=".45"
+        stroke-width="9" stroke-linecap="round"/>
+
+  <!-- arms -->
+  <path d="M96 116L50 158 12 180"
+        fill="none" stroke="#081b17" stroke-width="25" stroke-linecap="round"/>
+  <path d="M150 130L108 176 65 195"
+        fill="none" stroke="#081b17" stroke-width="25" stroke-linecap="round"/>
+
+  <!-- hands -->
+  <g stroke="#c69b73" stroke-width="7" stroke-linecap="round">
+    <path d="M5 179l-19 10M5 181l-18 1"/>
+    <path d="M65 194l-18 9M65 195l-18 0"/>
+  </g>
+
+  <!-- head touching the rug -->
+  <ellipse cx="-7" cy="181" rx="26" ry="21" fill="#bd906c"/>
+  <path d="M-29 178Q-16 150 8 161Q20 168 19 185L2 195-20 191Z"
+        fill="#102d27"/>
+
+  <!-- legs -->
+  <path d="M190 144Q238 157 278 185"
+        fill="none" stroke="#071713" stroke-width="32" stroke-linecap="round"/>
+  <path d="M278 185l39 5"
+        stroke="#bd906c" stroke-opacity=".9"
+        stroke-width="10" stroke-linecap="round"/>
+</g>
+
+<!-- cinematic vignette -->
+<rect width="1536" height="1024" fill="none"
+      stroke="#020908" stroke-opacity=".5" stroke-width="72"/>
+</svg>

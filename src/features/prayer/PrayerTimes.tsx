@@ -137,65 +137,12 @@ export default function PrayerTimes({ onBack }: PrayerTimesProps) {
 
       <section className="prayer-visual-hero">
         <div className="prayer-hero-art" aria-hidden="true">
-          <svg
-            className="prayer-hero-scene"
-            viewBox="0 0 900 520"
-            preserveAspectRatio="xMidYMid slice"
-            role="presentation"
-          >
-            <defs>
-              <linearGradient id="prayerSky" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#07140f" />
-                <stop offset="52%" stopColor="#174332" />
-                <stop offset="100%" stopColor="#0a8b63" />
-              </linearGradient>
-              <radialGradient id="prayerGlow">
-                <stop offset="0%" stopColor="#f0d58a" stopOpacity="0.34" />
-                <stop offset="100%" stopColor="#f0d58a" stopOpacity="0" />
-              </radialGradient>
-              <linearGradient id="prayerFloor" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#163b2d" />
-                <stop offset="100%" stopColor="#04100b" />
-              </linearGradient>
-            </defs>
-
-            <rect width="900" height="520" fill="url(#prayerSky)" />
-            <circle cx="700" cy="130" r="130" fill="url(#prayerGlow)" />
-            <circle cx="700" cy="130" r="48" fill="#f0d58a" opacity="0.9" />
-
-            <g fill="#07140f" opacity="0.9">
-              <path d="M120 390V255h58v135h34V220h62v170h35V250h58v140h34V205h65v185h34V255h58v135h32V235h58v155h42v48H120z" />
-              <path d="M345 220h95l-47-75z" />
-              <path d="M585 235h95l-47-75z" />
-            </g>
-
-            <g fill="#d4a84f" opacity="0.72">
-              <circle cx="392" cy="142" r="4" />
-              <rect x="390" y="145" width="4" height="54" />
-              <circle cx="632" cy="157" r="4" />
-              <rect x="630" y="160" width="4" height="56" />
-            </g>
-
-            <path
-              d="M0 405 Q170 365 330 405 T650 400 T900 380 V520 H0Z"
-              fill="url(#prayerFloor)"
-            />
-
-            <g transform="translate(470 285)" fill="#06120d">
-              <circle cx="0" cy="-48" r="18" />
-              <path d="M-15-28 Q-5-15 18-5 L55 22 Q62 29 55 37 Q48 43 39 36 L10 17 L-2 48 L-35 75 L-72 78 Q-84 77 -84 68 Q-84 59 -73 57 L-48 55 L-25 25 L-45 4 Q-54-7 -48-17 Q-42-28 -30-25Z" />
-              <path d="M-82 68 L-112 78 Q-122 82 -120 91 Q-118 98 -106 96 L-72 87Z" />
-              <path d="M-8 48 L-38 78 Q-44 86 -37 92 Q-30 97 -22 90 L8 61Z" />
-            </g>
-
-            <path
-              d="M405 390 Q470 370 540 392"
-              fill="none"
-              stroke="#d4a84f"
-              strokeOpacity="0.45"
-              strokeWidth="3"
-            />
-          </svg>
+          <img
+            className="prayer-hero-image"
+            src="/images/deen-life/prayer/prayer-hero.svg"
+            alt=""
+            aria-hidden="true"
+          />
         </div>
 
         <div className="prayer-visual-content">
