@@ -43,6 +43,15 @@ function getRandomMessage(current: string): string {
 
 function App() {
   const [page, setPage] = useState<Page>('home')
+  const [dailyMessage, setDailyMessage] = useState(DAILY_MESSAGES[0])
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setDailyMessage(current => getRandomMessage(current))
+    }, 15_000)
+
+    return () => window.clearInterval(interval)
+  }, [])
 
   return (
     <div className="app">
@@ -55,7 +64,7 @@ function App() {
       </header>
 
       <main className="content">
-        {page === 'home' && <Home onNavigate={setPage} />}
+        {page === 'home' && <Home onNavigate={setPage} dailyMessage={dailyMessage} />}
         {page === 'quran' && <QuranReader onBack={() => setPage('home')} />}
         {page === 'prayer' && <PrayerTimes onBack={() => setPage('home')} />}
         {page === 'duas' && <Section title="Daily Duas" text="Duas will be stored locally so the core experience remains available offline." />}
@@ -78,17 +87,7 @@ function App() {
   )
 }
 
-function Home({ onNavigate }: { onNavigate: (page: Page) => void }) {
-  const [dailyMessage, setDailyMessage] = useState(DAILY_MESSAGES[0])
-
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setDailyMessage(current => getRandomMessage(current))
-    }, 30_000)
-
-    return () => window.clearInterval(interval)
-  }, [])
-
+function Home({ onNavigate, dailyMessage }: { onNavigate: (page: Page) => void; dailyMessage: string }) {
 
   return (
     <div className="home-dashboard">
