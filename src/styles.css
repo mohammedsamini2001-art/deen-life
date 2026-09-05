@@ -152,8 +152,11 @@ p {
 
 .hero-actions button,
 .wide {
-  background: linear-gradient(135deg, var(--emerald-500), var(--emerald-700));
-  box-shadow: 0 10px 28px rgba(11, 148, 104, 0.2);
+  background: linear-gradient(135deg, #f0d58a 0%, #d4a84f 48%, #b8862f 100%);
+  color: #17110a;
+  box-shadow:
+    0 10px 28px rgba(212, 168, 79, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .hero-actions button,
@@ -816,6 +819,15 @@ button.secondary:active {
 
 .home-hero-art,
 .home-hero-glow,
+.home-hero-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+
 .home-hero-pattern {
   position: absolute;
   inset: 0;
@@ -846,6 +858,8 @@ button.secondary:active {
 }
 
 .home-hero-content h2 {
+  text-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 8px rgba(0,0,0,0.72);
+  color: #fff;
   max-width: 600px;
   margin: 8px 0 12px;
   font-size: clamp(2rem, 5vw, 3.6rem);
@@ -854,6 +868,8 @@ button.secondary:active {
 }
 
 .home-hero-content p {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.85);
+  color: #fff;
   max-width: 560px;
   margin: 0;
   font-size: 1.05rem;
@@ -861,6 +877,7 @@ button.secondary:active {
 }
 
 .home-hero-action {
+  color: #fff;
   margin-top: 22px;
   padding: 13px 17px;
   border: 1px solid rgba(212, 168, 79, 0.34);
@@ -892,6 +909,7 @@ button.secondary:active {
   }
 
   .home-hero-content h2 {
+    color: #fff;
     font-size: 2.35rem;
   }
 }
