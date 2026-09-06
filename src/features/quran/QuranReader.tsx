@@ -104,6 +104,12 @@ function QuranReader({ onBack }: QuranReaderProps) {
           </div>
         </header>
 
+        {selectedSurah.ayahs[0]?.bismillah && (
+          <div className="quran-bismillah" dir="rtl">
+            {selectedSurah.ayahs[0].bismillah}
+          </div>
+        )}
+
         <div className="quran-ayah-list" dir="rtl">
           {selectedSurah.ayahs.map(ayah => (
             <article className="quran-ayah" key={ayah.index}>
