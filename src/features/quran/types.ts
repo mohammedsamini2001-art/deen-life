@@ -1,6 +1,7 @@
 export interface QuranAyah {
   index: number;
   text: string;
+  bismillah?: string;
 }
 
 export interface QuranSurah {

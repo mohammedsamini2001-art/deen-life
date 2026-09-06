@@ -49,6 +49,9 @@ const surahs = rawSurahs.map((sura) => {
     ayahs: rawAyahs.map((aya) => ({
       index: Number(aya['@_index']),
       text: aya['@_text'],
+      ...(aya['@_bismillah']
+        ? { bismillah: aya['@_bismillah'] }
+        : {}),
     })),
   };
 });

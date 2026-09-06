@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { getQuranIndex, getSurah } from './quran-service'
 import type { QuranRuntimeIndex } from './runtime-types'
 import type { QuranSurah } from './types'
+import { getQuranAudioTrack, getQuranReciters } from './audio/quran-audio-service'
 import { getQuranProgress, saveQuranProgress } from './progress/quran-progress'
 import { getQuranBookmarks, toggleQuranBookmark } from './bookmarks/quran-bookmarks'
 
@@ -16,6 +17,9 @@ function QuranReader({ onBack }: QuranReaderProps) {
   const [error, setError] = useState<string | null>(null)
   const [progress, setProgress] = useState(getQuranProgress)
   const [bookmarks, setBookmarks] = useState(getQuranBookmarks)
+  const [selectedReciter, setSelectedReciter] = useState(getQuranReciters()[0]?.id ?? '')
+  const [audioError, setAudioError] = useState<string | null>(null)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
 
   useEffect(() => {
     let cancelled = false
@@ -53,7 +57,20 @@ function QuranReader({ onBack }: QuranReaderProps) {
     setBookmarks(next)
   }
 
+  function stopAudio() {
+    if (!audioRef.current) return
+    audioRef.current.pause()
+    audioRef.current.currentTime = 0
+  }
+
+  function getAudioUrl() {
+    if (!selectedSurah || !selectedReciter) return ''
+    return getQuranAudioTrack(selectedReciter, selectedSurah.index).audioUrl
+  }
+
   async function openSurah(surahIndex: number) {
+    stopAudio()
+    setAudioError(null)
     setLoading(true)
     setError(null)
 
@@ -68,6 +85,8 @@ function QuranReader({ onBack }: QuranReaderProps) {
   }
 
   if (selectedSurah) {
+    const reciters = getQuranReciters()
+
     return (
       <section className="quran-reader">
         <div className="quran-toolbar">
