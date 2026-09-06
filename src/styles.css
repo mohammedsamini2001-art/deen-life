@@ -1433,3 +1433,49 @@ button.secondary:active {
     font-size: 2.2rem;
   }
 }
+
+.quran-continue-card {
+  position: relative;
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 20px 52px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  text-align: left;
+  border: 1px solid rgba(212, 168, 79, 0.38);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(20, 48, 37, 0.94), rgba(11, 27, 21, 0.96));
+  color: var(--text-primary);
+}
+
+.quran-continue-card:hover {
+  border-color: var(--gold-300);
+  transform: translateY(-1px);
+}
+
+.quran-continue-label {
+  color: var(--gold-300);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.quran-continue-card strong {
+  font-size: 1.15rem;
+}
+
+.quran-continue-card > span:not(.quran-continue-label):not(.quran-continue-arrow) {
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+}
+
+.quran-continue-arrow {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: var(--gold-300);
+  font-size: 1.3rem;
+}

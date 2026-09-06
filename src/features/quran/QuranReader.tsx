@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { getQuranIndex, getSurah } from './quran-service'
 import type { QuranRuntimeIndex } from './runtime-types'
 import type { QuranSurah } from './types'
+import { getQuranProgress, saveQuranProgress } from './progress/quran-progress'
 
 interface QuranReaderProps {
   onBack: () => void
@@ -12,6 +13,7 @@ function QuranReader({ onBack }: QuranReaderProps) {
   const [selectedSurah, setSelectedSurah] = useState<QuranSurah | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [progress, setProgress] = useState(getQuranProgress)
 
   useEffect(() => {
     let cancelled = false
@@ -34,6 +36,13 @@ function QuranReader({ onBack }: QuranReaderProps) {
       cancelled = true
     }
   }, [])
+
+  function markAyah(ayahIndex: number) {
+    if (!selectedSurah) return
+
+    const next = saveQuranProgress(selectedSurah.index, ayahIndex)
+    setProgress(next)
+  }
 
   async function openSurah(surahIndex: number) {
     setLoading(true)
@@ -106,6 +115,20 @@ function QuranReader({ onBack }: QuranReaderProps) {
 
       {index && !loading && !error && (
         <>
+          {progress && (
+            <button
+              className="quran-continue-card"
+              onClick={() => openSurah(progress.surahIndex)}
+            >
+              <span className="quran-continue-label">CONTINUE READING · FREE</span>
+              <strong>
+                {index.surahs.find(surah => surah.index === progress.surahIndex)?.nameEnglish ?? `Surah ${progress.surahIndex}`}
+              </strong>
+              <span>Continue from Ayah {progress.ayahIndex}</span>
+              <span className="quran-continue-arrow">→</span>
+            </button>
+          )}
+
           <div className="quran-stats">
             <div>
               <strong>{index.totalSurahs}</strong>
