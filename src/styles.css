@@ -586,6 +586,54 @@ button.secondary:active {
   color: var(--text-secondary);
 }
 
+.quran-audio-player {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.quran-reciter-select {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+}
+
+.quran-audio-toggle {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  background: var(--emerald-700);
+  color: var(--ivory-50, #f5f0e6);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.quran-audio-toggle:active {
+  transform: scale(0.96);
+}
+
+.quran-audio-error {
+  margin: 0 0 18px;
+  padding: 12px 16px;
+  border: 1px solid var(--accent, #c0392b);
+  border-radius: 14px;
+  color: var(--accent, #c0392b);
+  font-size: 0.9rem;
+}
+
 .quran-bismillah {
   margin: 0 0 18px;
   padding: 20px;
