@@ -116,3 +116,13 @@ export function getQuranAudioTrack(
     audioUrl: `${ISLAMIC_NETWORK_CDN}/${provider.bitrate}/${provider.edition}/${surahIndex}.mp3`,
   }
 }
+
+/**
+ * Single place to gate content by tier. Today every reciter is free.
+ * When Premium adds translation-audio reciters or transcript tracks,
+ * mark them isFree: false above and they're automatically locked
+ * wherever this helper is used -- no UI changes needed.
+ */
+export function isPremiumReciter(reciter: QuranReciter): boolean {
+  return !reciter.isFree
+}

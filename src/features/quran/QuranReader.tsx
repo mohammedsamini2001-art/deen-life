@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getQuranIndex, getSurah } from './quran-service'
 import type { QuranRuntimeIndex } from './runtime-types'
 import type { QuranSurah } from './types'
-import { getQuranAudioTrack, getQuranReciters } from './audio/quran-audio-service'
+import QuranAudioPlayer from './audio/QuranAudioPlayer'
 import { getQuranProgress, saveQuranProgress } from './progress/quran-progress'
 import { getQuranBookmarks, toggleQuranBookmark } from './bookmarks/quran-bookmarks'
 
@@ -17,10 +17,6 @@ function QuranReader({ onBack }: QuranReaderProps) {
   const [error, setError] = useState<string | null>(null)
   const [progress, setProgress] = useState(getQuranProgress)
   const [bookmarks, setBookmarks] = useState(getQuranBookmarks)
-  const [selectedReciter, setSelectedReciter] = useState(getQuranReciters()[0]?.id ?? '')
-  const [audioError, setAudioError] = useState<string | null>(null)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const audioRef = useRef<HTMLAudioElement | null>(null)
 
   useEffect(() => {
     let cancelled = false
@@ -58,45 +54,7 @@ function QuranReader({ onBack }: QuranReaderProps) {
     setBookmarks(next)
   }
 
-  function stopAudio() {
-    if (!audioRef.current) return
-    audioRef.current.pause()
-    audioRef.current.currentTime = 0
-    setIsPlaying(false)
-  }
-
-  function getAudioUrl() {
-    if (!selectedSurah || !selectedReciter) return ''
-    return getQuranAudioTrack(selectedReciter, selectedSurah.index).audioUrl
-  }
-
-  function changeReciter(reciterId: string) {
-    stopAudio()
-    setAudioError(null)
-    setSelectedReciter(reciterId)
-  }
-
-  async function togglePlayback() {
-    if (!audioRef.current) return
-
-    if (isPlaying) {
-      audioRef.current.pause()
-      return
-    }
-
-    try {
-      setAudioError(null)
-      await audioRef.current.play()
-    } catch {
-      setIsPlaying(false)
-      setAudioError('Unable to play recitation audio. Check your connection and try again.')
-    }
-  }
-
   async function openSurah(surahIndex: number) {
-    stopAudio()
-    setAudioError(null)
-    setIsPlaying(false)
     setLoading(true)
     setError(null)
 
@@ -111,8 +69,6 @@ function QuranReader({ onBack }: QuranReaderProps) {
   }
 
   if (selectedSurah) {
-    const reciters = getQuranReciters()
-
     return (
       <section className="quran-reader">
         <div className="quran-toolbar">
@@ -130,48 +86,7 @@ function QuranReader({ onBack }: QuranReaderProps) {
           </div>
         </header>
 
-        <div className="quran-audio-player">
-          <select
-            className="quran-reciter-select"
-            value={selectedReciter}
-            onChange={event => changeReciter(event.target.value)}
-            aria-label="Choose reciter"
-          >
-            {reciters.map(reciter => (
-              <option key={reciter.id} value={reciter.id}>
-                {reciter.name}
-              </option>
-            ))}
-          </select>
-
-          <button
-            className="quran-audio-toggle"
-            onClick={togglePlayback}
-            type="button"
-            aria-label={isPlaying ? 'Pause recitation' : 'Play recitation'}
-          >
-            {isPlaying ? '⏸' : '▶'}
-          </button>
-
-          <audio
-            ref={audioRef}
-            src={getAudioUrl()}
-            preload="none"
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-            onEnded={() => setIsPlaying(false)}
-            onError={() => {
-              setIsPlaying(false)
-              setAudioError('Unable to load recitation audio. Check your connection and try again.')
-            }}
-          />
-        </div>
-
-        {audioError && (
-          <div className="quran-audio-error" role="alert">
-            {audioError}
-          </div>
-        )}
+        <QuranAudioPlayer key={selectedSurah.index} surahIndex={selectedSurah.index} />
 
         {selectedSurah.ayahs[0]?.bismillah && (
           <div className="quran-bismillah" dir="rtl">

@@ -588,13 +588,19 @@ button.secondary:active {
 
 .quran-audio-player {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 12px;
   margin: 0 0 18px;
   padding: 14px 16px;
   border: 1px solid var(--border-strong);
   border-radius: 18px;
   background: var(--surface);
+}
+
+.quran-audio-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .quran-reciter-select {
@@ -625,13 +631,70 @@ button.secondary:active {
   transform: scale(0.96);
 }
 
+.quran-audio-toggle:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.quran-audio-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(245, 240, 230, 0.35);
+  border-top-color: var(--ivory-50, #f5f0e6);
+  border-radius: 50%;
+  animation: quran-audio-spin 0.8s linear infinite;
+}
+
+@keyframes quran-audio-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.quran-audio-scrubber {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quran-audio-time {
+  flex-shrink: 0;
+  min-width: 36px;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.quran-audio-seek {
+  flex: 1;
+  accent-color: var(--emerald-700);
+}
+
+.quran-audio-seek:disabled {
+  opacity: 0.5;
+}
+
 .quran-audio-error {
-  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding: 12px 16px;
   border: 1px solid var(--accent, #c0392b);
   border-radius: 14px;
   color: var(--accent, #c0392b);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+}
+
+.quran-audio-error button {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border: 1px solid var(--accent, #c0392b);
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
 }
 
 .quran-bismillah {
