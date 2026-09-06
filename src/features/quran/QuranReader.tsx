@@ -3,6 +3,7 @@ import { getQuranIndex, getSurah } from './quran-service'
 import type { QuranRuntimeIndex } from './runtime-types'
 import type { QuranSurah } from './types'
 import { getQuranProgress, saveQuranProgress } from './progress/quran-progress'
+import { getQuranBookmarks, toggleQuranBookmark } from './bookmarks/quran-bookmarks'
 
 interface QuranReaderProps {
   onBack: () => void
@@ -14,6 +15,7 @@ function QuranReader({ onBack }: QuranReaderProps) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [progress, setProgress] = useState(getQuranProgress)
+  const [bookmarks, setBookmarks] = useState(getQuranBookmarks)
 
   useEffect(() => {
     let cancelled = false
@@ -42,6 +44,13 @@ function QuranReader({ onBack }: QuranReaderProps) {
 
     const next = saveQuranProgress(selectedSurah.index, ayahIndex)
     setProgress(next)
+  }
+
+  function toggleBookmark(ayahIndex: number) {
+    if (!selectedSurah) return
+
+    const next = toggleQuranBookmark(selectedSurah.index, ayahIndex)
+    setBookmarks(next)
   }
 
   async function openSurah(surahIndex: number) {
@@ -81,6 +90,14 @@ function QuranReader({ onBack }: QuranReaderProps) {
             <article className="quran-ayah" key={ayah.index}>
               <span className="quran-ayah-number">{ayah.index}</span>
               <p>{ayah.text}</p>
+              <button
+                className={`quran-bookmark-button${bookmarks.some(bookmark => bookmark.surahIndex === selectedSurah.index && bookmark.ayahIndex === ayah.index) ? ' quran-bookmark-active' : ''}`}
+                onClick={() => toggleBookmark(ayah.index)}
+                aria-label={bookmarks.some(bookmark => bookmark.surahIndex === selectedSurah.index && bookmark.ayahIndex === ayah.index) ? 'Remove bookmark' : 'Bookmark ayah'}
+                type="button"
+              >
+                {bookmarks.some(bookmark => bookmark.surahIndex === selectedSurah.index && bookmark.ayahIndex === ayah.index) ? '★' : '☆'}
+              </button>
             </article>
           ))}
         </div>

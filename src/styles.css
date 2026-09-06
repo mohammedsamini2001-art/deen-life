@@ -1479,3 +1479,27 @@ button.secondary:active {
   color: var(--gold-300);
   font-size: 1.3rem;
 }
+
+.quran-bookmark-button {
+  flex: 0 0 auto;
+  margin-inline-start: 12px;
+  border: 1px solid rgba(212, 168, 79, 0.35);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+  min-width: 38px;
+  min-height: 38px;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.quran-bookmark-button:hover,
+.quran-bookmark-active {
+  border-color: var(--gold-300);
+  color: var(--gold-300);
+  background: rgba(212, 168, 79, 0.10);
+}
+
+.quran-ayah {
+  position: relative;
+}
