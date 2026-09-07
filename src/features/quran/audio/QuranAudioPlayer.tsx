@@ -78,21 +78,24 @@ function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
 
   return (
     <div className="quran-audio-player">
-      <div className="quran-audio-row">
-        <select
-          className="quran-reciter-select"
-          value={selectedReciter}
-          onChange={event => changeReciter(event.target.value)}
-          aria-label="Choose reciter"
-        >
-          {reciters.map(reciter => (
-            <option key={reciter.id} value={reciter.id} disabled={isPremiumReciter(reciter)}>
-              {isPremiumReciter(reciter) ? '🔒 ' : ''}
-              {reciter.name}
-            </option>
-          ))}
-        </select>
+      <div
+        className="quran-audio-progress"
+        style={{ '--progress': `${duration ? (currentTime / duration) * 100 : 0}%` } as React.CSSProperties}
+      >
+        <input
+          className="quran-audio-seek"
+          type="range"
+          min={0}
+          max={duration || 0}
+          step={1}
+          value={Math.min(currentTime, duration || 0)}
+          onChange={handleSeek}
+          disabled={!duration}
+          aria-label="Seek recitation"
+        />
+      </div>
 
+      <div className="quran-audio-row">
         <button
           className="quran-audio-toggle"
           onClick={togglePlayback}
@@ -108,22 +111,25 @@ function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
             '▶'
           )}
         </button>
-      </div>
 
-      <div className="quran-audio-scrubber">
-        <span className="quran-audio-time">{formatTime(currentTime)}</span>
-        <input
-          className="quran-audio-seek"
-          type="range"
-          min={0}
-          max={duration || 0}
-          step={1}
-          value={Math.min(currentTime, duration || 0)}
-          onChange={handleSeek}
-          disabled={!duration}
-          aria-label="Seek recitation"
-        />
-        <span className="quran-audio-time">{formatTime(duration)}</span>
+        <div className="quran-audio-info">
+          <select
+            className="quran-reciter-select"
+            value={selectedReciter}
+            onChange={event => changeReciter(event.target.value)}
+            aria-label="Choose reciter"
+          >
+            {reciters.map(reciter => (
+              <option key={reciter.id} value={reciter.id} disabled={isPremiumReciter(reciter)}>
+                {isPremiumReciter(reciter) ? '🔒 ' : ''}
+                {reciter.name}
+              </option>
+            ))}
+          </select>
+          <span className="quran-audio-time">
+            {formatTime(currentTime)} / {formatTime(duration)}
+          </span>
+        </div>
       </div>
 
       {error && (
