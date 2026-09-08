@@ -69,7 +69,7 @@ function KnowledgeScreen({ onBack }: KnowledgeScreenProps) {
         <span className="eyebrow">LEARN</span>
       </div>
 
-      <header className="duas-category-header">
+      <header className="duas-category-header knowledge-hero">
         <h2>Islamic Knowledge</h2>
         <p>
           Learn Islam through organised lessons with clear sources and
