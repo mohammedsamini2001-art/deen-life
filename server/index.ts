@@ -2,6 +2,10 @@ import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import { MongoClient } from 'mongodb'
+import {
+  getTranslationCatalogue,
+  getTranslationSurah,
+} from './quran-translation-api.js'
 
 const app = express()
 const port = Number(process.env.PORT) || 3000
@@ -27,6 +31,68 @@ app.get('/api/config/status', (_req, res) => {
     paystack: Boolean(process.env.PAYSTACK_SECRET_KEY),
     environment: process.env.NODE_ENV || 'development',
   })
+})
+
+
+app.get('/api/quran/translations', async (_req, res) => {
+  try {
+    const translations = await getTranslationCatalogue()
+
+    return res.json({
+      ok: true,
+      data: translations,
+    })
+  } catch (error) {
+    console.error('Quran translation resources error:', error)
+
+    return res.status(503).json({
+      ok: false,
+      error:
+        error instanceof Error
+          ? error.message
+          : 'Quran translation service unavailable.',
+    })
+  }
+})
+
+app.get('/api/quran/translations/:resourceId/:surahIndex', async (req, res) => {
+  const resourceId = Number(req.params.resourceId)
+  const surahIndex = Number(req.params.surahIndex)
+
+  if (
+    !Number.isInteger(resourceId) ||
+    resourceId <= 0 ||
+    !Number.isInteger(surahIndex) ||
+    surahIndex < 1 ||
+    surahIndex > 114
+  ) {
+    return res.status(400).json({
+      ok: false,
+      error: 'Invalid Quran translation resource or surah index.',
+    })
+  }
+
+  try {
+    const data = await getTranslationSurah(
+      resourceId,
+      surahIndex,
+    )
+
+    return res.json({
+      ok: true,
+      data,
+    })
+  } catch (error) {
+    console.error('Quran translation surah error:', error)
+
+    return res.status(503).json({
+      ok: false,
+      error:
+        error instanceof Error
+          ? error.message
+          : 'Quran translation service unavailable.',
+    })
+  }
 })
 
 app.post('/api/premium/pay', (_req, res) => {
