@@ -24,8 +24,24 @@ const metadataFile = path.join(
   'src/features/quran/data/metadata/surahs.json'
 );
 
+const translationFile = path.join(
+  projectRoot,
+  'src/features/quran/data/pickthall-en.json'
+);
+
 const xml = fs.readFileSync(sourceFile, 'utf8');
 const metadataSource = JSON.parse(fs.readFileSync(metadataFile, 'utf8'));
+
+const translationSource = fs.existsSync(translationFile)
+  ? JSON.parse(fs.readFileSync(translationFile, 'utf8'))
+  : null;
+
+const translationByRef = new Map();
+if (translationSource) {
+  for (const item of translationSource.quran) {
+    translationByRef.set(`${item.chapter}:${item.verse}`, item.text);
+  }
+}
 
 const parser = new XMLParser({
   ignoreAttributes: false,
@@ -46,13 +62,21 @@ const surahs = rawSurahs.map((sura) => {
   return {
     index: Number(sura['@_index']),
     nameArabic: sura['@_name'],
-    ayahs: rawAyahs.map((aya) => ({
-      index: Number(aya['@_index']),
-      text: aya['@_text'],
-      ...(aya['@_bismillah']
-        ? { bismillah: aya['@_bismillah'] }
-        : {}),
-    })),
+    ayahs: rawAyahs.map((aya) => {
+      const ayahIndex = Number(aya['@_index']);
+      const translation = translationByRef.get(
+        `${Number(sura['@_index'])}:${ayahIndex}`
+      );
+
+      return {
+        index: ayahIndex,
+        text: aya['@_text'],
+        ...(aya['@_bismillah']
+          ? { bismillah: aya['@_bismillah'] }
+          : {}),
+        ...(translation ? { translation } : {}),
+      };
+    }),
   };
 });
 
@@ -109,6 +133,7 @@ fs.writeFileSync(
     source: 'tanzil',
     version: '1.1',
     textType: 'uthmani',
+    translation: translationSource ? 'en.pickthall' : null,
     totalSurahs: surahs.length,
     totalAyahs,
     surahs: index,

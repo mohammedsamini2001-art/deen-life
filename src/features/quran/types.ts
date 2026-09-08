@@ -2,6 +2,7 @@ export interface QuranAyah {
   index: number;
   text: string;
   bismillah?: string;
+  translation?: string;
 }
 
 export interface QuranSurah {

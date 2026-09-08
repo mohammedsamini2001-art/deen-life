@@ -773,6 +773,15 @@ button.secondary:active {
   text-align: right;
 }
 
+.quran-ayah-translation {
+  margin-top: 10px !important;
+  font-family: inherit !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  text-align: left !important;
+  color: var(--text-secondary);
+}
+
 @media (max-width: 520px) {
   .quran-stats {
     gap: 7px;

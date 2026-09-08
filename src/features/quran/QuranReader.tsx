@@ -99,6 +99,11 @@ function QuranReader({ onBack }: QuranReaderProps) {
             <article className="quran-ayah" key={ayah.index}>
               <span className="quran-ayah-number">{ayah.index}</span>
               <p>{ayah.text}</p>
+              {ayah.translation && (
+                <p className="quran-ayah-translation" dir="ltr">
+                  {ayah.translation}
+                </p>
+              )}
               <button
                 className={`quran-bookmark-button${bookmarks.some(bookmark => bookmark.surahIndex === selectedSurah.index && bookmark.ayahIndex === ayah.index) ? ' quran-bookmark-active' : ''}`}
                 onClick={() => toggleBookmark(ayah.index)}
