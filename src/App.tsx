@@ -4,7 +4,6 @@ import PrayerTimes from './features/prayer/PrayerTimes'
 import DuasScreen from './features/duas/DuasScreen'
 import QiblaDetector from './features/qibla/QiblaDetector'
 import KnowledgeScreen from './features/knowledge/KnowledgeScreen'
-import PremiumScreen from './features/premium/PremiumScreen'
 
 type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium'
 
@@ -74,7 +73,7 @@ function App() {
         {page === 'duas' && <DuasScreen onBack={() => setPage('home')} />}
         {page === 'qibla' && <QiblaDetector onBack={() => setPage('home')} />}
         {page === 'knowledge' && <KnowledgeScreen onBack={() => setPage('home')} />}
-        {page === 'premium' && <PremiumScreen onBack={() => setPage('home')} />}
+        {page === 'premium' && <Premium />}
       </main>
 
       {page !== 'premium' && (

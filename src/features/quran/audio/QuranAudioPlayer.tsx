@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import { getQuranAudioTrack, getQuranReciters, isPremiumReciter } from './quran-audio-service'
 import { getPreferredReciter, savePreferredReciter } from './quran-audio-preference'
-import { isPremiumActive } from '../../premium/premium-service'
 
 interface QuranAudioPlayerProps {
   surahIndex: number
@@ -16,8 +15,6 @@ function formatTime(seconds: number): string {
 
 function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
   const reciters = getQuranReciters()
-  const premiumActive = isPremiumActive()
-
   const [selectedReciter, setSelectedReciter] = useState(
     () => getPreferredReciter() ?? reciters[0]?.id ?? '',
   )
@@ -28,23 +25,16 @@ function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
   const [error, setError] = useState<string | null>(null)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
-  const selectedReciterData = reciters.find(
-    reciter => reciter.id === selectedReciter,
-  )
-
-  const audioSrc =
-    selectedReciter && selectedReciterData
-      ? getQuranAudioTrack(selectedReciter, surahIndex).audioUrl
-      : ''
+  const audioSrc = selectedReciter
+    ? getQuranAudioTrack(selectedReciter, surahIndex).audioUrl
+    : ''
 
   function resetPlaybackState() {
     const audio = audioRef.current
-
     if (audio) {
       audio.pause()
       audio.currentTime = 0
     }
-
     setIsPlaying(false)
     setIsBuffering(false)
     setCurrentTime(0)
@@ -53,26 +43,12 @@ function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
   }
 
   function changeReciter(reciterId: string) {
-    const reciter = reciters.find(item => item.id === reciterId)
-
-    if (!reciter) return
-
-    if (isPremiumReciter(reciter) && !isPremiumActive()) {
-      setError('Quran audio is a Premium feature. Subscribe to DEEN LIFE Premium to listen.')
-      return
-    }
-
     resetPlaybackState()
     setSelectedReciter(reciterId)
     savePreferredReciter(reciterId)
   }
 
   async function togglePlayback() {
-    if (!premiumActive) {
-      setError('Quran audio is a Premium feature. Subscribe to DEEN LIFE Premium to listen.')
-      return
-    }
-
     const audio = audioRef.current
     if (!audio) return
 
@@ -93,39 +69,18 @@ function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
   }
 
   function handleSeek(event: React.ChangeEvent<HTMLInputElement>) {
-    if (!premiumActive) return
-
     const audio = audioRef.current
     const value = Number(event.target.value)
-
     if (!audio || !Number.isFinite(value)) return
-
     audio.currentTime = value
     setCurrentTime(value)
-  }
-
-  if (!premiumActive) {
-    return (
-      <div className="quran-audio-player">
-        <div className="premium-feature">
-          <span className="eyebrow">DEEN LIFE PREMIUM</span>
-          <strong>🎧 Quran Audio is Premium</strong>
-          <span>
-            Unlock all verified available Arabic recitations with a Premium
-            subscription.
-          </span>
-        </div>
-      </div>
-    )
   }
 
   return (
     <div className="quran-audio-player">
       <div
         className="quran-audio-progress"
-        style={{
-          '--progress': `${duration ? (currentTime / duration) * 100 : 0}%`,
-        } as React.CSSProperties}
+        style={{ '--progress': `${duration ? (currentTime / duration) * 100 : 0}%` } as React.CSSProperties}
       >
         <input
           className="quran-audio-seek"
@@ -165,13 +120,12 @@ function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
             aria-label="Choose reciter"
           >
             {reciters.map(reciter => (
-              <option key={reciter.id} value={reciter.id}>
+              <option key={reciter.id} value={reciter.id} disabled={isPremiumReciter(reciter)}>
                 {isPremiumReciter(reciter) ? '🔒 ' : ''}
                 {reciter.name}
               </option>
             ))}
           </select>
-
           <span className="quran-audio-time">
             {formatTime(currentTime)} / {formatTime(duration)}
           </span>
@@ -198,12 +152,8 @@ function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
         onPause={() => setIsPlaying(false)}
         onPlaying={() => setIsBuffering(false)}
         onWaiting={() => setIsBuffering(true)}
-        onLoadedMetadata={event =>
-          setDuration(event.currentTarget.duration || 0)
-        }
-        onTimeUpdate={event =>
-          setCurrentTime(event.currentTarget.currentTime)
-        }
+        onLoadedMetadata={event => setDuration(event.currentTarget.duration || 0)}
+        onTimeUpdate={event => setCurrentTime(event.currentTarget.currentTime)}
         onEnded={() => {
           setIsPlaying(false)
           setCurrentTime(0)
@@ -211,9 +161,7 @@ function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
         onError={() => {
           setIsPlaying(false)
           setIsBuffering(false)
-          setError(
-            'Unable to load recitation. Check your connection and try again.',
-          )
+          setError('Unable to load recitation audio. Check your connection and try again.')
         }}
       />
     </div>
