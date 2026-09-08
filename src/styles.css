@@ -761,6 +761,18 @@ button.secondary:active {
   transform: scale(0.94);
 }
 
+.quran-audio-navigation {
+  border: 1px solid var(--gold-500);
+  background: transparent;
+  color: var(--gold-300);
+  cursor: pointer;
+}
+
+.quran-audio-navigation:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
 .quran-audio-toggle:disabled {
   opacity: 0.7;
   cursor: default;
