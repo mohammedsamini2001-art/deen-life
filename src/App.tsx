@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import QuranReader from './features/quran/QuranReader'
 import PrayerTimes from './features/prayer/PrayerTimes'
+import DuasScreen from './features/duas/DuasScreen'
 
 type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium'
 
@@ -67,7 +68,7 @@ function App() {
         {page === 'home' && <Home onNavigate={setPage} dailyMessage={dailyMessage} />}
         {page === 'quran' && <QuranReader onBack={() => setPage('home')} />}
         {page === 'prayer' && <PrayerTimes onBack={() => setPage('home')} />}
-        {page === 'duas' && <Section title="Daily Duas" text="Duas will be stored locally so the core experience remains available offline." />}
+        {page === 'duas' && <DuasScreen onBack={() => setPage('home')} />}
         {page === 'qibla' && <Section title="Qibla" text="The Qibla compass module will use device orientation when available." />}
         {page === 'knowledge' && <Section title="Islamic Knowledge" text="Lessons and educational content will become searchable offline modules." />}
         {page === 'premium' && <Premium />}
