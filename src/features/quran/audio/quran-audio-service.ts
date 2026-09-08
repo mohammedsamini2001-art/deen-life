@@ -1,56 +1,65 @@
 import type { QuranAudioTrack, QuranReciter } from './types'
 
 interface QuranAudioProviderConfig {
-  edition: string
-  bitrate: 32 | 40 | 48 | 64 | 128 | 192
+  buildUrl: (surahIndex: number) => string
   description: string
 }
 
-const ISLAMIC_NETWORK_CDN =
-  'https://cdn.islamic.network/quran/audio-surah'
+const ISLAMIC_NETWORK_CDN = 'https://cdn.islamic.network/quran/audio-surah'
+
+function islamicNetworkUrl(edition: string, bitrate: 32 | 40 | 48 | 64 | 128 | 192) {
+  return (surahIndex: number) =>
+    `${ISLAMIC_NETWORK_CDN}/${bitrate}/${edition}/${surahIndex}.mp3`
+}
+
+function mp3QuranUrl(server: number, folder: string) {
+  return (surahIndex: number) =>
+    `https://server${server}.mp3quran.net/${folder}/${String(surahIndex).padStart(3, '0')}.mp3`
+}
 
 /**
- * Verified against the live Islamic Network surah-audio CDN.
+ * Every entry here has been checked against its live CDN path
+ * (curl -o /dev/null -w '%{http_code}' on surah 1) before being added.
  *
- * IMPORTANT:
- * - Surah numbers are 1..114 and are NOT zero-padded.
- * - Bitrate is configured per edition.
- * - Do not add an edition here unless its live CDN path has been verified.
+ * IMPORTANT: Do not add a reciter here unless its live path has been
+ * verified the same way -- a wrong edition/folder name fails silently
+ * as a 403/404 and the player's error+retry UI is the only sign.
  */
 const PROVIDERS: Record<string, QuranAudioProviderConfig> = {
   'ar.alafasy': {
-    edition: 'ar.alafasy',
-    bitrate: 128,
-    description:
-      'Mishary Rashid Alafasy — verified Islamic Network surah audio.',
-  },
-
-  'ar.misharyrashidalafasy': {
-    edition: 'ar.misharyrashidalafasy',
-    bitrate: 128,
-    description:
-      'Mishary Rashid Alafasy — verified Islamic Network surah audio edition.',
+    buildUrl: islamicNetworkUrl('ar.alafasy', 128),
+    description: 'Mishary Rashid Alafasy -- verified Islamic Network surah audio.',
   },
 
   'ar.abdulbasitmurattal': {
-    edition: 'ar.abdulbasitmurattal',
-    bitrate: 128,
+    buildUrl: islamicNetworkUrl('ar.abdulbasitmurattal', 128),
     description:
-      'Abdul Basit Abdul Samad — Murattal — verified Islamic Network surah audio.',
-  },
-
-  'ar.abdulbasitmujawwad': {
-    edition: 'ar.abdulbasitmujawwad',
-    bitrate: 128,
-    description:
-      'Abdul Basit Abdul Samad — Mujawwad — verified Islamic Network surah audio.',
+      'Abdul Basit Abdul Samad -- Murattal -- verified Islamic Network surah audio.',
   },
 
   'ar.saudalshuraim': {
-    edition: 'ar.saudalshuraim',
-    bitrate: 128,
-    description:
-      'Saud Al-Shuraim — verified Islamic Network surah audio.',
+    buildUrl: islamicNetworkUrl('ar.saudalshuraim', 128),
+    description: 'Saud Al-Shuraim -- verified Islamic Network surah audio.',
+  },
+
+  'ar.sudais': {
+    buildUrl: mp3QuranUrl(11, 'sds'),
+    description: 'Abdur-Rahman as-Sudais -- verified MP3Quran.net surah audio.',
+  },
+
+  'ar.mahermuaiqly': {
+    buildUrl: mp3QuranUrl(12, 'maher'),
+    description: 'Maher Al-Muaiqly -- verified MP3Quran.net surah audio.',
+  },
+
+  'ar.husary': {
+    buildUrl: mp3QuranUrl(13, 'husr'),
+    description: 'Mahmoud Khalil Al-Husary -- verified MP3Quran.net surah audio.',
+  },
+
+  'ar.saadalghamdi': {
+    buildUrl: mp3QuranUrl(7, 's_gmd'),
+    description: 'Saad Al-Ghamdi -- verified MP3Quran.net surah audio.',
   },
 }
 
@@ -63,24 +72,17 @@ const RECITERS: QuranReciter[] = [
     isFree: true,
   },
   {
-    id: 'ar.misharyrashidalafasy',
-    name: 'Mishary Rashid Alafasy',
-    language: 'ar',
-    description: PROVIDERS['ar.misharyrashidalafasy'].description,
-    isFree: true,
-  },
-  {
     id: 'ar.abdulbasitmurattal',
-    name: 'Abdul Basit Abdul Samad — Murattal',
+    name: 'Abdul Basit (Murattal)',
     language: 'ar',
     description: PROVIDERS['ar.abdulbasitmurattal'].description,
     isFree: true,
   },
   {
-    id: 'ar.abdulbasitmujawwad',
-    name: 'Abdul Basit Abdul Samad — Mujawwad',
+    id: 'ar.sudais',
+    name: 'Abdur-Rahman as-Sudais',
     language: 'ar',
-    description: PROVIDERS['ar.abdulbasitmujawwad'].description,
+    description: PROVIDERS['ar.sudais'].description,
     isFree: true,
   },
   {
@@ -88,6 +90,27 @@ const RECITERS: QuranReciter[] = [
     name: 'Saud Al-Shuraim',
     language: 'ar',
     description: PROVIDERS['ar.saudalshuraim'].description,
+    isFree: true,
+  },
+  {
+    id: 'ar.mahermuaiqly',
+    name: 'Maher Al-Muaiqly',
+    language: 'ar',
+    description: PROVIDERS['ar.mahermuaiqly'].description,
+    isFree: true,
+  },
+  {
+    id: 'ar.husary',
+    name: 'Mahmoud Khalil Al-Husary',
+    language: 'ar',
+    description: PROVIDERS['ar.husary'].description,
+    isFree: true,
+  },
+  {
+    id: 'ar.saadalghamdi',
+    name: 'Saad Al-Ghamdi',
+    language: 'ar',
+    description: PROVIDERS['ar.saadalghamdi'].description,
     isFree: true,
   },
 ]
@@ -113,7 +136,7 @@ export function getQuranAudioTrack(
   return {
     reciterId,
     surahIndex,
-    audioUrl: `${ISLAMIC_NETWORK_CDN}/${provider.bitrate}/${provider.edition}/${surahIndex}.mp3`,
+    audioUrl: provider.buildUrl(surahIndex),
   }
 }
 
