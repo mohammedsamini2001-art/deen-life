@@ -3,6 +3,7 @@ import QuranReader from './features/quran/QuranReader'
 import PrayerTimes from './features/prayer/PrayerTimes'
 import DuasScreen from './features/duas/DuasScreen'
 import QiblaDetector from './features/qibla/QiblaDetector'
+import KnowledgeScreen from './features/knowledge/KnowledgeScreen'
 
 type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium'
 
@@ -71,7 +72,7 @@ function App() {
         {page === 'prayer' && <PrayerTimes onBack={() => setPage('home')} />}
         {page === 'duas' && <DuasScreen onBack={() => setPage('home')} />}
         {page === 'qibla' && <QiblaDetector onBack={() => setPage('home')} />}
-        {page === 'knowledge' && <Section title="Islamic Knowledge" text="Lessons and educational content will become searchable offline modules." />}
+        {page === 'knowledge' && <KnowledgeScreen onBack={() => setPage('home')} />}
         {page === 'premium' && <Premium />}
       </main>
 
