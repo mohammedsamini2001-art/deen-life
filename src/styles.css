@@ -740,11 +740,12 @@ button.secondary:active {
 }
 
 .quran-ayah {
+  position: relative;
   display: grid;
   grid-template-columns: 38px 1fr;
   gap: 16px;
   align-items: start;
-  padding: 22px 0;
+  padding: 22px 46px 22px 0;
   border-bottom: 1px solid rgba(23, 36, 29, 0.1);
 }
 
@@ -765,7 +766,14 @@ button.secondary:active {
   font-weight: 800;
 }
 
-.quran-ayah p {
+.quran-ayah-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.quran-ayah-arabic {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.55rem, 5vw, 2.15rem);
@@ -774,12 +782,13 @@ button.secondary:active {
 }
 
 .quran-ayah-translation {
-  margin-top: 10px !important;
-  font-family: inherit !important;
-  font-size: 0.95rem !important;
-  line-height: 1.6 !important;
-  text-align: left !important;
-  color: var(--text-secondary);
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(23, 36, 29, 0.08);
+  font-size: 1rem;
+  line-height: 1.65;
+  text-align: left;
+  color: rgba(23, 36, 29, 0.64);
 }
 
 @media (max-width: 520px) {
@@ -1654,6 +1663,21 @@ button.secondary:active {
   background: rgba(212, 168, 79, 0.10);
 }
 
-.quran-ayah {
-  position: relative;
+.quran-ayah > .quran-bookmark-button {
+  position: absolute;
+  top: 22px;
+  right: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  color: rgba(23, 36, 29, 0.4);
+  min-width: 32px;
+  min-height: 32px;
 }
+
+.quran-ayah > .quran-bookmark-button:hover,
+.quran-ayah > .quran-bookmark-active {
+  background: transparent;
+  color: var(--gold-500);
+}
+
