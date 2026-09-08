@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import QuranReader from './features/quran/QuranReader'
 import PrayerTimes from './features/prayer/PrayerTimes'
 import DuasScreen from './features/duas/DuasScreen'
+import QiblaDetector from './features/qibla/QiblaDetector'
 
 type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium'
 
@@ -69,7 +70,7 @@ function App() {
         {page === 'quran' && <QuranReader onBack={() => setPage('home')} />}
         {page === 'prayer' && <PrayerTimes onBack={() => setPage('home')} />}
         {page === 'duas' && <DuasScreen onBack={() => setPage('home')} />}
-        {page === 'qibla' && <Section title="Qibla" text="The Qibla compass module will use device orientation when available." />}
+        {page === 'qibla' && <QiblaDetector onBack={() => setPage('home')} />}
         {page === 'knowledge' && <Section title="Islamic Knowledge" text="Lessons and educational content will become searchable offline modules." />}
         {page === 'premium' && <Premium />}
       </main>

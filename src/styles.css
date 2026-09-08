@@ -1792,3 +1792,328 @@ button.secondary:active {
   color: var(--gold-500);
 }
 
+
+/* QIBLA DETECTOR */
+
+.qibla-page {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding-bottom: 120px;
+}
+
+.qibla-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0 16px;
+}
+
+.qibla-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 190px;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px clamp(22px, 5vw, 44px);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 78% 25%, rgba(202, 170, 91, 0.22), transparent 32%),
+    linear-gradient(135deg, #102d23, #071a14 70%);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.qibla-hero-glow {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -55px;
+  top: -70px;
+  border: 1px solid rgba(202, 170, 91, 0.22);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 35px rgba(202, 170, 91, 0.04),
+    0 0 0 70px rgba(202, 170, 91, 0.025);
+}
+
+.qibla-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+}
+
+.qibla-hero h2 {
+  margin: 6px 0 8px;
+  font-size: clamp(2rem, 7vw, 3.1rem);
+}
+
+.qibla-hero p {
+  margin: 0;
+  max-width: 560px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.qibla-compass-card {
+  margin-top: 18px;
+  padding: clamp(20px, 5vw, 34px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+}
+
+.qibla-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.qibla-status-success {
+  color: #d8bd72;
+}
+
+.qibla-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 12px currentColor;
+}
+
+.qibla-compass {
+  position: relative;
+  width: min(76vw, 330px);
+  aspect-ratio: 1;
+  margin: 0 auto 28px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.07) 0 2px, transparent 3px),
+    radial-gradient(circle, rgba(202, 170, 91, 0.08), transparent 68%);
+  border: 1px solid rgba(202, 170, 91, 0.25);
+  box-shadow:
+    inset 0 0 35px rgba(0, 0, 0, 0.35),
+    0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.qibla-compass-ring {
+  position: absolute;
+  inset: 9%;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 50%;
+}
+
+.qibla-ring-inner {
+  inset: 20%;
+  border-style: dashed;
+  border-color: rgba(202, 170, 91, 0.2);
+}
+
+.qibla-cardinal {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+}
+
+.qibla-north {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #d8bd72;
+}
+
+.qibla-east {
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+.qibla-south {
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.qibla-west {
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+.qibla-arrow {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: 50%;
+  width: 28px;
+  height: 43%;
+  transform-origin: 50% 100%;
+  transition: transform 180ms ease-out;
+}
+
+.qibla-arrow-head {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.45rem;
+  color: #d8bd72;
+  text-shadow: 0 0 15px rgba(202, 170, 91, 0.45);
+}
+
+.qibla-arrow-shaft {
+  position: absolute;
+  left: 50%;
+  top: 15px;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  background: #d8bd72;
+  box-shadow: 0 0 12px rgba(202, 170, 91, 0.35);
+}
+
+.qibla-kaaba {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 50%;
+  width: 86px;
+  height: 86px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(7, 25, 19, 0.88);
+  border: 1px solid rgba(202, 170, 91, 0.28);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.28);
+}
+
+.qibla-kaaba span {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.qibla-kaaba small {
+  margin-top: 5px;
+  color: #d8bd72;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.qibla-reading {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.qibla-reading > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.qibla-reading strong {
+  font-size: 1.5rem;
+}
+
+.qibla-reading small,
+.qibla-heading small {
+  color: var(--text-secondary);
+}
+
+.qibla-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--text-secondary);
+}
+
+.qibla-heading strong {
+  color: var(--text-primary);
+}
+
+.qibla-heading small {
+  text-align: right;
+}
+
+.qibla-message,
+.qibla-start-card,
+.qibla-tip {
+  margin-top: 16px;
+}
+
+.qibla-message {
+  padding: 18px;
+  border-radius: 20px;
+}
+
+.qibla-message-error {
+  border: 1px solid rgba(202, 170, 91, 0.2);
+  background: rgba(202, 170, 91, 0.05);
+}
+
+.qibla-message p,
+.qibla-start-card p,
+.qibla-tip p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.qibla-start-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.qibla-start-card h3 {
+  margin: 5px 0;
+}
+
+.qibla-start-card p {
+  margin: 0;
+  max-width: 560px;
+}
+
+.qibla-tip {
+  padding: 18px;
+}
+
+@media (max-width: 600px) {
+  .qibla-start-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .qibla-heading {
+    flex-wrap: wrap;
+  }
+
+  .qibla-heading small {
+    width: 100%;
+    text-align: left;
+  }
+}
