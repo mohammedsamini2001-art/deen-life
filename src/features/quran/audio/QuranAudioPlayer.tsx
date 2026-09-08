@@ -1,9 +1,13 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { getQuranAudioTrack, getQuranReciters, isPremiumReciter } from './quran-audio-service'
 import { getPreferredReciter, savePreferredReciter } from './quran-audio-preference'
 
 interface QuranAudioPlayerProps {
   surahIndex: number
+  surahName: string
+  autoPlay?: boolean
+  onPreviousSurah: () => void
+  onNextSurah: (autoPlay?: boolean) => void
 }
 
 function formatTime(seconds: number): string {
@@ -13,7 +17,13 @@ function formatTime(seconds: number): string {
   return `${mins}:${secs.toString().padStart(2, '0')}`
 }
 
-function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
+function QuranAudioPlayer({
+  surahIndex,
+  surahName,
+  autoPlay = false,
+  onPreviousSurah,
+  onNextSurah,
+}: QuranAudioPlayerProps) {
   const reciters = getQuranReciters()
   const [selectedReciter, setSelectedReciter] = useState(
     () => getPreferredReciter() ?? reciters[0]?.id ?? '',
@@ -28,6 +38,20 @@ function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
   const audioSrc = selectedReciter
     ? getQuranAudioTrack(selectedReciter, surahIndex).audioUrl
     : ''
+
+  useEffect(() => {
+    const audio = audioRef.current
+    if (!audio || !autoPlay) return
+
+    setError(null)
+    setIsBuffering(true)
+
+    void audio.play().catch(() => {
+      setIsPlaying(false)
+      setIsBuffering(false)
+      setError('Unable to play recitation audio. Check your connection and try again.')
+    })
+  }, [autoPlay, surahIndex])
 
   function resetPlaybackState() {
     const audio = audioRef.current
@@ -95,7 +119,22 @@ function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
         />
       </div>
 
+      <div className="quran-audio-surah">
+        <span className="quran-audio-surah-label">NOW PLAYING</span>
+        <strong>Surah {surahIndex} · {surahName}</strong>
+      </div>
+
       <div className="quran-audio-row">
+        <button
+          className="quran-audio-navigation"
+          onClick={onPreviousSurah}
+          type="button"
+          disabled={surahIndex <= 1}
+          aria-label="Previous Surah"
+        >
+          ⏮
+        </button>
+
         <button
           className="quran-audio-toggle"
           onClick={togglePlayback}
@@ -130,6 +169,16 @@ function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
             {formatTime(currentTime)} / {formatTime(duration)}
           </span>
         </div>
+
+        <button
+          className="quran-audio-navigation"
+          onClick={() => onNextSurah(false)}
+          type="button"
+          disabled={surahIndex >= 114}
+          aria-label="Next Surah"
+        >
+          ⏭
+        </button>
       </div>
 
       {error && (
@@ -157,6 +206,10 @@ function QuranAudioPlayer({ surahIndex }: QuranAudioPlayerProps) {
         onEnded={() => {
           setIsPlaying(false)
           setCurrentTime(0)
+
+          if (surahIndex < 114) {
+            onNextSurah(true)
+          }
         }}
         onError={() => {
           setIsPlaying(false)

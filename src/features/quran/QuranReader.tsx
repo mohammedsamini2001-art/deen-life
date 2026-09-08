@@ -17,6 +17,7 @@ function QuranReader({ onBack }: QuranReaderProps) {
   const [error, setError] = useState<string | null>(null)
   const [progress, setProgress] = useState(getQuranProgress)
   const [bookmarks, setBookmarks] = useState(getQuranBookmarks)
+  const [autoPlaySurah, setAutoPlaySurah] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -54,7 +55,8 @@ function QuranReader({ onBack }: QuranReaderProps) {
     setBookmarks(next)
   }
 
-  async function openSurah(surahIndex: number) {
+  async function openSurah(surahIndex: number, autoPlay = false) {
+    setAutoPlaySurah(autoPlay)
     setLoading(true)
     setError(null)
 
@@ -86,7 +88,22 @@ function QuranReader({ onBack }: QuranReaderProps) {
           </div>
         </header>
 
-        <QuranAudioPlayer key={selectedSurah.index} surahIndex={selectedSurah.index} />
+        <QuranAudioPlayer
+          key={selectedSurah.index}
+          surahIndex={selectedSurah.index}
+          surahName={selectedSurah.nameArabic}
+          autoPlay={autoPlaySurah}
+          onPreviousSurah={() => {
+            if (selectedSurah.index > 1) {
+              void openSurah(selectedSurah.index - 1, false)
+            }
+          }}
+          onNextSurah={(autoPlay = false) => {
+            if (selectedSurah.index < 114) {
+              void openSurah(selectedSurah.index + 1, autoPlay)
+            }
+          }}
+        />
 
         {selectedSurah.ayahs[0]?.bismillah && (
           <div className="quran-bismillah" dir="rtl">
