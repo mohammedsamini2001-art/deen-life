@@ -3,6 +3,15 @@ import {
   calculatePrayerSchedule,
   getCalculationMethodNames,
 } from './prayer-service'
+import {
+  getAdhanAlarmSettings,
+  isAlarmEligible,
+  isAlarmEnabled,
+  requestNotificationPermission,
+  scheduleAdhanAlarms,
+  setAlarmEnabled,
+} from './adhan-alarms'
+import { isPremiumActive } from '../premium/premium-entitlement'
 import type {
   CalculationMethodName,
   PrayerLocation,
@@ -12,6 +21,7 @@ import type {
 
 type PrayerTimesProps = {
   onBack: () => void
+  onOpenPremium: () => void
 }
 
 const labels: Record<PrayerName, string> = {
@@ -45,7 +55,7 @@ function formatMethod(method: CalculationMethodName): string {
   return method.replace(/([a-z])([A-Z])/g, '$1 $2')
 }
 
-export default function PrayerTimes({ onBack }: PrayerTimesProps) {
+export default function PrayerTimes({ onBack, onOpenPremium }: PrayerTimesProps) {
   const [location, setLocation] = useState<PrayerLocation | null>(null)
   const [schedule, setSchedule] = useState<PrayerSchedule | null>(null)
   const [method, setMethod] =
@@ -53,6 +63,8 @@ export default function PrayerTimes({ onBack }: PrayerTimesProps) {
   const [locationState, setLocationState] = useState<
     'idle' | 'requesting' | 'ready' | 'denied' | 'unavailable'
   >('idle')
+  const [alarmSettings, setAlarmSettings] = useState(getAdhanAlarmSettings)
+  const [premiumActive] = useState(isPremiumActive)
 
   const methods = useMemo(() => getCalculationMethodNames(), [])
 
@@ -99,6 +111,21 @@ export default function PrayerTimes({ onBack }: PrayerTimesProps) {
 
     return () => window.clearInterval(interval)
   }, [location, method])
+
+  useEffect(() => {
+    if (!schedule || !premiumActive) return
+    return scheduleAdhanAlarms(schedule, labels)
+  }, [schedule, premiumActive])
+
+  function toggleAlarm(prayer: PrayerName) {
+    const enabling = !isAlarmEnabled(prayer)
+
+    if (enabling) {
+      requestNotificationPermission()
+    }
+
+    setAlarmSettings(setAlarmEnabled(prayer, enabling))
+  }
 
   function useMyLocation() {
     if (!navigator.geolocation) {
@@ -241,6 +268,32 @@ export default function PrayerTimes({ onBack }: PrayerTimesProps) {
                     )}
                   </span>
                   <time>{formatTime(prayer.time)}</time>
+                  {isAlarmEligible(prayer.name) && (
+                    premiumActive ? (
+                      <button
+                        className={`adhan-alarm-toggle${
+                          alarmSettings[prayer.name] ? ' is-on' : ''
+                        }`}
+                        onClick={() => toggleAlarm(prayer.name)}
+                        aria-label={
+                          alarmSettings[prayer.name]
+                            ? `Turn off Adhan alarm for ${prayer.label}`
+                            : `Turn on Adhan alarm for ${prayer.label}`
+                        }
+                      >
+                        {alarmSettings[prayer.name] ? '🔔' : '🔕'}
+                      </button>
+                    ) : (
+                      <button
+                        className="adhan-alarm-toggle adhan-alarm-locked"
+                        onClick={onOpenPremium}
+                        aria-label="Unlock Adhan alarms with Premium"
+                        title="Unlock Adhan alarms with Premium"
+                      >
+                        🔒
+                      </button>
+                    )
+                  )}
                 </div>
               ))}
             </div>
@@ -277,7 +330,7 @@ export default function PrayerTimes({ onBack }: PrayerTimesProps) {
 
       {locationState === 'ready' && !displaySchedule && (
         <section className="card prayer-status-card">
-          <h3>Preparing today's schedule…</h3>
+          <h3>Preparing today’s schedule…</h3>
         </section>
       )}
 

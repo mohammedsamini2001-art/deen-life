@@ -311,6 +311,81 @@ button.secondary:active {
   color: var(--gold-300);
 }
 
+.premium-verify-message {
+  margin: 18px 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(8, 127, 91, 0.15);
+  border: 1px solid rgba(8, 127, 91, 0.35);
+  font-size: 0.92rem;
+}
+
+.premium-status {
+  margin-top: 22px;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(8, 127, 91, 0.12);
+  border: 1px solid rgba(8, 127, 91, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.premium-status strong {
+  font-size: 1.15rem;
+  color: var(--emerald-500);
+}
+
+.premium-status span {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.premium-plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.premium-plan-card {
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+}
+
+.premium-plan-card .price {
+  margin: 12px 0 2px;
+  font-size: 1.7rem;
+}
+
+.premium-plan-card small {
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+.premium-plan-card .wide {
+  margin-top: auto;
+}
+
+.premium-plan-featured {
+  border-color: var(--gold-300);
+  background: rgba(212, 168, 79, 0.08);
+}
+
+.premium-error {
+  margin-top: 18px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(192, 57, 43, 0.12);
+  border: 1px solid rgba(192, 57, 43, 0.35);
+  color: #e07a6f;
+  font-size: 0.9rem;
+}
+
 .wide {
   width: 100%;
 }
@@ -1575,6 +1650,31 @@ button.secondary:active {
 
 .prayer-row.is-current {
   border-color: var(--accent);
+}
+
+.adhan-alarm-toggle {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.adhan-alarm-toggle.is-on {
+  border-color: var(--gold-300);
+  background: rgba(212, 168, 79, 0.12);
+  opacity: 1;
+}
+
+.adhan-alarm-locked {
+  opacity: 0.45;
+  cursor: pointer;
 }
 
 .prayer-settings-card p {

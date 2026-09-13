@@ -4,6 +4,7 @@ import PrayerTimes from './features/prayer/PrayerTimes'
 import DuasScreen from './features/duas/DuasScreen'
 import QiblaDetector from './features/qibla/QiblaDetector'
 import KnowledgeScreen from './features/knowledge/KnowledgeScreen'
+import PremiumScreen from './features/premium/PremiumScreen'
 
 type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium'
 
@@ -44,8 +45,16 @@ function getRandomMessage(current: string): string {
   return choices[Math.floor(Math.random() * choices.length)]
 }
 
+function getInitialPage(): Page {
+  const params = new URLSearchParams(window.location.search)
+  if (params.has('reference') || params.has('trxref') || params.has('premium_callback')) {
+    return 'premium'
+  }
+  return 'home'
+}
+
 function App() {
-  const [page, setPage] = useState<Page>('home')
+  const [page, setPage] = useState<Page>(getInitialPage)
   const [dailyMessage, setDailyMessage] = useState(DAILY_MESSAGES[0])
 
   useEffect(() => {
@@ -69,11 +78,11 @@ function App() {
       <main className="content">
         {page === 'home' && <Home onNavigate={setPage} dailyMessage={dailyMessage} />}
         {page === 'quran' && <QuranReader onBack={() => setPage('home')} />}
-        {page === 'prayer' && <PrayerTimes onBack={() => setPage('home')} />}
+        {page === 'prayer' && <PrayerTimes onBack={() => setPage('home')} onOpenPremium={() => setPage('premium')} />}
         {page === 'duas' && <DuasScreen onBack={() => setPage('home')} />}
         {page === 'qibla' && <QiblaDetector onBack={() => setPage('home')} />}
         {page === 'knowledge' && <KnowledgeScreen onBack={() => setPage('home')} />}
-        {page === 'premium' && <Premium />}
+        {page === 'premium' && <PremiumScreen />}
       </main>
 
       {page !== 'premium' && (
@@ -212,18 +221,6 @@ function Section({ title, text }: { title: string; text: string }) {
       <h2>{title}</h2>
       <p>{text}</p>
       <div className="status">MODULE READY</div>
-    </section>
-  )
-}
-
-function Premium() {
-  return (
-    <section className="card page-card premium-page">
-      <span className="eyebrow">DEEN LIFE PREMIUM</span>
-      <h2>More value, still no ads.</h2>
-      <p>Premium infrastructure is reserved for secure Paystack checkout, entitlement tracking and future premium features.</p>
-      <div className="price">$3.99 / month</div>
-      <button className="wide">Payment integration comes after deployment setup</button>
     </section>
   )
 }
