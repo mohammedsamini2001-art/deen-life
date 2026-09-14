@@ -5,8 +5,9 @@ import DuasScreen from './features/duas/DuasScreen'
 import QiblaDetector from './features/qibla/QiblaDetector'
 import KnowledgeScreen from './features/knowledge/KnowledgeScreen'
 import PremiumScreen from './features/premium/PremiumScreen'
+import TasbihScreen from './features/tasbih/TasbihScreen'
 
-type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium'
+type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih'
 
 const pages: { id: Page; label: string; icon: string }[] = [
   { id: 'home', label: 'Home', icon: '⌂' },
@@ -82,7 +83,8 @@ function App() {
         {page === 'duas' && <DuasScreen onBack={() => setPage('home')} />}
         {page === 'qibla' && <QiblaDetector onBack={() => setPage('home')} />}
         {page === 'knowledge' && <KnowledgeScreen onBack={() => setPage('home')} />}
-        {page === 'premium' && <PremiumScreen />}
+        {page === 'premium' && <PremiumScreen onOpenTasbih={() => setPage('tasbih')} />}
+        {page === 'tasbih' && <TasbihScreen onBack={() => setPage('premium')} />}
       </main>
 
       {page !== 'premium' && (
