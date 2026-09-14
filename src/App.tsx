@@ -84,7 +84,7 @@ function App() {
         {page === 'qibla' && <QiblaDetector onBack={() => setPage('home')} />}
         {page === 'knowledge' && <KnowledgeScreen onBack={() => setPage('home')} />}
         {page === 'premium' && <PremiumScreen onOpenTasbih={() => setPage('tasbih')} />}
-        {page === 'tasbih' && <TasbihScreen onBack={() => setPage('premium')} />}
+        {page === 'tasbih' && <TasbihScreen onBack={() => setPage('premium')} onOpenPremium={() => setPage('premium')} />}
       </main>
 
       {page !== 'premium' && (
