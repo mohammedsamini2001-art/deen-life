@@ -1,4 +1,4 @@
-const APP_CACHE = 'deen-life-v1'
+const APP_CACHE = 'deen-life-v2'
 const QURAN_CACHE = 'deen-life-quran-v1'
 
 const APP_SHELL = [
