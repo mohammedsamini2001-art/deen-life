@@ -108,7 +108,7 @@ app.post('/api/premium/pay', async (req, res) => {
     const entitlements = getEntitlements()
     if (entitlements) {
       await entitlements.updateOne(
-        { reference: data.data.reference },
+        { userId: deviceToken },
         {
           $set: {
             userId: deviceToken,
