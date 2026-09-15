@@ -59,6 +59,26 @@ function App() {
   const [dailyMessage, setDailyMessage] = useState(DAILY_MESSAGES[0])
 
   useEffect(() => {
+    const initialPage = getInitialPage()
+    window.history.replaceState({ page: initialPage }, '', window.location.href)
+
+    const handlePopState = (event: PopStateEvent) => {
+      const nextPage = event.state?.page as Page | undefined
+      setPage(nextPage ?? 'home')
+    }
+
+    window.addEventListener('popstate', handlePopState)
+
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  const navigateTo = (nextPage: Page) => {
+    if (nextPage === page) return
+    window.history.pushState({ page: nextPage }, '', window.location.href)
+    setPage(nextPage)
+  }
+
+  useEffect(() => {
     const interval = window.setInterval(() => {
       setDailyMessage(current => getRandomMessage(current))
     }, 15_000)
@@ -73,24 +93,24 @@ function App() {
           <span className="eyebrow">HIKMAH LABS</span>
           <h1>DEEN LIFE</h1>
         </div>
-        <button className="premium-button" onClick={() => setPage('premium')}>Premium</button>
+        <button className="premium-button" onClick={() => navigateTo('premium')}>Premium</button>
       </header>
 
       <main className="content">
-        {page === 'home' && <Home onNavigate={setPage} dailyMessage={dailyMessage} />}
-        {page === 'quran' && <QuranReader onBack={() => setPage('home')} />}
-        {page === 'prayer' && <PrayerTimes onBack={() => setPage('home')} onOpenPremium={() => setPage('premium')} />}
-        {page === 'duas' && <DuasScreen onBack={() => setPage('home')} />}
-        {page === 'qibla' && <QiblaDetector onBack={() => setPage('home')} />}
-        {page === 'knowledge' && <KnowledgeScreen onBack={() => setPage('home')} />}
-        {page === 'premium' && <PremiumScreen onOpenTasbih={() => setPage('tasbih')} />}
-        {page === 'tasbih' && <TasbihScreen onBack={() => setPage('premium')} onOpenPremium={() => setPage('premium')} />}
+        {page === 'home' && <Home onNavigate={navigateTo} dailyMessage={dailyMessage} />}
+        {page === 'quran' && <QuranReader onBack={() => navigateTo('home')} />}
+        {page === 'prayer' && <PrayerTimes onBack={() => navigateTo('home')} onOpenPremium={() => navigateTo('premium')} />}
+        {page === 'duas' && <DuasScreen onBack={() => navigateTo('home')} />}
+        {page === 'qibla' && <QiblaDetector onBack={() => navigateTo('home')} />}
+        {page === 'knowledge' && <KnowledgeScreen onBack={() => navigateTo('home')} />}
+        {page === 'premium' && <PremiumScreen onOpenTasbih={() => navigateTo('tasbih')} />}
+        {page === 'tasbih' && <TasbihScreen onBack={() => navigateTo('premium')} onOpenPremium={() => navigateTo('premium')} />}
       </main>
 
       {page !== 'premium' && (
         <nav className="bottom-nav" aria-label="Main navigation">
           {pages.map(item => (
-            <button key={item.id} className={page === item.id ? 'nav-item active' : 'nav-item'} onClick={() => setPage(item.id)}>
+            <button key={item.id} className={page === item.id ? 'nav-item active' : 'nav-item'} onClick={() => navigateTo(item.id)}>
               <span>{item.icon}</span>
               <small>{item.label}</small>
             </button>

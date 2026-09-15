@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
 import {
-  PLAN_LABELS,
   PREMIUM_PLANS,
   confirmPremiumPayment,
   refreshPremiumStatus,
-  startFreeTrial,
   startPremiumCheckout,
   type PremiumPlan,
   type PremiumStatus,
@@ -25,7 +23,6 @@ export default function PremiumScreen({ onOpenTasbih }: { onOpenTasbih: () => vo
   const [pendingPlan, setPendingPlan] = useState<PremiumPlan | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [verifyMessage, setVerifyMessage] = useState<string | null>(null)
-  const [trialPending, setTrialPending] = useState(false)
 
   useEffect(() => {
     async function init() {
@@ -57,20 +54,6 @@ export default function PremiumScreen({ onOpenTasbih }: { onOpenTasbih: () => vo
 
     init()
   }, [])
-
-  async function handleStartTrial() {
-    setError(null)
-    setTrialPending(true)
-
-    try {
-      const result = await startFreeTrial()
-      setStatus(result)
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Could not start your free trial')
-    } finally {
-      setTrialPending(false)
-    }
-  }
 
   async function handleSubscribe(plan: PremiumPlan) {
     setError(null)
@@ -105,23 +88,12 @@ export default function PremiumScreen({ onOpenTasbih }: { onOpenTasbih: () => vo
         <div className="premium-status premium-status-active">
           <strong>Premium is active</strong>
           <span>
-            {status.plan ? PLAN_LABELS[status.plan] : ''} plan
+            {status.plan ? PREMIUM_PLANS[status.plan].label : ''} plan
             {status.expiresAt ? ` · renews ${formatExpiry(status.expiresAt)}` : ''}
           </span>
         </div>
       ) : (
         <div className="premium-plans">
-          {status?.trialAvailable && (
-            <div className="premium-plan-card premium-trial-card">
-              <span className="eyebrow">NEW HERE?</span>
-              <div className="price">Free</div>
-              <small>1 month, no payment required</small>
-              <button className="wide" disabled={trialPending} onClick={handleStartTrial}>
-                {trialPending ? 'Starting…' : 'Start Free Trial'}
-              </button>
-            </div>
-          )}
-
           <div className="premium-plan-card">
             <span className="eyebrow">MONTHLY</span>
             <div className="price">KES {PREMIUM_PLANS.monthly.amountKes}</div>
