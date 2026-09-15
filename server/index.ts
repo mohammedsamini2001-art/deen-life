@@ -130,7 +130,8 @@ app.post('/api/premium/pay', async (req, res) => {
     })
   } catch (error) {
     console.error('Paystack initialize error:', error)
-    return res.status(502).json({ ok: false, error: 'Could not reach Paystack' })
+    const message = error instanceof Error ? error.message : String(error)
+    return res.status(502).json({ ok: false, error: message })
   }
 })
 
