@@ -111,6 +111,7 @@ app.post('/api/premium/pay', async (req, res) => {
         { reference: data.data.reference },
         {
           $set: {
+            userId: deviceToken,
             deviceToken,
             plan,
             amountKes,
