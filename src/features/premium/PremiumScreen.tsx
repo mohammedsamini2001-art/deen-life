@@ -91,6 +91,9 @@ export default function PremiumScreen({ onOpenTasbih }: { onOpenTasbih: () => vo
             {status.plan ? PREMIUM_PLANS[status.plan].label : ''} plan
             {status.expiresAt ? ` · renews ${formatExpiry(status.expiresAt)}` : ''}
           </span>
+          <button className="wide" onClick={onOpenTasbih}>
+            Open Tasbih
+          </button>
         </div>
       ) : (
         <div className="premium-plans">
