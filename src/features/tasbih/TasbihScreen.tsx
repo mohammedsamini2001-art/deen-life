@@ -4,7 +4,7 @@ import { isPremiumActive } from '../premium/premium-entitlement'
 export default function TasbihScreen({ onBack, onOpenPremium }: { onBack: () => void; onOpenPremium: () => void }) {
   const [count, setCount] = useState(0)
 
-  if (!isPremiumActive) {
+  if (!isPremiumActive()) {
     return (
       <section className="card page-card tasbih-page">
         <button className="back" onClick={onBack}>
