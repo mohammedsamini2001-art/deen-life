@@ -36,22 +36,31 @@ export default function TasbihScreen({ onBack, onOpenPremium }: { onBack: () => 
         ← Back
       </button>
 
-      <span className="eyebrow">DEEN LIFE PREMIUM</span>
-      <h2>Tasbih</h2>
-      <p>Keep count of your dhikr with a simple digital tasbih.</p>
-
-      <div className="tasbih-counter">
-        <span className="eyebrow">COUNT</span>
-        <strong>{count}</strong>
+      <div className="tasbih-header">
+        <span className="eyebrow">DEEN LIFE PREMIUM</span>
+        <h2>Tasbih</h2>
+        <p>Keep count of your dhikr with a calm, simple digital tasbih.</p>
       </div>
 
-      <button className="wide" onClick={increment}>
-        Count Dhikr
-      </button>
+      <div className="tasbih-actions">
+        <button
+          className="tasbih-counter"
+          onClick={() => {
+            increment()
+            navigator.vibrate?.(18)
+          }}
+          aria-label={`Count dhikr, currently ${count}`}
+          aria-live="polite"
+        >
+          <span className="eyebrow">TAP TO COUNT</span>
+          <strong>{count}</strong>
+          <span className="tasbih-label">Dhikr</span>
+        </button>
 
-      <button className="secondary wide" onClick={reset}>
-        Reset
-      </button>
+        <button className="secondary tasbih-reset-button" onClick={reset}>
+          Reset
+        </button>
+      </div>
     </section>
   )
 }

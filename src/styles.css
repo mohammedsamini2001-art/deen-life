@@ -2230,6 +2230,160 @@ button.secondary:active {
   }
 }
 
+/* Premium Tasbih */
+.tasbih-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.tasbih-header {
+  max-width: 620px;
+  margin-bottom: 24px;
+}
+
+.tasbih-header h2 {
+  margin-bottom: 10px;
+}
+
+.tasbih-header p {
+  margin: 0;
+}
+
+.tasbih-counter {
+  position: relative;
+  width: min(72vw, 280px);
+  min-height: 0;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  margin: 12px auto 28px;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(22, 163, 111, 0.2), transparent 55%),
+    linear-gradient(145deg, rgba(16, 37, 29, 0.96), rgba(7, 19, 15, 0.96));
+  box-shadow:
+    0 24px 55px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 0 8px rgba(212, 168, 79, 0.035);
+}
+
+.tasbih-counter::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(212, 168, 79, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.tasbih-counter strong {
+  position: relative;
+  z-index: 1;
+  margin: 8px 0 2px;
+  font-size: clamp(3.8rem, 17vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+
+.tasbih-counter .eyebrow,
+.tasbih-label {
+  position: relative;
+  z-index: 1;
+}
+
+.tasbih-label {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tasbih-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(100%, 420px);
+  margin: 0 auto;
+}
+
+.tasbih-count-button {
+  min-height: 76px;
+  border: 1px solid rgba(212, 168, 79, 0.45);
+  border-radius: 18px;
+  padding: 14px 20px;
+  background:
+    linear-gradient(145deg, #f0d58a, #d4a84f);
+  color: #17110a;
+  box-shadow:
+    0 14px 32px rgba(212, 168, 79, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tasbih-count-button span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.tasbih-count-button strong {
+  font-size: 1.05rem;
+}
+
+.tasbih-count-button:active {
+  transform: translateY(2px) scale(0.99);
+  box-shadow:
+    0 7px 18px rgba(212, 168, 79, 0.18),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tasbih-reset-button {
+  width: 100%;
+  min-height: 48px;
+}
+
+@media (max-width: 520px) {
+  .tasbih-page {
+    padding-bottom: 24px;
+  }
+
+  .tasbih-counter {
+    width: min(78vw, 260px);
+    margin-top: 6px;
+  }
+
+  .tasbih-count-button {
+    min-height: 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tasbih-count-button {
+    transition: none;
+  }
+}
+
 /* Islamic Knowledge — dedicated scholar hero */
 .duas-category-header.knowledge-hero {
   background:
