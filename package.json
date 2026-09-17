@@ -11,6 +11,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
     "adhan": "^4.4.6",
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",
