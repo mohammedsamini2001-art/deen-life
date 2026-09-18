@@ -27,17 +27,56 @@ export interface DeenAiResult {
   sources: []
 }
 
-export async function askDeenAi(question: string): Promise<DeenAiResult> {
-  const response = await ai.models.generateContent({
-    model: 'gemini-3.6-flash',
-    contents: question,
-    config: {
-      systemInstruction: DEEN_AI_SYSTEM_PROMPT,
-    },
-  })
-
-  return {
-    answer: response.text?.trim() || 'I could not generate a response.',
-    sources: [],
+function isTemporaryGeminiError(error: unknown): boolean {
+  if (!error || typeof error !== 'object') {
+    return false
   }
+
+  const candidate = error as {
+    status?: number
+    code?: number
+    message?: string
+  }
+
+  return (
+    candidate.status === 503 ||
+    candidate.code === 503 ||
+    candidate.message?.includes('503') === true ||
+    candidate.message?.includes('UNAVAILABLE') === true
+  )
+}
+
+export async function askDeenAi(question: string): Promise<DeenAiResult> {
+  const maxAttempts = 3
+  const retryDelays = [1000, 2000]
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      const response = await ai.models.generateContent({
+        model: 'gemini-3.6-flash',
+        contents: question,
+        config: {
+          systemInstruction: DEEN_AI_SYSTEM_PROMPT,
+        },
+      })
+
+      return {
+        answer: response.text?.trim() || 'I could not generate a response.',
+        sources: [],
+      }
+    } catch (error) {
+      const shouldRetry =
+        attempt < maxAttempts && isTemporaryGeminiError(error)
+
+      if (!shouldRetry) {
+        throw error
+      }
+
+      await new Promise((resolve) => {
+        setTimeout(resolve, retryDelays[attempt - 1])
+      })
+    }
+  }
+
+  throw new Error('DEEN AI could not complete the request.')
 }
