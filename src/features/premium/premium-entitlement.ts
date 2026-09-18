@@ -10,8 +10,8 @@ export interface PremiumStatus {
 }
 
 export const PREMIUM_PLANS: Record<PremiumPlan, { amountKes: number; label: string }> = {
-  monthly: { amountKes: 100, label: 'Monthly' },
-  yearly: { amountKes: 650, label: 'Yearly' },
+  monthly: { amountKes: 20, label: 'Monthly' },
+  yearly: { amountKes: 100, label: 'Yearly' },
 }
 
 const CACHE_KEY = 'deen-life:premium-status-cache'
