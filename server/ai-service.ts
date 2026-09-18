@@ -29,7 +29,7 @@ export interface DeenAiResult {
 
 export async function askDeenAi(question: string): Promise<DeenAiResult> {
   const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash',
+    model: 'gemini-3.6-flash',
     contents: question,
     config: {
       systemInstruction: DEEN_AI_SYSTEM_PROMPT,
