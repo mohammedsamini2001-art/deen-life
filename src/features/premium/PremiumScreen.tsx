@@ -100,12 +100,22 @@ export default function PremiumScreen({
             {status.expiresAt ? ` · renews ${formatExpiry(status.expiresAt)}` : ''}
           </span>
           <div className="premium-feature-actions">
-            <button className="wide" onClick={onOpenTasbih}>
-              Open Tasbih
+            <button className="premium-feature-button premium-feature-tasbih" onClick={onOpenTasbih}>
+              <span className="premium-feature-icon" aria-hidden="true">◉</span>
+              <span className="premium-feature-content">
+                <strong>Tasbih</strong>
+                <span>Keep your dhikr close and continue your remembrance.</span>
+              </span>
+              <span className="premium-feature-arrow" aria-hidden="true">→</span>
             </button>
 
-            <button className="wide" onClick={onOpenAi}>
-              Open DEEN AI
+            <button className="premium-feature-button premium-feature-ai" onClick={onOpenAi}>
+              <span className="premium-feature-icon" aria-hidden="true">✦</span>
+              <span className="premium-feature-content">
+                <strong>DEEN AI</strong>
+                <span>Explore your questions about Islam naturally.</span>
+              </span>
+              <span className="premium-feature-arrow" aria-hidden="true">→</span>
             </button>
           </div>
         </div>
