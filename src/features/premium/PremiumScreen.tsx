@@ -17,7 +17,13 @@ function formatExpiry(expiresAt?: string): string {
   }).format(new Date(expiresAt))
 }
 
-export default function PremiumScreen({ onOpenTasbih }: { onOpenTasbih: () => void }) {
+export default function PremiumScreen({
+  onOpenTasbih,
+  onOpenAi,
+}: {
+  onOpenTasbih: () => void
+  onOpenAi: () => void
+}) {
   const [status, setStatus] = useState<PremiumStatus | null>(null)
   const [loading, setLoading] = useState(true)
   const [pendingPlan, setPendingPlan] = useState<PremiumPlan | null>(null)
@@ -91,9 +97,15 @@ export default function PremiumScreen({ onOpenTasbih }: { onOpenTasbih: () => vo
             {status.plan ? PREMIUM_PLANS[status.plan].label : ''} plan
             {status.expiresAt ? ` · renews ${formatExpiry(status.expiresAt)}` : ''}
           </span>
-          <button className="wide" onClick={onOpenTasbih}>
-            Open Tasbih
-          </button>
+          <div className="premium-feature-actions">
+            <button className="wide" onClick={onOpenTasbih}>
+              Open Tasbih
+            </button>
+
+            <button className="wide" onClick={onOpenAi}>
+              Open DEEN AI
+            </button>
+          </div>
         </div>
       ) : (
         <div className="premium-plans">

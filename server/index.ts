@@ -2,6 +2,7 @@ import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import { MongoClient } from 'mongodb'
+import { askDeenAi } from './ai-service.js'
 
 const app = express()
 const port = Number(process.env.PORT) || 3000
@@ -346,6 +347,49 @@ app.get('/api/premium/status', async (req, res) => {
     plan: record.plan,
     expiresAt: record.expiresAt,
   })
+})
+
+
+app.post('/api/ai/ask', async (req, res) => {
+  const { deviceToken, question } = req.body ?? {}
+
+  if (typeof deviceToken !== 'string' || !deviceToken) {
+    return res.status(400).json({ ok: false, error: 'deviceToken is required' })
+  }
+
+  if (typeof question !== 'string' || !question.trim()) {
+    return res.status(400).json({ ok: false, error: 'question is required' })
+  }
+
+  if (!process.env.AI_GATEWAY_API_KEY) {
+    return res.status(503).json({ ok: false, error: 'DEEN AI is not configured yet' })
+  }
+
+  const entitlements = getEntitlements()
+  if (!entitlements) {
+    return res.status(503).json({ ok: false, error: 'Premium service is not configured yet' })
+  }
+
+  const record = await entitlements.findOne(
+    { deviceToken, status: 'paid' },
+    { sort: { expiresAt: -1 } },
+  )
+
+  if (!record || !record.expiresAt || new Date(record.expiresAt) < new Date()) {
+    return res.status(403).json({ ok: false, error: 'DEEN AI is a Premium feature' })
+  }
+
+  try {
+    const result = await askDeenAi(question.trim())
+
+    return res.json({
+      ok: true,
+      ...result,
+    })
+  } catch (error) {
+    console.error('DEEN AI error:', error)
+    return res.status(502).json({ ok: false, error: 'DEEN AI could not complete the request' })
+  }
 })
 
 async function start() {
