@@ -2479,3 +2479,244 @@ button.secondary:active {
   max-width: 680px;
   font-size: clamp(0.95rem, 2vw, 1.08rem);
 }
+
+.deen-ai-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.deen-ai-header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.deen-ai-header-actions button,
+.deen-ai-history-delete {
+  border: 1px solid rgba(212, 168, 79, 0.42);
+  border-radius: 12px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(22, 163, 111, 0.2),
+      rgba(212, 168, 79, 0.08)
+    );
+  color: var(--gold-300);
+  padding: 9px 12px;
+  font-weight: 800;
+}
+
+.deen-ai-header-actions button:hover,
+.deen-ai-history-delete:hover {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(22, 163, 111, 0.3),
+      rgba(212, 168, 79, 0.14)
+    );
+  border-color: rgba(212, 168, 79, 0.68);
+}
+
+.deen-ai-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.deen-ai-history {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(7, 19, 15, 0.5);
+  padding: 14px;
+}
+
+.deen-ai-history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.deen-ai-history-header > div {
+  display: grid;
+  gap: 4px;
+}
+
+.deen-ai-history-list {
+  display: grid;
+  gap: 8px;
+}
+
+.deen-ai-history-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: stretch;
+  border: 1px solid rgba(212, 168, 79, 0.16);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.deen-ai-history-item-active {
+  border-color: rgba(212, 168, 79, 0.52);
+  background: rgba(22, 163, 111, 0.12);
+}
+
+.deen-ai-history-select {
+  min-width: 0;
+  text-align: left;
+  padding: 10px;
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.deen-ai-history-select strong,
+.deen-ai-history-select span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.deen-ai-history-select span {
+  margin-top: 4px;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.deen-ai-history-delete {
+  border: 0;
+  border-left: 1px solid rgba(212, 168, 79, 0.16);
+  border-radius: 0;
+  padding: 8px 11px;
+}
+
+.deen-ai-history-empty {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.deen-ai-chat {
+  min-width: 0;
+}
+
+.deen-ai-chat-header {
+  margin-bottom: 16px;
+}
+
+.deen-ai-chat-header h2 {
+  margin: 6px 0;
+}
+
+.deen-ai-chat-header p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.deen-ai-conversation {
+  display: grid;
+  gap: 12px;
+  min-height: 280px;
+  max-height: 55vh;
+  overflow-y: auto;
+  padding: 4px 2px 14px;
+}
+
+.deen-ai-message {
+  max-width: 88%;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+}
+
+.deen-ai-message-user {
+  justify-self: end;
+  background: rgba(22, 163, 111, 0.18);
+  border-color: rgba(22, 163, 111, 0.35);
+}
+
+.deen-ai-message-assistant {
+  justify-self: start;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.deen-ai-message-content {
+  margin-top: 8px;
+  white-space: pre-wrap;
+  line-height: 1.65;
+}
+
+.deen-ai-sources {
+  display: grid;
+  gap: 5px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.deen-ai-empty {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 8px;
+  min-height: 240px;
+  padding: 20px;
+  text-align: center;
+  border: 1px dashed rgba(212, 168, 79, 0.3);
+  border-radius: 18px;
+  color: var(--text-secondary);
+}
+
+.deen-ai-empty strong {
+  color: var(--text-primary);
+}
+
+.deen-ai-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.deen-ai-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+@media (max-width: 700px) {
+  .deen-ai-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .deen-ai-header-actions {
+    width: 100%;
+  }
+
+  .deen-ai-header-actions button {
+    flex: 1;
+  }
+
+  .deen-ai-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .deen-ai-history {
+    order: 2;
+  }
+
+  .deen-ai-chat {
+    order: 1;
+  }
+
+  .deen-ai-message {
+    max-width: 94%;
+  }
+}
