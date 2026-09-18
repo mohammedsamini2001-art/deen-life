@@ -80,10 +80,12 @@ export default function PremiumScreen({
         ← Back
       </button>
       <span className="eyebrow">DEEN LIFE PREMIUM</span>
-      <h2>More value, still no ads.</h2>
+      <h2>Go deeper with your deen.</h2>
       <p>
-        Premium unlocks Adhan alarms timed to your prayer schedule, with more
-        features on the way.
+        DEEN LIFE Premium brings together a deeper experience for learning,
+        remembrance, and everyday connection with Islam. Explore your questions
+        with DEEN AI, keep your dhikr close with Tasbih, and discover more of
+        what DEEN LIFE has to offer.
       </p>
 
       {verifyMessage && <div className="premium-verify-message">{verifyMessage}</div>}
