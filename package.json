@@ -15,6 +15,7 @@
     "@capacitor/cli": "^8.5.2",
     "@capacitor/core": "^8.5.2",
     "@capacitor/local-notifications": "^8.3.1",
+    "@google/genai": "^2.23.0",
     "adhan": "^4.4.6",
     "ai": "^7.0.106",
     "cors": "^2.8.5",

@@ -1,6 +1,8 @@
-import { generateText } from 'ai'
+import { GoogleGenAI } from '@google/genai'
 
-const aiModel = process.env.AI_MODEL || 'anthropic/claude-sonnet-4.5'
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY,
+})
 
 const DEEN_AI_SYSTEM_PROMPT = `
 You are DEEN AI, an Islamic knowledge assistant inside DEEN LIFE.
@@ -26,14 +28,16 @@ export interface DeenAiResult {
 }
 
 export async function askDeenAi(question: string): Promise<DeenAiResult> {
-  const { text } = await generateText({
-    model: aiModel,
-    system: DEEN_AI_SYSTEM_PROMPT,
-    prompt: question,
+  const response = await ai.models.generateContent({
+    model: 'gemini-2.5-flash',
+    contents: question,
+    config: {
+      systemInstruction: DEEN_AI_SYSTEM_PROMPT,
+    },
   })
 
   return {
-    answer: text.trim(),
+    answer: response.text?.trim() || 'I could not generate a response.',
     sources: [],
   }
 }

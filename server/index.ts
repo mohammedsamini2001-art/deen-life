@@ -361,7 +361,7 @@ app.post('/api/ai/ask', async (req, res) => {
     return res.status(400).json({ ok: false, error: 'question is required' })
   }
 
-  if (!process.env.AI_GATEWAY_API_KEY) {
+  if (!process.env.GEMINI_API_KEY) {
     return res.status(503).json({ ok: false, error: 'DEEN AI is not configured yet' })
   }
 
