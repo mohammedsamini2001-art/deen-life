@@ -493,7 +493,223 @@ export const TAWHEED_AQIDAH_COURSE: {
           slug: 'six-pillars-of-iman',
           title: 'The Six Pillars of Iman',
           number: 4,
-          content: {},
+          content: {
+        en: {
+          objectives: [
+            'Identify the six articles of Iman described in the Qur’an and authentic Sunnah.',
+            'Understand what belief in Allah, angels, revealed books, messengers, the Last Day, and divine decree means.',
+            'Recognize how these beliefs shape a Muslim’s worship, responsibility, hope, and daily life.',
+          ],
+          sections: [
+            {
+              title: 'The six articles of Iman',
+              paragraphs: [
+                'Islamic sources describe six core matters that a believer affirms as part of Iman: belief in Allah, His angels, His revealed books, His messengers, the Last Day, and divine decree (Qadar). The Qur’an names these matters together, and the Hadith of Jibril gives a clear explanation of Iman.',
+                'These articles are connected. They form a framework of belief about Allah, revelation, guidance, the future, and what occurs within Allah’s knowledge and will.',
+              ],
+            },
+            {
+              title: '1. Belief in Allah',
+              paragraphs: [
+                'Belief in Allah means affirming that Allah is the true Lord and the only One worthy of worship. It includes believing what He has revealed about Himself and worshipping Him sincerely.',
+                'Belief in Allah is the foundation of the other articles of Iman because the believer accepts Allah as the source of creation, revelation, guidance, and judgment.',
+              ],
+            },
+            {
+              title: '2. Belief in the angels',
+              paragraphs: [
+                'Angels are part of the unseen creation that Allah has told us about. Believing in them means accepting their existence and the roles Allah has assigned to them, without adding claims that revelation has not established.',
+                'Belief in the angels reminds a Muslim that creation includes realities beyond what can be seen and that Allah’s commands are carried out throughout His creation.',
+              ],
+            },
+            {
+              title: '3. Belief in the revealed books',
+              paragraphs: [
+                'A Muslim believes that Allah revealed guidance through scriptures to His messengers. The Qur’an teaches believers to affirm Allah’s revealed books and to believe in the revelation sent before the Qur’an.',
+                'The Qur’an is the final revealed Book sent to Prophet Muhammad ﷺ. Muslims therefore follow the Qur’an as their revealed guidance while affirming the original revelation given to earlier messengers.',
+              ],
+            },
+            {
+              title: '4. Belief in the messengers',
+              paragraphs: [
+                'Allah sent messengers to guide people to worship Him and follow His guidance. Belief in the messengers includes accepting the truth of their message and respecting them as servants and messengers of Allah.',
+                'The Qur’an teaches believers not to reject some messengers while accepting others. Muslims believe in Allah’s messengers as a connected chain of guidance and follow the final messenger, Muhammad ﷺ, according to the Qur’an and authentic Sunnah.',
+              ],
+            },
+            {
+              title: '5. Belief in the Last Day',
+              paragraphs: [
+                'Belief in the Last Day means accepting that earthly life is not the end. People will be raised, judged, and held accountable before Allah.',
+                'This belief strengthens moral responsibility. A Muslim remembers that actions matter even when other people do not see them, because Allah knows and the final return is to Him.',
+              ],
+            },
+            {
+              title: '6. Belief in divine decree (Qadar)',
+              paragraphs: [
+                'Belief in Qadar means affirming that Allah has complete knowledge and authority over His creation and that what occurs does so within His knowledge and will. The Qur’an teaches that Allah created all things with measure.',
+                'Belief in Qadar does not mean that a person should stop making choices or taking responsible action. A Muslim still chooses, acts, seeks what is beneficial, avoids wrongdoing, and is accountable for what they do.',
+              ],
+            },
+            {
+              title: 'How the six articles shape life',
+              paragraphs: [
+                'Belief changes how a person understands life. Belief in Allah gives worship a clear purpose. Belief in revelation and messengers gives guidance. Belief in the Last Day strengthens responsibility, while belief in Qadar helps a believer remain grounded in effort and trust in Allah.',
+                'These beliefs are not only subjects to memorize. They are foundations that can shape worship, character, decisions, patience, gratitude, and hope.',
+              ],
+            },
+          ],
+          keyTerms: [
+            {
+              term: 'Iman',
+              meaning: 'Faith and conviction in the core matters taught by Allah and His Messenger.',
+            },
+            {
+              term: 'Mala’ikah',
+              meaning: 'Angels, an unseen creation of Allah whom Muslims affirm as part of the unseen world.',
+            },
+            {
+              term: 'Kutub',
+              meaning: 'The revealed books and scriptures sent by Allah through His messengers.',
+            },
+            {
+              term: 'Rusul',
+              meaning: 'The messengers sent by Allah to convey His guidance to people.',
+            },
+            {
+              term: 'Al-Yawm al-Akhir',
+              meaning: 'The Last Day, when creation will be raised and judged by Allah.',
+            },
+            {
+              term: 'Qadar',
+              meaning: 'Divine decree: Allah’s complete knowledge and will concerning His creation and what occurs within it.',
+            },
+          ],
+          reviewQuestions: [
+            'What are the six articles of Iman?',
+            'Why is belief in Allah the foundation of the other articles of faith?',
+            'What does a Muslim believe about Allah’s revealed books?',
+            'Why do Muslims believe in all of Allah’s messengers?',
+            'How does belief in the Last Day affect a person’s sense of responsibility?',
+            'What does belief in Qadar mean?',
+            'Why does belief in Qadar not remove the need to make responsible choices and take action?',
+          ],
+          sources: [
+            { type: 'quran', reference: 'Qur’an 2:285' },
+            { type: 'quran', reference: 'Qur’an 4:136' },
+            { type: 'quran', reference: 'Qur’an 54:49' },
+            { type: 'quran', reference: 'Qur’an 76:29–30' },
+            { type: 'hadith', reference: 'Sahih Muslim 8e — Hadith of Jibril' },
+          ],
+        },
+
+        sw: {
+          objectives: [
+            'Tambua nguzo sita za Imani kama zinavyoelezwa katika Qur’an na Sunnah sahihi.',
+            'Elewa maana ya kumuamini Allah, Malaika, Vitabu vilivyoteremshwa, Mitume, Siku ya Mwisho na Qadar.',
+            'Tambua jinsi imani hizi zinavyounda ibada, uwajibikaji, matumaini na maisha ya kila siku ya Muislamu.',
+          ],
+          sections: [
+            {
+              title: 'Nguzo sita za Imani',
+              paragraphs: [
+                'Vyanzo vya Kiislamu vinaeleza mambo sita ya msingi ambayo muumini anayakubali katika Imani: kumuamini Allah, Malaika Wake, Vitabu Vyake vilivyoteremshwa, Mitume Wake, Siku ya Mwisho na Qadar. Qur’an inataja mambo haya pamoja, na Hadithi ya Jibril inaeleza Imani kwa uwazi.',
+                'Nguzo hizi zimeungana. Zinaunda mfumo wa imani kuhusu Allah, wahyi, mwongozo, maisha ya baadaye na mambo yanayotokea ndani ya elimu na matakwa ya Allah.',
+              ],
+            },
+            {
+              title: '1. Kumuamini Allah',
+              paragraphs: [
+                'Kumuamini Allah ni kuthibitisha kwamba Allah ndiye Mola wa kweli na ndiye Mwenye kustahiki kuabudiwa. Inahusisha kuamini yale ambayo Allah amejieleza Mwenyewe na kumuabudu kwa ikhlasi.',
+                'Kumuamini Allah ni msingi wa nguzo nyingine za Imani kwa sababu muumini humkubali Allah kuwa Muumba, Mwenye kuleta wahyi, Mwenye kutoa mwongozo na Mwenye kuhukumu.',
+              ],
+            },
+            {
+              title: '2. Kuwaamini Malaika',
+              paragraphs: [
+                'Malaika ni miongoni mwa viumbe vya ghaibu ambavyo Allah ametueleza. Kuwaamini kunamaanisha kukubali kuwepo kwao na majukumu ambayo Allah amewapa, bila kuongeza madai ambayo hayajathibitishwa na Wahyi.',
+                'Imani juu ya Malaika humkumbusha Muislamu kwamba uumbaji una mambo ambayo hayaonekani kwa macho na kwamba amri za Allah zinatekelezwa katika uumbaji Wake.',
+              ],
+            },
+            {
+              title: '3. Kuamini Vitabu vilivyoteremshwa',
+              paragraphs: [
+                'Muislamu anaamini kwamba Allah aliteremsha mwongozo kupitia maandiko kwa Mitume Wake. Qur’an inawafundisha Waumini kuthibitisha Vitabu vya Allah na kuamini wahyi ulioteremshwa kabla ya Qur’an.',
+                'Qur’an ni Kitabu cha mwisho kilichoteremshwa kwa Mtume Muhammad ﷺ. Kwa hiyo Waislamu wanaifuata Qur’an kama mwongozo ulioteremshwa huku wakithibitisha wahyi wa asili uliotolewa kwa Mitume waliotangulia.',
+              ],
+            },
+            {
+              title: '4. Kuwaamini Mitume',
+              paragraphs: [
+                'Allah aliwatuma Mitume ili kuwaongoza watu wamuabudu Yeye na kufuata mwongozo Wake. Kuwaamini Mitume kunahusisha kukubali ukweli wa ujumbe wao na kuwaheshimu kama waja na Mitume wa Allah.',
+                'Qur’an inawafundisha Waumini kutowakataa baadhi ya Mitume huku wakiwakubali wengine. Waislamu huwaamini Mitume wa Allah kama mlolongo wa mwongozo na humfuata Mtume wa mwisho, Muhammad ﷺ, kwa mujibu wa Qur’an na Sunnah sahihi.',
+              ],
+            },
+            {
+              title: '5. Kuamini Siku ya Mwisho',
+              paragraphs: [
+                'Kuamini Siku ya Mwisho ni kukubali kwamba maisha ya duniani si mwisho. Watu watafufuliwa, watahukumiwa na watawajibishwa mbele ya Allah.',
+                'Imani hii huimarisha uwajibikaji wa kimaadili. Muislamu hukumbuka kwamba matendo yana umuhimu hata kama watu wengine hawayaoni, kwa sababu Allah anayajua na marejeo ya mwisho ni Kwake.',
+              ],
+            },
+            {
+              title: '6. Kuamini Qadar',
+              paragraphs: [
+                'Kuamini Qadar ni kuthibitisha kwamba Allah ana elimu kamili na mamlaka juu ya uumbaji Wake na kwamba mambo hutokea ndani ya elimu na matakwa Yake. Qur’an inafundisha kwamba Allah ameumba kila kitu kwa kipimo.',
+                'Kuamini Qadar hakumaanishi mtu aache kufanya maamuzi au kuchukua hatua kwa uwajibikaji. Muislamu bado huchagua, hutenda, hutafuta yaliyo na manufaa, hujiepusha na maovu na huwajibika kwa yale anayoyafanya.',
+              ],
+            },
+            {
+              title: 'Jinsi nguzo hizi zinavyounda maisha',
+              paragraphs: [
+                'Imani hubadilisha namna mtu anavyoona maisha. Kumuamini Allah huipa ibada kusudi. Kuamini wahyi na Mitume hutoa mwongozo. Kuamini Siku ya Mwisho huimarisha uwajibikaji, na kuamini Qadar humsaidia muumini kubaki na juhudi pamoja na kumtegemea Allah.',
+                'Nguzo hizi si masomo ya kukariri tu. Ni misingi inayoweza kuunda ibada, tabia, maamuzi, subira, shukrani na matumaini.',
+              ],
+            },
+          ],
+          keyTerms: [
+            {
+              term: 'Imani',
+              meaning: 'Kumuamini kwa yakini mambo ya msingi yaliyofundishwa na Allah na Mtume Wake.',
+            },
+            {
+              term: 'Malaika',
+              meaning: 'Viumbe vya ghaibu vya Allah ambavyo Muislamu anaamini kuwa vipo.',
+            },
+            {
+              term: 'Vitabu',
+              meaning: 'Vitabu na maandiko yaliyoteremshwa na Allah kupitia Mitume Wake.',
+            },
+            {
+              term: 'Mitume',
+              meaning: 'Wajumbe waliotumwa na Allah kufikisha mwongozo Wake kwa watu.',
+            },
+            {
+              term: 'Siku ya Mwisho',
+              meaning: 'Siku ambayo viumbe watafufuliwa na kuhukumiwa na Allah.',
+            },
+            {
+              term: 'Qadar',
+              meaning: 'Kadirio la Allah katika uumbaji Wake kwa mujibu wa elimu na matakwa Yake.',
+            },
+          ],
+          reviewQuestions: [
+            'Nguzo sita za Imani ni zipi?',
+            'Kwa nini kumuamini Allah ni msingi wa nguzo nyingine za Imani?',
+            'Muislamu anaamini nini kuhusu Vitabu vilivyoteremshwa na Allah?',
+            'Kwa nini Waislamu wanawaamini Mitume wote wa Allah?',
+            'Kuamini Siku ya Mwisho kunaathirije uwajibikaji wa mtu?',
+            'Kuamini Qadar kunamaanisha nini?',
+            'Kwa nini kuamini Qadar hakumwondolei mtu jukumu la kuchagua na kuchukua hatua kwa uwajibikaji?',
+          ],
+          sources: [
+            { type: 'quran', reference: 'Qur’an 2:285' },
+            { type: 'quran', reference: 'Qur’an 4:136' },
+            { type: 'quran', reference: 'Qur’an 54:49' },
+            { type: 'quran', reference: 'Qur’an 76:29–30' },
+            { type: 'hadith', reference: 'Sahih Muslim 8e — Hadithi ya Jibril' },
+          ],
+        },
+      },
         },
         {
           slug: 'why-correct-belief-matters',
