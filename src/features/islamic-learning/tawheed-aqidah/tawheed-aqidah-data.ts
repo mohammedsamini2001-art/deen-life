@@ -876,7 +876,167 @@ export const TAWHEED_AQIDAH_COURSE: {
       slug: 'knowing-allah',
       title: 'Knowing Allah',
       number: 2,
-      lessons: [],
+      lessons: [
+  {
+    slug: 'allah-is-the-creator-and-lord',
+    title: 'Allah Is the Creator and Lord',
+    number: 1,
+    content: {
+      en: {
+        objectives: [
+          'Understand that Allah is the Creator, Lord, and Sustainer of all creation.',
+          'Understand why recognizing Allah as Lord leads to worshipping Him alone.',
+          'Learn to describe what is taught about Allah through revelation without relying on unsupported speculation.',
+        ],
+        sections: [
+          {
+            title: 'Allah is the Creator',
+            paragraphs: [
+              'Islam teaches that Allah created the heavens, the earth, and everything that exists. Creation is dependent on Him, while Allah is not dependent on His creation.',
+              'Recognizing Allah as the Creator gives a Muslim a foundation for understanding who deserves ultimate gratitude, obedience, and worship.',
+            ],
+          },
+          {
+            title: 'Allah is the Lord',
+            paragraphs: [
+              'The Qur’an repeatedly describes Allah as the Lord of the worlds. The word Rabb carries meanings connected with lordship, ownership, authority, care, and sustaining creation.',
+              'Allah’s lordship means that He alone has ultimate authority over creation. Muslims therefore turn to Him with trust, gratitude, and reliance while still taking responsible means in their lives.',
+            ],
+          },
+          {
+            title: 'The Creator alone deserves worship',
+            paragraphs: [
+              'Knowing that Allah is the Creator and Lord is closely connected to Tawheed in worship. The Qur’an calls people to worship their Lord who created them.',
+              'A Muslim therefore directs acts of worship such as prayer, supplication, reliance, and sacrifice to Allah alone. Recognizing Allah as Lord is not merely a theoretical idea; it has consequences for worship.',
+            ],
+          },
+          {
+            title: 'Allah is unlike His creation',
+            paragraphs: [
+              'The Qur’an teaches that nothing is comparable to Allah. Muslims affirm what revelation teaches about Allah while avoiding descriptions that make Him like created things.',
+              'This principle helps a learner approach knowledge of Allah with humility and care. What Allah has revealed about Himself is accepted without inventing details that revelation does not give.',
+            ],
+          },
+          {
+            title: 'Knowing Allah through revelation',
+            paragraphs: [
+              'Knowledge about Allah should be grounded in the Qur’an and the authentic Sunnah. Human reflection can recognize signs of creation and think about Allah’s greatness, but a Muslim does not invent beliefs about Allah without evidence from revelation.',
+              'Learning about Allah is therefore a lifelong process of reading revelation, understanding its meanings, worshipping Allah sincerely, and allowing that knowledge to shape character and conduct.',
+            ],
+          },
+        ],
+        keyTerms: [
+          {
+            term: 'Rabb',
+            meaning: 'A term describing Allah’s lordship, including His authority, ownership, care, and sustaining of creation.',
+          },
+          {
+            term: 'Tawheed',
+            meaning: 'Affirming Allah’s oneness in the ways taught by revelation, including directing worship to Allah alone.',
+          },
+          {
+            term: 'Khalq',
+            meaning: 'Creation; the act of bringing created things into existence.',
+          },
+          {
+            term: 'Worship',
+            meaning: 'Acts of devotion and obedience that are directed to Allah sincerely.',
+          },
+        ],
+        reviewQuestions: [
+          'Why is Allah described as the Creator and Lord of the worlds?',
+          'What does the term Rabb communicate about Allah’s relationship to creation?',
+          'Why does recognizing Allah as Lord lead to worshipping Him alone?',
+          'What does the Qur’an teach about Allah being unlike His creation?',
+          'Why should knowledge about Allah be grounded in revelation?',
+        ],
+        sources: [
+          { type: 'quran', reference: 'Qur’an 1:2' },
+          { type: 'quran', reference: 'Qur’an 6:102' },
+          { type: 'quran', reference: 'Qur’an 20:50' },
+          { type: 'quran', reference: 'Qur’an 42:11' },
+          { type: 'quran', reference: 'Qur’an 112:1–4' },
+        ],
+      },
+      sw: {
+        objectives: [
+          'Kuelewa kwamba Allah ndiye Muumba, Mola na Mlezi wa viumbe vyote.',
+          'Kuelewa kwa nini kumtambua Allah kama Mola kunaelekeza katika kumuabudu Yeye pekee.',
+          'Kujifunza kueleza yanayofundishwa kuhusu Allah kupitia wahyi bila kutegemea dhana zisizo na ushahidi.',
+        ],
+        sections: [
+          {
+            title: 'Allah ndiye Muumba',
+            paragraphs: [
+              'Uislamu unafundisha kwamba Allah aliumba mbingu, ardhi na kila kilichopo. Viumbe vinamtegemea Yeye, wakati Allah hahitaji viumbe vyake.',
+              'Kumtambua Allah kama Muumba humpa Muislamu msingi wa kuelewa ni nani anayestahili shukrani, utiifu na ibada kwa kiwango cha juu kabisa.',
+            ],
+          },
+          {
+            title: 'Allah ndiye Mola',
+            paragraphs: [
+              'Qur’an mara nyingi inamtaja Allah kuwa Mola wa walimwengu. Neno Rabb lina maana zinazohusiana na ulezi, umiliki, mamlaka, uangalizi na kuendeleza uumbaji.',
+              'Uola wa Allah unamaanisha kwamba Yeye ndiye mwenye mamlaka ya mwisho juu ya viumbe. Kwa hiyo Muislamu humtegemea Allah kwa matumaini na shukrani, huku pia akichukua sababu na hatua zenye kuwajibika katika maisha yake.',
+            ],
+          },
+          {
+            title: 'Muumba ndiye anayestahiki kuabudiwa',
+            paragraphs: [
+              'Kujua kwamba Allah ndiye Muumba na Mola kuna uhusiano wa karibu na Tawheed katika ibada. Qur’an inawaita watu wamuabudu Mola wao aliyewaumba.',
+              'Kwa hiyo Muislamu humwelekea Allah pekee katika ibada kama Swala, dua, kumtegemea na kuchinja kwa ajili ya ibada. Kumtambua Allah kama Mola si wazo la kinadharia tu; kuna athari katika ibada.',
+            ],
+          },
+          {
+            title: 'Allah hafanani na viumbe Wake',
+            paragraphs: [
+              'Qur’an inafundisha kwamba hakuna chochote kinachofanana na Allah. Muislamu anakubali yale ambayo wahyi umefundisha kuhusu Allah bila kumfananisha na viumbe.',
+              'Kanuni hii humsaidia mwanafunzi kujifunza kuhusu Allah kwa unyenyekevu na uangalifu. Yale ambayo Allah ameyafichua kuhusu Yeye yanakubaliwa bila kubuni maelezo ambayo wahyi haujayatoa.',
+            ],
+          },
+          {
+            title: 'Kumjua Allah kupitia wahyi',
+            paragraphs: [
+              'Maarifa kuhusu Allah yanapaswa kujengwa juu ya Qur’an na Sunnah sahihi. Tafakuri inaweza kumsaidia mtu kuona ishara za uumbaji na kutafakari ukuu wa Allah, lakini Muislamu habuni imani kuhusu Allah bila ushahidi kutoka katika wahyi.',
+              'Kujifunza kuhusu Allah ni safari ya maisha yote ya kusoma wahyi, kuelewa maana zake, kumuabudu Allah kwa ikhlasi na kuruhusu elimu hiyo iathiri tabia na mwenendo.',
+            ],
+          },
+        ],
+        keyTerms: [
+          {
+            term: 'Rabb',
+            meaning: 'Neno linaloeleza uola wa Allah, likihusisha mamlaka, umiliki, uangalizi na kulea uumbaji Wake.',
+          },
+          {
+            term: 'Tawheed',
+            meaning: 'Kuthibitisha upweke na upekee wa Allah kwa namna ilivyofundishwa na wahyi, ikiwemo kuelekeza ibada kwa Allah pekee.',
+          },
+          {
+            term: 'Khalq',
+            meaning: 'Uumbaji; kuleta viumbe katika uwepo.',
+          },
+          {
+            term: 'Ibada',
+            meaning: 'Matendo ya kujitolea kwa Allah na utiifu yanayofanywa kwa ikhlasi.',
+          },
+        ],
+        reviewQuestions: [
+          'Kwa nini Allah anatajwa kuwa Muumba na Mola wa walimwengu?',
+          'Neno Rabb linaeleza nini kuhusu uhusiano wa Allah na viumbe?',
+          'Kwa nini kumtambua Allah kama Mola kunaelekeza katika kumuabudu Yeye pekee?',
+          'Qur’an inafundisha nini kuhusu Allah kutofanana na viumbe Wake?',
+          'Kwa nini maarifa kuhusu Allah yanapaswa kujengwa juu ya wahyi?',
+        ],
+        sources: [
+          { type: 'quran', reference: 'Qur’an 1:2' },
+          { type: 'quran', reference: 'Qur’an 6:102' },
+          { type: 'quran', reference: 'Qur’an 20:50' },
+          { type: 'quran', reference: 'Qur’an 42:11' },
+          { type: 'quran', reference: 'Qur’an 112:1–4' },
+        ],
+      },
+    },
+  },
+],
     },
     {
       slug: 'understanding-tawheed',
