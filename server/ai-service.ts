@@ -1,4 +1,5 @@
 import { GoogleGenAI } from '@google/genai'
+import { searchQuran } from './quran-retrieval'
 
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
@@ -22,9 +23,16 @@ Core rules:
 - If the available evidence is insufficient, explicitly say that more source verification is needed.
 `
 
+export interface DeenAiSource {
+  type: 'quran'
+  title: string
+  reference: string
+  excerpt: string
+}
+
 export interface DeenAiResult {
   answer: string
-  sources: []
+  sources: DeenAiSource[]
 }
 
 function isTemporaryGeminiError(error: unknown): boolean {
@@ -47,6 +55,23 @@ function isTemporaryGeminiError(error: unknown): boolean {
 }
 
 export async function askDeenAi(question: string): Promise<DeenAiResult> {
+  const quranSources = await searchQuran(question)
+
+  const quranContext = quranSources.length
+    ? `
+
+Relevant Quran evidence from the DEEN LIFE Quran dataset:
+${quranSources
+  .map(
+    (source) =>
+      `${source.reference} — ${source.title}
+${source.excerpt}`,
+  )
+  .join('\n\n')}
+
+Use this evidence when it is relevant. Do not invent or alter Quran references.`
+    : ''
+
   const maxAttempts = 3
   const retryDelays = [1000, 2000]
 
@@ -54,7 +79,7 @@ export async function askDeenAi(question: string): Promise<DeenAiResult> {
     try {
       const response = await ai.models.generateContent({
         model: 'gemini-3.6-flash',
-        contents: question,
+        contents: `${question}${quranContext}`,
         config: {
           systemInstruction: DEEN_AI_SYSTEM_PROMPT,
         },
@@ -62,7 +87,7 @@ export async function askDeenAi(question: string): Promise<DeenAiResult> {
 
       return {
         answer: response.text?.trim() || 'I could not generate a response.',
-        sources: [],
+        sources: quranSources,
       }
     } catch (error) {
       const shouldRetry =
