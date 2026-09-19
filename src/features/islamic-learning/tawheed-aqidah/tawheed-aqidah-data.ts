@@ -715,7 +715,160 @@ export const TAWHEED_AQIDAH_COURSE: {
           slug: 'why-correct-belief-matters',
           title: 'Why Correct Belief Matters',
           number: 5,
-          content: {},
+          content: {
+  en: {
+    objectives: [
+      'Understand why Islamic belief is connected to worship, character, and daily choices.',
+      'Recognize the importance of grounding belief in the Qur’an and authentic Sunnah.',
+      'Understand how sound belief can guide a Muslim toward sincere worship, responsibility, hope, and good action.',
+    ],
+    sections: [
+      {
+        title: 'Belief is the foundation of worship',
+        paragraphs: [
+          'A Muslim’s actions are connected to what they believe about Allah, revelation, and the purpose of life. Belief in Allah gives worship its purpose: a Muslim worships Allah because He is the Creator and the One worthy of worship.',
+          'The Qur’an repeatedly connects belief with righteous action. This shows that Aqidah is not only something to discuss or memorize; it should influence how a person worships and lives.',
+        ],
+      },
+      {
+        title: 'Correct belief needs reliable sources',
+        paragraphs: [
+          'Islamic belief should be learned from the Qur’an and the authentic Sunnah, rather than from unsupported claims, rumours, or personal speculation.',
+          'When Muslims encounter a claim about belief, they should seek reliable evidence and ask qualified people when they need clarification. This helps protect a person from attributing ideas to Islam without sound evidence.',
+        ],
+      },
+      {
+        title: 'Belief shapes character and choices',
+        paragraphs: [
+          'Belief in Allah reminds a Muslim that Allah knows what people do and that actions have meaning. Belief in the Last Day strengthens awareness of accountability, while belief in revelation provides guidance for how to live.',
+          'These beliefs can encourage honesty, patience, gratitude, responsibility, repentance, and kindness. They do not remove the need for effort; instead, they give effort a clear purpose and direction.',
+        ],
+      },
+      {
+        title: 'Avoiding extremes in matters of belief',
+        paragraphs: [
+          'Studying Aqidah should be approached with humility and care. A learner should distinguish between what the Qur’an and authentic Sunnah explicitly teach and explanations offered by later scholars.',
+          'Muslims have differed in some theological interpretations throughout history. This course focuses on foundational beliefs supported by the Qur’an and authentic Sunnah and avoids presenting disputed details as though they are universally agreed upon.',
+        ],
+      },
+      {
+        title: 'Belief should lead to beneficial action',
+        paragraphs: [
+          'Sound belief is not meant to remain only in the mind. It should appear in worship, conduct, relationships, and responsible choices.',
+          'The goal of learning Aqidah is therefore not simply to win arguments. It is to understand what Islam teaches, worship Allah sincerely, follow reliable guidance, and improve one’s actions.',
+        ],
+      },
+    ],
+    keyTerms: [
+      {
+        term: 'Aqidah',
+        meaning: 'The foundational beliefs that a Muslim holds about Allah and the matters of faith taught by revelation.',
+      },
+      {
+        term: 'Dalil',
+        meaning: 'Evidence or proof used to support a religious claim.',
+      },
+      {
+        term: 'Sunnah',
+        meaning: 'The guidance and example of Prophet Muhammad ﷺ as preserved through authentic reports and teachings.',
+      },
+      {
+        term: 'Righteous action',
+        meaning: 'A good deed performed in accordance with Islamic guidance and sincerely for Allah.',
+      },
+    ],
+    reviewQuestions: [
+      'Why is belief connected to worship?',
+      'Why should Islamic beliefs be grounded in the Qur’an and authentic Sunnah?',
+      'How can belief in the Last Day affect a person’s choices?',
+      'Why should a learner distinguish between primary texts and later scholarly explanations?',
+      'What does it mean for belief to lead to beneficial action?',
+    ],
+    sources: [
+      { type: 'quran', reference: 'Qur’an 2:177' },
+      { type: 'quran', reference: 'Qur’an 103:1–3' },
+      { type: 'quran', reference: 'Qur’an 4:59' },
+      { type: 'quran', reference: 'Qur’an 4:136' },
+      { type: 'hadith', reference: 'Sahih Muslim 8e — Hadith of Jibril' },
+    ],
+  },
+  sw: {
+    objectives: [
+      'Kuelewa kwa nini imani ya Kiislamu imeunganishwa na ibada, tabia na maamuzi ya kila siku.',
+      'Kutambua umuhimu wa kujenga imani juu ya Qur’an na Sunnah sahihi.',
+      'Kuelewa jinsi imani sahihi inaweza kumwelekeza Muislamu katika ibada ya ikhlasi, uwajibikaji, matumaini na matendo mema.',
+    ],
+    sections: [
+      {
+        title: 'Imani ni msingi wa ibada',
+        paragraphs: [
+          'Matendo ya Muislamu yana uhusiano na kile anachoamini kuhusu Allah, wahyi na kusudi la maisha. Kumuamini Allah huipa ibada kusudi: Muislamu humwabudu Allah kwa sababu Yeye ndiye Muumba na ndiye anayestahiki kuabudiwa.',
+          'Qur’an mara nyingi huunganisha imani na matendo mema. Hii inaonyesha kwamba Aqidah si jambo la kujadili au kukariri tu; inapaswa kuathiri namna mtu anavyoabudu na kuishi.',
+        ],
+      },
+      {
+        title: 'Imani sahihi inahitaji vyanzo vya kuaminika',
+        paragraphs: [
+          'Imani ya Kiislamu inapaswa kujifunzwa kutoka katika Qur’an na Sunnah sahihi, badala ya madai yasiyo na ushahidi, uvumi au dhana binafsi.',
+          'Muislamu anapokutana na dai kuhusu imani, anapaswa kutafuta ushahidi wa kuaminika na kuwauliza watu wenye elimu na sifa zinazofaa anapohitaji ufafanuzi. Hii humsaidia mtu kuepuka kuhusisha mawazo fulani na Uislamu bila ushahidi thabiti.',
+        ],
+      },
+      {
+        title: 'Imani huunda tabia na maamuzi',
+        paragraphs: [
+          'Kumuamini Allah humkumbusha Muislamu kwamba Allah anayajua matendo ya watu na kwamba matendo yana umuhimu. Kuamini Siku ya Mwisho huimarisha ufahamu wa uwajibikaji, huku kuamini wahyi kukitoa mwongozo wa namna ya kuishi.',
+          'Imani hizi zinaweza kuhimiza ukweli, subira, shukrani, uwajibikaji, toba na wema. Haziondoi umuhimu wa juhudi; bali huipa juhudi kusudi na mwelekeo.',
+        ],
+      },
+      {
+        title: 'Kuepuka misimamo mikali katika masuala ya imani',
+        paragraphs: [
+          'Kujifunza Aqidah kunapaswa kufanywa kwa unyenyekevu na uangalifu. Mwanafunzi anapaswa kutofautisha kati ya yale ambayo Qur’an na Sunnah sahihi yanafundisha wazi na maelezo yaliyotolewa na wanazuoni wa baadaye.',
+          'Waislamu wamekuwa na tofauti katika baadhi ya tafsiri za kiteolojia katika historia. Kozi hii inalenga misingi ya imani inayoungwa mkono na Qur’an na Sunnah sahihi na huepuka kuwasilisha mambo yenye khilafu kana kwamba yamekubaliwa na kila mtu.',
+        ],
+      },
+      {
+        title: 'Imani inapaswa kuzaa matendo yenye manufaa',
+        paragraphs: [
+          'Imani sahihi haikusudiwi kubaki katika fikra pekee. Inapaswa kuonekana katika ibada, tabia, mahusiano na maamuzi yenye uwajibikaji.',
+          'Kwa hiyo, lengo la kujifunza Aqidah si kushinda mabishano tu. Ni kuelewa mafundisho ya Uislamu, kumuabudu Allah kwa ikhlasi, kufuata mwongozo wa kuaminika na kuboresha matendo.',
+        ],
+      },
+    ],
+    keyTerms: [
+      {
+        term: 'Aqidah',
+        meaning: 'Misingi ya imani ambayo Muislamu anaamini kuhusu Allah na mambo ya imani yaliyofundishwa kupitia wahyi.',
+      },
+      {
+        term: 'Dalili',
+        meaning: 'Ushahidi au hoja inayotumika kuunga mkono dai la kidini.',
+      },
+      {
+        term: 'Sunnah',
+        meaning: 'Mwongozo na mfano wa Mtume Muhammad ﷺ kama ulivyohifadhiwa kupitia riwaya na mafundisho sahihi.',
+      },
+      {
+        term: 'Tendo jema',
+        meaning: 'Tendo zuri linalofanywa kwa mujibu wa mwongozo wa Kiislamu na kwa ikhlasi kwa ajili ya Allah.',
+      },
+    ],
+    reviewQuestions: [
+      'Kwa nini imani imeunganishwa na ibada?',
+      'Kwa nini imani ya Kiislamu inapaswa kujengwa juu ya Qur’an na Sunnah sahihi?',
+      'Kuamini Siku ya Mwisho kunaweza kuathirije maamuzi ya mtu?',
+      'Kwa nini mwanafunzi anatakiwa kutofautisha kati ya maandiko ya msingi na maelezo ya wanazuoni wa baadaye?',
+      'Inamaanisha nini kusema kwamba imani inapaswa kuzaa matendo yenye manufaa?',
+    ],
+    sources: [
+      { type: 'quran', reference: 'Qur’an 2:177' },
+      { type: 'quran', reference: 'Qur’an 103:1–3' },
+      { type: 'quran', reference: 'Qur’an 4:59' },
+      { type: 'quran', reference: 'Qur’an 4:136' },
+      { type: 'hadith', reference: 'Sahih Muslim 8e — Hadithi ya Jibril' },
+    ],
+  },
+},
         },
       ],
     },
