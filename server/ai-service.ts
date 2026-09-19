@@ -1,6 +1,7 @@
 import { GoogleGenAI } from '@google/genai'
 import { searchQuran } from './quran-retrieval'
 import type { AiMessage, AiProvider } from './ai-provider'
+import { cloudflareProvider } from './cloudflare-ai-provider'
 
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
@@ -23,6 +24,26 @@ const geminiProvider: AiProvider = {
       text: response.text?.trim() || 'I could not generate a response.',
     }
   },
+}
+
+async function generateWithProviders(messages: AiMessage[]) {
+  if (process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN) {
+    try {
+      return await cloudflareProvider.generate(messages)
+    } catch (error) {
+      console.error('Cloudflare AI provider error:', error)
+
+      if (!process.env.GEMINI_API_KEY) {
+        throw error
+      }
+    }
+  }
+
+  if (process.env.GEMINI_API_KEY) {
+    return await geminiProvider.generate(messages)
+  }
+
+  throw new Error('No DEEN AI provider is configured.')
 }
 
 const DEEN_AI_SYSTEM_PROMPT = `
@@ -97,7 +118,7 @@ Use this evidence when it is relevant. Do not invent or alter Quran references.`
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     try {
-      const response = await geminiProvider.generate([
+      const response = await generateWithProviders([
         {
           role: 'system',
           content: DEEN_AI_SYSTEM_PROMPT,

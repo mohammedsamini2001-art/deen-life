@@ -361,7 +361,11 @@ app.post('/api/ai/ask', async (req, res) => {
     return res.status(400).json({ ok: false, error: 'question is required' })
   }
 
-  if (!process.env.GEMINI_API_KEY) {
+  const aiProviderConfigured =
+    Boolean(process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN) ||
+    Boolean(process.env.GEMINI_API_KEY)
+
+  if (!aiProviderConfigured) {
     return res.status(503).json({ ok: false, error: 'DEEN AI is not configured yet' })
   }
 
