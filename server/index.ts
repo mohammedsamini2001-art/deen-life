@@ -2,6 +2,7 @@ import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import { MongoClient } from 'mongodb'
+import { askDeenAi } from './ai-service.js'
 
 const app = express()
 const port = Number(process.env.PORT) || 3000
@@ -11,6 +12,62 @@ const paystackSecretKey = process.env.PAYSTACK_SECRET_KEY
 const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5173'
 
 app.use(cors())
+
+app.post('/api/payments/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
+  if (!paystackSecretKey) {
+    return res.status(503).json({ ok: false, error: 'Paystack is not configured yet' })
+  }
+
+  const signature = req.headers['x-paystack-signature']
+  if (typeof signature !== 'string') {
+    return res.status(401).json({ ok: false, error: 'Missing Paystack signature' })
+  }
+
+  try {
+    const crypto = await import('node:crypto')
+    const hash = crypto
+      .createHmac('sha512', paystackSecretKey)
+      .update(req.body)
+      .digest('hex')
+
+    if (hash !== signature) {
+      return res.status(401).json({ ok: false, error: 'Invalid Paystack signature' })
+    }
+
+    const event = JSON.parse(req.body.toString('utf8'))
+
+    if (event.event !== 'charge.success') {
+      return res.json({ ok: true, ignored: true })
+    }
+
+    const transaction = event.data
+    const deviceToken = transaction?.metadata?.deviceToken
+    const plan = transaction?.metadata?.plan
+
+    if (
+      typeof transaction?.reference !== 'string' ||
+      typeof deviceToken !== 'string' ||
+      !isPlanId(plan) ||
+      transaction?.status !== 'success' ||
+      transaction?.currency !== 'KES' ||
+      transaction?.amount !== PLANS[plan].amountKes * 100
+    ) {
+      return res.status(400).json({ ok: false, error: 'Invalid Premium transaction' })
+    }
+
+    await recordSuccessfulPayment({
+      reference: transaction.reference,
+      deviceToken,
+      plan,
+    })
+
+    return res.json({ ok: true })
+  } catch (error) {
+    console.error('Paystack webhook error:', error)
+    return res.status(400).json({ ok: false, error: 'Invalid webhook payload' })
+  }
+})
+
 app.use(express.json())
 
 let mongoClient: MongoClient | null = null
@@ -34,6 +91,74 @@ function isPlanId(value: unknown): value is PlanId {
   return value === 'monthly' || value === 'yearly'
 }
 
+async function recordSuccessfulPayment(params: {
+  reference: string
+  deviceToken: string
+  plan: PlanId
+}) {
+  const entitlements = getEntitlements()
+  if (!entitlements) {
+    throw new Error('Database is not configured')
+  }
+
+  // A Paystack event/callback can be delivered more than once.
+  // Never grant the same transaction twice.
+  const existingPayment = await entitlements.findOne({
+    reference: params.reference,
+  })
+
+  if (existingPayment?.status === 'paid' && existingPayment.expiresAt) {
+    return {
+      plan: existingPayment.plan as PlanId,
+      expiresAt: new Date(existingPayment.expiresAt),
+    }
+  }
+
+  const now = new Date()
+
+  // Renewals extend an active Premium period instead of restarting it.
+  const current = await entitlements.findOne(
+    {
+      deviceToken: params.deviceToken,
+      status: 'paid',
+      expiresAt: { $gt: now },
+    },
+    {
+      sort: { expiresAt: -1 },
+    },
+  )
+
+  const currentExpiry =
+    current?.expiresAt ? new Date(current.expiresAt) : now
+
+  const base = currentExpiry > now ? currentExpiry : now
+  const expiresAt = new Date(
+    base.getTime() + PLANS[params.plan].durationDays * 24 * 60 * 60 * 1000,
+  )
+
+  await entitlements.updateOne(
+    { reference: params.reference },
+    {
+      $set: {
+        userId: params.deviceToken,
+        deviceToken: params.deviceToken,
+        plan: params.plan,
+        amountKes: PLANS[params.plan].amountKes,
+        reference: params.reference,
+        status: 'paid',
+        paidAt: now,
+        expiresAt,
+      },
+    },
+    { upsert: true },
+  )
+
+  return {
+    plan: params.plan,
+    expiresAt,
+  }
+}
+
 interface PaystackInitializeResponse {
   status: boolean
   message: string
@@ -48,6 +173,9 @@ interface PaystackVerifyResponse {
   message: string
   data: {
     status: string
+    amount: number
+    currency: string
+    reference: string
     metadata?: { deviceToken?: string; plan?: string }
   }
 }
@@ -113,7 +241,8 @@ app.post('/api/premium/pay', async (req, res) => {
       await entitlements.updateOne(
         { reference: data.data.reference },
         {
-          $set: {
+          $setOnInsert: {
+            userId: deviceToken,
             deviceToken,
             plan,
             amountKes,
@@ -133,7 +262,8 @@ app.post('/api/premium/pay', async (req, res) => {
     })
   } catch (error) {
     console.error('Paystack initialize error:', error)
-    return res.status(502).json({ ok: false, error: 'Could not reach Paystack' })
+    const message = error instanceof Error ? error.message : String(error)
+    return res.status(502).json({ ok: false, error: message })
   }
 })
 
@@ -197,22 +327,31 @@ app.get('/api/premium/verify', async (req, res) => {
     const plan: PlanId | undefined = isPlanId(data.data.metadata?.plan)
       ? data.data.metadata.plan
       : undefined
+    const deviceToken = data.data.metadata?.deviceToken
 
-    if (!paid || !plan) {
+    if (
+      !paid ||
+      !plan ||
+      typeof deviceToken !== 'string' ||
+      data.data.reference !== reference ||
+      data.data.currency !== 'KES' ||
+      data.data.amount !== PLANS[plan].amountKes * 100
+    ) {
       return res.json({ ok: true, isPremium: false })
     }
 
-    const expiresAt = new Date(Date.now() + PLANS[plan].durationDays * 24 * 60 * 60 * 1000)
+    const result = await recordSuccessfulPayment({
+      reference,
+      deviceToken,
+      plan,
+    })
 
-    const entitlements = getEntitlements()
-    if (entitlements) {
-      await entitlements.updateOne(
-        { reference },
-        { $set: { status: 'paid', paidAt: new Date(), expiresAt } },
-      )
-    }
-
-    return res.json({ ok: true, isPremium: true, plan, expiresAt })
+    return res.json({
+      ok: true,
+      isPremium: true,
+      plan: result.plan,
+      expiresAt: result.expiresAt,
+    })
   } catch (error) {
     console.error('Paystack verify error:', error)
     return res.status(502).json({ ok: false, error: 'Could not reach Paystack' })
@@ -350,6 +489,53 @@ app.get('/api/premium/status', async (req, res) => {
     expiresAt: record.expiresAt,
     trialAvailable: false,
   })
+})
+
+
+app.post('/api/ai/ask', async (req, res) => {
+  const { deviceToken, question } = req.body ?? {}
+
+  if (typeof deviceToken !== 'string' || !deviceToken) {
+    return res.status(400).json({ ok: false, error: 'deviceToken is required' })
+  }
+
+  if (typeof question !== 'string' || !question.trim()) {
+    return res.status(400).json({ ok: false, error: 'question is required' })
+  }
+
+  const aiProviderConfigured =
+    Boolean(process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN) ||
+    Boolean(process.env.GEMINI_API_KEY)
+
+  if (!aiProviderConfigured) {
+    return res.status(503).json({ ok: false, error: 'DEEN AI is not configured yet' })
+  }
+
+  const entitlements = getEntitlements()
+  if (!entitlements) {
+    return res.status(503).json({ ok: false, error: 'Premium service is not configured yet' })
+  }
+
+  const record = await entitlements.findOne(
+    { deviceToken, status: 'paid' },
+    { sort: { expiresAt: -1 } },
+  )
+
+  if (!record || !record.expiresAt || new Date(record.expiresAt) < new Date()) {
+    return res.status(403).json({ ok: false, error: 'DEEN AI is a Premium feature' })
+  }
+
+  try {
+    const result = await askDeenAi(question.trim())
+
+    return res.json({
+      ok: true,
+      ...result,
+    })
+  } catch (error) {
+    console.error('DEEN AI error:', error)
+    return res.status(502).json({ ok: false, error: 'DEEN AI could not complete the request' })
+  }
 })
 
 async function start() {

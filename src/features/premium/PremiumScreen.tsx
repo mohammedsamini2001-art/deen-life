@@ -20,7 +20,15 @@ function formatExpiry(expiresAt?: string): string {
   }).format(new Date(expiresAt))
 }
 
-export default function PremiumScreen({ onOpenTasbih }: { onOpenTasbih: () => void }) {
+export default function PremiumScreen({
+  onOpenTasbih,
+  onOpenAi,
+  onOpenLearning,
+}: {
+  onOpenTasbih: () => void
+  onOpenAi: () => void
+  onOpenLearning: () => void
+}) {
   const [status, setStatus] = useState<PremiumStatus | null>(null)
   const [loading, setLoading] = useState(true)
   const [pendingPlan, setPendingPlan] = useState<PremiumPlan | null>(null)
@@ -120,10 +128,12 @@ export default function PremiumScreen({ onOpenTasbih }: { onOpenTasbih: () => vo
         ← Back
       </button>
       <span className="eyebrow">DEEN LIFE PREMIUM</span>
-      <h2>More value, still no ads.</h2>
+      <h2>Go deeper with your deen.</h2>
       <p>
-        Premium unlocks Adhan alarms timed to your prayer schedule, with more
-        features on the way.
+        DEEN LIFE Premium brings together a deeper experience for learning,
+        remembrance, and everyday connection with Islam. Explore your questions
+        with DEEN AI, keep your dhikr close with Tasbih, and discover more of
+        what DEEN LIFE has to offer.
       </p>
 
       {verifyMessage && <div className="premium-verify-message">{verifyMessage}</div>}
@@ -137,6 +147,34 @@ export default function PremiumScreen({ onOpenTasbih }: { onOpenTasbih: () => vo
             {status.plan ? PLAN_LABELS[status.plan] : ''} plan
             {status.expiresAt ? ` · renews ${formatExpiry(status.expiresAt)}` : ''}
           </span>
+          <div className="premium-feature-actions">
+            <button className="premium-feature-button premium-feature-tasbih" onClick={onOpenTasbih}>
+              <span className="premium-feature-icon" aria-hidden="true">◉</span>
+              <span className="premium-feature-content">
+                <strong>Tasbih</strong>
+                <span>Keep your dhikr close and continue your remembrance.</span>
+              </span>
+              <span className="premium-feature-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button className="premium-feature-button premium-feature-ai" onClick={onOpenAi}>
+              <span className="premium-feature-icon" aria-hidden="true">✦</span>
+              <span className="premium-feature-content">
+                <strong>DEEN AI</strong>
+                <span>Explore your questions about Islam naturally.</span>
+              </span>
+              <span className="premium-feature-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button className="premium-feature-button premium-feature-learning" onClick={onOpenLearning}>
+              <span className="premium-feature-icon" aria-hidden="true">▤</span>
+              <span className="premium-feature-content">
+                <strong>Islamic Learning Library</strong>
+                <span>Study Islamic sciences step by step and continue your progress.</span>
+              </span>
+              <span className="premium-feature-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
         </div>
       ) : (
         <div className="premium-plans">

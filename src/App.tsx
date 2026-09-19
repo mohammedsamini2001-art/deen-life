@@ -5,9 +5,12 @@ import DuasScreen from './features/duas/DuasScreen'
 import QiblaDetector from './features/qibla/QiblaDetector'
 import KnowledgeScreen from './features/knowledge/KnowledgeScreen'
 import PremiumScreen from './features/premium/PremiumScreen'
+import IslamicLearningScreen from './features/islamic-learning/IslamicLearningScreen'
+import TawheedAqidahScreen from './features/islamic-learning/tawheed-aqidah/TawheedAqidahScreen'
 import TasbihScreen from './features/tasbih/TasbihScreen'
+import DeenAiScreen from './features/ai/DeenAiScreen'
 
-type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih'
+type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai' | 'islamic-learning' | 'tawheed-aqidah'
 
 const pages: { id: Page; label: string; icon: string }[] = [
   { id: 'home', label: 'Home', icon: '⌂' },
@@ -57,6 +60,27 @@ function getInitialPage(): Page {
 function App() {
   const [page, setPage] = useState<Page>(getInitialPage)
   const [dailyMessage, setDailyMessage] = useState(DAILY_MESSAGES[0])
+  const [learningLanguage, setLearningLanguage] = useState<'ar' | 'en' | 'sw' | 'fr'>('en')
+
+  useEffect(() => {
+    const initialPage = getInitialPage()
+    window.history.replaceState({ page: initialPage }, '', window.location.href)
+
+    const handlePopState = (event: PopStateEvent) => {
+      const nextPage = event.state?.page as Page | undefined
+      setPage(nextPage ?? 'home')
+    }
+
+    window.addEventListener('popstate', handlePopState)
+
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  const navigateTo = (nextPage: Page) => {
+    if (nextPage === page) return
+    window.history.pushState({ page: nextPage }, '', window.location.href)
+    setPage(nextPage)
+  }
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -73,24 +97,32 @@ function App() {
           <span className="eyebrow">HIKMAH LABS</span>
           <h1>DEEN LIFE</h1>
         </div>
-        <button className="premium-button" onClick={() => setPage('premium')}>Premium</button>
+        <button className="premium-button" onClick={() => navigateTo('premium')}>Premium</button>
       </header>
 
       <main className="content">
-        {page === 'home' && <Home onNavigate={setPage} dailyMessage={dailyMessage} />}
-        {page === 'quran' && <QuranReader onBack={() => setPage('home')} />}
-        {page === 'prayer' && <PrayerTimes onBack={() => setPage('home')} onOpenPremium={() => setPage('premium')} />}
-        {page === 'duas' && <DuasScreen onBack={() => setPage('home')} />}
-        {page === 'qibla' && <QiblaDetector onBack={() => setPage('home')} />}
-        {page === 'knowledge' && <KnowledgeScreen onBack={() => setPage('home')} />}
-        {page === 'premium' && <PremiumScreen onOpenTasbih={() => setPage('tasbih')} />}
-        {page === 'tasbih' && <TasbihScreen onBack={() => setPage('premium')} onOpenPremium={() => setPage('premium')} />}
+        {page === 'home' && <Home onNavigate={navigateTo} dailyMessage={dailyMessage} />}
+        {page === 'quran' && <QuranReader onBack={() => navigateTo('home')} />}
+        {page === 'prayer' && <PrayerTimes onBack={() => navigateTo('home')} onOpenPremium={() => navigateTo('premium')} />}
+        {page === 'duas' && <DuasScreen onBack={() => navigateTo('home')} />}
+        {page === 'qibla' && <QiblaDetector onBack={() => navigateTo('home')} />}
+        {page === 'knowledge' && <KnowledgeScreen onBack={() => navigateTo('home')} />}
+        {page === 'premium' && <PremiumScreen onOpenTasbih={() => navigateTo('tasbih')} onOpenAi={() => navigateTo('ai')} onOpenLearning={() => navigateTo('islamic-learning')} />}
+        {page === 'tasbih' && <TasbihScreen onBack={() => navigateTo('premium')} onOpenPremium={() => navigateTo('premium')} />}
+        {page === 'ai' && <DeenAiScreen onBack={() => navigateTo('premium')} onOpenPremium={() => navigateTo('premium')} />}
+        {page === 'islamic-learning' && <IslamicLearningScreen onBack={() => navigateTo('premium')} onOpenSubject={(slug, language) => {
+            if (slug === 'tawheed-aqidah') {
+              setLearningLanguage(language as 'ar' | 'en' | 'sw' | 'fr')
+              navigateTo('tawheed-aqidah')
+            }
+          }} />}
+        {page === 'tawheed-aqidah' && <TawheedAqidahScreen language={learningLanguage} onBack={() => navigateTo('islamic-learning')} />}
       </main>
 
       {page !== 'premium' && (
         <nav className="bottom-nav" aria-label="Main navigation">
           {pages.map(item => (
-            <button key={item.id} className={page === item.id ? 'nav-item active' : 'nav-item'} onClick={() => setPage(item.id)}>
+            <button key={item.id} className={page === item.id ? 'nav-item active' : 'nav-item'} onClick={() => navigateTo(item.id)}>
               <span>{item.icon}</span>
               <small>{item.label}</small>
             </button>

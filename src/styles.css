@@ -2266,6 +2266,227 @@ button.secondary:active {
   }
 }
 
+/* Premium Tasbih */
+.tasbih-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.tasbih-header {
+  max-width: 620px;
+  margin-bottom: 14px;
+}
+
+.tasbih-header h2 {
+  margin: 6px 0 8px;
+  font-size: clamp(1.8rem, 7vw, 2.4rem);
+}
+
+.tasbih-header p {
+  margin: 0;
+  max-width: 520px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.tasbih-content {
+  width: min(100%, 460px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0 22px;
+}
+
+.tasbih-count-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2px 0 22px;
+}
+
+.tasbih-count-display .eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  opacity: 0.72;
+}
+
+.tasbih-count-display strong {
+  margin-top: 5px;
+  font-size: clamp(4.8rem, 20vw, 7rem);
+  line-height: 0.84;
+  letter-spacing: -0.075em;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+}
+
+.tasbih-counter {
+  position: relative;
+  width: min(82vw, 318px);
+  aspect-ratio: 1;
+  padding: 0;
+  margin: 2px auto 26px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgba(212, 168, 79, 0.82);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 50% 28%,
+      rgba(55, 214, 154, 0.38) 0%,
+      rgba(22, 163, 111, 0.16) 28%,
+      transparent 51%
+    ),
+    radial-gradient(
+      circle at 50% 68%,
+      rgba(10, 83, 61, 0.98) 0%,
+      rgba(4, 39, 30, 0.99) 68%,
+      rgba(2, 24, 19, 1) 100%
+    );
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  overflow: hidden;
+  box-shadow:
+    0 24px 52px rgba(0, 0, 0, 0.32),
+    0 0 0 8px rgba(212, 168, 79, 0.055),
+    0 0 0 16px rgba(212, 168, 79, 0.018),
+    0 0 46px rgba(22, 163, 111, 0.16),
+    inset 0 3px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -18px 32px rgba(0, 0, 0, 0.28);
+  transition:
+    transform 90ms cubic-bezier(0.2, 0.8, 0.25, 1),
+    box-shadow 90ms ease,
+    filter 90ms ease;
+}
+
+.tasbih-counter::before {
+  content: "";
+  position: absolute;
+  inset: 11px;
+  border: 1px solid rgba(212, 168, 79, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 0 20px rgba(212, 168, 79, 0.035);
+}
+
+.tasbih-counter::after {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.065);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.tasbih-counter:hover {
+  filter: brightness(1.045);
+  box-shadow:
+    0 26px 56px rgba(0, 0, 0, 0.34),
+    0 0 0 8px rgba(212, 168, 79, 0.065),
+    0 0 0 16px rgba(212, 168, 79, 0.022),
+    0 0 52px rgba(22, 163, 111, 0.19),
+    inset 0 3px 0 rgba(255, 255, 255, 0.13),
+    inset 0 -18px 32px rgba(0, 0, 0, 0.28);
+}
+
+.tasbih-counter:active {
+  transform: scale(0.945);
+  filter: brightness(0.94);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.28),
+    0 0 0 5px rgba(212, 168, 79, 0.045),
+    0 0 24px rgba(22, 163, 111, 0.11),
+    inset 0 7px 18px rgba(0, 0, 0, 0.3),
+    inset 0 -2px 5px rgba(255, 255, 255, 0.035);
+}
+
+.tasbih-tap-icon,
+.tasbih-tap-text,
+.tasbih-tap-subtext {
+  position: relative;
+  z-index: 1;
+}
+
+.tasbih-tap-icon {
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(212, 168, 79, 0.58);
+  border-radius: 50%;
+  font-size: 2.45rem;
+  line-height: 1;
+  color: #f0d58a;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.09), transparent 58%),
+    rgba(255, 255, 255, 0.035);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.09),
+    inset 0 -5px 12px rgba(0, 0, 0, 0.14),
+    0 9px 22px rgba(0, 0, 0, 0.2);
+}
+
+.tasbih-tap-text {
+  font-size: 1.04rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.tasbih-tap-subtext {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.tasbih-reset-button {
+  width: min(100%, 360px);
+  min-height: 52px;
+  border-radius: 999px;
+}
+
+@media (max-width: 520px) {
+  .tasbih-page {
+    padding-bottom: 18px;
+  }
+
+  .tasbih-header {
+    margin-bottom: 12px;
+  }
+
+  .tasbih-content {
+    padding-top: 2px;
+  }
+
+  .tasbih-count-display {
+    margin-bottom: 20px;
+  }
+
+  .tasbih-counter {
+    width: min(82vw, 304px);
+    margin-bottom: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tasbih-counter {
+    transition: none;
+  }
+}
+
 /* Islamic Knowledge — dedicated scholar hero */
 .duas-category-header.knowledge-hero {
   background:
@@ -2293,4 +2514,776 @@ button.secondary:active {
 .duas-category-header.knowledge-hero p {
   max-width: 680px;
   font-size: clamp(0.95rem, 2vw, 1.08rem);
+}
+
+/* Islamic Learning — language selection and subject library */
+.islamic-learning-page {
+  padding-bottom: 32px;
+}
+
+.islamic-learning-language-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.islamic-learning-language-card {
+  position: relative;
+  min-height: 138px;
+  padding: 22px 20px;
+  border: 1px solid rgba(212, 168, 79, 0.22);
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    rgba(8, 22, 17, 0.72);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.islamic-learning-language-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 168, 79, 0.48);
+}
+
+.islamic-learning-language-card.selected {
+  border-color: rgba(212, 168, 79, 0.9);
+  background:
+    linear-gradient(145deg, rgba(212, 168, 79, 0.16), rgba(22, 163, 111, 0.08)),
+    rgba(8, 22, 17, 0.84);
+  box-shadow: 0 0 0 1px rgba(212, 168, 79, 0.16);
+}
+
+.islamic-learning-language-native {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.islamic-learning-language-name {
+  display: block;
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.islamic-learning-language-card small {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.78rem;
+}
+
+.islamic-learning-language-check {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(212, 168, 79, 0.95);
+  color: #102018;
+  font-weight: 800;
+}
+
+.islamic-learning-continue {
+  display: block;
+  width: min(100%, 260px);
+  margin: 22px auto 0;
+  padding: 13px 20px;
+  border: 1px solid rgba(212, 168, 79, 0.5);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(22, 163, 111, 0.9), rgba(212, 168, 79, 0.82));
+  color: #08150f;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.islamic-learning-continue:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.islamic-learning-continue:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.islamic-learning-subject-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.islamic-learning-subject-card {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 17px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.islamic-learning-subject-card:hover {
+  transform: translateX(3px);
+  border-color: rgba(22, 163, 111, 0.5);
+  background: rgba(22, 163, 111, 0.07);
+}
+
+.islamic-learning-subject-number {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid rgba(212, 168, 79, 0.34);
+  border-radius: 12px;
+  background: rgba(212, 168, 79, 0.08);
+  color: rgba(212, 168, 79, 0.95);
+  font-weight: 800;
+}
+
+.islamic-learning-subject-info {
+  min-width: 0;
+}
+
+.islamic-learning-subject-info strong,
+.islamic-learning-subject-info small {
+  display: block;
+}
+
+.islamic-learning-subject-info strong {
+  font-size: 1rem;
+}
+
+.islamic-learning-subject-info small {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.45;
+}
+
+.islamic-learning-subject-card .continue-arrow {
+  color: rgba(212, 168, 79, 0.9);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .islamic-learning-language-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .islamic-learning-language-card {
+    min-height: 118px;
+  }
+
+  .islamic-learning-subject-card {
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+    padding: 15px;
+  }
+
+  .islamic-learning-subject-number {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.deen-ai-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.deen-ai-header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.deen-ai-header-actions button,
+.deen-ai-history-delete {
+  border: 1px solid rgba(212, 168, 79, 0.42);
+  border-radius: 12px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(22, 163, 111, 0.2),
+      rgba(212, 168, 79, 0.08)
+    );
+  color: var(--gold-300);
+  padding: 9px 12px;
+  font-weight: 800;
+}
+
+.deen-ai-header-actions button:hover,
+.deen-ai-history-delete:hover {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(22, 163, 111, 0.3),
+      rgba(212, 168, 79, 0.14)
+    );
+  border-color: rgba(212, 168, 79, 0.68);
+}
+
+.deen-ai-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.deen-ai-history {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(7, 19, 15, 0.5);
+  padding: 14px;
+}
+
+.deen-ai-history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.deen-ai-history-header > div {
+  display: grid;
+  gap: 4px;
+}
+
+.deen-ai-history-list {
+  display: grid;
+  gap: 8px;
+}
+
+.deen-ai-history-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: stretch;
+  border: 1px solid rgba(212, 168, 79, 0.16);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.deen-ai-history-item-active {
+  border-color: rgba(212, 168, 79, 0.52);
+  background: rgba(22, 163, 111, 0.12);
+}
+
+.deen-ai-history-select {
+  min-width: 0;
+  text-align: left;
+  padding: 10px;
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.deen-ai-history-select strong,
+.deen-ai-history-select span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.deen-ai-history-select span {
+  margin-top: 4px;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.deen-ai-history-delete {
+  border: 0;
+  border-left: 1px solid rgba(212, 168, 79, 0.16);
+  border-radius: 0;
+  padding: 8px 11px;
+}
+
+.deen-ai-history-empty {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.deen-ai-chat {
+  min-width: 0;
+}
+
+.deen-ai-chat-header {
+  margin-bottom: 16px;
+}
+
+.deen-ai-chat-header h2 {
+  margin: 6px 0;
+}
+
+.deen-ai-chat-header p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.deen-ai-conversation {
+  display: grid;
+  gap: 12px;
+  min-height: 280px;
+  max-height: 55vh;
+  overflow-y: auto;
+  padding: 4px 2px 14px;
+}
+
+.deen-ai-message {
+  max-width: 88%;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+}
+
+.deen-ai-message-user {
+  justify-self: end;
+  background: rgba(22, 163, 111, 0.18);
+  border-color: rgba(22, 163, 111, 0.35);
+}
+
+.deen-ai-message-assistant {
+  justify-self: start;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.deen-ai-message-content {
+  margin-top: 8px;
+  white-space: pre-wrap;
+  line-height: 1.65;
+}
+
+.deen-ai-sources {
+  display: grid;
+  gap: 5px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.deen-ai-empty {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 8px;
+  min-height: 240px;
+  padding: 20px;
+  text-align: center;
+  border: 1px dashed rgba(212, 168, 79, 0.3);
+  border-radius: 18px;
+  color: var(--text-secondary);
+}
+
+.deen-ai-empty strong {
+  color: var(--text-primary);
+}
+
+.deen-ai-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.deen-ai-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+@media (max-width: 700px) {
+  .deen-ai-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .deen-ai-header-actions {
+    width: 100%;
+  }
+
+  .deen-ai-header-actions button {
+    flex: 1;
+  }
+
+  .deen-ai-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .deen-ai-history {
+    order: 2;
+  }
+
+  .deen-ai-chat {
+    order: 1;
+  }
+
+  .deen-ai-message {
+    max-width: 94%;
+  }
+}
+
+/* Premium active feature buttons */
+.premium-feature-actions {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.premium-feature-button {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 96px;
+  padding: 18px 20px;
+  border: 0;
+  border-radius: 22px;
+  text-align: left;
+  cursor: pointer;
+  transform: translateY(0);
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    filter 120ms ease;
+  box-shadow:
+    0 7px 0 rgba(0, 0, 0, 0.16),
+    0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.premium-feature-button:hover {
+  filter: brightness(1.03);
+  transform: translateY(-2px);
+}
+
+.premium-feature-button:active {
+  transform: translateY(5px);
+  box-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.16),
+    0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.premium-feature-tasbih {
+  background: linear-gradient(135deg, #d8f3e6, #a9dec8);
+  color: #123d2e;
+}
+
+.premium-feature-ai {
+  background: linear-gradient(135deg, #f4e7bd, #ddc77e);
+  color: #40330e;
+}
+
+.premium-feature-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.55),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.premium-feature-content {
+  display: grid;
+  gap: 5px;
+}
+
+.premium-feature-content strong {
+  font-size: 1.08rem;
+  letter-spacing: -0.01em;
+}
+
+.premium-feature-content span {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  opacity: 0.78;
+}
+
+.premium-feature-arrow {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.38);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 3px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.premium-feature-button:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .premium-feature-button {
+    min-height: 92px;
+    padding: 16px;
+    gap: 12px;
+    border-radius: 20px;
+  }
+
+  .premium-feature-icon {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+  }
+
+  .premium-feature-content span {
+    font-size: 0.82rem;
+  }
+}
+
+.tawheed-course-page {
+  padding-bottom: 110px;
+}
+
+.tawheed-course-layout {
+  display: grid;
+  grid-template-columns: minmax(210px, 280px) 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.tawheed-lesson-list,
+.tawheed-lesson-content {
+  background: var(--card-bg, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  border-radius: 20px;
+}
+
+.tawheed-lesson-list {
+  padding: 18px;
+  position: sticky;
+  top: 18px;
+}
+
+.tawheed-lesson-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 13px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.tawheed-lesson-item > span {
+  min-width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 0.8rem;
+}
+
+.tawheed-lesson-item strong {
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.tawheed-lesson-item.active {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.tawheed-lesson-content {
+  padding: 28px;
+}
+
+.tawheed-lesson-heading {
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+}
+
+.tawheed-lesson-heading h3 {
+  margin: 7px 0 0;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+.tawheed-objectives,
+.tawheed-key-terms,
+.tawheed-review,
+.tawheed-sources {
+  margin-top: 24px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.tawheed-objectives ul,
+.tawheed-review ol {
+  margin: 12px 0 0;
+  padding-left: 22px;
+}
+
+.tawheed-objectives li,
+.tawheed-review li {
+  margin-bottom: 9px;
+  line-height: 1.6;
+}
+
+.tawheed-section {
+  margin-top: 30px;
+}
+
+.tawheed-section h4 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+}
+
+.tawheed-section p,
+.tawheed-term p,
+.tawheed-unavailable p {
+  line-height: 1.75;
+  opacity: 0.9;
+}
+
+.tawheed-term {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.07));
+}
+
+.tawheed-term:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.tawheed-term p {
+  margin: 5px 0 0;
+}
+
+.tawheed-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tawheed-sources small {
+  opacity: 0.75;
+}
+
+.tawheed-unavailable {
+  padding: 20px 0;
+}
+
+@media (max-width: 760px) {
+  .tawheed-course-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tawheed-lesson-list {
+    position: static;
+  }
+
+  .tawheed-lesson-content {
+    padding: 20px;
+  }
+}
+
+.tawheed-progress {
+  margin: 18px 0 24px;
+  padding: 16px 18px;
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.tawheed-progress-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 11px;
+  font-size: 0.88rem;
+}
+
+.tawheed-progress-heading span {
+  opacity: 0.7;
+}
+
+.tawheed-progress-heading strong {
+  text-align: right;
+}
+
+.tawheed-progress-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tawheed-progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: currentColor;
+  transition: width 0.25s ease;
+}
+
+.tawheed-lesson-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.tawheed-lesson-navigation button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 560px) {
+  .tawheed-progress-heading {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .tawheed-progress-heading strong {
+    text-align: left;
+  }
+
+  .tawheed-lesson-navigation {
+    flex-direction: column;
+  }
 }
