@@ -3106,9 +3106,28 @@ button.secondary:active {
 }
 
 .tawheed-chapter-heading {
+  width: 100%;
   display: grid;
   gap: 4px;
   padding: 2px 4px 8px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.tawheed-course-back {
+  margin: 18px 0 10px;
+}
+
+.tawheed-selected-chapter {
+  margin: 10px 0 20px;
+}
+
+.tawheed-selected-chapter h3 {
+  margin: 7px 0 0;
+  font-size: clamp(1.4rem, 4vw, 2rem);
 }
 
 .tawheed-chapter-heading span {
@@ -3248,7 +3267,7 @@ button.secondary:active {
     grid-template-columns: 1fr;
   }
 
-  .tawheed-lesson-list {
+  .tawheed-chapter-list {
     position: static;
   }
 
