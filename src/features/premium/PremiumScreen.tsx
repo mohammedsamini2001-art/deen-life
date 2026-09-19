@@ -20,9 +20,11 @@ function formatExpiry(expiresAt?: string): string {
 export default function PremiumScreen({
   onOpenTasbih,
   onOpenAi,
+  onOpenLearning,
 }: {
   onOpenTasbih: () => void
   onOpenAi: () => void
+  onOpenLearning: () => void
 }) {
   const [status, setStatus] = useState<PremiumStatus | null>(null)
   const [loading, setLoading] = useState(true)
@@ -114,6 +116,15 @@ export default function PremiumScreen({
               <span className="premium-feature-content">
                 <strong>DEEN AI</strong>
                 <span>Explore your questions about Islam naturally.</span>
+              </span>
+              <span className="premium-feature-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button className="premium-feature-button premium-feature-learning" onClick={onOpenLearning}>
+              <span className="premium-feature-icon" aria-hidden="true">▤</span>
+              <span className="premium-feature-content">
+                <strong>Islamic Learning Library</strong>
+                <span>Study Islamic sciences step by step and continue your progress.</span>
               </span>
               <span className="premium-feature-arrow" aria-hidden="true">→</span>
             </button>

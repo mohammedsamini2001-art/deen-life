@@ -5,10 +5,11 @@ import DuasScreen from './features/duas/DuasScreen'
 import QiblaDetector from './features/qibla/QiblaDetector'
 import KnowledgeScreen from './features/knowledge/KnowledgeScreen'
 import PremiumScreen from './features/premium/PremiumScreen'
+import IslamicLearningScreen from './features/islamic-learning/IslamicLearningScreen'
 import TasbihScreen from './features/tasbih/TasbihScreen'
 import DeenAiScreen from './features/ai/DeenAiScreen'
 
-type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai'
+type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai' | 'islamic-learning'
 
 const pages: { id: Page; label: string; icon: string }[] = [
   { id: 'home', label: 'Home', icon: '⌂' },
@@ -104,9 +105,10 @@ function App() {
         {page === 'duas' && <DuasScreen onBack={() => navigateTo('home')} />}
         {page === 'qibla' && <QiblaDetector onBack={() => navigateTo('home')} />}
         {page === 'knowledge' && <KnowledgeScreen onBack={() => navigateTo('home')} />}
-        {page === 'premium' && <PremiumScreen onOpenTasbih={() => navigateTo('tasbih')} onOpenAi={() => navigateTo('ai')} />}
+        {page === 'premium' && <PremiumScreen onOpenTasbih={() => navigateTo('tasbih')} onOpenAi={() => navigateTo('ai')} onOpenLearning={() => navigateTo('islamic-learning')} />}
         {page === 'tasbih' && <TasbihScreen onBack={() => navigateTo('premium')} onOpenPremium={() => navigateTo('premium')} />}
         {page === 'ai' && <DeenAiScreen onBack={() => navigateTo('premium')} onOpenPremium={() => navigateTo('premium')} />}
+        {page === 'islamic-learning' && <IslamicLearningScreen onBack={() => navigateTo('premium')} onOpenSubject={(slug) => console.log('Open Islamic Learning subject:', slug)} />}
       </main>
 
       {page !== 'premium' && (
