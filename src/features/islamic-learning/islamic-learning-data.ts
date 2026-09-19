@@ -1,3 +1,37 @@
+export interface IslamicLearningLanguage {
+  code: string
+  name: string
+  nativeName: string
+  role: 'original' | 'translation'
+}
+
+export const ISLAMIC_LEARNING_LANGUAGES: IslamicLearningLanguage[] = [
+  {
+    code: 'ar',
+    name: 'Arabic',
+    nativeName: 'العربية',
+    role: 'original',
+  },
+  {
+    code: 'en',
+    name: 'English',
+    nativeName: 'English',
+    role: 'translation',
+  },
+  {
+    code: 'sw',
+    name: 'Kiswahili',
+    nativeName: 'Kiswahili',
+    role: 'translation',
+  },
+  {
+    code: 'fr',
+    name: 'French',
+    nativeName: 'Français',
+    role: 'translation',
+  },
+]
+
 export interface IslamicLearningSubject {
   slug: string
   title: string

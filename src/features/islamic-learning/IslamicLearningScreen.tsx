@@ -1,4 +1,5 @@
-import { ISLAMIC_LEARNING_SUBJECTS } from './islamic-learning-data'
+import { useState } from 'react'
+import { ISLAMIC_LEARNING_LANGUAGES, ISLAMIC_LEARNING_SUBJECTS } from './islamic-learning-data'
 
 interface IslamicLearningScreenProps {
   onBack: () => void
@@ -9,6 +10,8 @@ export default function IslamicLearningScreen({
   onBack,
   onOpenSubject,
 }: IslamicLearningScreenProps) {
+  const [selectedLanguage, setSelectedLanguage] = useState('en')
+
   return (
     <section className="duas-reader">
       <div className="quran-toolbar">
@@ -25,6 +28,33 @@ export default function IslamicLearningScreen({
           for steady learning and continued progress.
         </p>
       </header>
+
+      <div className="quran-surah-list">
+        {ISLAMIC_LEARNING_LANGUAGES.map((language) => (
+          <button
+            key={language.code}
+            className={selectedLanguage === language.code ? 'quran-surah-card active' : 'quran-surah-card'}
+            onClick={() => setSelectedLanguage(language.code)}
+          >
+            <span className="quran-surah-number">
+              {language.code === 'ar' ? 'ع' : language.code.toUpperCase()}
+            </span>
+
+            <span className="quran-surah-info">
+              <strong>{language.nativeName}</strong>
+              <small>
+                {language.name} · {language.role === 'original' ? 'Original source' : 'Translation / explanation'}
+              </small>
+            </span>
+
+            {selectedLanguage === language.code && (
+              <span className="continue-arrow" aria-label="Selected">
+                ✓
+              </span>
+            )}
+          </button>
+        ))}
+      </div>
 
       <div className="quran-surah-list">
         {ISLAMIC_LEARNING_SUBJECTS.map((subject, index) => (
