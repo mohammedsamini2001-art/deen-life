@@ -78,34 +78,37 @@ export default function TawheedAqidahScreen({
       </div>
 
       <div className="tawheed-course-layout">
-        <aside className="tawheed-lesson-list">
+        <aside className="tawheed-chapter-list">
           <span className="eyebrow">CHAPTERS</span>
 
           {TAWHEED_AQIDAH_COURSE.chapters.map(chapter => (
-            <div key={chapter.slug}>
+            <section className="tawheed-chapter-card" key={chapter.slug}>
               <div className="tawheed-chapter-heading">
                 <span>CHAPTER {chapter.number}</span>
                 <strong>{chapter.title}</strong>
               </div>
 
-              {chapter.lessons.map(item => (
-            <button
-              key={item.slug}
-              className={
-                selectedLessonSlug === item.slug
-                  ? 'tawheed-lesson-item active'
-                  : 'tawheed-lesson-item'
-              }
-              onClick={() => setSelectedLessonSlug(item.slug)}
-            >
-              <span>{item.number}</span>
-              <strong>{item.title}</strong>
-            </button>
-              ))}
-            </div>
+              {chapter.lessons.length > 0 && (
+                <div className="tawheed-chapter-lessons">
+                  {chapter.lessons.map(item => (
+                    <button
+                      key={item.slug}
+                      className={
+                        selectedLessonSlug === item.slug
+                          ? 'tawheed-lesson-item active'
+                          : 'tawheed-lesson-item'
+                      }
+                      onClick={() => setSelectedLessonSlug(item.slug)}
+                    >
+                      <span>{item.number}</span>
+                      <strong>{item.title}</strong>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </section>
           ))}
         </aside>
-
         <article className="tawheed-lesson-content">
           {lesson && content ? (
             <>

@@ -3080,18 +3080,53 @@ button.secondary:active {
   align-items: start;
 }
 
-.tawheed-lesson-list,
+.tawheed-chapter-list,
 .tawheed-lesson-content {
   background: var(--card-bg, rgba(255, 255, 255, 0.04));
   border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
   border-radius: 20px;
 }
 
-.tawheed-lesson-list {
-  padding: 18px;
+.tawheed-chapter-list {
   position: sticky;
   top: 18px;
 }
+
+.tawheed-chapter-list > .eyebrow {
+  display: block;
+  padding: 18px 18px 10px;
+}
+
+.tawheed-chapter-card {
+  margin: 10px 12px;
+  padding: 14px;
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.tawheed-chapter-heading {
+  display: grid;
+  gap: 4px;
+  padding: 2px 4px 8px;
+}
+
+.tawheed-chapter-heading span {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+}
+
+.tawheed-chapter-heading strong {
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.tawheed-chapter-lessons {
+  display: grid;
+  gap: 4px;
+}
+
 
 .tawheed-lesson-item {
   width: 100%;
