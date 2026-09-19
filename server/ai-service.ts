@@ -1,9 +1,29 @@
 import { GoogleGenAI } from '@google/genai'
 import { searchQuran } from './quran-retrieval'
+import type { AiMessage, AiProvider } from './ai-provider'
 
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 })
+
+const geminiProvider: AiProvider = {
+  async generate(messages: AiMessage[]) {
+    const systemMessage = messages.find((message) => message.role === 'system')
+    const userMessages = messages.filter((message) => message.role === 'user')
+
+    const response = await ai.models.generateContent({
+      model: 'gemini-3.6-flash',
+      contents: userMessages.map((message) => message.content).join('\n\n'),
+      config: {
+        systemInstruction: systemMessage?.content,
+      },
+    })
+
+    return {
+      text: response.text?.trim() || 'I could not generate a response.',
+    }
+  },
+}
 
 const DEEN_AI_SYSTEM_PROMPT = `
 You are DEEN AI, an Islamic knowledge assistant inside DEEN LIFE.
@@ -77,16 +97,19 @@ Use this evidence when it is relevant. Do not invent or alter Quran references.`
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     try {
-      const response = await ai.models.generateContent({
-        model: 'gemini-3.6-flash',
-        contents: `${question}${quranContext}`,
-        config: {
-          systemInstruction: DEEN_AI_SYSTEM_PROMPT,
+      const response = await geminiProvider.generate([
+        {
+          role: 'system',
+          content: DEEN_AI_SYSTEM_PROMPT,
         },
-      })
+        {
+          role: 'user',
+          content: `${question}${quranContext}`,
+        },
+      ])
 
       return {
-        answer: response.text?.trim() || 'I could not generate a response.',
+        answer: response.text,
         sources: quranSources,
       }
     } catch (error) {
