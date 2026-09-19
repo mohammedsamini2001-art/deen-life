@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { TAWHEED_AQIDAH_COURSE } from './tawheed-aqidah-data'
-import type { TawheedLanguage, TawheedLesson } from './tawheed-aqidah-data'
+import type { TawheedLanguage, TawheedLessonContent } from './tawheed-aqidah-data'
 
 interface TawheedAqidahScreenProps {
   language: TawheedLanguage
@@ -11,16 +11,27 @@ export default function TawheedAqidahScreen({
   language,
   onBack,
 }: TawheedAqidahScreenProps) {
-  const [selectedLessonSlug, setSelectedLessonSlug] = useState<string>(
-    TAWHEED_AQIDAH_COURSE.chapters[0]?.lessons[0]?.slug ?? ''
+  const lessons = TAWHEED_AQIDAH_COURSE.chapters[0]?.lessons ?? []
+  const [selectedLessonSlug, setSelectedLessonSlug] = useState(
+    lessons[0]?.slug ?? ''
   )
 
-  const chapter = TAWHEED_AQIDAH_COURSE.chapters[0]
-  const lesson = chapter?.lessons.find(
-    item => item.slug === selectedLessonSlug
+  const lessonIndex = lessons.findIndex(
+    lesson => lesson.slug === selectedLessonSlug
   )
 
-  const content = lesson?.content[language] as TawheedLesson['content'][TawheedLanguage]
+  const lesson = lessons[lessonIndex]
+  const content = lesson?.content[language] as
+    | TawheedLessonContent
+    | undefined
+
+  const goToLesson = (index: number) => {
+    const nextLesson = lessons[index]
+    if (nextLesson) {
+      setSelectedLessonSlug(nextLesson.slug)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
 
   return (
     <section className="duas-reader islamic-learning-page tawheed-course-page">
@@ -32,16 +43,37 @@ export default function TawheedAqidahScreen({
       </div>
 
       <header className="duas-category-header knowledge-hero">
-        <span className="eyebrow">CHAPTER 1</span>
-        <h2>{chapter?.title}</h2>
+        <span className="eyebrow">FOUNDATIONS OF AQIDAH</span>
+        <h2>{TAWHEED_AQIDAH_COURSE.title}</h2>
         <p>{TAWHEED_AQIDAH_COURSE.description}</p>
       </header>
+
+      <div className="tawheed-progress">
+        <div className="tawheed-progress-heading">
+          <span>Lesson {lessonIndex + 1} of {lessons.length}</span>
+          <strong>{lesson?.title}</strong>
+        </div>
+
+        <div
+          className="tawheed-progress-track"
+          role="progressbar"
+          aria-valuemin={1}
+          aria-valuemax={lessons.length}
+          aria-valuenow={lessonIndex + 1}
+        >
+          <span
+            style={{
+              width: `${((lessonIndex + 1) / lessons.length) * 100}%`,
+            }}
+          />
+        </div>
+      </div>
 
       <div className="tawheed-course-layout">
         <aside className="tawheed-lesson-list">
           <span className="eyebrow">LESSONS</span>
 
-          {chapter?.lessons.map(item => (
+          {lessons.map(item => (
             <button
               key={item.slug}
               className={
@@ -79,7 +111,6 @@ export default function TawheedAqidahScreen({
               {content.sections.map(section => (
                 <section className="tawheed-section" key={section.title}>
                   <h4>{section.title}</h4>
-
                   {section.paragraphs.map(paragraph => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -108,7 +139,6 @@ export default function TawheedAqidahScreen({
 
               <section className="tawheed-sources">
                 <span className="eyebrow">SOURCES</span>
-
                 {content.sources.map(source => (
                   <small key={`${source.type}-${source.reference}`}>
                     {source.reference}
@@ -125,6 +155,24 @@ export default function TawheedAqidahScreen({
               </p>
             </div>
           )}
+
+          <div className="tawheed-lesson-navigation">
+            <button
+              className="secondary"
+              disabled={lessonIndex <= 0}
+              onClick={() => goToLesson(lessonIndex - 1)}
+            >
+              ← Previous
+            </button>
+
+            <button
+              className="primary"
+              disabled={lessonIndex >= lessons.length - 1}
+              onClick={() => goToLesson(lessonIndex + 1)}
+            >
+              Next Lesson →
+            </button>
+          </div>
         </article>
       </div>
     </section>

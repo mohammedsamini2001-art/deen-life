@@ -3185,3 +3185,69 @@ button.secondary:active {
     padding: 20px;
   }
 }
+
+.tawheed-progress {
+  margin: 18px 0 24px;
+  padding: 16px 18px;
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.tawheed-progress-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 11px;
+  font-size: 0.88rem;
+}
+
+.tawheed-progress-heading span {
+  opacity: 0.7;
+}
+
+.tawheed-progress-heading strong {
+  text-align: right;
+}
+
+.tawheed-progress-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tawheed-progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: currentColor;
+  transition: width 0.25s ease;
+}
+
+.tawheed-lesson-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.tawheed-lesson-navigation button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 560px) {
+  .tawheed-progress-heading {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .tawheed-progress-heading strong {
+    text-align: left;
+  }
+
+  .tawheed-lesson-navigation {
+    flex-direction: column;
+  }
+}
