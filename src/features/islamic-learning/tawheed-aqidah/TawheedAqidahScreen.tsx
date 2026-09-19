@@ -21,6 +21,9 @@ export default function TawheedAqidahScreen({
   const [selectedLessonSlug, setSelectedLessonSlug] = useState(
     lessons[0]?.slug ?? ''
   )
+  const [openChapterNumber, setOpenChapterNumber] = useState(
+    TAWHEED_AQIDAH_COURSE.chapters[0]?.number ?? 1
+  )
 
   const lessonIndex = lessons.findIndex(
     lesson => lesson.slug === selectedLessonSlug
@@ -35,6 +38,7 @@ export default function TawheedAqidahScreen({
     const nextLesson = lessons[index]
     if (nextLesson) {
       setSelectedLessonSlug(nextLesson.slug)
+      setOpenChapterNumber(nextLesson.chapterNumber)
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }
@@ -81,33 +85,44 @@ export default function TawheedAqidahScreen({
         <aside className="tawheed-chapter-list">
           <span className="eyebrow">CHAPTERS</span>
 
-          {TAWHEED_AQIDAH_COURSE.chapters.map(chapter => (
-            <section className="tawheed-chapter-card" key={chapter.slug}>
-              <div className="tawheed-chapter-heading">
-                <span>CHAPTER {chapter.number}</span>
-                <strong>{chapter.title}</strong>
-              </div>
+          {TAWHEED_AQIDAH_COURSE.chapters.map(chapter => {
+            const isOpen = openChapterNumber === chapter.number
 
-              {chapter.lessons.length > 0 && (
-                <div className="tawheed-chapter-lessons">
-                  {chapter.lessons.map(item => (
-                    <button
-                      key={item.slug}
-                      className={
-                        selectedLessonSlug === item.slug
-                          ? 'tawheed-lesson-item active'
-                          : 'tawheed-lesson-item'
-                      }
-                      onClick={() => setSelectedLessonSlug(item.slug)}
-                    >
-                      <span>{item.number}</span>
-                      <strong>{item.title}</strong>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </section>
-          ))}
+            return (
+              <section className="tawheed-chapter-card" key={chapter.slug}>
+                <button
+                  type="button"
+                  className="tawheed-chapter-heading"
+                  onClick={() =>
+                    setOpenChapterNumber(isOpen ? 0 : chapter.number)
+                  }
+                  aria-expanded={isOpen}
+                >
+                  <span>CHAPTER {chapter.number}</span>
+                  <strong>{chapter.title}</strong>
+                </button>
+
+                {isOpen && chapter.lessons.length > 0 && (
+                  <div className="tawheed-chapter-lessons">
+                    {chapter.lessons.map(item => (
+                      <button
+                        key={item.slug}
+                        className={
+                          selectedLessonSlug === item.slug
+                            ? 'tawheed-lesson-item active'
+                            : 'tawheed-lesson-item'
+                        }
+                        onClick={() => setSelectedLessonSlug(item.slug)}
+                      >
+                        <span>{item.number}</span>
+                        <strong>{item.title}</strong>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </section>
+            )
+          })}
         </aside>
         <article className="tawheed-lesson-content">
           {lesson && content ? (
