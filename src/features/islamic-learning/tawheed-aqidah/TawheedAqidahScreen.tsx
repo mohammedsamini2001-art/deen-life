@@ -11,7 +11,13 @@ export default function TawheedAqidahScreen({
   language,
   onBack,
 }: TawheedAqidahScreenProps) {
-  const lessons = TAWHEED_AQIDAH_COURSE.chapters[0]?.lessons ?? []
+  const lessons = TAWHEED_AQIDAH_COURSE.chapters.flatMap(chapter =>
+    chapter.lessons.map(lesson => ({
+      ...lesson,
+      chapterNumber: chapter.number,
+      chapterTitle: chapter.title,
+    }))
+  )
   const [selectedLessonSlug, setSelectedLessonSlug] = useState(
     lessons[0]?.slug ?? ''
   )
@@ -50,7 +56,9 @@ export default function TawheedAqidahScreen({
 
       <div className="tawheed-progress">
         <div className="tawheed-progress-heading">
-          <span>Lesson {lessonIndex + 1} of {lessons.length}</span>
+          <span>
+            Chapter {lesson?.chapterNumber} · Lesson {lesson?.number}
+          </span>
           <strong>{lesson?.title}</strong>
         </div>
 
@@ -71,9 +79,16 @@ export default function TawheedAqidahScreen({
 
       <div className="tawheed-course-layout">
         <aside className="tawheed-lesson-list">
-          <span className="eyebrow">LESSONS</span>
+          <span className="eyebrow">CHAPTERS</span>
 
-          {lessons.map(item => (
+          {TAWHEED_AQIDAH_COURSE.chapters.map(chapter => (
+            <div key={chapter.slug}>
+              <div className="tawheed-chapter-heading">
+                <span>CHAPTER {chapter.number}</span>
+                <strong>{chapter.title}</strong>
+              </div>
+
+              {chapter.lessons.map(item => (
             <button
               key={item.slug}
               className={
@@ -86,6 +101,8 @@ export default function TawheedAqidahScreen({
               <span>{item.number}</span>
               <strong>{item.title}</strong>
             </button>
+              ))}
+            </div>
           ))}
         </aside>
 
@@ -94,7 +111,7 @@ export default function TawheedAqidahScreen({
             <>
               <div className="tawheed-lesson-heading">
                 <span className="eyebrow">
-                  LESSON {lesson.number}
+                  CHAPTER {lesson.chapterNumber} · LESSON {lesson.number}
                 </span>
                 <h3>{lesson.title}</h3>
               </div>
