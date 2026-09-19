@@ -3032,3 +3032,156 @@ button.secondary:active {
     font-size: 0.82rem;
   }
 }
+
+.tawheed-course-page {
+  padding-bottom: 110px;
+}
+
+.tawheed-course-layout {
+  display: grid;
+  grid-template-columns: minmax(210px, 280px) 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.tawheed-lesson-list,
+.tawheed-lesson-content {
+  background: var(--card-bg, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  border-radius: 20px;
+}
+
+.tawheed-lesson-list {
+  padding: 18px;
+  position: sticky;
+  top: 18px;
+}
+
+.tawheed-lesson-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 13px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.tawheed-lesson-item > span {
+  min-width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 0.8rem;
+}
+
+.tawheed-lesson-item strong {
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.tawheed-lesson-item.active {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.tawheed-lesson-content {
+  padding: 28px;
+}
+
+.tawheed-lesson-heading {
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+}
+
+.tawheed-lesson-heading h3 {
+  margin: 7px 0 0;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+.tawheed-objectives,
+.tawheed-key-terms,
+.tawheed-review,
+.tawheed-sources {
+  margin-top: 24px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.tawheed-objectives ul,
+.tawheed-review ol {
+  margin: 12px 0 0;
+  padding-left: 22px;
+}
+
+.tawheed-objectives li,
+.tawheed-review li {
+  margin-bottom: 9px;
+  line-height: 1.6;
+}
+
+.tawheed-section {
+  margin-top: 30px;
+}
+
+.tawheed-section h4 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+}
+
+.tawheed-section p,
+.tawheed-term p,
+.tawheed-unavailable p {
+  line-height: 1.75;
+  opacity: 0.9;
+}
+
+.tawheed-term {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.07));
+}
+
+.tawheed-term:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.tawheed-term p {
+  margin: 5px 0 0;
+}
+
+.tawheed-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tawheed-sources small {
+  opacity: 0.75;
+}
+
+.tawheed-unavailable {
+  padding: 20px 0;
+}
+
+@media (max-width: 760px) {
+  .tawheed-course-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tawheed-lesson-list {
+    position: static;
+  }
+
+  .tawheed-lesson-content {
+    padding: 20px;
+  }
+}

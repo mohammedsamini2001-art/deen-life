@@ -6,10 +6,11 @@ import QiblaDetector from './features/qibla/QiblaDetector'
 import KnowledgeScreen from './features/knowledge/KnowledgeScreen'
 import PremiumScreen from './features/premium/PremiumScreen'
 import IslamicLearningScreen from './features/islamic-learning/IslamicLearningScreen'
+import TawheedAqidahScreen from './features/islamic-learning/tawheed-aqidah/TawheedAqidahScreen'
 import TasbihScreen from './features/tasbih/TasbihScreen'
 import DeenAiScreen from './features/ai/DeenAiScreen'
 
-type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai' | 'islamic-learning'
+type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai' | 'islamic-learning' | 'tawheed-aqidah'
 
 const pages: { id: Page; label: string; icon: string }[] = [
   { id: 'home', label: 'Home', icon: '⌂' },
@@ -59,6 +60,7 @@ function getInitialPage(): Page {
 function App() {
   const [page, setPage] = useState<Page>(getInitialPage)
   const [dailyMessage, setDailyMessage] = useState(DAILY_MESSAGES[0])
+  const [learningLanguage, setLearningLanguage] = useState<'ar' | 'en' | 'sw' | 'fr'>('en')
 
   useEffect(() => {
     const initialPage = getInitialPage()
@@ -108,7 +110,13 @@ function App() {
         {page === 'premium' && <PremiumScreen onOpenTasbih={() => navigateTo('tasbih')} onOpenAi={() => navigateTo('ai')} onOpenLearning={() => navigateTo('islamic-learning')} />}
         {page === 'tasbih' && <TasbihScreen onBack={() => navigateTo('premium')} onOpenPremium={() => navigateTo('premium')} />}
         {page === 'ai' && <DeenAiScreen onBack={() => navigateTo('premium')} onOpenPremium={() => navigateTo('premium')} />}
-        {page === 'islamic-learning' && <IslamicLearningScreen onBack={() => navigateTo('premium')} onOpenSubject={(slug) => console.log('Open Islamic Learning subject:', slug)} />}
+        {page === 'islamic-learning' && <IslamicLearningScreen onBack={() => navigateTo('premium')} onOpenSubject={(slug, language) => {
+            if (slug === 'tawheed-aqidah') {
+              setLearningLanguage(language as 'ar' | 'en' | 'sw' | 'fr')
+              navigateTo('tawheed-aqidah')
+            }
+          }} />}
+        {page === 'tawheed-aqidah' && <TawheedAqidahScreen language={learningLanguage} onBack={() => navigateTo('islamic-learning')} />}
       </main>
 
       {page !== 'premium' && (

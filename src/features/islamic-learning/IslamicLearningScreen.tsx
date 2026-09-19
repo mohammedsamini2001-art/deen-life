@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { TAWHEED_AQIDAH_COURSE } from './tawheed-aqidah/tawheed-aqidah-data'
 import {
   ISLAMIC_LEARNING_LANGUAGES,
   ISLAMIC_LEARNING_SUBJECTS,
@@ -6,7 +7,7 @@ import {
 
 interface IslamicLearningScreenProps {
   onBack: () => void
-  onOpenSubject: (slug: string) => void
+  onOpenSubject: (slug: string, language: string) => void
 }
 
 export default function IslamicLearningScreen({
@@ -106,7 +107,7 @@ export default function IslamicLearningScreen({
           <button
             key={subject.slug}
             className="islamic-learning-subject-card"
-            onClick={() => onOpenSubject(subject.slug)}
+            onClick={() => onOpenSubject(subject.slug, selectedLanguage ?? 'en')}
           >
             <span className="islamic-learning-subject-number">
               {index + 1}
