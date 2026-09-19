@@ -2,16 +2,24 @@ import { apiFetch } from '../../lib/api'
 import { getDeviceToken } from './device-token'
 
 export type PremiumPlan = 'monthly' | 'yearly'
+export type EntitlementPlan = PremiumPlan | 'trial'
 
 export interface PremiumStatus {
   isPremium: boolean
-  plan?: PremiumPlan
+  plan?: EntitlementPlan
   expiresAt?: string
+  trialAvailable?: boolean
 }
 
 export const PREMIUM_PLANS: Record<PremiumPlan, { amountKes: number; label: string }> = {
   monthly: { amountKes: 100, label: 'Monthly' },
-  yearly: { amountKes: 650, label: 'Yearly' },
+  yearly: { amountKes: 650, label: 'Yearly (15 months)' },
+}
+
+export const PLAN_LABELS: Record<EntitlementPlan, string> = {
+  monthly: 'Monthly',
+  yearly: 'Yearly',
+  trial: 'Free Trial',
 }
 
 const CACHE_KEY = 'deen-life:premium-status-cache'
@@ -60,6 +68,30 @@ export async function refreshPremiumStatus(): Promise<PremiumStatus> {
     // rather than silently revoking premium (e.g. brief network drop).
     return readCache() ?? { isPremium: false }
   }
+}
+
+export async function restorePremium(reference: string): Promise<PremiumStatus> {
+  const deviceToken = getDeviceToken()
+
+  const result = await apiFetch<PremiumStatus>('/api/premium/restore', {
+    method: 'POST',
+    body: JSON.stringify({ reference: reference.trim(), deviceToken }),
+  })
+
+  writeCache(result)
+  return result
+}
+
+export async function startFreeTrial(): Promise<PremiumStatus> {
+  const deviceToken = getDeviceToken()
+
+  const result = await apiFetch<PremiumStatus>('/api/premium/trial', {
+    method: 'POST',
+    body: JSON.stringify({ deviceToken }),
+  })
+
+  writeCache(result)
+  return result
 }
 
 export async function startPremiumCheckout(plan: PremiumPlan): Promise<string> {

@@ -22,10 +22,13 @@ function getEntitlements() {
 
 const PLANS = {
   monthly: { amountKes: 100, durationDays: 30 },
-  yearly: { amountKes: 650, durationDays: 365 },
+  yearly: { amountKes: 650, durationDays: 15 * 30 }, // 12 paid months + 3 bonus months
 } as const
 
+const TRIAL_DURATION_DAYS = 30
+
 type PlanId = keyof typeof PLANS
+type EntitlementPlan = PlanId | 'trial'
 
 function isPlanId(value: unknown): value is PlanId {
   return value === 'monthly' || value === 'yearly'
@@ -134,6 +137,40 @@ app.post('/api/premium/pay', async (req, res) => {
   }
 })
 
+app.post('/api/premium/trial', async (req, res) => {
+  const { deviceToken } = req.body ?? {}
+
+  if (typeof deviceToken !== 'string' || deviceToken.length < 8) {
+    return res.status(400).json({ ok: false, error: 'A valid deviceToken is required' })
+  }
+
+  const entitlements = getEntitlements()
+  if (!entitlements) {
+    return res.status(503).json({ ok: false, error: 'Free trial requires the database to be configured' })
+  }
+
+  const existing = await entitlements.findOne({ deviceToken })
+  if (existing) {
+    return res.status(409).json({
+      ok: false,
+      error: 'This device has already used its free trial or has a subscription on record',
+    })
+  }
+
+  const expiresAt = new Date(Date.now() + TRIAL_DURATION_DAYS * 24 * 60 * 60 * 1000)
+
+  await entitlements.insertOne({
+    deviceToken,
+    plan: 'trial',
+    amountKes: 0,
+    status: 'paid',
+    createdAt: new Date(),
+    expiresAt,
+  })
+
+  return res.json({ ok: true, isPremium: true, plan: 'trial', expiresAt })
+})
+
 app.get('/api/premium/verify', async (req, res) => {
   if (!paystackSecretKey) {
     return res.status(503).json({ ok: false, error: 'Paystack is not configured yet' })
@@ -182,6 +219,107 @@ app.get('/api/premium/verify', async (req, res) => {
   }
 })
 
+app.post('/api/premium/restore', async (req, res) => {
+  if (!paystackSecretKey) {
+    return res.status(503).json({ ok: false, error: 'Paystack is not configured yet' })
+  }
+
+  const { reference, deviceToken } = req.body ?? {}
+
+  if (typeof reference !== 'string' || !reference) {
+    return res.status(400).json({ ok: false, error: 'reference is required' })
+  }
+
+  if (typeof deviceToken !== 'string' || deviceToken.length < 8) {
+    return res.status(400).json({ ok: false, error: 'A valid deviceToken is required' })
+  }
+
+  try {
+    const response = await fetch(
+      `https://api.paystack.co/transaction/verify/${encodeURIComponent(reference)}`,
+      { headers: { Authorization: `Bearer ${paystackSecretKey}` } },
+    )
+
+    const data = (await response.json()) as PaystackVerifyResponse
+
+    if (!response.ok || !data.status) {
+      return res.status(502).json({
+        ok: false,
+        error: data.message || 'Verification failed',
+      })
+    }
+
+    const paid = data.data.status === 'success'
+    const plan: PlanId | undefined = isPlanId(data.data.metadata?.plan)
+      ? data.data.metadata.plan
+      : undefined
+
+    if (!paid || !plan) {
+      return res.status(400).json({
+        ok: false,
+        error: 'This payment could not be verified as an active Premium purchase',
+      })
+    }
+
+    const entitlements = getEntitlements()
+
+    if (!entitlements) {
+      return res.status(503).json({
+        ok: false,
+        error: 'Premium database is not available',
+      })
+    }
+
+    const existing = await entitlements.findOne({ reference })
+
+    if (!existing) {
+      return res.status(404).json({
+        ok: false,
+        error: 'Premium purchase record was not found',
+      })
+    }
+
+    if (existing.plan !== plan) {
+      return res.status(400).json({
+        ok: false,
+        error: 'Premium purchase details do not match',
+      })
+    }
+
+    const expiresAt = existing.expiresAt
+
+    if (!expiresAt || new Date(expiresAt) <= new Date()) {
+      return res.status(400).json({
+        ok: false,
+        error: 'This Premium subscription has expired',
+      })
+    }
+
+    await entitlements.updateOne(
+      { reference },
+      {
+        $set: {
+          deviceToken,
+          status: 'paid',
+        },
+      },
+    )
+
+    return res.json({
+      ok: true,
+      isPremium: true,
+      plan,
+      expiresAt,
+    })
+  } catch (error) {
+    console.error('Premium restore error:', error)
+    return res.status(502).json({
+      ok: false,
+      error: 'Could not reach Paystack',
+    })
+  }
+})
+
 app.get('/api/premium/status', async (req, res) => {
   const deviceToken = req.query.deviceToken
   if (typeof deviceToken !== 'string' || !deviceToken) {
@@ -190,8 +328,11 @@ app.get('/api/premium/status', async (req, res) => {
 
   const entitlements = getEntitlements()
   if (!entitlements) {
-    return res.json({ ok: true, isPremium: false })
+    return res.json({ ok: true, isPremium: false, trialAvailable: false })
   }
+
+  const anyRecord = await entitlements.findOne({ deviceToken })
+  const trialAvailable = !anyRecord
 
   const record = await entitlements.findOne(
     { deviceToken, status: 'paid' },
@@ -199,14 +340,15 @@ app.get('/api/premium/status', async (req, res) => {
   )
 
   if (!record || !record.expiresAt || new Date(record.expiresAt) < new Date()) {
-    return res.json({ ok: true, isPremium: false })
+    return res.json({ ok: true, isPremium: false, trialAvailable })
   }
 
   return res.json({
     ok: true,
     isPremium: true,
-    plan: record.plan,
+    plan: record.plan as EntitlementPlan,
     expiresAt: record.expiresAt,
+    trialAvailable: false,
   })
 })
 
