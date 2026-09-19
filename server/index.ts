@@ -59,6 +59,9 @@ app.post('/api/payments/webhook', express.raw({ type: 'application/json' }), asy
       reference: transaction.reference,
       deviceToken,
       plan,
+      customerCode: transaction?.customer?.customer_code,
+      customerPhone: transaction?.customer?.phone,
+      customerEmail: transaction?.customer?.email,
     })
 
     return res.json({ ok: true })
@@ -95,6 +98,9 @@ async function recordSuccessfulPayment(params: {
   reference: string
   deviceToken: string
   plan: PlanId
+  customerCode?: string
+  customerPhone?: string
+  customerEmail?: string
 }) {
   const entitlements = getEntitlements()
   if (!entitlements) {
@@ -145,6 +151,9 @@ async function recordSuccessfulPayment(params: {
         plan: params.plan,
         amountKes: PLANS[params.plan].amountKes,
         reference: params.reference,
+        customerCode: params.customerCode,
+        customerPhone: params.customerPhone,
+        customerEmail: params.customerEmail,
         status: 'paid',
         paidAt: now,
         expiresAt,
@@ -177,6 +186,11 @@ interface PaystackVerifyResponse {
     currency: string
     reference: string
     metadata?: { deviceToken?: string; plan?: string }
+    customer?: {
+      customer_code?: string
+      email?: string
+      phone?: string | null
+    }
   }
 }
 
@@ -344,6 +358,9 @@ app.get('/api/premium/verify', async (req, res) => {
       reference,
       deviceToken,
       plan,
+      customerCode: data.data.customer?.customer_code,
+      customerPhone: data.data.customer?.phone || undefined,
+      customerEmail: data.data.customer?.email,
     })
 
     return res.json({

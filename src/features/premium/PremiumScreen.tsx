@@ -4,7 +4,6 @@ import {
   PREMIUM_PLANS,
   confirmPremiumPayment,
   refreshPremiumStatus,
-  restorePremium,
   startFreeTrial,
   startPremiumCheckout,
   type PremiumPlan,
@@ -35,8 +34,6 @@ export default function PremiumScreen({
   const [error, setError] = useState<string | null>(null)
   const [verifyMessage, setVerifyMessage] = useState<string | null>(null)
   const [trialPending, setTrialPending] = useState(false)
-  const [restoreReference, setRestoreReference] = useState('')
-  const [restorePending, setRestorePending] = useState(false)
 
   useEffect(() => {
     async function init() {
@@ -80,32 +77,6 @@ export default function PremiumScreen({
       setError(err instanceof Error ? err.message : 'Could not start your free trial')
     } finally {
       setTrialPending(false)
-    }
-  }
-
-  async function handleRestore() {
-    setError(null)
-    setVerifyMessage(null)
-
-    if (!restoreReference.trim()) {
-      setError('Enter your Paystack payment reference')
-      return
-    }
-
-    setRestorePending(true)
-
-    try {
-      const result = await restorePremium(restoreReference)
-      setStatus(result)
-      setVerifyMessage(
-        result.isPremium
-          ? 'Payment verified — Premium has been restored on this device.'
-          : 'We could not restore that Premium payment.',
-      )
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Could not restore Premium')
-    } finally {
-      setRestorePending(false)
     }
   }
 
@@ -189,26 +160,6 @@ export default function PremiumScreen({
             </div>
           )}
 
-          <div className="premium-restore-card">
-            <span className="eyebrow">ALREADY PAID?</span>
-            <p>Restore a previous Premium purchase on this device.</p>
-            <input
-              className="premium-restore-input"
-              type="text"
-              value={restoreReference}
-              onChange={(event) => setRestoreReference(event.target.value)}
-              placeholder="Paystack payment reference"
-              autoComplete="off"
-              spellCheck={false}
-            />
-            <button
-              className="wide"
-              disabled={restorePending}
-              onClick={handleRestore}
-            >
-              {restorePending ? 'Restoring…' : 'Restore Premium'}
-            </button>
-          </div>
 
           <div className="premium-plan-card">
             <span className="eyebrow">MONTHLY</span>
