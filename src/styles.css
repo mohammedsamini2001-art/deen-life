@@ -2480,6 +2480,197 @@ button.secondary:active {
   font-size: clamp(0.95rem, 2vw, 1.08rem);
 }
 
+/* Islamic Learning — language selection and subject library */
+.islamic-learning-page {
+  padding-bottom: 32px;
+}
+
+.islamic-learning-language-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.islamic-learning-language-card {
+  position: relative;
+  min-height: 138px;
+  padding: 22px 20px;
+  border: 1px solid rgba(212, 168, 79, 0.22);
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    rgba(8, 22, 17, 0.72);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.islamic-learning-language-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 168, 79, 0.48);
+}
+
+.islamic-learning-language-card.selected {
+  border-color: rgba(212, 168, 79, 0.9);
+  background:
+    linear-gradient(145deg, rgba(212, 168, 79, 0.16), rgba(22, 163, 111, 0.08)),
+    rgba(8, 22, 17, 0.84);
+  box-shadow: 0 0 0 1px rgba(212, 168, 79, 0.16);
+}
+
+.islamic-learning-language-native {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.islamic-learning-language-name {
+  display: block;
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.islamic-learning-language-card small {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.78rem;
+}
+
+.islamic-learning-language-check {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(212, 168, 79, 0.95);
+  color: #102018;
+  font-weight: 800;
+}
+
+.islamic-learning-continue {
+  display: block;
+  width: min(100%, 260px);
+  margin: 22px auto 0;
+  padding: 13px 20px;
+  border: 1px solid rgba(212, 168, 79, 0.5);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(22, 163, 111, 0.9), rgba(212, 168, 79, 0.82));
+  color: #08150f;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.islamic-learning-continue:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.islamic-learning-continue:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.islamic-learning-subject-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.islamic-learning-subject-card {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 17px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.islamic-learning-subject-card:hover {
+  transform: translateX(3px);
+  border-color: rgba(22, 163, 111, 0.5);
+  background: rgba(22, 163, 111, 0.07);
+}
+
+.islamic-learning-subject-number {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid rgba(212, 168, 79, 0.34);
+  border-radius: 12px;
+  background: rgba(212, 168, 79, 0.08);
+  color: rgba(212, 168, 79, 0.95);
+  font-weight: 800;
+}
+
+.islamic-learning-subject-info {
+  min-width: 0;
+}
+
+.islamic-learning-subject-info strong,
+.islamic-learning-subject-info small {
+  display: block;
+}
+
+.islamic-learning-subject-info strong {
+  font-size: 1rem;
+}
+
+.islamic-learning-subject-info small {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.45;
+}
+
+.islamic-learning-subject-card .continue-arrow {
+  color: rgba(212, 168, 79, 0.9);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .islamic-learning-language-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .islamic-learning-language-card {
+    min-height: 118px;
+  }
+
+  .islamic-learning-subject-card {
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+    padding: 15px;
+  }
+
+  .islamic-learning-subject-number {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 .deen-ai-header {
   display: flex;
   align-items: center;
