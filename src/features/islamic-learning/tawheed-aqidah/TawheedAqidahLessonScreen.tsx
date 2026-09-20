@@ -8,6 +8,8 @@ import { TAHAWIYYAH_LESSON_MAP } from './source/tahawiyyah-lesson-map'
 const TAHAWIYYAH_SOURCE_TITLE_ARABIC = TAHAWIYYAH_CURRICULUM.source.titleArabic
 const TAHAWIYYAH_SOURCE_AUTHOR_ARABIC = TAHAWIYYAH_CURRICULUM.source.authorArabic
 
+const ARABIC_SOURCE_NUMBERS = '٠١٢٣٤٥٦٧٨٩'
+
 export default function TawheedAqidahLessonScreen({
   lessonNumber,
   onBack,
@@ -64,6 +66,9 @@ export default function TawheedAqidahLessonScreen({
           {sourceUnits.map((unit) =>
             unit ? (
               <div key={unit.id} className="tawheed-aqidah-source-unit">
+                <span className="tawheed-aqidah-source-number" dir="rtl" lang="ar">
+                  {String(unit.id).replace(/[0-9]/g, (digit) => '٠١٢٣٤٥٦٧٨٩'[Number(digit)])}
+                </span>
                 <p dir="rtl" lang="ar">
                   {unit.arabic}
                 </p>
