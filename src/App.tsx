@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import TawheedAqidahScreen from './features/islamic-learning/tawheed-aqidah/TawheedAqidahScreen'
+import TawheedAqidahLessonScreen from './features/islamic-learning/tawheed-aqidah/TawheedAqidahLessonScreen'
 import QuranReader from './features/quran/QuranReader'
 import PrayerTimes from './features/prayer/PrayerTimes'
 import DuasScreen from './features/duas/DuasScreen'
@@ -10,7 +11,7 @@ import IslamicLearningScreen from './features/islamic-learning/IslamicLearningSc
 import TasbihScreen from './features/tasbih/TasbihScreen'
 import DeenAiScreen from './features/ai/DeenAiScreen'
 
-type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai' | 'islamic-learning' | 'tawheed-aqidah'
+type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai' | 'islamic-learning' | 'tawheed-aqidah' | 'tawheed-aqidah-lesson'
 
 const pages: { id: Page; label: string; icon: string }[] = [
   { id: 'home', label: 'Home', icon: '⌂' },
@@ -61,6 +62,7 @@ function App() {
   const [page, setPage] = useState<Page>(getInitialPage)
   const [dailyMessage, setDailyMessage] = useState(DAILY_MESSAGES[0])
   const [learningLanguage, setLearningLanguage] = useState<'ar' | 'en' | 'sw' | 'fr'>('en')
+  const [selectedTawheedLesson, setSelectedTawheedLesson] = useState(1)
 
   useEffect(() => {
     const initialPage = getInitialPage()
@@ -120,7 +122,19 @@ function App() {
             }}
           />
         )}
-        {page === 'tawheed-aqidah' && <TawheedAqidahScreen onBack={() => navigateTo('islamic-learning')} />}
+        {page === 'tawheed-aqidah' && <TawheedAqidahScreen
+            onBack={() => navigateTo('islamic-learning')}
+            onOpenLesson={(lessonNumber) => {
+              setSelectedTawheedLesson(lessonNumber)
+              navigateTo('tawheed-aqidah-lesson')
+            }}
+          />}
+        {page === 'tawheed-aqidah-lesson' && (
+          <TawheedAqidahLessonScreen
+            lessonNumber={selectedTawheedLesson}
+            onBack={() => navigateTo('tawheed-aqidah')}
+          />
+        )}
       </main>
 
       {page !== 'premium' && (
