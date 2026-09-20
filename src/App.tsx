@@ -115,20 +115,24 @@ function App() {
         {page === 'islamic-learning' && (
           <IslamicLearningScreen
             onBack={() => navigateTo('premium')}
-            onOpenSubject={(slug) => {
+            onOpenSubject={(slug, language) => {
               if (slug === 'tawheed-aqidah') {
+                setLearningLanguage(language as 'ar' | 'en' | 'sw' | 'fr')
                 navigateTo('tawheed-aqidah')
               }
             }}
           />
         )}
-        {page === 'tawheed-aqidah' && <TawheedAqidahScreen
+        {page === 'tawheed-aqidah' && (
+          <TawheedAqidahScreen
+            language={learningLanguage}
             onBack={() => navigateTo('islamic-learning')}
             onOpenLesson={(lessonNumber) => {
               setSelectedTawheedLesson(lessonNumber)
               navigateTo('tawheed-aqidah-lesson')
             }}
-          />}
+          />
+        )}
         {page === 'tawheed-aqidah-lesson' && (
           <TawheedAqidahLessonScreen
             lessonNumber={selectedTawheedLesson}
