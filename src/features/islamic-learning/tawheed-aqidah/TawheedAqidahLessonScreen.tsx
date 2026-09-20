@@ -64,9 +64,6 @@ export default function TawheedAqidahLessonScreen({
           {sourceUnits.map((unit) =>
             unit ? (
               <div key={unit.id} className="tawheed-aqidah-source-unit">
-                <span className="tawheed-aqidah-source-number">
-                  {unit.id}
-                </span>
                 <p dir="rtl" lang="ar">
                   {unit.arabic}
                 </p>
