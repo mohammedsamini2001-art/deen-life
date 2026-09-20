@@ -8,7 +8,7 @@ export interface TahawiyyahSourceUnit {
 export interface TahawiyyahLesson {
   number: number
   slug: string
-  topic: string
+  teachingTitle: string
   sourceUnitIds: number[]
   title: Record<TawheedLanguage, string>
   explanation: Record<TawheedLanguage, string>
