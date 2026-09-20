@@ -181,143 +181,106 @@ export const TAWHEED_AQIDAH_COURSE: {
         },
         {
           slug: 'sources-of-islamic-belief',
-          title: 'Sources of Islamic Belief',
           number: 2,
-          content: {
+          source: {
+            arabicTitle: 'مصادر العقيدة الإسلامية',
+            arabicIntroduction: [
+              'العقيدة الإسلامية مبناها على الوحي الذي أنزله الله تعالى، فلا تُؤخذ أصول الإيمان من الآراء المجردة، وإنما تُعرف بما جاء في كتاب الله وما صح عن رسول الله ﷺ.',
+              'والقرآن الكريم هو كلام الله تعالى، والسنة الصحيحة تبين ما جاء في القرآن وتفصل معانيه وأحكامه، ومن مجموعهما يعرف المسلم أصول عقيدته.',
+            ],
+            sections: [
+              {
+                arabicTitle: 'القرآن الكريم',
+                arabicText: [
+                  'القرآن الكريم هو المصدر الأول للعقيدة الإسلامية؛ ففيه يخبر الله تعالى عن نفسه، وعن أسمائه وصفاته، وعن ملائكته وكتبه ورسله واليوم الآخر والقدر، وغير ذلك من أصول الإيمان.',
+                  'قال الله تعالى: «آمَنَ الرَّسُولُ بِمَا أُنزِلَ إِلَيْهِ مِن رَّبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ».',
+                ],
+                translations: {
+                  en: [
+                    'The Qur’an is the primary source of Islamic belief. It teaches about Allah, His names and attributes, His angels, Books, messengers, the Last Day, divine decree, and other foundations of faith.',
+                    'Allah says that the Messenger and the believers believe in Allah, His angels, His Books, and His messengers.',
+                  ],
+                  sw: [
+                    'Qur’ani Tukufu ni chanzo cha kwanza cha itikadi ya Kiislamu. Inafundisha kuhusu Allah, majina na sifa Zake, Malaika Wake, Vitabu Vyake, Mitume Wake, Siku ya Mwisho, Qadar na misingi mingine ya imani.',
+                    'Allah anaeleza kwamba Mtume na Waumini wanaamini Allah, Malaika Wake, Vitabu Vyake na Mitume Wake.',
+                  ],
+                  fr: [
+                    'Le Coran est la première source de la croyance islamique. Il enseigne au sujet d’Allah, de Ses noms et attributs, de Ses anges, de Ses Livres, de Ses messagers, du Jour dernier, du destin et des autres fondements de la foi.',
+                    'Allah dit que le Messager et les croyants croient en Allah, en Ses anges, en Ses Livres et en Ses messagers.',
+                  ],
+                },
+              },
+              {
+                arabicTitle: 'السنة النبوية الصحيحة',
+                arabicText: [
+                  'السنة الصحيحة هي ما ثبت عن النبي ﷺ من قول أو فعل أو تقرير أو صفة. وهي تبين القرآن وتوضح كثيرًا من معانيه، ولذلك فهي من أصول معرفة الدين والعقيدة.',
+                  'ومن أوضح الأمثلة حديث جبريل عليه السلام، الذي بيّن فيه النبي ﷺ مراتب الدين وذكر أصول الإيمان الستة.',
+                ],
+                translations: {
+                  en: [
+                    'The authentic Sunnah includes what is authentically established from the Prophet ﷺ of his sayings, actions, approvals, and descriptions. It explains the Qur’an and clarifies many of its meanings, making it an essential source for understanding Islam and its beliefs.',
+                    'A clear example is the Hadith of Jibril, in which the Prophet ﷺ explained the levels of the religion and mentioned the six foundations of Iman.',
+                  ],
+                  sw: [
+                    'Sunnah sahihi ni yale yaliyothibiti kutoka kwa Mtume ﷺ katika kauli, vitendo, maamuzi ya kukubali, au sifa zake. Inaeleza Qur’ani na kufafanua maana zake nyingi, hivyo ni chanzo muhimu cha kuifahamu dini na itikadi.',
+                    'Mfano wazi ni Hadith ya Jibril, ambapo Mtume ﷺ alieleza daraja za dini na akataja misingi sita ya Imani.',
+                  ],
+                  fr: [
+                    'La Sunna authentique comprend ce qui est authentiquement établi du Prophète ﷺ parmi ses paroles, ses actes, ses approbations et ses descriptions. Elle explique le Coran et en clarifie de nombreux sens ; elle constitue donc une source essentielle pour comprendre l’Islam et la croyance.',
+                    'Un exemple clair est le hadith de Jibril, dans lequel le Prophète ﷺ a expliqué les degrés de la religion et mentionné les six fondements de la foi.',
+                  ],
+                },
+              },
+              {
+                arabicTitle: 'فهم الوحي على الوجه الصحيح',
+                arabicText: [
+                  'لا يكفي أن ينسب الإنسان قولًا إلى القرآن أو السنة، بل لا بد من فهم النصوص فهمًا صحيحًا، والرجوع إلى ما صح من السنة وإلى فهم أهل العلم المعتبرين.',
+                  'ولهذا تُبنى دراسة العقيدة في هذا المنهج على القرآن والسنة الصحيحة، مع التمييز بين نصوص الوحي وبين الشرح والتفسير والتعليم.',
+                ],
+                translations: {
+                  en: [
+                    'It is not enough to attribute a statement to the Qur’an or Sunnah; the texts must be understood correctly, authentic Sunnah must be distinguished from what is not established, and recognized scholarship should be consulted for sound understanding.',
+                    'For this reason, this course bases its study of Aqidah on the Qur’an and authentic Sunnah while clearly distinguishing revealed texts from educational explanation and interpretation.',
+                  ],
+                  sw: [
+                    'Haitoshi kumhusisha mtu kauli na Qur’ani au Sunnah; matini zinapaswa kueleweka kwa usahihi, Sunnah sahihi itofautishwe na yasiyothibiti, na kurejea kwa wanazuoni wanaotambulika kwa uelewa sahihi.',
+                    'Kwa sababu hiyo, kozi hii inajenga masomo ya Aqidah juu ya Qur’ani na Sunnah sahihi, huku ikitofautisha wazi matini za wahyi na maelezo na ufafanuzi wa kielimu.',
+                  ],
+                  fr: [
+                    'Il ne suffit pas d’attribuer une parole au Coran ou à la Sunna ; les textes doivent être compris correctement, la Sunna authentique doit être distinguée de ce qui n’est pas établi, et il convient de se référer aux savants reconnus pour une compréhension sûre.',
+                    'C’est pourquoi ce cours fonde l’étude de la Aqida sur le Coran et la Sunna authentique, tout en distinguant clairement les textes révélés de l’explication et de l’interprétation pédagogiques.',
+                  ],
+                },
+              },
+            ],
+            sources: [
+              {
+                type: 'quran',
+                reference: 'Qur’an 2:285',
+              },
+              {
+                type: 'quran',
+                reference: 'Qur’an 4:136',
+              },
+              {
+                type: 'hadith',
+                reference: 'Sahih Muslim 8e — Hadith of Jibril',
+              },
+              {
+                type: 'hadith',
+                reference: 'Sahih al-Bukhari 50 — Hadith of Jibril',
+              },
+            ],
+          },
+          translations: {
             en: {
-              objectives: [
-                'Understand the Qur’an and authentic Sunnah as foundational sources of Islamic belief.',
-                'Understand how the Qur’an provides revelation and how the Sunnah explains and demonstrates it.',
-                'Learn to approach claims about Islamic belief by referring back to reliable revealed sources.',
-              ],
-              sections: [
-                {
-                  title: 'The Qur’an',
-                  paragraphs: [
-                    'The Qur’an is the revelation of Allah and the primary revealed source for Islamic belief. It teaches Muslims about Allah, His names and attributes, the unseen, revelation, the messengers, the Last Day, and other matters of faith.',
-                    'When studying Aqidah, Qur’anic evidence should be understood according to its context and in harmony with the established teachings of the Prophet ﷺ.',
-                  ],
-                },
-                {
-                  title: 'The authentic Sunnah',
-                  paragraphs: [
-                    'The Sunnah refers to the teachings, statements, actions, and approvals of the Messenger of Allah ﷺ. Authentic hadith preserve these teachings and help Muslims understand how revelation was explained and practiced.',
-                    'The Sunnah clarifies matters of faith and worship and provides guidance for understanding and applying the Qur’an.',
-                  ],
-                },
-                {
-                  title: 'Using the sources carefully',
-                  paragraphs: [
-                    'A Muslim should not treat every statement found online or attributed to Islam as evidence. Claims about belief should be checked against the Qur’an and authentic Sunnah.',
-                    'The Qur’an and Sunnah should be studied with sound scholarship, careful attention to context, and respect for the established methods of Islamic learning.',
-                  ],
-                },
-              ],
-              keyTerms: [
-                {
-                  term: 'Qur’an',
-                  meaning:
-                    'The revealed Book of Allah and the primary source of guidance and belief for Muslims.',
-                },
-                {
-                  term: 'Sunnah',
-                  meaning:
-                    'The teachings, statements, actions, and approvals of the Messenger of Allah ﷺ.',
-                },
-                {
-                  term: 'Hadith',
-                  meaning:
-                    'A report describing a statement, action, approval, or characteristic attributed to the Prophet ﷺ.',
-                },
-              ],
-              reviewQuestions: [
-                'What is the Qur’an’s role in Islamic belief?',
-                'What does the term Sunnah refer to?',
-                'Why are authentic hadith important when studying Aqidah?',
-                'Why should claims about Islamic belief be checked against reliable sources?',
-              ],
-              sources: [
-                {
-                  type: 'quran',
-                  reference: 'Qur’an 4:59',
-                },
-                {
-                  type: 'quran',
-                  reference: 'Qur’an 4:136',
-                },
-                {
-                  type: 'hadith',
-                  reference: 'Sahih Muslim 8a/8e — Hadith of Jibril',
-                },
-              ],
+              title: 'Sources of Islamic Belief',
             },
-
             sw: {
-              objectives: [
-                'Kuelewa Qur’ani na Sunnah sahihi kama vyanzo vya msingi vya itikadi ya Kiislamu.',
-                'Kuelewa jinsi Qur’ani inavyotoa wahyi na jinsi Sunnah inavyoufafanua na kuuonyesha kwa vitendo.',
-                'Kujifunza kurejea vyanzo sahihi tunapochunguza mada za itikadi ya Kiislamu.',
-              ],
-              sections: [
-                {
-                  title: 'Qur’ani',
-                  paragraphs: [
-                    'Qur’ani ni wahyi wa Allah na chanzo kikuu cha wahyi katika itikadi ya Kiislamu. Inawafundisha Waislamu kuhusu Allah, majina na sifa Zake, mambo ya ghaibu, wahyi, Mitume, Siku ya Mwisho na mambo mengine ya imani.',
-                    'Tunaposoma Aqidah, ushahidi wa Qur’ani unapaswa kueleweka kwa kuzingatia muktadha wake na mafundisho sahihi yaliyofundishwa na Mtume ﷺ.',
-                  ],
-                },
-                {
-                  title: 'Sunnah sahihi',
-                  paragraphs: [
-                    'Sunnah inahusu mafundisho, maneno, matendo na maafikiano ya Mtume wa Allah ﷺ. Hadith sahihi huhifadhi mafundisho hayo na hutusaidia kuelewa jinsi wahyi ulivyofafanuliwa na kutekelezwa.',
-                    'Sunnah hufafanua mambo ya imani na ibada na hutoa mwongozo wa kuielewa na kuitumia Qur’ani.',
-                  ],
-                },
-                {
-                  title: 'Kutumia vyanzo kwa uangalifu',
-                  paragraphs: [
-                    'Muislamu hapaswi kuchukulia kila kauli inayopatikana mtandaoni au inayodaiwa kuwa ya Kiislamu kuwa ni ushahidi. Madai kuhusu itikadi yanapaswa kuchunguzwa kwa kurejea Qur’ani na Sunnah sahihi.',
-                    'Qur’ani na Sunnah vinapaswa kusomwa kwa msaada wa elimu sahihi, kuzingatia muktadha, na kuheshimu misingi iliyothibitishwa ya elimu ya Kiislamu.',
-                  ],
-                },
-              ],
-              keyTerms: [
-                {
-                  term: 'Qur’ani',
-                  meaning:
-                    'Kitabu kilichoteremshwa na Allah na chanzo kikuu cha mwongozo na itikadi kwa Waislamu.',
-                },
-                {
-                  term: 'Sunnah',
-                  meaning:
-                    'Mafundisho, maneno, matendo na maafikiano ya Mtume wa Allah ﷺ.',
-                },
-                {
-                  term: 'Hadith',
-                  meaning:
-                    'Riwaya inayosimulia kauli, tendo, maafikiano au sifa iliyohusishwa na Mtume ﷺ.',
-                },
-              ],
-              reviewQuestions: [
-                'Qur’ani ina nafasi gani katika itikadi ya Kiislamu?',
-                'Neno Sunnah linamaanisha nini?',
-                'Kwa nini hadith sahihi ni muhimu tunaposoma Aqidah?',
-                'Kwa nini madai kuhusu itikadi ya Kiislamu yanapaswa kuchunguzwa kwa vyanzo sahihi?',
-              ],
-              sources: [
-                {
-                  type: 'quran',
-                  reference: 'Qur’an 4:59',
-                },
-                {
-                  type: 'quran',
-                  reference: 'Qur’an 4:136',
-                },
-                {
-                  type: 'hadith',
-                  reference: 'Sahih Muslim 8a/8e — Hadith ya Jibril',
-                },
-              ],
+              title: 'Misingi ya Itikadi ya Kiislamu',
+            },
+            fr: {
+              title: 'Les sources de la croyance islamique',
             },
           },
         },
