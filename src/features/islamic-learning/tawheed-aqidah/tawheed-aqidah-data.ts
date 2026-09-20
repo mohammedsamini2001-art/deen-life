@@ -1,16 +1,24 @@
 export type TawheedLanguage = 'ar' | 'en' | 'sw' | 'fr'
 
-export interface TawheedLessonContent {
-  objectives: string[]
-  sections: {
-    title: string
-    paragraphs: string[]
+export interface TawheedSourceSection {
+  arabicTitle: string
+  arabicText: string[]
+  translations: Partial<Record<'en' | 'sw' | 'fr', string[]>>
+}
+
+export interface TawheedLessonSource {
+  arabicTitle: string
+  arabicIntroduction?: string[]
+  sections: TawheedSourceSection[]
+  keyTerms?: {
+    arabicTerm: string
+    arabicMeaning: string
+    translations: Partial<Record<'en' | 'sw' | 'fr', string>>
   }[]
-  keyTerms: {
-    term: string
-    meaning: string
+  reviewQuestions?: {
+    arabic: string
+    translations: Partial<Record<'en' | 'sw' | 'fr', string>>
   }[]
-  reviewQuestions: string[]
   sources: {
     type: 'quran' | 'hadith' | 'scholarly'
     reference: string
@@ -19,9 +27,28 @@ export interface TawheedLessonContent {
 
 export interface TawheedLesson {
   slug: string
-  title: string
   number: number
-  content: Partial<Record<TawheedLanguage, TawheedLessonContent>>
+  title?: string
+  source?: TawheedLessonSource
+  translations?: Partial<Record<'en' | 'sw' | 'fr', {
+    title: string
+  }>>
+  content?: Partial<Record<TawheedLanguage, {
+    objectives: string[]
+    sections: {
+      title: string
+      paragraphs: string[]
+    }[]
+    keyTerms: {
+      term: string
+      meaning: string
+    }[]
+    reviewQuestions: string[]
+    sources: {
+      type: 'quran' | 'hadith' | 'scholarly'
+      reference: string
+    }[]
+  }>>
 }
 
 export interface TawheedChapter {
@@ -49,151 +76,106 @@ export const TAWHEED_AQIDAH_COURSE: {
       lessons: [
         {
           slug: 'what-is-aqidah',
-          title: 'What is Aqidah?',
           number: 1,
-          content: {
+          source: {
+            arabicTitle: 'ما هي العقيدة؟',
+            arabicIntroduction: [
+              'العقيدة هي ما يعقد عليه القلب ويؤمن به إيمانًا جازمًا. وفي الإسلام تتعلق العقيدة بأصول الإيمان التي أخبر الله بها في كتابه، وبيّنها رسول الله ﷺ في سنته الصحيحة.',
+              'والإيمان الصحيح يقوم على التصديق بما جاء عن الله ورسوله ﷺ، ومن ذلك الإيمان بالله وملائكته وكتبه ورسله واليوم الآخر والقدر.',
+            ],
+            sections: [
+              {
+                arabicTitle: 'معنى العقيدة',
+                arabicText: [
+                  'العقيدة مأخوذة من العقد، وهو الربط والإحكام. ويقصد بها ما يعقد الإنسان عليه قلبه ويستقر فيه من اعتقاد.',
+                  'وعقيدة المسلم ليست مجرد أفكار أو معلومات، بل هي إيمان راسخ بما يجب اعتقاده في الله تعالى، وفي أصول الإيمان التي جاء بها الوحي.',
+                ],
+                translations: {
+                  en: [
+                    'Aqidah refers to what a person firmly holds and believes in their heart. In Islamic studies, it refers to the foundational beliefs established by revelation.',
+                    'A Muslim’s Aqidah is not merely a collection of ideas or information. It is firm belief in what must be believed about Allah and the foundations of faith taught by revelation.',
+                  ],
+                  sw: [
+                    'Aqidah inahusu mambo ambayo mtu anayashikilia na kuyaamini kwa yakini moyoni. Katika elimu ya Kiislamu, inahusu misingi ya imani iliyowekwa na wahyi.',
+                    'Aqidah ya Muislamu si mkusanyiko wa mawazo au taarifa tu. Ni imani thabiti katika yale yanayopaswa kuaminiwa kuhusu Allah na misingi ya imani iliyofundishwa na wahyi.',
+                  ],
+                  fr: [
+                    'La Aqida désigne ce que la personne tient fermement dans son cœur et croit avec certitude. Dans les études islamiques, elle désigne les fondements de la croyance établis par la révélation.',
+                    'La Aqida du musulman n’est pas simplement un ensemble d’idées ou d’informations. Elle est une croyance ferme en ce qui doit être cru au sujet d’Allah et des fondements de la foi enseignés par la révélation.',
+                  ],
+                },
+              },
+              {
+                arabicTitle: 'مصادر العقيدة الإسلامية',
+                arabicText: [
+                  'مصدر العقيدة الإسلامية هو الوحي الذي أنزله الله تعالى، وفي مقدمة ذلك القرآن الكريم، وما صح عن رسول الله ﷺ من السنة.',
+                  'وقد بيّن النبي ﷺ أصول الإيمان في حديث جبريل، فذكر الإيمان بالله وملائكته وكتبه ورسله واليوم الآخر والقدر.',
+                ],
+                translations: {
+                  en: [
+                    'The foundation of Islamic belief is revelation from Allah, foremost the Qur’an and what has been authentically transmitted from the Sunnah of the Messenger of Allah ﷺ.',
+                    'The Prophet ﷺ explained the foundations of Iman in the Hadith of Jibril, mentioning belief in Allah, His angels, His Books, His messengers, the Last Day, and divine decree.',
+                  ],
+                  sw: [
+                    'Msingi wa itikadi ya Kiislamu ni wahyi kutoka kwa Allah, hasa Qur’ani na yale yaliyothibiti kwa usahihi kutoka katika Sunnah ya Mtume wa Allah ﷺ.',
+                    'Mtume ﷺ alieleza misingi ya Imani katika Hadith ya Jibril, akataja kumuamini Allah, Malaika Wake, Vitabu Vyake, Mitume Wake, Siku ya Mwisho na Qadar.',
+                  ],
+                  fr: [
+                    'Le fondement de la croyance islamique est la révélation d’Allah, en premier lieu le Coran et ce qui est authentiquement transmis de la Sunna du Messager d’Allah ﷺ.',
+                    'Le Prophète ﷺ a expliqué les fondements de la foi dans le hadith de Jibril, en mentionnant la foi en Allah, Ses anges, Ses Livres, Ses messagers, le Jour dernier et le destin.',
+                  ],
+                },
+              },
+              {
+                arabicTitle: 'أهمية العقيدة',
+                arabicText: [
+                  'العقيدة الصحيحة هي أساس عبادة المسلم وفهمه لدينه؛ فمن خلالها يعرف المسلم ربَّه، وما يجب له من التوحيد والعبادة، ويعرف أصول الإيمان التي يقوم عليها دينه.',
+                  'ولهذا يبدأ تعلم العقيدة بمعرفة أصول الإيمان، ثم يتدرج في دراسة التوحيد وسائر مسائل الاعتقاد على ضوء القرآن والسنة الصحيحة.',
+                ],
+                translations: {
+                  en: [
+                    'Sound belief is a foundation for a Muslim’s worship and understanding of Islam. Through it, a Muslim learns about their Lord, what is due to Him in worship and Tawheed, and the foundations of faith upon which the religion is established.',
+                    'For this reason, the study of Aqidah begins with the foundations of faith and then progresses to Tawheed and other matters of belief in light of the Qur’an and authentic Sunnah.',
+                  ],
+                  sw: [
+                    'Itikadi sahihi ni msingi wa ibada ya Muislamu na uelewa wake wa Uislamu. Kupitia Aqidah, Muislamu humjua Mola wake, anayostahiki katika Tawheed na ibada, na misingi ya imani ambayo dini imejengwa juu yake.',
+                    'Kwa sababu hiyo, kujifunza Aqidah huanza kwa misingi ya imani, kisha kuendelea katika Tawheed na masuala mengine ya itikadi kwa mwanga wa Qur’ani na Sunnah sahihi.',
+                  ],
+                  fr: [
+                    'Une croyance saine constitue une base pour l’adoration du musulman et sa compréhension de l’Islam. Par elle, le musulman apprend à connaître son Seigneur, ce qui Lui revient en matière de tawhid et d’adoration, ainsi que les fondements de la foi sur lesquels repose la religion.',
+                    'C’est pourquoi l’étude de la Aqida commence par les fondements de la foi, puis progresse vers le tawhid et les autres questions de croyance à la lumière du Coran et de la Sunna authentique.',
+                  ],
+                },
+              },
+            ],
+            sources: [
+              {
+                type: 'quran',
+                reference: 'Qur’an 2:285',
+              },
+              {
+                type: 'quran',
+                reference: 'Qur’an 4:136',
+              },
+              {
+                type: 'hadith',
+                reference: 'Sahih Muslim 8e — Hadith of Jibril',
+              },
+              {
+                type: 'hadith',
+                reference: 'Sahih al-Bukhari 50 — Hadith of Jibril',
+              },
+            ],
+          },
+          translations: {
             en: {
-              objectives: [
-                'Understand what Aqidah means in Islamic studies.',
-                'Recognize that Aqidah concerns the beliefs a Muslim holds.',
-                'Identify the Qur’an and authentic Sunnah as the foundations of Islamic belief.',
-              ],
-              sections: [
-                {
-                  title: 'Aqidah means belief',
-                  paragraphs: [
-                    'Aqidah refers to the beliefs that a person firmly holds in their heart. In Islamic studies, it is used for the foundational beliefs that a Muslim accepts about Allah, His revelation, His messengers, the unseen, and the realities of faith.',
-                    'Aqidah is therefore not simply a list of ideas. It concerns what a Muslim believes to be true and how those beliefs shape worship, understanding, and life.',
-                  ],
-                },
-                {
-                  title: 'The foundations of Islamic belief',
-                  paragraphs: [
-                    'The foundations of Islamic belief are taken from the Qur’an and the authentic teachings of the Messenger of Allah ﷺ. The Hadith of Jibril gives a central explanation of Iman by mentioning belief in Allah, His angels, His Books, His messengers, the Last Day, and divine decree.',
-                    'These foundations will be studied progressively throughout this course rather than treated as isolated definitions.',
-                  ],
-                },
-                {
-                  title: 'Why we study Aqidah',
-                  paragraphs: [
-                    'A sound understanding of belief helps a Muslim understand why Allah is worshipped, what revelation teaches, and how faith relates to worship and character.',
-                    'This course therefore begins with the foundations before moving into Tawheed, the articles of Iman, and related subjects.',
-                  ],
-                },
-              ],
-              keyTerms: [
-                {
-                  term: 'Aqidah',
-                  meaning:
-                    'Foundational matters of belief that a person firmly accepts.',
-                },
-                {
-                  term: 'Iman',
-                  meaning:
-                    'Faith and belief; the Sunnah describes its foundational objects of belief.',
-                },
-                {
-                  term: 'Tawheed',
-                  meaning:
-                    'Affirming the oneness and uniqueness of Allah in accordance with the Qur’an and Sunnah.',
-                },
-              ],
-              reviewQuestions: [
-                'What does Aqidah refer to?',
-                'What are the two primary sources used for Islamic belief?',
-                'Name the six foundational matters of Iman mentioned in the Hadith of Jibril.',
-                'Why is studying Aqidah important for a Muslim?',
-              ],
-              sources: [
-                {
-                  type: 'quran',
-                  reference: 'Qur’an 2:285',
-                },
-                {
-                  type: 'quran',
-                  reference: 'Qur’an 4:136',
-                },
-                {
-                  type: 'hadith',
-                  reference: 'Sahih Muslim 8e — Hadith of Jibril',
-                },
-                {
-                  type: 'hadith',
-                  reference: 'Sahih al-Bukhari 50 — Hadith of Jibril',
-                },
-              ],
+              title: 'What is Aqidah?',
             },
-
             sw: {
-              objectives: [
-                'Kuelewa maana ya Aqidah katika elimu ya Kiislamu.',
-                'Kutambua kwamba Aqidah inahusu misingi ya imani ya Muislamu.',
-                'Kutambua Qur’ani na Sunnah sahihi kama misingi ya itikadi ya Kiislamu.',
-              ],
-              sections: [
-                {
-                  title: 'Aqidah maana yake ni imani',
-                  paragraphs: [
-                    'Aqidah inahusu mambo ambayo mtu anayashikilia kwa yakini moyoni. Katika elimu ya Kiislamu, neno hili hutumika kuelezea misingi ya imani kuhusu Allah, wahyi Wake, Mitume Wake, mambo ya ghaibu, na mambo ya msingi ya imani.',
-                    'Kwa hiyo, Aqidah si orodha ya mawazo tu. Inahusu mambo ambayo Muislamu anaamini kuwa ni ya kweli na jinsi imani hiyo inavyoathiri ibada, uelewa na maisha.',
-                  ],
-                },
-                {
-                  title: 'Misingi ya itikadi ya Kiislamu',
-                  paragraphs: [
-                    'Misingi ya itikadi ya Kiislamu inachukuliwa kutoka katika Qur’ani na mafundisho sahihi ya Mtume wa Allah ﷺ. Hadith ya Jibril inaeleza msingi wa Imani kwa kutaja kumuamini Allah, Malaika Wake, Vitabu Vyake, Mitume Wake, Siku ya Mwisho na Qadar.',
-                    'Katika kozi hii, misingi hiyo itasomwa hatua kwa hatua badala ya kuishia katika ufafanuzi mfupi wa maneno.',
-                  ],
-                },
-                {
-                  title: 'Kwa nini tunasoma Aqidah?',
-                  paragraphs: [
-                    'Uelewa sahihi wa imani humsaidia Muislamu kuelewa kwa nini Allah anaabudiwa, kile ambacho wahyi unafundisha, na uhusiano kati ya imani, ibada na tabia.',
-                    'Kwa hiyo, kozi hii inaanza na misingi kabla ya kuingia katika Tawheed, nguzo za Imani na mada zinazohusiana nazo.',
-                  ],
-                },
-              ],
-              keyTerms: [
-                {
-                  term: 'Aqidah',
-                  meaning:
-                    'Mambo ya msingi ya imani ambayo mtu anayakubali kwa yakini.',
-                },
-                {
-                  term: 'Imani',
-                  meaning:
-                    'Kuamini; katika Sunnah imeelezwa kupitia mambo ya msingi ambayo muumini anapaswa kuyaamini.',
-                },
-                {
-                  term: 'Tawheed',
-                  meaning:
-                    'Kuthibitisha upweke na upekee wa Allah kwa mujibu wa Qur’ani na Sunnah.',
-                },
-              ],
-              reviewQuestions: [
-                'Aqidah inahusu nini?',
-                'Ni vyanzo gani viwili vya msingi vya itikadi ya Kiislamu?',
-                'Taja mambo sita ya msingi ya Imani yaliyotajwa katika Hadith ya Jibril.',
-                'Kwa nini kusoma Aqidah ni muhimu kwa Muislamu?',
-              ],
-              sources: [
-                {
-                  type: 'quran',
-                  reference: 'Qur’an 2:285',
-                },
-                {
-                  type: 'quran',
-                  reference: 'Qur’an 4:136',
-                },
-                {
-                  type: 'hadith',
-                  reference: 'Sahih Muslim 8e — Hadith ya Jibril',
-                },
-                {
-                  type: 'hadith',
-                  reference: 'Sahih al-Bukhari 50 — Hadith ya Jibril',
-                },
-              ],
+              title: 'Aqidah ni nini?',
+            },
+            fr: {
+              title: 'Qu’est-ce que la Aqida ?',
             },
           },
         },

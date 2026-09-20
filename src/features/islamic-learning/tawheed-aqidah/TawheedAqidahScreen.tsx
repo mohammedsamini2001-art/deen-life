@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { TAWHEED_AQIDAH_COURSE } from './tawheed-aqidah-data'
-import type { TawheedLanguage, TawheedLessonContent } from './tawheed-aqidah-data'
+import type { TawheedLanguage, TawheedLessonSource } from './tawheed-aqidah-data'
 
 interface TawheedAqidahScreenProps {
   language: TawheedLanguage
@@ -25,9 +25,6 @@ export default function TawheedAqidahScreen({
   )
 
   const lesson = lessons[lessonIndex]
-  const content = lesson?.content[language] as
-    | TawheedLessonContent
-    | undefined
 
   const selectChapter = (chapterSlug: string) => {
     const chapter = TAWHEED_AQIDAH_COURSE.chapters.find(
@@ -54,6 +51,100 @@ export default function TawheedAqidahScreen({
       setSelectedLessonSlug(nextLesson.slug)
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
+  }
+
+  const getLessonTitle = (currentLesson: typeof lesson) => {
+    if (!currentLesson) return ''
+
+    if (currentLesson.source) {
+      if (language === 'ar') return currentLesson.source.arabicTitle
+      return currentLesson.translations?.[language]?.title ?? currentLesson.source.arabicTitle
+    }
+
+    return currentLesson.title ?? ''
+  }
+
+  const renderSourceLesson = (source: TawheedLessonSource) => {
+    if (language === 'ar') {
+      return (
+        <>
+          <div className="tawheed-lesson-heading" dir="rtl">
+            <span className="eyebrow">
+              الدرس {lesson?.number}
+            </span>
+            <h3>{source.arabicTitle}</h3>
+          </div>
+
+          {source.arabicIntroduction?.map(paragraph => (
+            <p key={paragraph} dir="rtl">
+              {paragraph}
+            </p>
+          ))}
+
+          {source.sections.map(section => (
+            <section className="tawheed-section" key={section.arabicTitle} dir="rtl">
+              <h4>{section.arabicTitle}</h4>
+              {section.arabicText.map(paragraph => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </section>
+          ))}
+
+          <section className="tawheed-sources" dir="rtl">
+            <span className="eyebrow">المصادر</span>
+            {source.sources.map(item => (
+              <small key={`${item.type}-${item.reference}`}>
+                {item.reference}
+              </small>
+            ))}
+          </section>
+        </>
+      )
+    }
+
+    const translation = language as 'en' | 'sw' | 'fr'
+
+    return (
+      <>
+        <div className="tawheed-lesson-heading">
+          <span className="eyebrow">
+            CHAPTER {selectedChapter?.number} · LESSON {lesson?.number}
+          </span>
+          <h3 dir="rtl">{source.arabicTitle}</h3>
+          <p>{lesson?.translations?.[language]?.title}</p>
+        </div>
+
+        {source.arabicIntroduction?.map(paragraph => (
+          <div className="tawheed-source-pair" key={paragraph}>
+            <p dir="rtl">{paragraph}</p>
+          </div>
+        ))}
+
+        {source.sections.map(section => (
+          <section className="tawheed-section" key={section.arabicTitle}>
+            <h4 dir="rtl">{section.arabicTitle}</h4>
+
+            {section.arabicText.map((paragraph, index) => (
+              <div className="tawheed-source-pair" key={paragraph}>
+                <p dir="rtl">{paragraph}</p>
+                {translation && section.translations[translation]?.[index] && (
+                  <p>{section.translations[translation][index]}</p>
+                )}
+              </div>
+            ))}
+          </section>
+        ))}
+
+        <section className="tawheed-sources">
+          <span className="eyebrow">SOURCES</span>
+          {source.sources.map(item => (
+            <small key={`${item.type}-${item.reference}`}>
+              {item.reference}
+            </small>
+          ))}
+        </section>
+      </>
+    )
   }
 
   return (
@@ -112,7 +203,7 @@ export default function TawheedAqidahScreen({
                   <span>
                     Lesson {lesson?.number} of {lessons.length}
                   </span>
-                  <strong>{lesson?.title}</strong>
+                  <strong>{getLessonTitle(lesson)}</strong>
                 </div>
 
                 <div
@@ -146,74 +237,26 @@ export default function TawheedAqidahScreen({
                       onClick={() => setSelectedLessonSlug(item.slug)}
                     >
                       <span>{item.number}</span>
-                      <strong>{item.title}</strong>
+                      <strong>{getLessonTitle(item)}</strong>
                     </button>
                   ))}
                 </aside>
 
                 <article className="tawheed-lesson-content">
-                  {lesson && content ? (
-                    <>
-                      <div className="tawheed-lesson-heading">
-                        <span className="eyebrow">
-                          CHAPTER {selectedChapter.number} · LESSON {lesson.number}
-                        </span>
-                        <h3>{lesson.title}</h3>
-                      </div>
-
-                      <section className="tawheed-objectives">
-                        <span className="eyebrow">LEARNING OBJECTIVES</span>
-                        <ul>
-                          {content.objectives.map(objective => (
-                            <li key={objective}>{objective}</li>
-                          ))}
-                        </ul>
-                      </section>
-
-                      {content.sections.map(section => (
-                        <section className="tawheed-section" key={section.title}>
-                          <h4>{section.title}</h4>
-                          {section.paragraphs.map(paragraph => (
-                            <p key={paragraph}>{paragraph}</p>
-                          ))}
-                        </section>
-                      ))}
-
-                      <section className="tawheed-key-terms">
-                        <span className="eyebrow">KEY TERMS</span>
-                        {content.keyTerms.map(item => (
-                          <div className="tawheed-term" key={item.term}>
-                            <strong>{item.term}</strong>
-                            <p>{item.meaning}</p>
-                          </div>
-                        ))}
-                      </section>
-
-                      <section className="tawheed-review">
-                        <span className="eyebrow">REVIEW</span>
-                        <ol>
-                          {content.reviewQuestions.map(question => (
-                            <li key={question}>{question}</li>
-                          ))}
-                        </ol>
-                      </section>
-
-                      <section className="tawheed-sources">
-                        <span className="eyebrow">SOURCES</span>
-                        {content.sources.map(source => (
-                          <small key={`${source.type}-${source.reference}`}>
-                            {source.reference}
-                          </small>
-                        ))}
-                      </section>
-                    </>
+                  {lesson?.source ? (
+                    renderSourceLesson(lesson.source)
+                  ) : lesson ? (
+                    <div className="tawheed-unavailable">
+                      <span className="eyebrow">CONTENT MIGRATION</span>
+                      <h3>This lesson is still using the previous content format.</h3>
+                      <p>
+                        Its Arabic source-centered version will be added during the next migration step.
+                      </p>
+                    </div>
                   ) : (
                     <div className="tawheed-unavailable">
                       <span className="eyebrow">LANGUAGE CONTENT</span>
-                      <h3>This lesson is not yet available in this language.</h3>
-                      <p>
-                        More translations will be added as the learning library grows.
-                      </p>
+                      <h3>This lesson is not yet available.</h3>
                     </div>
                   )}
 
