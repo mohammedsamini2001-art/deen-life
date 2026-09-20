@@ -10,8 +10,16 @@ export interface TahawiyyahLesson {
   slug: string
   teachingTitle: string
   sourceUnitIds: number[]
-  title: Record<TawheedLanguage, string>
-  explanation: Record<TawheedLanguage, string>
+
+  original: {
+    language: 'ar'
+    sourceUnitIds: number[]
+  }
+
+  title: Record<Exclude<TawheedLanguage, 'ar'>, string>
+  translation: Record<Exclude<TawheedLanguage, 'ar'>, string>
+  explanation: Record<Exclude<TawheedLanguage, 'ar'>, string>
+
   quranReferences: string[]
   hadithReferences: string[]
   scholarlyReferences: string[]

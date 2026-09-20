@@ -3513,3 +3513,25 @@ button.secondary:active {
     line-height: 2.05;
   }
 }
+
+.tawheed-aqidah-original-header {
+  display: grid;
+  gap: 8px;
+  margin: 20px 0;
+  padding: 18px;
+  border: 1px solid rgba(212, 168, 79, 0.22);
+  border-radius: 16px;
+  background: rgba(212, 168, 79, 0.055);
+}
+
+.tawheed-aqidah-original-header strong {
+  color: var(--text-primary);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.45rem;
+  line-height: 1.8;
+}
+
+.tawheed-aqidah-original-header > span:last-child {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}

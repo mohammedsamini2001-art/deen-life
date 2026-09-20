@@ -25,5 +25,39 @@ export const TAHAWIYYAH_CURRICULUM: TahawiyyahCurriculum = {
     authorEnglish: 'Abu Ja‘far Ahmad ibn Muhammad al-Tahawi',
     sourceUrl: 'https://islamhouse.com/ar/books/1899',
   },
-  lessons: [],
+  lessons: [
+    {
+      number: 1,
+      slug: 'tawhid-and-the-uniqueness-of-allah',
+      teachingTitle: 'Tawhid and the uniqueness of Allah',
+      sourceUnitIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+
+      original: {
+        language: 'ar',
+        sourceUnitIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+      },
+
+      title: {
+        en: 'Tawhid and the uniqueness of Allah',
+        sw: 'Tawhidi na upekee wa Allah',
+        fr: 'Le Tawhid et l’unicité d’Allah',
+      },
+
+      translation: {
+        en: '',
+        sw: '',
+        fr: '',
+      },
+
+      explanation: {
+        en: '',
+        sw: '',
+        fr: '',
+      },
+
+      quranReferences: [],
+      hadithReferences: [],
+      scholarlyReferences: [],
+    },
+  ],
 }
