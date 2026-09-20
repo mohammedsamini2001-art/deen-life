@@ -1,8 +1,12 @@
 import { useMemo } from 'react'
 import {
+  TAHAWIYYAH_CURRICULUM,
   TAHAWIYYAH_SOURCE_UNITS,
 } from './source/tahawiyyah-curriculum'
 import { TAHAWIYYAH_LESSON_MAP } from './source/tahawiyyah-lesson-map'
+
+const TAHAWIYYAH_SOURCE_TITLE_ARABIC = TAHAWIYYAH_CURRICULUM.source.titleArabic
+const TAHAWIYYAH_SOURCE_AUTHOR_ARABIC = TAHAWIYYAH_CURRICULUM.source.authorArabic
 
 export default function TawheedAqidahLessonScreen({
   lessonNumber,
@@ -43,10 +47,17 @@ export default function TawheedAqidahLessonScreen({
         <p className="eyebrow">LESSON {lesson.lesson}</p>
         <h2>{lesson.teachingTitle}</h2>
 
+        <div className="tawheed-aqidah-original-header">
+          <span className="eyebrow">العربية — ORIGINAL SOURCE</span>
+          <strong dir="rtl" lang="ar">
+            {TAHAWIYYAH_SOURCE_TITLE_ARABIC}
+          </strong>
+          <span>{TAHAWIYYAH_SOURCE_AUTHOR_ARABIC}</span>
+        </div>
+
         <p className="tawheed-aqidah-source-note">
-          Source text from Al-Aqidah al-Tahawiyyah. The lesson title is a
-          DEEN LIFE teaching label; the Arabic text below is preserved from
-          the verified source.
+          The Arabic text below is preserved from the verified source.
+          Translation and explanation layers will be added separately.
         </p>
 
         <div className="tawheed-aqidah-source-list">
