@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import TawheedAqidahScreen from './features/islamic-learning/tawheed-aqidah/TawheedAqidahScreen'
 import QuranReader from './features/quran/QuranReader'
 import PrayerTimes from './features/prayer/PrayerTimes'
 import DuasScreen from './features/duas/DuasScreen'
@@ -6,7 +7,6 @@ import QiblaDetector from './features/qibla/QiblaDetector'
 import KnowledgeScreen from './features/knowledge/KnowledgeScreen'
 import PremiumScreen from './features/premium/PremiumScreen'
 import IslamicLearningScreen from './features/islamic-learning/IslamicLearningScreen'
-import TawheedAqidahScreen from './features/islamic-learning/tawheed-aqidah/TawheedAqidahScreen'
 import TasbihScreen from './features/tasbih/TasbihScreen'
 import DeenAiScreen from './features/ai/DeenAiScreen'
 
@@ -110,13 +110,17 @@ function App() {
         {page === 'premium' && <PremiumScreen onOpenTasbih={() => navigateTo('tasbih')} onOpenAi={() => navigateTo('ai')} onOpenLearning={() => navigateTo('islamic-learning')} />}
         {page === 'tasbih' && <TasbihScreen onBack={() => navigateTo('premium')} onOpenPremium={() => navigateTo('premium')} />}
         {page === 'ai' && <DeenAiScreen onBack={() => navigateTo('premium')} onOpenPremium={() => navigateTo('premium')} />}
-        {page === 'islamic-learning' && <IslamicLearningScreen onBack={() => navigateTo('premium')} onOpenSubject={(slug, language) => {
-            if (slug === 'tawheed-aqidah') {
-              setLearningLanguage(language as 'ar' | 'en' | 'sw' | 'fr')
-              navigateTo('tawheed-aqidah')
-            }
-          }} />}
-        {page === 'tawheed-aqidah' && <TawheedAqidahScreen language={learningLanguage} onBack={() => navigateTo('islamic-learning')} />}
+        {page === 'islamic-learning' && (
+          <IslamicLearningScreen
+            onBack={() => navigateTo('premium')}
+            onOpenSubject={(slug) => {
+              if (slug === 'tawheed-aqidah') {
+                navigateTo('tawheed-aqidah')
+              }
+            }}
+          />
+        )}
+        {page === 'tawheed-aqidah' && <TawheedAqidahScreen onBack={() => navigateTo('islamic-learning')} />}
       </main>
 
       {page !== 'premium' && (

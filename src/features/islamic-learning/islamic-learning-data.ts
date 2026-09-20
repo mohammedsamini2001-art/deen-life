@@ -42,8 +42,10 @@ export const ISLAMIC_LEARNING_SUBJECTS: IslamicLearningSubject[] = [
   {
     slug: 'tawheed-aqidah',
     title: 'Tawheed & Aqidah',
-    description: 'Learn the foundations of Islamic belief, Tawheed, Iman, and matters of creed step by step.',
+    description: 'Study Al-Aqidah al-Tahawiyyah from its verified classical Arabic source.',
   },
+
+
   {
     slug: 'hadith',
     title: 'Hadith',

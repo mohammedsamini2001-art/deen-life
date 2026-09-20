@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { TAWHEED_AQIDAH_COURSE } from './tawheed-aqidah/tawheed-aqidah-data'
 import {
   ISLAMIC_LEARNING_LANGUAGES,
   ISLAMIC_LEARNING_SUBJECTS,

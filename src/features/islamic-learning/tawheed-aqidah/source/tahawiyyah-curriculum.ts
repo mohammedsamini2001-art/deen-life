@@ -3,7 +3,7 @@ import type {
   TahawiyyahSourceUnit,
 } from './tahawiyyah-curriculum-types'
 
-import sourceUnits from '../../../../../../../.tahawiyyah-inspect/source-units.json'
+import sourceUnits from './tahawiyyah-source-units.json'
 
 const units = sourceUnits as Array<{
   sourceParagraph: number
