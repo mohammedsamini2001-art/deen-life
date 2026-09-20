@@ -941,6 +941,114 @@ export const TAWHEED_AQIDAH_COURSE: {
       fr: { title: 'Les Noms et Attributs d’Allah' },
     },
   },
+  {
+    slug: 'tawheed-and-worship',
+    number: 3,
+    source: {
+      arabicTitle: 'التوحيد وأثره في العبادة',
+      arabicIntroduction: [
+        'التوحيد هو إفراد الله تعالى بما يختص به من الربوبية والألوهية والأسماء والصفات، وهو أصل الدين وأعظم ما دعا إليه الرسل.',
+        'وتوحيد العبادة يعني إفراد الله تعالى بجميع أنواع العبادة التي شرعها، فلا يُصرف شيء منها لغيره.',
+      ],
+      sections: [
+        {
+          arabicTitle: 'التوحيد هو أصل دعوة الرسل',
+          arabicText: [
+            'بعث الله الرسل عليهم السلام لدعوة أقوامهم إلى عبادة الله وحده واجتناب عبادة ما سواه. قال الله تعالى: وَلَقَدْ بَعَثْنَا فِي كُلِّ أُمَّةٍ رَسُولًا أَنِ اعْبُدُوا اللَّهَ وَاجْتَنِبُوا الطَّاغُوتَ.',
+            'فأصل دعوتهم واحد، وهو توحيد الله وإخلاص العبادة له، وإن اختلفت بعض الشرائع والتفاصيل بين الأمم.',
+          ],
+          translations: {
+            en: [
+              'Allah sent the messengers to call their peoples to worship Allah alone and avoid worshipping anything besides Him. The Qur’an states that a messenger was sent to every nation with the call to worship Allah and avoid false objects of worship.',
+              'The foundation of their call was therefore one: affirming Allah’s oneness and directing worship sincerely to Him, even though some laws and details differed between communities.',
+            ],
+            sw: [
+              'Allah aliwatuma Mitume kwa watu wao ili wawalinganie wamuabudu Allah peke Yake na waepuke kuabudu chochote kisichokuwa Yeye. Qur’an inaeleza kwamba kwa kila umma alitumwa Mtume akiwa na mwito wa kumuabudu Allah na kujiepusha na waabudiwa wa batili.',
+              'Kwa hiyo msingi wa mwito wao ulikuwa mmoja: kumpwekesha Allah na kuelekeza ibada Kwake kwa ikhlasi, ingawa baadhi ya sheria na maelezo yalitofautiana kati ya umma na umma.',
+            ],
+            fr: [
+              'Allah a envoyé les messagers appeler leurs peuples à adorer Allah seul et à éviter l’adoration de toute chose en dehors de Lui. Le Coran indique qu’un messager fut envoyé à chaque communauté avec cet appel.',
+              'Le fondement de leur message était donc le même : affirmer l’unicité d’Allah et Lui consacrer l’adoration avec sincérité, même si certaines lois et certains détails différaient entre les communautés.',
+            ],
+          },
+        },
+        {
+          arabicTitle: 'العبادة حق لله وحده',
+          arabicText: [
+            'الصلاة والدعاء والخوف والرجاء والتوكل وسائر العبادات التي شرعها الله يجب أن تكون لله وحده. قال الله تعالى: وَمَا خَلَقْتُ الْجِنَّ وَالْإِنْسَ إِلَّا لِيَعْبُدُونِ.',
+            'فإذا عرف المسلم أن الله هو خالقه وربه، علم أن العبادة حق له سبحانه، وأن صرف العبادة لغير الله يناقض التوحيد.',
+          ],
+          translations: {
+            en: [
+              'Prayer, supplication, fear, hope, reliance, and all other acts of worship legislated by Allah are to be directed to Him alone. The Qur’an states that Allah created jinn and humankind to worship Him.',
+              'When a Muslim knows that Allah is his Creator and Lord, he understands that worship belongs to Him alone and that directing worship to another contradicts Tawheed.',
+            ],
+            sw: [
+              'Swala, dua, khofu, matumaini, tawakkul na aina nyingine zote za ibada alizoamrisha Allah zinapaswa kuelekezwa Kwake peke Yake. Qur’an inaeleza kwamba Allah aliwaumba majini na wanadamu ili wamuabudu.',
+              'Muislamu anapojua kwamba Allah ndiye Muumba na Mola wake, hutambua kwamba ibada ni haki Yake peke Yake na kwamba kuelekeza ibada kwa mwingine kunapingana na Tawheed.',
+            ],
+            fr: [
+              'La prière, l’invocation, la crainte, l’espérance, la confiance et tous les autres actes d’adoration prescrits par Allah doivent Lui être consacrés seul. Le Coran affirme qu’Allah a créé les djinns et les humains afin qu’ils L’adorent.',
+              'Lorsque le musulman sait qu’Allah est son Créateur et son Seigneur, il comprend que l’adoration Lui appartient seul et que la diriger vers un autre contredit le Tawhid.',
+            ],
+          },
+        },
+        {
+          arabicTitle: 'التوحيد يظهر في أعمال القلب والجوارح',
+          arabicText: [
+            'التوحيد ليس مجرد قول باللسان، بل يظهر أثره في قلب المسلم وأقواله وأعماله. فيخلص لله المحبة والخوف والرجاء والتوكل وسائر أعمال القلوب.',
+            'ويظهر أثر التوحيد كذلك في الصلاة والدعاء والصدقة والصيام وسائر الطاعات، فيقصد المسلم بها وجه الله تعالى.',
+          ],
+          translations: {
+            en: [
+              'Tawheed is not merely a statement of the tongue. Its effect appears in a Muslim’s heart, words, and actions. The believer directs love, fear, hope, reliance, and other acts of the heart sincerely to Allah.',
+              'Tawheed also appears in prayer, supplication, charity, fasting, and other acts of obedience, which the Muslim performs seeking the pleasure of Allah.',
+            ],
+            sw: [
+              'Tawheed si kauli ya ulimi pekee, bali athari yake huonekana katika moyo, maneno na matendo ya Muislamu. Muumini humwelekea Allah kwa upendo, khofu, matumaini, tawakkul na matendo mengine ya moyo kwa ikhlasi.',
+              'Tawheed pia huonekana katika Swala, dua, sadaka, Saumu na utiifu mwingine, ambao Muislamu huufanya akitafuta radhi za Allah.',
+            ],
+            fr: [
+              'Le Tawhid n’est pas seulement une parole de la langue. Son effet apparaît dans le cœur, les paroles et les actes du musulman. Le croyant consacre sincèrement à Allah l’amour, la crainte, l’espérance, la confiance et les autres actes du cœur.',
+              'Le Tawhid apparaît également dans la prière, l’invocation, l’aumône, le jeûne et les autres actes d’obéissance, que le musulman accomplit en recherchant l’agrément d’Allah.',
+            ],
+          },
+        },
+        {
+          arabicTitle: 'التوحيد يحرر القلب من التعلق بغير الله',
+          arabicText: [
+            'إذا امتلأ قلب المسلم بتوحيد الله تعلق به وحده، ولم يجعل المخلوقين غاية عبادته أو رجائه أو خوفه، مع معرفته أن الناس أسباب وأن الله هو المدبر للأمور.',
+            'وهذا لا يعني ترك الأسباب المشروعة، بل يعني اعتماد القلب على الله مع الأخذ بالأسباب التي أباحها وشرعها.',
+          ],
+          translations: {
+            en: [
+              'When a Muslim’s heart is filled with Tawheed, he turns to Allah alone and does not make created beings the ultimate object of worship, hope, or fear, while recognizing that people are means and Allah controls all affairs.',
+              'This does not mean abandoning lawful means. Rather, it means relying upon Allah while taking the means that He has permitted and legislated.',
+            ],
+            sw: [
+              'Moyo wa Muislamu unapojazwa na Tawheed, humwelekea Allah peke Yake na hafanyi viumbe kuwa lengo kuu la ibada, matumaini au khofu yake, huku akitambua kwamba watu ni sababu na Allah ndiye anayesimamia mambo yote.',
+              'Hii haimaanishi kuacha sababu halali. Bali inamaanisha kumtegemea Allah huku akichukua sababu ambazo Yeye ameziruhusu na kuzifanya kuwa halali.',
+            ],
+            fr: [
+              'Lorsque le cœur du musulman est rempli de Tawhid, il se tourne vers Allah seul et ne fait pas des créatures l’objet ultime de son adoration, de son espoir ou de sa crainte, tout en reconnaissant que les gens ne sont que des moyens et qu’Allah dirige toute chose.',
+              'Cela ne signifie pas abandonner les moyens permis. Cela signifie plutôt placer sa confiance en Allah tout en prenant les moyens qu’Il a permis et prescrits.',
+            ],
+          },
+        },
+      ],
+      sources: [
+        { type: 'quran', reference: 'Qur’an 16:36' },
+        { type: 'quran', reference: 'Qur’an 51:56' },
+        { type: 'quran', reference: 'Qur’an 1:5' },
+        { type: 'quran', reference: 'Qur’an 39:2–3' },
+      ],
+    },
+    translations: {
+      en: { title: 'Tawheed and Its Effect on Worship' },
+      sw: { title: 'Tawheed na Athari Yake katika Ibada' },
+      fr: { title: 'Le Tawhid et son effet sur l’adoration' },
+    },
+  },
     {
       slug: 'understanding-tawheed',
       title: 'Understanding Tawheed',
