@@ -3112,13 +3112,15 @@ button.secondary:active {
   padding: 2px 4px 8px;
   border: 0;
   background: transparent;
-  color: inherit;
+  color: var(--text-color, #1f2937);
   text-align: left;
   cursor: pointer;
 }
 
 .tawheed-course-back {
   margin: 18px 0 10px;
+  color: var(--text-color, #1f2937);
+  background: transparent;
 }
 
 .tawheed-selected-chapter {
@@ -3157,7 +3159,7 @@ button.secondary:active {
   border: 1px solid transparent;
   border-radius: 14px;
   background: transparent;
-  color: inherit;
+  color: var(--text-color, #1f2937);
   text-align: left;
   cursor: pointer;
 }
