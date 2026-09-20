@@ -394,225 +394,176 @@ export const TAWHEED_AQIDAH_COURSE: {
         },
         {
           slug: 'six-pillars-of-iman',
-          title: 'The Six Pillars of Iman',
           number: 4,
-          content: {
-        en: {
-          objectives: [
-            'Identify the six articles of Iman described in the Qur’an and authentic Sunnah.',
-            'Understand what belief in Allah, angels, revealed books, messengers, the Last Day, and divine decree means.',
-            'Recognize how these beliefs shape a Muslim’s worship, responsibility, hope, and daily life.',
-          ],
-          sections: [
-            {
-              title: 'The six articles of Iman',
-              paragraphs: [
-                'Islamic sources describe six core matters that a believer affirms as part of Iman: belief in Allah, His angels, His revealed books, His messengers, the Last Day, and divine decree (Qadar). The Qur’an names these matters together, and the Hadith of Jibril gives a clear explanation of Iman.',
-                'These articles are connected. They form a framework of belief about Allah, revelation, guidance, the future, and what occurs within Allah’s knowledge and will.',
-              ],
-            },
-            {
-              title: '1. Belief in Allah',
-              paragraphs: [
-                'Belief in Allah means affirming that Allah is the true Lord and the only One worthy of worship. It includes believing what He has revealed about Himself and worshipping Him sincerely.',
-                'Belief in Allah is the foundation of the other articles of Iman because the believer accepts Allah as the source of creation, revelation, guidance, and judgment.',
-              ],
-            },
-            {
-              title: '2. Belief in the angels',
-              paragraphs: [
-                'Angels are part of the unseen creation that Allah has told us about. Believing in them means accepting their existence and the roles Allah has assigned to them, without adding claims that revelation has not established.',
-                'Belief in the angels reminds a Muslim that creation includes realities beyond what can be seen and that Allah’s commands are carried out throughout His creation.',
-              ],
-            },
-            {
-              title: '3. Belief in the revealed books',
-              paragraphs: [
-                'A Muslim believes that Allah revealed guidance through scriptures to His messengers. The Qur’an teaches believers to affirm Allah’s revealed books and to believe in the revelation sent before the Qur’an.',
-                'The Qur’an is the final revealed Book sent to Prophet Muhammad ﷺ. Muslims therefore follow the Qur’an as their revealed guidance while affirming the original revelation given to earlier messengers.',
-              ],
-            },
-            {
-              title: '4. Belief in the messengers',
-              paragraphs: [
-                'Allah sent messengers to guide people to worship Him and follow His guidance. Belief in the messengers includes accepting the truth of their message and respecting them as servants and messengers of Allah.',
-                'The Qur’an teaches believers not to reject some messengers while accepting others. Muslims believe in Allah’s messengers as a connected chain of guidance and follow the final messenger, Muhammad ﷺ, according to the Qur’an and authentic Sunnah.',
-              ],
-            },
-            {
-              title: '5. Belief in the Last Day',
-              paragraphs: [
-                'Belief in the Last Day means accepting that earthly life is not the end. People will be raised, judged, and held accountable before Allah.',
-                'This belief strengthens moral responsibility. A Muslim remembers that actions matter even when other people do not see them, because Allah knows and the final return is to Him.',
-              ],
-            },
-            {
-              title: '6. Belief in divine decree (Qadar)',
-              paragraphs: [
-                'Belief in Qadar means affirming that Allah has complete knowledge and authority over His creation and that what occurs does so within His knowledge and will. The Qur’an teaches that Allah created all things with measure.',
-                'Belief in Qadar does not mean that a person should stop making choices or taking responsible action. A Muslim still chooses, acts, seeks what is beneficial, avoids wrongdoing, and is accountable for what they do.',
-              ],
-            },
-            {
-              title: 'How the six articles shape life',
-              paragraphs: [
-                'Belief changes how a person understands life. Belief in Allah gives worship a clear purpose. Belief in revelation and messengers gives guidance. Belief in the Last Day strengthens responsibility, while belief in Qadar helps a believer remain grounded in effort and trust in Allah.',
-                'These beliefs are not only subjects to memorize. They are foundations that can shape worship, character, decisions, patience, gratitude, and hope.',
-              ],
-            },
-          ],
-          keyTerms: [
-            {
-              term: 'Iman',
-              meaning: 'Faith and conviction in the core matters taught by Allah and His Messenger.',
-            },
-            {
-              term: 'Mala’ikah',
-              meaning: 'Angels, an unseen creation of Allah whom Muslims affirm as part of the unseen world.',
-            },
-            {
-              term: 'Kutub',
-              meaning: 'The revealed books and scriptures sent by Allah through His messengers.',
-            },
-            {
-              term: 'Rusul',
-              meaning: 'The messengers sent by Allah to convey His guidance to people.',
-            },
-            {
-              term: 'Al-Yawm al-Akhir',
-              meaning: 'The Last Day, when creation will be raised and judged by Allah.',
-            },
-            {
-              term: 'Qadar',
-              meaning: 'Divine decree: Allah’s complete knowledge and will concerning His creation and what occurs within it.',
-            },
-          ],
-          reviewQuestions: [
-            'What are the six articles of Iman?',
-            'Why is belief in Allah the foundation of the other articles of faith?',
-            'What does a Muslim believe about Allah’s revealed books?',
-            'Why do Muslims believe in all of Allah’s messengers?',
-            'How does belief in the Last Day affect a person’s sense of responsibility?',
-            'What does belief in Qadar mean?',
-            'Why does belief in Qadar not remove the need to make responsible choices and take action?',
-          ],
-          sources: [
-            { type: 'quran', reference: 'Qur’an 2:285' },
-            { type: 'quran', reference: 'Qur’an 4:136' },
-            { type: 'quran', reference: 'Qur’an 54:49' },
-            { type: 'quran', reference: 'Qur’an 76:29–30' },
-            { type: 'hadith', reference: 'Sahih Muslim 8e — Hadith of Jibril' },
-          ],
-        },
-
-        sw: {
-          objectives: [
-            'Tambua nguzo sita za Imani kama zinavyoelezwa katika Qur’an na Sunnah sahihi.',
-            'Elewa maana ya kumuamini Allah, Malaika, Vitabu vilivyoteremshwa, Mitume, Siku ya Mwisho na Qadar.',
-            'Tambua jinsi imani hizi zinavyounda ibada, uwajibikaji, matumaini na maisha ya kila siku ya Muislamu.',
-          ],
-          sections: [
-            {
-              title: 'Nguzo sita za Imani',
-              paragraphs: [
-                'Vyanzo vya Kiislamu vinaeleza mambo sita ya msingi ambayo muumini anayakubali katika Imani: kumuamini Allah, Malaika Wake, Vitabu Vyake vilivyoteremshwa, Mitume Wake, Siku ya Mwisho na Qadar. Qur’an inataja mambo haya pamoja, na Hadithi ya Jibril inaeleza Imani kwa uwazi.',
-                'Nguzo hizi zimeungana. Zinaunda mfumo wa imani kuhusu Allah, wahyi, mwongozo, maisha ya baadaye na mambo yanayotokea ndani ya elimu na matakwa ya Allah.',
-              ],
-            },
-            {
-              title: '1. Kumuamini Allah',
-              paragraphs: [
-                'Kumuamini Allah ni kuthibitisha kwamba Allah ndiye Mola wa kweli na ndiye Mwenye kustahiki kuabudiwa. Inahusisha kuamini yale ambayo Allah amejieleza Mwenyewe na kumuabudu kwa ikhlasi.',
-                'Kumuamini Allah ni msingi wa nguzo nyingine za Imani kwa sababu muumini humkubali Allah kuwa Muumba, Mwenye kuleta wahyi, Mwenye kutoa mwongozo na Mwenye kuhukumu.',
-              ],
-            },
-            {
-              title: '2. Kuwaamini Malaika',
-              paragraphs: [
-                'Malaika ni miongoni mwa viumbe vya ghaibu ambavyo Allah ametueleza. Kuwaamini kunamaanisha kukubali kuwepo kwao na majukumu ambayo Allah amewapa, bila kuongeza madai ambayo hayajathibitishwa na Wahyi.',
-                'Imani juu ya Malaika humkumbusha Muislamu kwamba uumbaji una mambo ambayo hayaonekani kwa macho na kwamba amri za Allah zinatekelezwa katika uumbaji Wake.',
-              ],
-            },
-            {
-              title: '3. Kuamini Vitabu vilivyoteremshwa',
-              paragraphs: [
-                'Muislamu anaamini kwamba Allah aliteremsha mwongozo kupitia maandiko kwa Mitume Wake. Qur’an inawafundisha Waumini kuthibitisha Vitabu vya Allah na kuamini wahyi ulioteremshwa kabla ya Qur’an.',
-                'Qur’an ni Kitabu cha mwisho kilichoteremshwa kwa Mtume Muhammad ﷺ. Kwa hiyo Waislamu wanaifuata Qur’an kama mwongozo ulioteremshwa huku wakithibitisha wahyi wa asili uliotolewa kwa Mitume waliotangulia.',
-              ],
-            },
-            {
-              title: '4. Kuwaamini Mitume',
-              paragraphs: [
-                'Allah aliwatuma Mitume ili kuwaongoza watu wamuabudu Yeye na kufuata mwongozo Wake. Kuwaamini Mitume kunahusisha kukubali ukweli wa ujumbe wao na kuwaheshimu kama waja na Mitume wa Allah.',
-                'Qur’an inawafundisha Waumini kutowakataa baadhi ya Mitume huku wakiwakubali wengine. Waislamu huwaamini Mitume wa Allah kama mlolongo wa mwongozo na humfuata Mtume wa mwisho, Muhammad ﷺ, kwa mujibu wa Qur’an na Sunnah sahihi.',
-              ],
-            },
-            {
-              title: '5. Kuamini Siku ya Mwisho',
-              paragraphs: [
-                'Kuamini Siku ya Mwisho ni kukubali kwamba maisha ya duniani si mwisho. Watu watafufuliwa, watahukumiwa na watawajibishwa mbele ya Allah.',
-                'Imani hii huimarisha uwajibikaji wa kimaadili. Muislamu hukumbuka kwamba matendo yana umuhimu hata kama watu wengine hawayaoni, kwa sababu Allah anayajua na marejeo ya mwisho ni Kwake.',
-              ],
-            },
-            {
-              title: '6. Kuamini Qadar',
-              paragraphs: [
-                'Kuamini Qadar ni kuthibitisha kwamba Allah ana elimu kamili na mamlaka juu ya uumbaji Wake na kwamba mambo hutokea ndani ya elimu na matakwa Yake. Qur’an inafundisha kwamba Allah ameumba kila kitu kwa kipimo.',
-                'Kuamini Qadar hakumaanishi mtu aache kufanya maamuzi au kuchukua hatua kwa uwajibikaji. Muislamu bado huchagua, hutenda, hutafuta yaliyo na manufaa, hujiepusha na maovu na huwajibika kwa yale anayoyafanya.',
-              ],
-            },
-            {
-              title: 'Jinsi nguzo hizi zinavyounda maisha',
-              paragraphs: [
-                'Imani hubadilisha namna mtu anavyoona maisha. Kumuamini Allah huipa ibada kusudi. Kuamini wahyi na Mitume hutoa mwongozo. Kuamini Siku ya Mwisho huimarisha uwajibikaji, na kuamini Qadar humsaidia muumini kubaki na juhudi pamoja na kumtegemea Allah.',
-                'Nguzo hizi si masomo ya kukariri tu. Ni misingi inayoweza kuunda ibada, tabia, maamuzi, subira, shukrani na matumaini.',
-              ],
-            },
-          ],
-          keyTerms: [
-            {
-              term: 'Imani',
-              meaning: 'Kumuamini kwa yakini mambo ya msingi yaliyofundishwa na Allah na Mtume Wake.',
-            },
-            {
-              term: 'Malaika',
-              meaning: 'Viumbe vya ghaibu vya Allah ambavyo Muislamu anaamini kuwa vipo.',
-            },
-            {
-              term: 'Vitabu',
-              meaning: 'Vitabu na maandiko yaliyoteremshwa na Allah kupitia Mitume Wake.',
-            },
-            {
-              term: 'Mitume',
-              meaning: 'Wajumbe waliotumwa na Allah kufikisha mwongozo Wake kwa watu.',
-            },
-            {
-              term: 'Siku ya Mwisho',
-              meaning: 'Siku ambayo viumbe watafufuliwa na kuhukumiwa na Allah.',
-            },
-            {
-              term: 'Qadar',
-              meaning: 'Kadirio la Allah katika uumbaji Wake kwa mujibu wa elimu na matakwa Yake.',
-            },
-          ],
-          reviewQuestions: [
-            'Nguzo sita za Imani ni zipi?',
-            'Kwa nini kumuamini Allah ni msingi wa nguzo nyingine za Imani?',
-            'Muislamu anaamini nini kuhusu Vitabu vilivyoteremshwa na Allah?',
-            'Kwa nini Waislamu wanawaamini Mitume wote wa Allah?',
-            'Kuamini Siku ya Mwisho kunaathirije uwajibikaji wa mtu?',
-            'Kuamini Qadar kunamaanisha nini?',
-            'Kwa nini kuamini Qadar hakumwondolei mtu jukumu la kuchagua na kuchukua hatua kwa uwajibikaji?',
-          ],
-          sources: [
-            { type: 'quran', reference: 'Qur’an 2:285' },
-            { type: 'quran', reference: 'Qur’an 4:136' },
-            { type: 'quran', reference: 'Qur’an 54:49' },
-            { type: 'quran', reference: 'Qur’an 76:29–30' },
-            { type: 'hadith', reference: 'Sahih Muslim 8e — Hadithi ya Jibril' },
-          ],
-        },
-      },
+          source: {
+            arabicTitle: 'أركان الإيمان الستة',
+            arabicIntroduction: [
+              'الإيمان أصل عظيم من أصول الدين، وقد بيّن النبي ﷺ أركانه في حديث جبريل عليه السلام، وهي الإيمان بالله وملائكته وكتبه ورسله واليوم الآخر والقدر خيره وشره.',
+              'وهذه الأركان مترابطة، وبها يعرف المسلم ما يجب عليه اعتقاده في الله تعالى، وفي عالم الغيب، والوحي والرسل، والمصير بعد الموت، وما يجري في هذا الكون.',
+            ],
+            sections: [
+              {
+                arabicTitle: 'الإيمان بالله',
+                arabicText: [
+                  'الإيمان بالله هو الإقرار بأنه سبحانه رب كل شيء ومليكه، وأنه وحده المستحق للعبادة، مع الإيمان بما أخبر به عن نفسه في كتابه وما صح عن رسوله ﷺ.',
+                  'فالإيمان بالله هو أصل سائر أركان الإيمان؛ لأن المسلم يؤمن بالله خالقًا ومدبرًا، ويؤمن بوحيه وهدايته وحكمه.',
+                ],
+                translations: {
+                  en: [
+                    'Belief in Allah means affirming that He alone is the Lord and Owner of everything and that He alone deserves worship, while believing what He has revealed about Himself in the Qur’an and what is authentically reported from His Messenger ﷺ.',
+                    'Belief in Allah is the foundation of the other pillars of faith because the Muslim believes in Allah as Creator, Sustainer, and Judge, and accepts His revelation and guidance.',
+                  ],
+                  sw: [
+                    'Kumuamini Allah ni kukiri kwamba Yeye ndiye Mola na Mmiliki wa kila kitu na kwamba Yeye pekee ndiye anayestahiki kuabudiwa, pamoja na kuamini yale aliyojieleza katika Qur’an na yale yaliyothibiti kutoka kwa Mtume Wake ﷺ.',
+                    'Kumuamini Allah ni msingi wa nguzo nyingine za imani kwa sababu Muislamu anamwamini Allah kuwa Muumba, Msimamizi na Mwenye kuhukumu, na anakubali wahyi na mwongozo Wake.',
+                  ],
+                  fr: [
+                    'Croire en Allah signifie reconnaître qu’Il est le Seigneur et le Maître de toute chose et que Lui seul mérite l’adoration, tout en croyant ce qu’Il a révélé sur Lui-même dans le Coran et ce qui est authentiquement rapporté de Son Messager ﷺ.',
+                    'La foi en Allah est le fondement des autres piliers de la foi, car le musulman croit en Allah comme Créateur, Maître et Juge, et accepte Sa révélation et Sa guidance.',
+                  ],
+                },
+              },
+              {
+                arabicTitle: 'الإيمان بالملائكة',
+                arabicText: [
+                  'الملائكة خلق من خلق الله تعالى، خلقهم الله لعبادته وتنفيذ ما يأمرهم به. والإيمان بهم يكون بالتصديق بوجودهم وبما ثبت في الوحي من أخبارهم وصفاتهم وأعمالهم.',
+                  'ولا يتجاوز المسلم في أمر الغيب ما جاء به الوحي، فلا يثبت للملائكة شيئًا إلا بدليل صحيح من القرآن أو السنة.',
+                ],
+                translations: {
+                  en: [
+                    'Angels are a creation of Allah whom He created to worship Him and carry out what He commands. Belief in them means affirming their existence and believing what revelation authentically tells us about them, their qualities, and their duties.',
+                    'In matters of the unseen, a Muslim stays within what revelation establishes and does not attribute to the angels claims without sound evidence from the Qur’an or Sunnah.',
+                  ],
+                  sw: [
+                    'Malaika ni miongoni mwa viumbe vya Allah, ambao amewaumba wamuabudu Yeye na kutekeleza yale anayowaamuru. Kuwaamini kunamaanisha kuthibitisha kuwepo kwao na kuamini yale yaliyothibiti katika wahyi kuhusu sifa na majukumu yao.',
+                    'Katika mambo ya ghaibu, Muislamu hushikamana na yale yaliyothibitishwa na wahyi na hatowasifu Malaika kwa mambo yasiyokuwa na dalili sahihi kutoka Qur’an au Sunnah.',
+                  ],
+                  fr: [
+                    'Les anges sont des créatures d’Allah qu’Il a créées pour L’adorer et exécuter Ses ordres. Croire en eux signifie affirmer leur existence et croire ce que la révélation authentique nous enseigne à leur sujet, leurs qualités et leurs fonctions.',
+                    'Dans les questions relatives à l’invisible, le musulman s’en tient à ce que la révélation établit et n’attribue pas aux anges des faits sans preuve authentique du Coran ou de la Sunnah.',
+                  ],
+                },
+              },
+              {
+                arabicTitle: 'الإيمان بالكتب',
+                arabicText: [
+                  'يؤمن المسلم بأن الله تعالى أنزل كتبًا على رسله هداية للناس، وأن ما أنزله الله من وحي حق من عنده.',
+                  'والقرآن الكريم هو كتاب الله المنزل على محمد ﷺ، وهو آخر الكتب المنزلة، وقد حفظه الله، وهو الكتاب الذي يتبعه المسلمون في هدايتهم ودينهم.',
+                ],
+                translations: {
+                  en: [
+                    'A Muslim believes that Allah revealed scriptures to His messengers as guidance for people and that the revelation sent by Allah is true and from Him.',
+                    'The Qur’an is the Book of Allah revealed to Muhammad ﷺ. It is the final revealed Book, preserved by Allah, and the Book Muslims follow for their guidance and religion.',
+                  ],
+                  sw: [
+                    'Muislamu anaamini kwamba Allah aliwateremshia Mitume Wake Vitabu kuwa mwongozo kwa watu na kwamba wahyi ulioteremshwa na Allah ni wa kweli na unatoka Kwake.',
+                    'Qur’an ni Kitabu cha Allah kilichoteremshwa kwa Muhammad ﷺ. Ni Kitabu cha mwisho kilichoteremshwa, ambacho Allah amekihifadhi, na ndicho wanachokifuata Waislamu katika mwongozo na dini yao.',
+                  ],
+                  fr: [
+                    'Le musulman croit qu’Allah a révélé des Écritures à Ses messagers comme guidance pour les gens et que la révélation venant d’Allah est une vérité provenant de Lui.',
+                    'Le Coran est le Livre d’Allah révélé à Muhammad ﷺ. C’est le dernier Livre révélé, préservé par Allah, et le Livre que les musulmans suivent pour leur guidance et leur religion.',
+                  ],
+                },
+              },
+              {
+                arabicTitle: 'الإيمان بالرسل',
+                arabicText: [
+                  'أرسل الله تعالى رسله إلى الناس ليدعوهم إلى عبادته وحده واتباع هداه. والإيمان بالرسل هو تصديقهم فيما أخبروا به، والإيمان برسالتهم، واحترامهم من غير غلو ولا جفاء.',
+                  'ويؤمن المسلم بجميع رسل الله، ولا يفرق بينهم في أصل التصديق برسالتهم، ويتبع خاتم الأنبياء والمرسلين محمدًا ﷺ.',
+                ],
+                translations: {
+                  en: [
+                    'Allah sent His messengers to people to call them to worship Him alone and follow His guidance. Belief in the messengers means accepting the truth of what they conveyed, believing in their missions, and respecting them without excess or disrespect.',
+                    'A Muslim believes in all of Allah’s messengers and does not reject some while accepting others. Muslims follow Muhammad ﷺ as the final prophet and messenger.',
+                  ],
+                  sw: [
+                    'Allah aliwatuma Mitume Wake kwa watu ili wawaite wamuabudu Yeye pekee na kufuata mwongozo Wake. Kuwaamini Mitume kunamaanisha kusadiki ukweli wa yale waliyofikisha, kuamini utume wao na kuwaheshimu bila kupindukia wala kupunguza heshima yao.',
+                    'Muislamu huwaamini Mitume wote wa Allah na hawawakatai baadhi huku akiwaamini wengine. Waislamu humfuata Muhammad ﷺ kuwa Nabii na Mtume wa mwisho.',
+                  ],
+                  fr: [
+                    'Allah a envoyé Ses messagers aux gens pour les appeler à L’adorer Lui seul et à suivre Sa guidance. Croire aux messagers signifie reconnaître la vérité de ce qu’ils ont transmis, croire en leur mission et les respecter sans excès ni négligence.',
+                    'Le musulman croit en tous les messagers d’Allah et n’en rejette pas certains tout en en acceptant d’autres. Les musulmans suivent Muhammad ﷺ comme dernier prophète et messager.',
+                  ],
+                },
+              },
+              {
+                arabicTitle: 'الإيمان باليوم الآخر',
+                arabicText: [
+                  'اليوم الآخر هو اليوم الذي يبعث الله فيه الخلق بعد الموت، ثم يحاسبهم على أعمالهم ويجازيهم عليها. والإيمان به يثبت في قلب المسلم أن الحياة الدنيا ليست نهاية الوجود.',
+                  'ومن آثار الإيمان باليوم الآخر أن يستعد المسلم للقاء الله تعالى، فيحرص على الطاعة ويجتنب المعصية ويتذكر مسؤوليته عن أعماله.',
+                ],
+                translations: {
+                  en: [
+                    'The Last Day is the Day when Allah will resurrect creation after death, hold them accountable for their deeds, and recompense them. Belief in it teaches the Muslim that worldly life is not the end of existence.',
+                    'One effect of believing in the Last Day is that a Muslim prepares to meet Allah by striving in obedience, avoiding sin, and remembering responsibility for their actions.',
+                  ],
+                  sw: [
+                    'Siku ya Mwisho ni siku ambayo Allah atawafufua viumbe baada ya kifo, kisha atawahesabu kwa matendo yao na kuwalipa kwa hayo. Kuamini Siku hiyo humfundisha Muislamu kwamba maisha ya dunia si mwisho wa kuwepo.',
+                    'Miongoni mwa athari za kuamini Siku ya Mwisho ni Muislamu kujiandaa kukutana na Allah kwa kujitahidi katika utiifu, kujiepusha na maasi na kukumbuka uwajibikaji wa matendo yake.',
+                  ],
+                  fr: [
+                    'Le Jour dernier est le jour où Allah ressuscitera les créatures après la mort, les jugera selon leurs œuvres et les rétribuera. Croire en ce Jour enseigne au musulman que la vie terrestre n’est pas la fin de l’existence.',
+                    'Parmi les effets de la foi au Jour dernier, le musulman se prépare à rencontrer Allah en s’efforçant d’obéir, en évitant le péché et en se rappelant sa responsabilité envers ses actes.',
+                  ],
+                },
+              },
+              {
+                arabicTitle: 'الإيمان بالقدر',
+                arabicText: [
+                  'يؤمن المسلم بأن الله تعالى أحاط بكل شيء علمًا، وأن ما يكون في الكون لا يخرج عن علمه ومشيئته وقدرته، وأنه سبحانه قدّر الأشياء وخلقها.',
+                  'ولا يعني الإيمان بالقدر ترك الأسباب أو إلغاء مسؤولية الإنسان؛ بل يعمل المسلم ويختار ويسعى في الخير، ثم يتوكل على الله فيما لا يملكه.',
+                ],
+                translations: {
+                  en: [
+                    'A Muslim believes that Allah has complete knowledge of everything and that nothing in creation occurs outside His knowledge, will, and power, and that He has decreed and created all things.',
+                    'Belief in Qadar does not mean abandoning means or human responsibility. A Muslim acts, chooses, and strives for what is good, then relies upon Allah regarding what is beyond their control.',
+                  ],
+                  sw: [
+                    'Muislamu anaamini kwamba Allah ana elimu kamili ya kila kitu na kwamba hakuna kinachotokea katika uumbaji nje ya elimu, matakwa na uwezo Wake, na kwamba Yeye amekadiria na kuumba vitu vyote.',
+                    'Kuamini Qadar hakumaanishi kuacha kuchukua sababu au kuondoa uwajibikaji wa mwanadamu. Muislamu hutenda, huchagua na hujitahidi katika kheri, kisha humtegemea Allah katika yale yaliyo nje ya uwezo wake.',
+                  ],
+                  fr: [
+                    'Le musulman croit qu’Allah possède une connaissance parfaite de toute chose et que rien dans la création ne se produit en dehors de Sa connaissance, de Sa volonté et de Sa puissance, et qu’Il a décrété et créé toute chose.',
+                    'Croire au destin ne signifie pas abandonner les causes ni supprimer la responsabilité humaine. Le musulman agit, choisit et s’efforce dans le bien, puis s’en remet à Allah pour ce qui dépasse son contrôle.',
+                  ],
+                },
+              },
+              {
+                arabicTitle: 'أثر أركان الإيمان في حياة المسلم',
+                arabicText: [
+                  'أركان الإيمان ليست معلومات تحفظ فقط، بل هي أصول تؤثر في عبادة المسلم وأخلاقه ونظرته إلى الحياة.',
+                  'فالإيمان بالله يوجه العبادة، والإيمان بالوحي والرسل يثبت طريق الهداية، والإيمان باليوم الآخر يعظم المسؤولية، والإيمان بالقدر يعين على الصبر وبذل الأسباب والتوكل على الله.',
+                ],
+                translations: {
+                  en: [
+                    'The pillars of faith are not merely information to memorize; they are foundations that affect a Muslim’s worship, character, and understanding of life.',
+                    'Belief in Allah directs worship, belief in revelation and messengers establishes the path of guidance, belief in the Last Day strengthens responsibility, and belief in Qadar helps a believer combine patience, effort, and reliance upon Allah.',
+                  ],
+                  sw: [
+                    'Nguzo za Imani si taarifa za kukariri tu, bali ni misingi inayogusa ibada, tabia na namna Muislamu anavyoelewa maisha.',
+                    'Kumuamini Allah huongoza ibada, kuamini wahyi na Mitume huimarisha njia ya mwongozo, kuamini Siku ya Mwisho huimarisha uwajibikaji, na kuamini Qadar humsaidia muumini kuchanganya subira, juhudi na kumtegemea Allah.',
+                  ],
+                  fr: [
+                    'Les piliers de la foi ne sont pas seulement des informations à mémoriser ; ce sont des fondements qui influencent l’adoration, le caractère et la compréhension de la vie du musulman.',
+                    'La foi en Allah oriente l’adoration, la foi en la révélation et aux messagers établit la voie de la guidance, la foi au Jour dernier renforce la responsabilité, et la foi au destin aide le croyant à réunir patience, effort et confiance en Allah.',
+                  ],
+                },
+              },
+            ],
+            sources: [
+              { type: 'quran', reference: 'Qur’an 2:285' },
+              { type: 'quran', reference: 'Qur’an 4:136' },
+              { type: 'quran', reference: 'Qur’an 54:49' },
+              { type: 'quran', reference: 'Qur’an 76:29–30' },
+              { type: 'hadith', reference: 'Sahih Muslim 8e — Hadith of Jibril' },
+              { type: 'hadith', reference: 'Sahih al-Bukhari 50 — Hadith of Jibril' },
+            ],
+          },
+          translations: {
+            en: { title: 'The Six Pillars of Iman' },
+            sw: { title: 'Nguzo Sita za Imani' },
+            fr: { title: 'Les six piliers de la foi' },
+          },
         },
         {
           slug: 'why-correct-belief-matters',
