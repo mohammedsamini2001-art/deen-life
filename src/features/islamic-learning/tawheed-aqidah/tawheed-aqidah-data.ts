@@ -1056,8 +1056,112 @@ export const TAWHEED_AQIDAH_COURSE: {
     },
     {
       slug: 'shirk-and-protecting-tawheed',
-      title: 'Shirk and Protecting Tawheed',
       number: 4,
+      source: {
+        arabicTitle: 'الشرك وخطره وطرق حماية التوحيد',
+        arabicIntroduction: [
+          'الشرك هو صرف شيء من العبادة لغير الله تعالى، وهو أعظم ما نهى الله عنه، لأن العبادة حق خالص لله وحده.',
+          'وحماية التوحيد تكون بتعلم ما شرعه الله، وإخلاص العبادة له، والحذر من الشرك ووسائله وأسبابه، مع الرجوع إلى القرآن والسنة الصحيحة في مسائل الاعتقاد.',
+        ],
+        sections: [
+          {
+            arabicTitle: 'الشرك أعظم الذنوب',
+            arabicText: [
+              'الشرك بالله تعالى هو أن يجعل الإنسان لله شريكًا في شيء من خصائصه أو في العبادة. وقد بيّن القرآن عظم خطره، قال الله تعالى: إِنَّ الشِّرْكَ لَظُلْمٌ عَظِيمٌ.',
+              'وعظم خطر الشرك لا يعني أن المسلم ييأس من رحمة الله، بل يجب عليه أن يعرف التوحيد ويحذر من الشرك، وأن يتوب إلى الله إذا وقع في ذنب.',
+            ],
+            translations: {
+              en: [
+                'Shirk is to associate a partner with Allah in something belonging uniquely to Him or in worship. The Qur’an makes clear its great danger, describing shirk as a tremendous wrongdoing.',
+                'The seriousness of shirk does not mean that a Muslim should despair of Allah’s mercy. Rather, the believer should learn Tawheed, avoid shirk, and repent to Allah from sin.',
+              ],
+              sw: [
+                'Shirk ni kumshirikisha Allah na mshirika katika jambo linalomhusu Yeye peke Yake au katika ibada. Qur’an imeeleza hatari yake kubwa na imeuita shirk kuwa dhulma kubwa.',
+                'Uzito wa shirk haumaanishi kwamba Muislamu akate tamaa na rehema ya Allah. Bali anapaswa kujifunza Tawheed, kujiepusha na shirk na kutubia Allah anapofanya dhambi.',
+              ],
+              fr: [
+                'Le shirk consiste à associer à Allah un partenaire dans ce qui Lui appartient exclusivement ou dans l’adoration. Le Coran montre sa grande gravité et le décrit comme une immense injustice.',
+                'La gravité du shirk ne signifie pas que le musulman doit désespérer de la miséricorde d’Allah. Il doit plutôt apprendre le Tawhid, éviter le shirk et se repentir à Allah lorsqu’il commet un péché.',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'الشرك يناقض إخلاص العبادة',
+            arabicText: [
+              'من أعظم مقاصد التوحيد أن تكون العبادة لله وحده. قال الله تعالى: فَاعْبُدِ اللَّهَ مُخْلِصًا لَهُ الدِّينَ. فالإخلاص أساس قبول العبادة وصحتها.',
+              'ويحذر المسلم من أن يجعل شيئًا من العبادة لغير الله، سواء كان ذلك في الدعاء أو النذر أو الذبح أو غير ذلك من العبادات التي شرعها الله.',
+            ],
+            translations: {
+              en: [
+                'One of the central meanings of Tawheed is that worship belongs to Allah alone. The Qur’an commands worship of Allah with sincere devotion to Him, making sincerity fundamental to worship.',
+                'A Muslim therefore avoids directing any act of worship to other than Allah, whether in supplication, vows, sacrifice, or other forms of worship that Allah has legislated.',
+              ],
+              sw: [
+                'Katika maana kuu za Tawheed ni kwamba ibada ni ya Allah peke Yake. Qur’an inaamrisha kumuabudu Allah kwa kumtakasia dini, hivyo ikhlasi ni msingi wa ibada.',
+                'Kwa hiyo Muislamu huepuka kuelekeza aina yoyote ya ibada kwa mwingine asiye Allah, iwe ni dua, nadhiri, kuchinja au ibada nyingine alizoamrisha Allah.',
+              ],
+              fr: [
+                'L’un des sens essentiels du Tawhid est que l’adoration appartient à Allah seul. Le Coran ordonne de L’adorer en Lui consacrant sincèrement la religion, faisant de la sincérité un fondement de l’adoration.',
+                'Le musulman évite donc de consacrer un acte d’adoration à autre qu’Allah, qu’il s’agisse de l’invocation, des vœux, du sacrifice ou d’autres formes d’adoration prescrites par Allah.',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'الحذر من وسائل الشرك',
+            arabicText: [
+              'يحذر المسلم من الوسائل التي قد تقود إلى الشرك، ومن أعظمها الغلو في الصالحين أو جعل المخلوق واسطة في عبادة الله. وقد نهى النبي ﷺ عن الغلو.',
+              'والواجب في مسائل التوحيد أن يتعلم المسلم من الوحي، وألا يجعل العادات أو الظنون أو الأقوال غير الموثوقة مصدرًا للعقيدة.',
+            ],
+            translations: {
+              en: [
+                'A Muslim should be cautious of practices that can lead toward shirk, including excessive veneration of righteous people or treating created beings as objects of worship. The Prophet ﷺ warned against excess.',
+                'In matters of Tawheed, a Muslim should learn from revelation and should not make customs, assumptions, or unreliable statements the source of belief.',
+              ],
+              sw: [
+                'Muislamu anapaswa kujihadhari na mambo yanayoweza kupelekea shirk, ikiwa ni pamoja na kuwazidishia watu wema katika kuwaheshimu au kuwafanya viumbe kuwa sehemu ya ibada. Mtume ﷺ alionya dhidi ya kupindukia.',
+                'Katika masuala ya Tawheed, Muislamu anapaswa kujifunza kutoka katika wahyi na asifanye desturi, dhana au kauli zisizoaminika kuwa chanzo cha itikadi.',
+              ],
+              fr: [
+                'Le musulman doit se méfier des pratiques qui peuvent conduire au shirk, notamment l’exagération envers les personnes pieuses ou le fait de faire des créatures des objets d’adoration. Le Prophète ﷺ a mis en garde contre l’excès.',
+                'Dans les questions de Tawhid, le musulman doit apprendre à partir de la révélation et ne pas prendre les coutumes, les suppositions ou les propos non fiables comme source de croyance.',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'حماية التوحيد تكون بالعلم والعمل',
+            arabicText: [
+              'حماية التوحيد لا تكون بالخوف وحده، بل بالعلم بما جاء في القرآن والسنة، وإخلاص العبادة لله، والابتعاد عن أسباب الشرك، وسؤال أهل العلم فيما يشكل.',
+              'وإذا تعلم المسلم التوحيد وعمل به ازداد حرصه على إخلاص عبادته لله، وعرف ما يجب اجتنابه وما ينبغي فعله وفق الدليل.',
+            ],
+            translations: {
+              en: [
+                'Protecting Tawheed is not achieved by fear alone. It is achieved by learning the Qur’an and Sunnah, worshipping Allah sincerely, avoiding causes of shirk, and asking qualified scholars about matters that are unclear.',
+                'As a Muslim learns and practices Tawheed, he becomes more careful to keep worship sincere to Allah and to distinguish what should be avoided from what should be done according to evidence.',
+              ],
+              sw: [
+                'Kulinda Tawheed hakutegemei khofu pekee. Kunahitaji kujifunza Qur’an na Sunnah, kumuabudu Allah kwa ikhlasi, kuepuka sababu za shirk na kuwauliza wanazuoni wenye sifa inapokuwa kuna jambo lisiloeleweka.',
+                'Muislamu anapojifunza na kutekeleza Tawheed, huzidi kuwa mwangalifu katika kuitakasa ibada yake kwa ajili ya Allah na kutambua yanayopaswa kuepukwa na yanayopaswa kufanywa kwa mujibu wa dalili.',
+              ],
+              fr: [
+                'Préserver le Tawhid ne repose pas seulement sur la crainte. Cela passe par l’apprentissage du Coran et de la Sunnah, l’adoration sincère d’Allah, l’éloignement des causes du shirk et le recours à des savants qualifiés lorsque quelque chose n’est pas clair.',
+                'Lorsque le musulman apprend et met en pratique le Tawhid, il devient plus attentif à consacrer son adoration à Allah et à distinguer ce qui doit être évité de ce qui doit être fait selon les preuves.',
+              ],
+            },
+          },
+        ],
+        sources: [
+          { type: 'quran', reference: 'Qur’an 31:13' },
+          { type: 'quran', reference: 'Qur’an 39:2–3' },
+          { type: 'quran', reference: 'Qur’an 4:48' },
+          { type: 'quran', reference: 'Qur’an 72:18' },
+          { type: 'hadith', reference: 'Sahih al-Bukhari 3445' },
+        ],
+      },
+      translations: {
+        en: { title: 'Shirk and Protecting Tawheed' },
+        sw: { title: 'Shirk na Kulinda Tawheed' },
+        fr: { title: 'Le shirk et la protection du Tawhid' },
+      },
     },
     {
       slug: 'six-articles-of-iman',
