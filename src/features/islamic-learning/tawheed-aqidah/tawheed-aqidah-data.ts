@@ -704,194 +704,160 @@ export const TAWHEED_AQIDAH_COURSE: {
       lessons: [
   {
     slug: 'allah-is-the-creator-and-lord',
-    title: 'Allah Is the Creator and Lord',
     number: 1,
-    content: {
-      en: {
-        objectives: [
-          'Understand that Allah is the Creator, Lord, and Sustainer of all creation.',
-          'Understand why recognizing Allah as Lord leads to worshipping Him alone.',
-          'Learn to describe what is taught about Allah through revelation without relying on unsupported speculation.',
-        ],
-        sections: [
-          {
-            title: 'Allah is the Creator',
-            paragraphs: [
-              'Islam teaches that Allah created the heavens, the earth, and everything that exists. Creation is dependent on Him, while Allah is not dependent on His creation.',
-              'Recognizing Allah as the Creator gives a Muslim a foundation for understanding who deserves ultimate gratitude, obedience, and worship.',
+    source: {
+      arabicTitle: 'الله هو الخالق والرب',
+      arabicIntroduction: [
+        'الله تعالى هو الخالق لكل شيء، وهو رب العالمين ومدبر أمرهم، وكل ما سواه من المخلوقات محتاج إليه سبحانه.',
+        'ومعرفة الله تعالى بما أخبر به عن نفسه في القرآن، وما صح عن رسوله ﷺ، تقود المسلم إلى توحيده وإخلاص العبادة له.',
+      ],
+      sections: [
+        {
+          arabicTitle: 'الله هو الخالق',
+          arabicText: [
+            'الله تعالى خالق السماوات والأرض وما فيهما، وخالق كل شيء. والمخلوقات كلها محتاجة إليه، أما هو سبحانه فغني عن خلقه.',
+            'ومعرفة الله بأنه الخالق تذكّر المسلم بأن النعم كلها من الله، وأنه سبحانه المستحق للحمد والشكر والطاعة.',
+          ],
+          translations: {
+            en: [
+              'Allah is the Creator of the heavens, the earth, and everything within them. All created things depend upon Him, while He is independent of His creation.',
+              'Knowing Allah as the Creator reminds a Muslim that blessings come from Allah and that He deserves ultimate gratitude, obedience, and worship.',
+            ],
+            sw: [
+              'Allah ndiye Muumba wa mbingu, ardhi na kila kilichomo ndani yake. Viumbe vyote vinamhitaji Yeye, wakati Yeye hahitaji viumbe vyake.',
+              'Kumtambua Allah kuwa Muumba humkumbusha Muislamu kwamba neema zote zinatoka kwa Allah na kwamba Yeye ndiye anayestahiki shukrani, utiifu na ibada.',
+            ],
+            fr: [
+              'Allah est le Créateur des cieux, de la terre et de tout ce qui s’y trouve. Toutes les créatures dépendent de Lui, tandis qu’Il Se suffit à Lui-même.',
+              'Reconnaître Allah comme le Créateur rappelle au musulman que les bienfaits viennent d’Allah et qu’Il mérite la gratitude, l’obéissance et l’adoration.',
             ],
           },
-          {
-            title: 'Allah is the Lord',
-            paragraphs: [
-              'The Qur’an repeatedly describes Allah as the Lord of the worlds. The word Rabb carries meanings connected with lordship, ownership, authority, care, and sustaining creation.',
-              'Allah’s lordship means that He alone has ultimate authority over creation. Muslims therefore turn to Him with trust, gratitude, and reliance while still taking responsible means in their lives.',
+        },
+        {
+          arabicTitle: 'الله هو الرب',
+          arabicText: [
+            'الله تعالى رب العالمين، والرب هو المالك والسيد والمدبر والمربي لخلقه بنعمه ورحمته.',
+            'فربوبية الله تعالى تعني أنه وحده المتصرف في ملكه، وأن الخلق جميعًا تحت ملكه وتدبيره وحاجتهم إليه.',
+          ],
+          translations: {
+            en: [
+              'Allah is the Lord of the worlds. Rabb includes meanings of ownership, authority, care, and sustaining His creation.',
+              'Allah’s lordship means that He alone has ultimate authority over His creation, and all created beings remain under His ownership and care.',
+            ],
+            sw: [
+              'Allah ndiye Mola wa walimwengu. Neno Rabb linahusisha maana ya umiliki, mamlaka, uangalizi na kulea viumbe Vyake.',
+              'Uola wa Allah unamaanisha kwamba Yeye ndiye mwenye mamlaka juu ya viumbe Vyake, na viumbe vyote viko chini ya umiliki na uangalizi Wake.',
+            ],
+            fr: [
+              'Allah est le Seigneur des mondes. Le terme Rabb comprend les sens de possession, d’autorité, de soin et de préservation de Sa création.',
+              'La seigneurie d’Allah signifie qu’Il détient l’autorité ultime sur Sa création et que toutes les créatures sont sous Sa possession et Sa protection.',
             ],
           },
-          {
-            title: 'The Creator alone deserves worship',
-            paragraphs: [
-              'Knowing that Allah is the Creator and Lord is closely connected to Tawheed in worship. The Qur’an calls people to worship their Lord who created them.',
-              'A Muslim therefore directs acts of worship such as prayer, supplication, reliance, and sacrifice to Allah alone. Recognizing Allah as Lord is not merely a theoretical idea; it has consequences for worship.',
+        },
+        {
+          arabicTitle: 'الذي خلق هو المستحق للعبادة',
+          arabicText: [
+            'معرفة الله بأنه الخالق والرب تتعلق بتوحيد العبادة؛ فالذي خلق الخلق ويرزقهم ويدبر أمرهم هو المستحق لأن يُعبد وحده.',
+            'ولهذا يخلص المسلم لله تعالى الصلاة والدعاء والاستعانة وسائر العبادات التي شرعها الله، ولا يجعل شيئًا منها لغيره.',
+          ],
+          translations: {
+            en: [
+              'Knowing Allah as the Creator and Lord is connected to Tawheed in worship. The One who created, provides for, and sustains creation is the One who deserves to be worshipped alone.',
+              'A Muslim therefore directs prayer, supplication, seeking help, and all acts of worship legislated by Allah sincerely to Him, without directing worship to anyone else.',
+            ],
+            sw: [
+              'Kumtambua Allah kuwa Muumba na Mola kunahusiana na Tawheed ya ibada. Yeye aliyeumba, anayetoa riziki na anayesimamia viumbe ndiye anayestahiki kuabudiwa peke Yake.',
+              'Kwa hiyo Muislamu humwelekea Allah kwa Swala, dua, kuomba msaada na ibada zote alizoamrisha kwa ikhlasi, bila kuelekeza ibada kwa mwingine.',
+            ],
+            fr: [
+              'Reconnaître Allah comme le Créateur et le Seigneur est lié au Tawhid dans l’adoration. Celui qui a créé, pourvoit et administre la création est Celui qui mérite d’être adoré seul.',
+              'Le musulman adresse donc sincèrement à Allah la prière, l’invocation, la demande d’aide et les actes d’adoration qu’Allah a prescrits, sans les diriger vers un autre.',
             ],
           },
-          {
-            title: 'Allah is unlike His creation',
-            paragraphs: [
-              'The Qur’an teaches that nothing is comparable to Allah. Muslims affirm what revelation teaches about Allah while avoiding descriptions that make Him like created things.',
-              'This principle helps a learner approach knowledge of Allah with humility and care. What Allah has revealed about Himself is accepted without inventing details that revelation does not give.',
+        },
+        {
+          arabicTitle: 'الله لا يشبه خلقه',
+          arabicText: [
+            'الله تعالى ليس كمثله شيء، ولا يجوز للمسلم أن يجعل صفات الخالق مثل صفات المخلوقين أو أن يتخيل كيفية ما أخبر الله به عن نفسه بلا دليل.',
+            'ولهذا يتعلم المسلم ما أخبر الله به عن نفسه وما صح عن رسوله ﷺ، ويثبت ذلك على الوجه اللائق بالله، مع تنزيهه عن مشابهة خلقه.',
+          ],
+          translations: {
+            en: [
+              'Allah is not like His creation. A Muslim should not make the attributes of the Creator like the attributes of created beings or speculate about matters for which revelation gives no details.',
+              'A Muslim therefore learns what Allah has revealed about Himself and what is authentically reported from the Prophet ﷺ, affirming it in a manner befitting Allah while declaring Him unlike His creation.',
+            ],
+            sw: [
+              'Allah hafanani na viumbe Vyake. Muislamu hapaswi kuyafanya sifa za Muumba kuwa kama sifa za viumbe au kubuni namna ya mambo ambayo wahyi haujaeleza.',
+              'Kwa hiyo Muislamu hujifunza yale ambayo Allah ameyafichua kuhusu Yeye na yale yaliyothibiti kutoka kwa Mtume ﷺ, akiyakubali kwa namna inayomstahili Allah na kumtakasa kutokana na kufanana na viumbe.',
+            ],
+            fr: [
+              'Allah ne ressemble pas à Sa création. Le musulman ne doit pas assimiler les attributs du Créateur à ceux des créatures ni spéculer sur ce que la révélation n’a pas détaillé.',
+              'Le musulman apprend donc ce qu’Allah a révélé sur Lui-même et ce qui est authentiquement rapporté du Prophète ﷺ, en l’affirmant d’une manière qui convient à Allah et en affirmant qu’Il ne ressemble pas à Ses créatures.',
             ],
           },
-          {
-            title: 'Knowing Allah through revelation',
-            paragraphs: [
-              'Knowledge about Allah should be grounded in the Qur’an and the authentic Sunnah. Human reflection can recognize signs of creation and think about Allah’s greatness, but a Muslim does not invent beliefs about Allah without evidence from revelation.',
-              'Learning about Allah is therefore a lifelong process of reading revelation, understanding its meanings, worshipping Allah sincerely, and allowing that knowledge to shape character and conduct.',
+        },
+        {
+          arabicTitle: 'معرفة الله تكون من الوحي',
+          arabicText: [
+            'المعرفة الصحيحة بالله تعالى تُبنى على ما جاء في القرآن الكريم وما صح عن رسول الله ﷺ، لأن الوحي هو الطريق الموثوق لمعرفة ما يجب اعتقاده في الله.',
+            'ويتفكر المسلم في خلق الله وآياته، لكن لا ينسب إلى الله اعتقادًا أو وصفًا بلا دليل من الوحي.',
+          ],
+          translations: {
+            en: [
+              'Sound knowledge of Allah is grounded in the Qur’an and what is authentically reported from the Messenger of Allah ﷺ, because revelation is the reliable source for what must be believed about Allah.',
+              'A Muslim may reflect upon Allah’s creation and signs, but should not attribute beliefs or descriptions to Allah without evidence from revelation.',
+            ],
+            sw: [
+              'Maarifa sahihi kuhusu Allah hujengwa juu ya Qur’an na yale yaliyothibiti kutoka kwa Mtume wa Allah ﷺ, kwa sababu wahyi ndio chanzo cha kuaminika cha yale yanayopaswa kuaminiwa kuhusu Allah.',
+              'Muislamu anaweza kutafakari uumbaji na ishara za Allah, lakini hapaswi kumnasibishia Allah itikadi au sifa bila ushahidi kutoka katika wahyi.',
+            ],
+            fr: [
+              'La connaissance correcte d’Allah repose sur le Coran et ce qui est authentiquement rapporté du Messager d’Allah ﷺ, car la révélation est la source fiable de ce qui doit être cru au sujet d’Allah.',
+              'Le musulman peut réfléchir à la création et aux signes d’Allah, mais ne doit pas Lui attribuer une croyance ou une description sans preuve provenant de la révélation.',
             ],
           },
-        ],
-        keyTerms: [
-          {
-            term: 'Rabb',
-            meaning: 'A term describing Allah’s lordship, including His authority, ownership, care, and sustaining of creation.',
-          },
-          {
-            term: 'Tawheed',
-            meaning: 'Affirming Allah’s oneness in the ways taught by revelation, including directing worship to Allah alone.',
-          },
-          {
-            term: 'Khalq',
-            meaning: 'Creation; the act of bringing created things into existence.',
-          },
-          {
-            term: 'Worship',
-            meaning: 'Acts of devotion and obedience that are directed to Allah sincerely.',
-          },
-        ],
-        reviewQuestions: [
-          'Why is Allah described as the Creator and Lord of the worlds?',
-          'What does the term Rabb communicate about Allah’s relationship to creation?',
-          'Why does recognizing Allah as Lord lead to worshipping Him alone?',
-          'What does the Qur’an teach about Allah being unlike His creation?',
-          'Why should knowledge about Allah be grounded in revelation?',
-        ],
-        sources: [
-          { type: 'quran', reference: 'Qur’an 1:2' },
-          { type: 'quran', reference: 'Qur’an 6:102' },
-          { type: 'quran', reference: 'Qur’an 20:50' },
-          { type: 'quran', reference: 'Qur’an 42:11' },
-          { type: 'quran', reference: 'Qur’an 112:1–4' },
-        ],
-      },
-      sw: {
-        objectives: [
-          'Kuelewa kwamba Allah ndiye Muumba, Mola na Mlezi wa viumbe vyote.',
-          'Kuelewa kwa nini kumtambua Allah kama Mola kunaelekeza katika kumuabudu Yeye pekee.',
-          'Kujifunza kueleza yanayofundishwa kuhusu Allah kupitia wahyi bila kutegemea dhana zisizo na ushahidi.',
-        ],
-        sections: [
-          {
-            title: 'Allah ndiye Muumba',
-            paragraphs: [
-              'Uislamu unafundisha kwamba Allah aliumba mbingu, ardhi na kila kilichopo. Viumbe vinamtegemea Yeye, wakati Allah hahitaji viumbe vyake.',
-              'Kumtambua Allah kama Muumba humpa Muislamu msingi wa kuelewa ni nani anayestahili shukrani, utiifu na ibada kwa kiwango cha juu kabisa.',
-            ],
-          },
-          {
-            title: 'Allah ndiye Mola',
-            paragraphs: [
-              'Qur’an mara nyingi inamtaja Allah kuwa Mola wa walimwengu. Neno Rabb lina maana zinazohusiana na ulezi, umiliki, mamlaka, uangalizi na kuendeleza uumbaji.',
-              'Uola wa Allah unamaanisha kwamba Yeye ndiye mwenye mamlaka ya mwisho juu ya viumbe. Kwa hiyo Muislamu humtegemea Allah kwa matumaini na shukrani, huku pia akichukua sababu na hatua zenye kuwajibika katika maisha yake.',
-            ],
-          },
-          {
-            title: 'Muumba ndiye anayestahiki kuabudiwa',
-            paragraphs: [
-              'Kujua kwamba Allah ndiye Muumba na Mola kuna uhusiano wa karibu na Tawheed katika ibada. Qur’an inawaita watu wamuabudu Mola wao aliyewaumba.',
-              'Kwa hiyo Muislamu humwelekea Allah pekee katika ibada kama Swala, dua, kumtegemea na kuchinja kwa ajili ya ibada. Kumtambua Allah kama Mola si wazo la kinadharia tu; kuna athari katika ibada.',
-            ],
-          },
-          {
-            title: 'Allah hafanani na viumbe Wake',
-            paragraphs: [
-              'Qur’an inafundisha kwamba hakuna chochote kinachofanana na Allah. Muislamu anakubali yale ambayo wahyi umefundisha kuhusu Allah bila kumfananisha na viumbe.',
-              'Kanuni hii humsaidia mwanafunzi kujifunza kuhusu Allah kwa unyenyekevu na uangalifu. Yale ambayo Allah ameyafichua kuhusu Yeye yanakubaliwa bila kubuni maelezo ambayo wahyi haujayatoa.',
-            ],
-          },
-          {
-            title: 'Kumjua Allah kupitia wahyi',
-            paragraphs: [
-              'Maarifa kuhusu Allah yanapaswa kujengwa juu ya Qur’an na Sunnah sahihi. Tafakuri inaweza kumsaidia mtu kuona ishara za uumbaji na kutafakari ukuu wa Allah, lakini Muislamu habuni imani kuhusu Allah bila ushahidi kutoka katika wahyi.',
-              'Kujifunza kuhusu Allah ni safari ya maisha yote ya kusoma wahyi, kuelewa maana zake, kumuabudu Allah kwa ikhlasi na kuruhusu elimu hiyo iathiri tabia na mwenendo.',
-            ],
-          },
-        ],
-        keyTerms: [
-          {
-            term: 'Rabb',
-            meaning: 'Neno linaloeleza uola wa Allah, likihusisha mamlaka, umiliki, uangalizi na kulea uumbaji Wake.',
-          },
-          {
-            term: 'Tawheed',
-            meaning: 'Kuthibitisha upweke na upekee wa Allah kwa namna ilivyofundishwa na wahyi, ikiwemo kuelekeza ibada kwa Allah pekee.',
-          },
-          {
-            term: 'Khalq',
-            meaning: 'Uumbaji; kuleta viumbe katika uwepo.',
-          },
-          {
-            term: 'Ibada',
-            meaning: 'Matendo ya kujitolea kwa Allah na utiifu yanayofanywa kwa ikhlasi.',
-          },
-        ],
-        reviewQuestions: [
-          'Kwa nini Allah anatajwa kuwa Muumba na Mola wa walimwengu?',
-          'Neno Rabb linaeleza nini kuhusu uhusiano wa Allah na viumbe?',
-          'Kwa nini kumtambua Allah kama Mola kunaelekeza katika kumuabudu Yeye pekee?',
-          'Qur’an inafundisha nini kuhusu Allah kutofanana na viumbe Wake?',
-          'Kwa nini maarifa kuhusu Allah yanapaswa kujengwa juu ya wahyi?',
-        ],
-        sources: [
-          { type: 'quran', reference: 'Qur’an 1:2' },
-          { type: 'quran', reference: 'Qur’an 6:102' },
-          { type: 'quran', reference: 'Qur’an 20:50' },
-          { type: 'quran', reference: 'Qur’an 42:11' },
-          { type: 'quran', reference: 'Qur’an 112:1–4' },
-        ],
-      },
+        },
+      ],
+      sources: [
+        { type: 'quran', reference: 'Qur’an 1:2' },
+        { type: 'quran', reference: 'Qur’an 6:102' },
+        { type: 'quran', reference: 'Qur’an 20:50' },
+        { type: 'quran', reference: 'Qur’an 42:11' },
+        { type: 'quran', reference: 'Qur’an 112:1–4' },
+      ],
+    },
+    translations: {
+      en: { title: 'Allah Is the Creator and Lord' },
+      sw: { title: 'Allah Ndiye Muumba na Mola' },
+      fr: { title: 'Allah est le Créateur et le Seigneur' },
     },
   },
-],
-    },
     {
       slug: 'understanding-tawheed',
       title: 'Understanding Tawheed',
       number: 3,
-      lessons: [],
     },
     {
       slug: 'shirk-and-protecting-tawheed',
       title: 'Shirk and Protecting Tawheed',
       number: 4,
-      lessons: [],
     },
     {
       slug: 'six-articles-of-iman',
       title: 'The Six Articles of Iman',
       number: 5,
-      lessons: [],
     },
     {
       slug: 'prophethood-and-revelation',
       title: 'Prophethood and Revelation',
       number: 6,
-      lessons: [],
     },
     {
       slug: 'aqidah-in-the-life-of-a-muslim',
       title: 'Aqidah in the Life of a Muslim',
       number: 7,
-      lessons: [],
     },
-  ],
+    ],
+  },
+]
 }
