@@ -1215,7 +1215,7 @@ export const TAWHEED_AQIDAH_COURSE: {
             arabicTitle: 'معرفة الله تورث التوكل عليه',
             arabicText: [
               'من عرف قدرة الله وتدبيره اعتمد عليه مع الأخذ بالأسباب المشروعة، وعلم أن النفع والضر بيد الله تعالى.',
-              'قال الله تعالى: وَعَلَى اللَّهِ فَتَوَكَّلُوا إِنْ كُنْتُمْ مُؤْمِنِينَ.',
+              'قال الله تعالى: وَعَلَى ٱللَّهِ فَتَوَكَّلُوٓا۟ إِن كُنتُم مُّؤْمِنِينَ.',
             ],
             translations: {
               en: [
@@ -1405,8 +1405,138 @@ export const TAWHEED_AQIDAH_COURSE: {
     },
     {
       slug: 'aqidah-in-the-life-of-a-muslim',
-      title: 'Aqidah in the Life of a Muslim',
       number: 7,
+      source: {
+        arabicTitle: 'العقيدة في حياة المسلم',
+        arabicIntroduction: [
+          'العقيدة الصحيحة ليست معلومات تُحفظ فقط، بل هي إيمان يقوم في القلب ويظهر أثره في عبادة المسلم وأخلاقه وأعماله وحياته اليومية.',
+          'فكلما صح توحيد المسلم وإيمانه بالله وملائكته وكتبه ورسله واليوم الآخر والقدر، ظهر أثر ذلك في إخلاصه لله، وثقته به، وخوفه ورجائه، وطاعته واجتنابه للمعاصي.',
+        ],
+        sections: [
+          {
+            arabicTitle: 'العقيدة أساس العبادة',
+            arabicText: [
+              'من آثار العقيدة الصحيحة أن يقصد المسلم بعبادته وجه الله وحده، فلا يجعل شيئًا من العبادة لغيره، ويحرص على موافقة ما شرعه الله ورسوله ﷺ.',
+              'قال الله تعالى: وَمَآ أُمِرُوٓا۟ إِلَّا لِيَعْبُدُوا۟ ٱللَّهَ مُخْلِصِينَ لَهُ ٱلدِّينَ.',
+            ],
+            translations: {
+              en: [
+                'One of the effects of sound Aqidah is that a Muslim seeks Allah alone through worship, directing no act of worship to anyone besides Him and striving to follow what Allah and His Messenger ﷺ legislated.',
+                'Allah says: “They were only commanded to worship Allah, sincerely devoting the religion to Him.”',
+              ],
+              sw: [
+                'Miongoni mwa athari za itikadi sahihi ni kwamba Muislamu humkusudia Allah peke Yake katika ibada, haelekezi ibada yoyote kwa asiyekuwa Yeye, na hujitahidi kufuata aliyoyaweka Allah na Mtume Wake ﷺ kuwa ni sheria.',
+                'Allah amesema: “Nao hawakuamrishwa isipokuwa wamuabudu Allah kwa kumtakasia Dini.”',
+              ],
+              fr: [
+                'Parmi les effets d’une croyance correcte, le musulman recherche par son adoration la Face d’Allah seul, ne dirige aucun acte d’adoration vers autre que Lui et s’efforce de suivre ce qu’Allah et Son Messager ﷺ ont légiféré.',
+                'Allah dit : « Il ne leur a été commandé que d’adorer Allah en Lui vouant exclusivement la religion. »',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'التوكل على الله مع الأخذ بالأسباب',
+            arabicText: [
+              'الإيمان بالله يورث القلب التوكل عليه، فيعتمد المسلم على ربه ويستعين به، مع الأخذ بالأسباب المشروعة وعدم ترك العمل النافع.',
+              'قال الله تعالى: وَعَلَى اللَّهِ فَتَوَكَّلُوا إِنْ كُنْتُمْ مُؤْمِنِينَ.',
+            ],
+            translations: {
+              en: [
+                'Faith in Allah leads the heart to rely upon Him. A Muslim seeks Allah’s help and places trust in Him while also taking lawful and beneficial means and not abandoning useful effort.',
+                'Allah says: “And upon Allah put your trust, if you are believers.”',
+              ],
+              sw: [
+                'Kumuamini Allah huufanya moyo umtegemee Yeye. Muislamu humuomba msaada Allah na humtegemea, huku akichukua sababu halali na zenye manufaa na bila kuacha juhudi yenye manufaa.',
+                'Allah amesema: “Na mtegemeeni Allah ikiwa nyinyi ni Waumini.”',
+              ],
+              fr: [
+                'La foi en Allah conduit le cœur à placer sa confiance en Lui. Le musulman recherche Son aide et se confie à Lui tout en prenant les moyens licites et utiles et sans abandonner les efforts bénéfiques.',
+                'Allah dit : « Et placez votre confiance en Allah si vous êtes croyants. »',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'الخوف والرجاء والمحبة لله',
+            arabicText: [
+              'العقيدة الصحيحة تجعل قلب المسلم متعلقًا بالله بالمحبة والخوف والرجاء، فيحبه ويعظمه، ويرجو رحمته ويخاف عقابه، ويوازن بين هذه المعاني في سيره إلى الله.',
+              'قال الله تعالى: وَٱلَّذِينَ ءَامَنُوٓا۟ أَشَدُّ حُبًّا لِّلَّهِ.',
+              'وقال الله تعالى: وَيَرْجُونَ رَحْمَتَهُۥ وَيَخَافُونَ عَذَابَهُۥٓ.',
+            ],
+            translations: {
+              en: [
+                'Sound Aqidah connects the Muslim’s heart to Allah through love, fear, and hope. The believer loves and honors Allah, hopes for His mercy, fears His punishment, and maintains a balanced heart while striving toward Him.',
+                'Allah says: “Those who believe are stronger in love for Allah.”',
+                'Allah says: “They hope for His mercy and fear His punishment.”',
+              ],
+              sw: [
+                'Itikadi sahihi huufanya moyo wa Muislamu ushikamane na Allah kwa mapenzi, khofu na matumaini. Muumini humpenda na kumtukuza Allah, anatarajia rehema Yake, anaogopa adhabu Yake, na huweka uwiano wa mambo haya anapomwelekea Allah.',
+                'Allah amesema: “Na walioamini ni wenye mapenzi makubwa zaidi kwa Allah.”',
+                'Allah amesema: “Na wanatarajia rehema Yake na wanaogopa adhabu Yake.”',
+              ],
+              fr: [
+                'La croyance correcte attache le cœur du musulman à Allah par l’amour, la crainte et l’espérance. Le croyant aime et glorifie Allah, espère Sa miséricorde, craint Son châtiment et maintient un équilibre entre ces sentiments dans sa marche vers Allah.',
+                'Allah dit : « Ceux qui croient sont les plus ardents en amour pour Allah. »',
+                'Allah dit : « Ils espèrent Sa miséricorde et craignent Son châtiment. »',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'العقيدة تظهر في الأخلاق والأعمال',
+            arabicText: [
+              'الإيمان الصادق يظهر أثره في سلوك المسلم، فيدفعه إلى الصدق والأمانة وبر الوالدين والإحسان إلى الناس، ويبعده عن الظلم والكذب والخيانة وسائر المعاصي.',
+              'قال الله تعالى: إِنَّ ٱللَّهَ يَأْمُرُ بِٱلْعَدْلِ وَٱلْإِحْسَٰنِ وَإِيتَآئِ ذِى ٱلْقُرْبَىٰ وَيَنْهَىٰ عَنِ ٱلْفَحْشَآءِ وَٱلْمُنكَرِ وَٱلْبَغْىِ.',
+            ],
+            translations: {
+              en: [
+                'True faith has an effect on a Muslim’s conduct. It encourages truthfulness, trustworthiness, kindness to parents, and good treatment of people, while keeping the believer away from injustice, lying, betrayal, and other sins.',
+                'Allah says: “Indeed, Allah commands justice, excellence, and giving to relatives, and He forbids immorality, wrongdoing, and oppression.”',
+              ],
+              sw: [
+                'Imani ya kweli huonekana katika mwenendo wa Muislamu. Humhimiza kuwa mkweli, mwaminifu, kuwafanyia wema wazazi, na kuwatendea watu kwa ihsani, huku ikimuepusha na dhulma, uongo, khiyana na maasi mengine.',
+                'Allah amesema: “Hakika Allah anaamrisha uadilifu, ihsani na kuwapa jamaa, na anakataza machafu, maovu na dhulma.”',
+              ],
+              fr: [
+                'La foi véritable produit des effets dans le comportement du musulman. Elle l’encourage à être véridique et digne de confiance, à bien traiter ses parents et les gens, et l’éloigne de l’injustice, du mensonge, de la trahison et des autres péchés.',
+                'Allah dit : « Certes, Allah commande la justice, la bienfaisance et la générosité envers les proches, et Il interdit la turpitude, le blâmable et la transgression. »',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'الثبات على الحق عند الابتلاء',
+            arabicText: [
+              'الإيمان بالقدر يعلّم المسلم أن ما أصابه لم يكن ليخطئه وما أخطأه لم يكن ليصيبه، فيصبر عند البلاء، ويشكر عند النعمة، ويرضى بقضاء الله مع استمرار السعي في الخير.',
+              'قال الله تعالى: مَآ أَصَابَ مِن مُّصِيبَةٍ فِى ٱلْأَرْضِ وَلَا فِىٓ أَنفُسِكُمْ إِلَّا فِى كِتَٰبٍ مِّن قَبْلِ أَن نَّبْرَأَهَآ.',
+            ],
+            translations: {
+              en: [
+                'Belief in divine decree teaches a Muslim that what reached him could not have missed him and what missed him could not have reached him. He remains patient in hardship, grateful in blessing, and accepts Allah’s decree while continuing to strive for good.',
+                'Allah says: “No disaster strikes upon the earth or within yourselves except that it is in a record before We bring it into being.”',
+              ],
+              sw: [
+                'Kumuamini Qadar humfundisha Muislamu kwamba kilichompata hakikuwa cha kumpita, na kilichompita hakikuwa cha kumpata. Husubiri wakati wa shida, hushukuru wakati wa neema, na hukubali Qadar ya Allah huku akiendelea kujitahidi katika mema.',
+                'Allah amesema: “Hakuna msiba unaotokea katika ardhi wala katika nafsi zenu isipokuwa umo katika Kitabu kabla Hatujauumba.”',
+              ],
+              fr: [
+                'La foi au décret divin apprend au musulman que ce qui l’a atteint ne pouvait pas lui échapper et que ce qui lui a échappé ne pouvait pas l’atteindre. Il patiente dans l’épreuve, remercie Allah dans la facilité et accepte Son décret tout en continuant à œuvrer dans le bien.',
+                'Allah dit : « Aucun malheur n’atteint la terre ni vos personnes sans qu’il ne soit inscrit dans un Livre avant que Nous ne le créions. »',
+              ],
+            },
+          },
+        ],
+        sources: [
+          { type: 'quran', reference: 'Qur’an 98:5' },
+          { type: 'quran', reference: 'Qur’an 5:23' },
+          { type: 'quran', reference: 'Qur’an 2:165' },
+          { type: 'quran', reference: 'Qur’an 17:57' },
+          { type: 'quran', reference: 'Qur’an 16:90' },
+          { type: 'quran', reference: 'Qur’an 57:22' },
+        ],
+      },
+      translations: {
+        en: { title: 'Aqidah in the Life of a Muslim' },
+        sw: { title: 'Itikadi katika Maisha ya Muislamu' },
+        fr: { title: 'La croyance dans la vie du musulman' },
+      },
     },
     ],
   },
