@@ -1049,11 +1049,7 @@ export const TAWHEED_AQIDAH_COURSE: {
       fr: { title: 'Le Tawhid et son effet sur l’adoration' },
     },
   },
-    {
-      slug: 'understanding-tawheed',
-      title: 'Understanding Tawheed',
-      number: 3,
-    },
+
     {
       slug: 'shirk-and-protecting-tawheed',
       number: 4,
