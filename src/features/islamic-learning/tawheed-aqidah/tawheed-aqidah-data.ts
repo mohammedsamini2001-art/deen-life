@@ -832,6 +832,115 @@ export const TAWHEED_AQIDAH_COURSE: {
       fr: { title: 'Allah est le Créateur et le Seigneur' },
     },
   },
+  {
+    slug: 'names-and-attributes-of-allah',
+    number: 2,
+    source: {
+      arabicTitle: 'أسماء الله وصفاته',
+      arabicIntroduction: [
+        'لله تعالى الأسماء الحسنى والصفات العلى، وقد أخبر عن نفسه بها في كتابه، وثبت عن رسوله ﷺ من ذلك ما يجب الإيمان به.',
+        'ويتعلم المسلم أسماء الله وصفاته من القرآن والسنة الصحيحة، فيثبت ما أثبته الله لنفسه وما أثبته له رسوله ﷺ، وينزهه عن مشابهة خلقه.',
+      ],
+      sections: [
+        {
+          arabicTitle: 'لله الأسماء الحسنى',
+          arabicText: [
+            'قال الله تعالى: وَلِلَّهِ الْأَسْمَاءُ الْحُسْنَى فَادْعُوهُ بِهَا. فله سبحانه الأسماء الحسنى الدالة على كماله وجلاله.',
+            'ومعرفة أسماء الله ليست مجرد حفظ للألفاظ، بل يتعلم المسلم معانيها وما تدل عليه من كمال الله، ويظهر أثر ذلك في عبادته ودعائه وسلوكه.',
+          ],
+          translations: {
+            en: [
+              'Allah has the Most Beautiful Names. The Qur’an teaches that these names belong to Him and that believers should call upon Him through them. They point to His perfection and majesty.',
+              'Learning Allah’s Names is not only about memorizing words. A Muslim learns their meanings and what they indicate about Allah’s perfection, allowing that knowledge to shape worship, supplication, and conduct.',
+            ],
+            sw: [
+              'Allah ana Majina Mazuri Zaidi. Qur’an inafundisha kwamba Majina haya ni Yake na kwamba Waumini wamwite kwa Majina hayo. Majina hayo yanaonyesha ukamilifu na utukufu Wake.',
+              'Kujifunza Majina ya Allah si kuhifadhi maneno tu. Muislamu hujifunza maana zake na yale yanayoonyesha kuhusu ukamilifu wa Allah, na maarifa hayo huathiri ibada, dua na mwenendo.',
+            ],
+            fr: [
+              'Allah possède les Plus Beaux Noms. Le Coran enseigne que ces noms Lui appartiennent et que les croyants doivent L’invoquer par eux. Ils indiquent Sa perfection et Sa majesté.',
+              'Apprendre les Noms d’Allah ne consiste pas seulement à mémoriser des mots. Le musulman apprend leurs significations et ce qu’ils indiquent de la perfection d’Allah, afin que cette connaissance influence l’adoration, l’invocation et le comportement.',
+            ],
+          },
+        },
+        {
+          arabicTitle: 'نثبت ما أثبته الله لنفسه',
+          arabicText: [
+            'يؤمن المسلم بما وصف الله به نفسه في القرآن، وبما صح عن رسول الله ﷺ، من غير تحريف ولا إنكار، ومن غير تشبيه للخالق بالمخلوق.',
+            'قال الله تعالى: لَيْسَ كَمِثْلِهِ شَيْءٌ وَهُوَ السَّمِيعُ الْبَصِيرُ. ففي الآية إثبات لما وصف الله به نفسه مع نفي مماثلته لخلقه.',
+          ],
+          translations: {
+            en: [
+              'A Muslim believes in what Allah has described Himself with in the Qur’an and what is authentically reported from the Messenger of Allah ﷺ, without distorting or rejecting it and without comparing the Creator to creation.',
+              'Allah says that there is nothing like Him, while He is the All-Hearing, the All-Seeing. The verse combines affirmation of what Allah has stated about Himself with the declaration that He is unlike His creation.',
+            ],
+            sw: [
+              'Muislamu huamini yale ambayo Allah amejieleza nayo katika Qur’an na yale yaliyothibiti kutoka kwa Mtume wa Allah ﷺ, bila kuyapotosha au kuyakataa, na bila kumfananisha Muumba na kiumbe.',
+              'Allah anasema kwamba hakuna chochote kinachofanana na Yeye, na Yeye ni Mwenye Kusikia, Mwenye Kuona. Aya hii inaunganisha kuthibitisha yale ambayo Allah amejithibitishia pamoja na kutangaza kwamba Yeye hafanani na viumbe Vyake.',
+            ],
+            fr: [
+              'Le musulman croit à ce par quoi Allah S’est décrit dans le Coran et à ce qui est authentiquement rapporté du Messager d’Allah ﷺ, sans le déformer ni le rejeter, et sans comparer le Créateur à la création.',
+              'Allah dit que rien ne Lui ressemble, tout en étant l’Audient et le Clairvoyant. Le verset réunit l’affirmation de ce qu’Allah a affirmé de Lui-même et la négation de toute ressemblance avec Sa création.',
+            ],
+          },
+        },
+        {
+          arabicTitle: 'أسماء الله وصفاته لا تشبه صفات المخلوقين',
+          arabicText: [
+            'اشتراك الاسم بين الخالق والمخلوق لا يعني التماثل في الحقيقة والكيفية. فالله تعالى له الكمال المطلق، ولا يشبهه شيء من خلقه.',
+            'ولهذا لا يتكلف المسلم معرفة كيفية صفات الله بعقله، بل يؤمن بما جاء به الوحي ويكل علم الكيفية إلى الله تعالى.',
+          ],
+          translations: {
+            en: [
+              'A shared name or description between the Creator and created beings does not mean that their reality or manner is the same. Allah has absolute perfection, and nothing in creation resembles Him.',
+              'A Muslim therefore does not try to determine the manner of Allah’s attributes through speculation. Rather, the believer accepts what revelation teaches and leaves knowledge of the manner to Allah.',
+            ],
+            sw: [
+              'Kufanana kwa jina au sifa kati ya Muumba na kiumbe hakumaanishi kwamba uhalisia au namna yake ni sawa. Allah ana ukamilifu usio na mwisho, na hakuna katika viumbe Vyake anayefanana Naye.',
+              'Kwa hiyo Muislamu hajaribu kubuni namna ya sifa za Allah kwa fikra zake. Bali huamini yale yaliyofundishwa na wahyi na huacha kujua namna yake kwa Allah.',
+            ],
+            fr: [
+              'Le fait qu’un nom ou une description soit employé pour le Créateur et pour une créature ne signifie pas que leur réalité ou leur manière soit identique. Allah possède la perfection absolue et rien de Sa création ne Lui ressemble.',
+              'Le musulman ne cherche donc pas à déterminer par la spéculation la manière dont sont les attributs d’Allah. Il accepte plutôt ce que révèle la révélation et laisse à Allah la connaissance de la manière.',
+            ],
+          },
+        },
+        {
+          arabicTitle: 'معرفة أسماء الله تزيد الإيمان',
+          arabicText: [
+            'كلما ازداد المسلم معرفة بأسماء الله وصفاته ازداد تعظيمًا له ومحبةً وخوفًا ورجاءً، لأن معرفة الرب سبحانه تؤثر في القلب والعمل.',
+            'فإذا علم المسلم أن الله سميع بصير راقب كلامه وأعماله، وإذا علم أنه غفور رحيم تاب إليه ورجا رحمته، وإذا علم أنه شديد العقاب حذر من معصيته.',
+          ],
+          translations: {
+            en: [
+              'As a Muslim learns more about Allah’s Names and Attributes, this can increase reverence, love, fear, and hope, because knowledge of the Lord affects both the heart and actions.',
+              'Knowing that Allah is All-Hearing and All-Seeing can encourage a Muslim to be mindful of speech and actions. Knowing that He is Forgiving and Merciful encourages repentance and hope in His mercy, while knowing that He is severe in punishment encourages avoidance of disobedience.',
+            ],
+            sw: [
+              'Kadiri Muislamu anavyozidi kujua Majina na Sifa za Allah, maarifa hayo yanaweza kuongeza kumtukuza, kumpenda, kumwogopa na kumtumainia, kwa sababu kumjua Mola kunaathiri moyo na matendo.',
+              'Kujua kwamba Allah ni Mwenye Kusikia na Mwenye Kuona humhimiza Muislamu kuwa mwangalifu katika maneno na matendo. Kujua kwamba Yeye ni Mwingi wa Kusamehe na Mwenye Rehema humhimiza kutubu na kutumaini rehema Yake, na kujua adhabu Yake humhimiza kujiepusha na maasi.',
+            ],
+            fr: [
+              'Plus le musulman connaît les Noms et les Attributs d’Allah, plus cette connaissance peut accroître la révérence, l’amour, la crainte et l’espérance, car connaître le Seigneur influence le cœur et les actes.',
+              'Savoir qu’Allah est l’Audient et le Clairvoyant peut encourager le musulman à surveiller ses paroles et ses actes. Savoir qu’Il est Pardonneur et Miséricordieux encourage le repentir et l’espoir en Sa miséricorde, tandis que connaître Son châtiment encourage à éviter la désobéissance.',
+            ],
+          },
+        },
+      ],
+      sources: [
+        { type: 'quran', reference: 'Qur’an 7:180' },
+        { type: 'quran', reference: 'Qur’an 42:11' },
+        { type: 'quran', reference: 'Qur’an 59:22–24' },
+        { type: 'quran', reference: 'Qur’an 20:8' },
+        { type: 'hadith', reference: 'Sahih al-Bukhari 7392' },
+      ],
+    },
+    translations: {
+      en: { title: 'Allah’s Names and Attributes' },
+      sw: { title: 'Majina na Sifa za Allah' },
+      fr: { title: 'Les Noms et Attributs d’Allah' },
+    },
+  },
     {
       slug: 'understanding-tawheed',
       title: 'Understanding Tawheed',
