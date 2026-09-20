@@ -3,6 +3,9 @@ import { TAHAWIYYAH_LESSON_MAP } from './source/tahawiyyah-lesson-map'
 
 type Language = 'ar' | 'en' | 'sw' | 'fr'
 
+const toArabicNumerals = (value: number) =>
+  String(value).replace(/[0-9]/g, (digit) => '٠١٢٣٤٥٦٧٨٩'[Number(digit)])
+
 const UI_TEXT = {
   ar: {
     back: '← التعلّم',
@@ -73,10 +76,10 @@ export default function TawheedAqidahScreen({
             className="tawheed-aqidah-lesson"
             onClick={() => onOpenLesson(item.lesson)}
           >
-            <span>{item.lesson}</span>
+            <span>{toArabicNumerals(item.lesson)}</span>
             <strong>
               {language === 'ar'
-                ? `الدرس ${item.lesson}`
+                ? `الدرس ${toArabicNumerals(item.lesson)}`
                 : item.teachingTitle}
             </strong>
             <small>
