@@ -286,153 +286,111 @@ export const TAWHEED_AQIDAH_COURSE: {
         },
         {
           slug: 'islam-iman-ihsan',
-          title: 'Islam, Iman and Ihsan',
           number: 3,
-          content: {
-      en: {
-        objectives: [
-          'Explain the meanings of Islam, Iman, and Ihsan as described in the Qur’an and the Hadith of Jibril.',
-          'Understand how belief, worship, and excellence in worship are connected.',
-          'Recognize the six articles of Iman and the five practices described under Islam in the Hadith of Jibril.',
-        ],
-        sections: [
-          {
-            title: 'The three dimensions of the religion',
-            paragraphs: [
-              'The Hadith of Jibril presents Islam, Iman, and Ihsan together as connected dimensions of the religion. Islam includes outward acts of worship, Iman includes essential matters of belief, and Ihsan describes excellence and sincerity in worship.',
-              'Together, these concepts help a Muslim understand practice, belief, and the quality of worship.',
+          source: {
+            arabicTitle: 'الإسلام والإيمان والإحسان',
+            arabicIntroduction: [
+              'الإسلام والإيمان والإحسان مراتب عظيمة من الدين، وقد بينها النبي ﷺ في حديث جبريل عليه السلام، فذكر أصول الإسلام، ثم أصول الإيمان، ثم الإحسان.',
+              'وتبين هذه المراتب علاقة العمل الظاهر بالإيمان الباطن وبحسن العبادة ومراقبة الله تعالى.',
+            ],
+            sections: [
+              {
+                arabicTitle: 'الإسلام',
+                arabicText: [
+                  'الإسلام هو الاستسلام لله تعالى بالتوحيد، والانقياد له بالطاعة، والبراءة من الشرك وأهله.',
+                  'وقد بيّن النبي ﷺ الإسلام في حديث جبريل بخمس خصال: شهادة أن لا إله إلا الله وأن محمدًا رسول الله، وإقام الصلاة، وإيتاء الزكاة، وصوم رمضان، وحج البيت لمن استطاع إليه سبيلًا.',
+                ],
+                translations: {
+                  en: [
+                    'Islam means submitting to Allah through Tawhid, obeying Him, and rejecting shirk.',
+                    'In the Hadith of Jibril, the Prophet ﷺ explained Islam through five major practices: bearing witness that there is no deity worthy of worship except Allah and that Muhammad is the Messenger of Allah, establishing prayer, giving Zakah, fasting Ramadan, and performing Hajj for whoever is able.',
+                  ],
+                  sw: [
+                    'Uislamu ni kujisalimisha kwa Allah kwa Tawhid, kumtii Yeye, na kujiepusha na shirki.',
+                    'Katika Hadith ya Jibril, Mtume ﷺ alieleza Uislamu kupitia mambo matano: kushuhudia kuwa hakuna anayestahiki kuabudiwa kwa haki isipokuwa Allah na kwamba Muhammad ni Mtume wa Allah, kusimamisha Swala, kutoa Zaka, kufunga Ramadhani, na kuhiji kwa mwenye uwezo.',
+                  ],
+                  fr: [
+                    'L’Islam signifie se soumettre à Allah par le Tawhid, Lui obéir et se préserver du shirk.',
+                    'Dans le hadith de Jibril, le Prophète ﷺ a expliqué l’Islam par cinq pratiques majeures : attester qu’il n’y a aucune divinité digne d’adoration en dehors d’Allah et que Muhammad est le Messager d’Allah, accomplir la prière, donner la Zakat, jeûner Ramadan et accomplir le Hajj pour celui qui en a la capacité.',
+                  ],
+                },
+              },
+              {
+                arabicTitle: 'الإيمان',
+                arabicText: [
+                  'الإيمان هو التصديق الجازم بما أخبر الله تعالى به ورسوله ﷺ، ويشمل أصول الإيمان التي بينها النبي ﷺ في حديث جبريل.',
+                  'وهي الإيمان بالله، وملائكته، وكتبه، ورسله، واليوم الآخر، والقدر خيره وشره.',
+                ],
+                translations: {
+                  en: [
+                    'Iman is firm faith in what Allah and His Messenger ﷺ have informed us of, including the foundations of faith explained by the Prophet ﷺ in the Hadith of Jibril.',
+                    'These foundations are belief in Allah, His angels, His Books, His messengers, the Last Day, and divine decree, both its good and its difficult aspects.',
+                  ],
+                  sw: [
+                    'Imani ni kuamini kwa yakini yale ambayo Allah na Mtume Wake ﷺ wametufahamisha, ikiwemo misingi ya imani ambayo Mtume ﷺ aliieleza katika Hadith ya Jibril.',
+                    'Misingi hiyo ni kumuamini Allah, Malaika Wake, Vitabu Vyake, Mitume Wake, Siku ya Mwisho, na Qadar pamoja na yale yanayoonekana kuwa mema au magumu kwake mwanadamu.',
+                  ],
+                  fr: [
+                    'La foi (Iman) est la conviction ferme de ce qu’Allah et Son Messager ﷺ nous ont enseigné, notamment les fondements de la foi expliqués par le Prophète ﷺ dans le hadith de Jibril.',
+                    'Ces fondements sont la foi en Allah, en Ses anges, en Ses Livres, en Ses messagers, au Jour dernier et au destin, dans ce qui nous paraît bon comme dans ce qui nous paraît difficile.',
+                  ],
+                },
+              },
+              {
+                arabicTitle: 'الإحسان',
+                arabicText: [
+                  'الإحسان هو أن تعبد الله كأنك تراه، فإن لم تكن تراه فإنه يراك.',
+                  'وهو مقام عظيم من العبادة، يقوم على استحضار مراقبة الله تعالى، وإخلاص العبادة له، وتحسين العمل وإتقانه.',
+                ],
+                translations: {
+                  en: [
+                    'Ihsan is to worship Allah as though you see Him, and if you do not see Him, then know that He sees you.',
+                    'It is a high level of worship based on awareness that Allah is watching, sincerity to Him, and striving to perform deeds well and correctly.',
+                  ],
+                  sw: [
+                    'Ihsani ni kumuabudu Allah kana kwamba unamuona; na ikiwa humuoni, basi ujue kwamba Yeye anakuona.',
+                    'Ni daraja ya juu ya ibada inayojengwa juu ya kutambua kuwa Allah anatuangalia, kuwa na ikhlasi Kwake, na kujitahidi kufanya matendo kwa ubora na usahihi.',
+                  ],
+                  fr: [
+                    'L’Ihsan consiste à adorer Allah comme si tu Le voyais ; et si tu ne Le vois pas, sache qu’Il te voit.',
+                    'C’est un degré élevé de l’adoration fondé sur la conscience qu’Allah nous observe, la sincérité envers Lui et l’effort pour accomplir les œuvres avec excellence et justesse.',
+                  ],
+                },
+              },
+              {
+                arabicTitle: 'العلاقة بين الإسلام والإيمان والإحسان',
+                arabicText: [
+                  'الإسلام والإيمان والإحسان ليست مفاهيم متعارضة، بل هي مراتب مترابطة من الدين.',
+                  'فالعمل الظاهر من الإسلام، والإيمان بما في القلب من أصول الاعتقاد، والإحسان كمال في العبادة والمراقبة؛ ويجتمع ذلك كله في دين الله تعالى.',
+                ],
+                translations: {
+                  en: [
+                    'Islam, Iman, and Ihsan are not competing concepts; they are interconnected dimensions of the religion.',
+                    'Islam includes outward practice, Iman concerns the foundations of belief in the heart, and Ihsan represents excellence in worship and awareness of Allah. Together they form a complete understanding of the religion.',
+                  ],
+                  sw: [
+                    'Uislamu, Imani na Ihsani si dhana zinazopingana; ni vipengele vinavyohusiana vya dini.',
+                    'Uislamu unahusisha matendo ya nje, Imani inahusu misingi ya itikadi moyoni, na Ihsani ni ubora katika ibada na kumtambua Allah kuwa anatuona. Vyote kwa pamoja vinaunda uelewa wa dini.',
+                  ],
+                  fr: [
+                    'L’Islam, l’Iman et l’Ihsan ne sont pas des notions opposées ; ce sont des dimensions liées de la religion.',
+                    'L’Islam comprend les pratiques extérieures, l’Iman concerne les fondements de la croyance dans le cœur, et l’Ihsan représente l’excellence dans l’adoration et la conscience d’Allah. Ensemble, ils donnent une compréhension complète de la religion.',
+                  ],
+                },
+              },
+            ],
+            sources: [
+              { type: 'quran', reference: 'Qur’an 49:14' },
+              { type: 'quran', reference: 'Qur’an 2:285' },
+              { type: 'hadith', reference: 'Sahih Muslim 8e — Hadith of Jibril' },
+              { type: 'hadith', reference: 'Sahih al-Bukhari 50 — Hadith of Jibril' },
             ],
           },
-          {
-            title: 'Islam: submission and practice',
-            paragraphs: [
-              'In the Hadith of Jibril, the Prophet Muhammad ﷺ explained Islam through five major practices: the testimony of faith, prayer, Zakah, fasting Ramadan, and Hajj for whoever is able.',
-              'Islam therefore includes submitting to Allah through worship and obedience. These practices are outward expressions of submission to Allah.',
-            ],
+          translations: {
+            en: { title: 'Islam, Iman and Ihsan' },
+            sw: { title: 'Uislamu, Imani na Ihsani' },
+            fr: { title: 'Islam, Iman et Ihsan' },
           },
-          {
-            title: 'Iman: faith and conviction',
-            paragraphs: [
-              'In the Hadith of Jibril, the Prophet ﷺ explained Iman through belief in Allah, His angels, His revealed books, His messengers, the Last Day, and divine decree.',
-              'Iman is connected to what a Muslim believes and accepts as true. The Qur’an also teaches believers to have faith in Allah, His Messenger, His Book, and the revealed scriptures.',
-            ],
-          },
-          {
-            title: 'Ihsan: excellence in worship',
-            paragraphs: [
-              'The Prophet ﷺ described Ihsan as worshipping Allah as though you see Him; and if you do not see Him, knowing that He sees you.',
-              'This teaches awareness of Allah, sincerity, carefulness, and excellence in worship. Ihsan is not simply doing more actions; it is striving to perform worship with conscious awareness of Allah.',
-            ],
-          },
-          {
-            title: 'How Islam, Iman, and Ihsan fit together',
-            paragraphs: [
-              'A Muslim learns Islam through worship and obedience, Iman through sound belief, and Ihsan through sincerity and excellence. These dimensions are connected rather than competing.',
-              'The Hadith of Jibril is especially important because the Prophet ﷺ taught these three concepts together in one explanation of the religion.',
-            ],
-          },
-        ],
-        keyTerms: [
-          {
-            term: 'Islam',
-            meaning: 'Submission to Allah expressed through belief, worship, and obedience; the Hadith of Jibril specifically describes five major practices.',
-          },
-          {
-            term: 'Iman',
-            meaning: 'Faith and conviction in Allah, His angels, His books, His messengers, the Last Day, and divine decree.',
-          },
-          {
-            term: 'Ihsan',
-            meaning: 'Excellence in worship through sincere awareness that Allah sees and knows us.',
-          },
-        ],
-        reviewQuestions: [
-          'What three concepts are presented together in the Hadith of Jibril?',
-          'What five practices are described under Islam in the Hadith of Jibril?',
-          'What six matters of belief are described under Iman?',
-          'How did the Prophet ﷺ explain Ihsan?',
-          'How are Islam, Iman, and Ihsan connected?',
-        ],
-        sources: [
-          { type: 'quran', reference: 'Qur’an 49:14' },
-          { type: 'quran', reference: 'Qur’an 2:285' },
-          { type: 'hadith', reference: 'Sahih Muslim 8e — Hadith of Jibril' },
-          { type: 'hadith', reference: 'Sahih al-Bukhari 50 — Hadith of Jibril' },
-        ],
-      },
-
-      sw: {
-        objectives: [
-          'Eleza maana ya Uislamu, Imani na Ihsani kama zilivyoelezwa katika Qur’an na Hadithi ya Jibril.',
-          'Elewa jinsi imani, ibada na kufanya ibada kwa ubora zinavyohusiana.',
-          'Tambua misingi sita ya Imani na matendo matano yaliyoelezwa chini ya Uislamu katika Hadithi ya Jibril.',
-        ],
-        sections: [
-          {
-            title: 'Vipengele vitatu vya dini',
-            paragraphs: [
-              'Hadithi ya Jibril inawasilisha Uislamu, Imani na Ihsani pamoja kama vipengele vinavyohusiana vya dini. Uislamu unahusisha matendo ya ibada yanayoonekana, Imani inahusisha mambo ya msingi ya itikadi, na Ihsani inaeleza ubora na ikhlasi katika ibada.',
-              'Kwa pamoja, dhana hizi zinamsaidia Muislamu kuelewa matendo, imani na ubora wa ibada.',
-            ],
-          },
-          {
-            title: 'Uislamu: kujisalimisha na kutenda',
-            paragraphs: [
-              'Katika Hadithi ya Jibril, Mtume Muhammad ﷺ alieleza Uislamu kupitia matendo matano makuu: shahada, Swala, Zaka, kufunga Ramadhani na Hija kwa mwenye uwezo.',
-              'Uislamu unahusisha kujisalimisha kwa Allah kupitia ibada na utiifu. Matendo haya ni udhihirisho wa nje wa kujisalimisha kwa Allah.',
-            ],
-          },
-          {
-            title: 'Imani: kuamini na kuwa na yakini',
-            paragraphs: [
-              'Katika Hadithi ya Jibril, Mtume ﷺ alieleza Imani kwa kuamini Allah, Malaika Wake, Vitabu Vyake, Mitume Wake, Siku ya Mwisho na Qadar.',
-              'Imani inahusiana na mambo ambayo Muislamu anaamini na kuyakubali kuwa ni ya kweli. Qur’an pia inawafundisha waumini kumuamini Allah, Mtume Wake, Kitabu Chake na vitabu vilivyoteremshwa.',
-            ],
-          },
-          {
-            title: 'Ihsani: ubora katika ibada',
-            paragraphs: [
-              'Mtume ﷺ alieleza Ihsani kuwa kumuabudu Allah kana kwamba unamuona; na ikiwa humuoni, ujue kwamba Yeye anakuona.',
-              'Hili linafundisha kumtambua Allah, kuwa na ikhlasi na kufanya ibada kwa ubora. Ihsani si kufanya matendo mengi tu, bali ni kujitahidi kufanya ibada kwa kumtambua Allah.',
-            ],
-          },
-          {
-            title: 'Jinsi Uislamu, Imani na Ihsani zinavyohusiana',
-            paragraphs: [
-              'Muislamu hujifunza Uislamu kupitia ibada na utiifu, Imani kupitia itikadi sahihi, na Ihsani kupitia ikhlasi na ubora. Vipengele hivi vinahusiana.',
-              'Hadithi ya Jibril ni muhimu kwa sababu Mtume ﷺ alifundisha dhana hizi tatu pamoja katika maelezo yake kuhusu dini.',
-            ],
-          },
-        ],
-        keyTerms: [
-          {
-            term: 'Uislamu',
-            meaning: 'Kujisalimisha kwa Allah kupitia imani, ibada na utiifu; Hadithi ya Jibril inaeleza hasa matendo matano makuu.',
-          },
-          {
-            term: 'Imani',
-            meaning: 'Kumwamini na kuwa na yakini katika Allah, Malaika Wake, Vitabu Vyake, Mitume Wake, Siku ya Mwisho na Qadar.',
-          },
-          {
-            term: 'Ihsani',
-            meaning: 'Ubora katika ibada kupitia ikhlasi na kutambua kwamba Allah anatuona na anajua hali yetu.',
-          },
-        ],
-        reviewQuestions: [
-          'Ni dhana gani tatu zinazowasilishwa pamoja katika Hadithi ya Jibril?',
-          'Ni matendo gani matano yaliyoelezwa chini ya Uislamu?',
-          'Ni mambo gani sita ya Imani yaliyoelezwa katika hadithi?',
-          'Mtume ﷺ alielezaje Ihsani?',
-          'Uislamu, Imani na Ihsani vinahusianaje?',
-        ],
-        sources: [
-          { type: 'quran', reference: 'Qur’an 49:14' },
-          { type: 'quran', reference: 'Qur’an 2:285' },
-          { type: 'hadith', reference: 'Sahih Muslim 8e — Hadithi ya Jibril' },
-          { type: 'hadith', reference: 'Sahih al-Bukhari 50 — Hadithi ya Jibril' },
-        ],
-      },
-    },
         },
         {
           slug: 'six-pillars-of-iman',
