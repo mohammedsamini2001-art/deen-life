@@ -40,26 +40,27 @@ export default function TawheedAqidahLessonScreen({
     <section className="duas-reader islamic-learning-page tawheed-aqidah-page">
       <div className="quran-toolbar">
         <button className="back" onClick={onBack}>
-          ← Tawheed & Aqidah
+          ← التوحيد والعقيدة
         </button>
-        <span className="eyebrow">TAWHEED & AQIDAH</span>
+        <span className="eyebrow">التوحيد والعقيدة</span>
       </div>
 
       <article className="tawheed-aqidah-source-card">
-        <p className="eyebrow">LESSON {lesson.lesson}</p>
+        <p className="eyebrow" dir="rtl" lang="ar">
+          الدرس {String(lesson.lesson).replace(/[0-9]/g, (digit) => '٠١٢٣٤٥٦٧٨٩'[Number(digit)])}
+        </p>
         <h2>{lesson.teachingTitle}</h2>
 
         <div className="tawheed-aqidah-original-header">
-          <span className="eyebrow">العربية — ORIGINAL SOURCE</span>
+          <span className="eyebrow" dir="rtl" lang="ar">العربية — المصدر الأصلي</span>
           <strong dir="rtl" lang="ar">
             {TAHAWIYYAH_SOURCE_TITLE_ARABIC}
           </strong>
           <span>{TAHAWIYYAH_SOURCE_AUTHOR_ARABIC}</span>
         </div>
 
-        <p className="tawheed-aqidah-source-note">
-          The Arabic text below is preserved from the verified source.
-          Translation and explanation layers will be added separately.
+        <p className="tawheed-aqidah-source-note" dir="rtl" lang="ar">
+          النص العربي أدناه محفوظ من المصدر المحقق.
         </p>
 
         <div className="tawheed-aqidah-source-list">

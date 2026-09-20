@@ -3466,11 +3466,13 @@ button.secondary:active {
   width: 30px;
   height: 30px;
   place-items: center;
+  margin-top: 8px;
   border-radius: 50%;
   background: rgba(212, 168, 79, 0.1);
   color: var(--gold-300);
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 800;
+  direction: rtl;
 }
 
 .tawheed-aqidah-source-unit p {
