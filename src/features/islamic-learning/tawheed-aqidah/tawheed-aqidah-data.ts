@@ -1160,9 +1160,113 @@ export const TAWHEED_AQIDAH_COURSE: {
       },
     },
     {
-      slug: 'six-articles-of-iman',
-      title: 'The Six Articles of Iman',
+      slug: 'effects-of-knowing-allah',
       number: 5,
+      source: {
+        arabicTitle: 'آثار معرفة الله تعالى في حياة المسلم',
+        arabicIntroduction: [
+          'معرفة الله تعالى تكون بما أخبر به عن نفسه في كتابه، وبما صح عن رسوله ﷺ، وهي معرفة تورث الإيمان والتعظيم والخوف والرجاء والمحبة.',
+          'وكلما ازداد المسلم معرفةً بالله تعالى ازداد حرصًا على عبادته وطاعته، وأحسن التوكل عليه، واستقام سلوكه بحسب ما شرعه الله.',
+        ],
+        sections: [
+          {
+            arabicTitle: 'معرفة الله تزيد الإيمان',
+            arabicText: [
+              'معرفة أسماء الله وصفاته وآياته تزيد المؤمن يقينًا وإيمانًا، لأن العبد إذا عرف ربه عرف عظمته وكماله ورحمته وحكمته.',
+              'قال الله تعالى: وَلِلَّهِ الْأَسْمَاءُ الْحُسْنَىٰ فَادْعُوهُ بِهَا.',
+            ],
+            translations: {
+              en: [
+                'Knowing Allah through His Names, Attributes, and signs increases a believer’s certainty and faith. When a servant knows his Lord, he recognizes His greatness, perfection, mercy, and wisdom.',
+                'Allah says: “And to Allah belong the Most Beautiful Names, so call upon Him by them.”',
+              ],
+              sw: [
+                'Kumjua Allah kupitia Majina Yake, Sifa Zake na ishara Zake huongeza yakini na imani ya Muumini. Mja anapomjua Mola wake hutambua utukufu Wake, ukamilifu Wake, rehema Yake na hekima Yake.',
+                'Allah amesema: “Na Allah ana Majina mazuri kabisa, basi muombeni kwa hayo.”',
+              ],
+              fr: [
+                'Connaître Allah à travers Ses Noms, Ses Attributs et Ses signes augmente la certitude et la foi du croyant. Lorsqu’un serviteur connaît son Seigneur, il reconnaît Sa grandeur, Sa perfection, Sa miséricorde et Sa sagesse.',
+                'Allah dit : « À Allah appartiennent les plus beaux Noms ; invoquez-Le donc par eux. »',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'معرفة الله تؤثر في العبادة',
+            arabicText: [
+              'إذا عرف المسلم أن الله وحده هو المستحق للعبادة، أخلص له صلاته ودعاءه وسائر عباداته، ولم يجعل شيئًا منها لغيره.',
+              'قال الله تعالى: فَاعْبُدِ اللَّهَ مُخْلِصًا لَهُ الدِّينَ.',
+            ],
+            translations: {
+              en: [
+                'When a Muslim knows that Allah alone deserves worship, he directs his prayer, supplication, and all other acts of worship sincerely to Him and does not direct them to anyone else.',
+                'Allah says: “So worship Allah, making the religion sincerely for Him.”',
+              ],
+              sw: [
+                'Muislamu anapojua kwamba Allah peke Yake ndiye anayestahiki kuabudiwa, humtakasia Yeye swala, dua na ibada zake zote, wala hazielekezi kwa mwingine.',
+                'Allah amesema: “Basi muabudu Allah, ukimtakasia Yeye dini.”',
+              ],
+              fr: [
+                'Lorsque le musulman sait qu’Allah seul mérite l’adoration, il Lui consacre sincèrement sa prière, ses invocations et tous ses actes d’adoration, sans les consacrer à autre que Lui.',
+                'Allah dit : « Adore donc Allah en Lui consacrant sincèrement la religion. »',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'معرفة الله تورث التوكل عليه',
+            arabicText: [
+              'من عرف قدرة الله وتدبيره اعتمد عليه مع الأخذ بالأسباب المشروعة، وعلم أن النفع والضر بيد الله تعالى.',
+              'قال الله تعالى: وَعَلَى اللَّهِ فَتَوَكَّلُوا إِنْ كُنْتُمْ مُؤْمِنِينَ.',
+            ],
+            translations: {
+              en: [
+                'Whoever knows Allah’s power and control relies upon Him while taking lawful means, knowing that benefit and harm are ultimately under Allah’s control.',
+                'Allah says: “And upon Allah rely, if you are believers.”',
+              ],
+              sw: [
+                'Anayejua uwezo na uendeshaji wa Allah humtegemea Yeye huku akichukua sababu halali, akijua kwamba manufaa na madhara yako chini ya uwezo wa Allah.',
+                'Allah amesema: “Na mtegemeeni Allah ikiwa nyinyi ni Waumini.”',
+              ],
+              fr: [
+                'Celui qui connaît la puissance et la maîtrise d’Allah place sa confiance en Lui tout en prenant les moyens permis, sachant que le bien et le mal sont finalement sous le contrôle d’Allah.',
+                'Allah dit : « Et placez votre confiance en Allah, si vous êtes croyants. »',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'معرفة الله تؤثر في الأخلاق والعمل',
+            arabicText: [
+              'معرفة الله ليست معلومات مجردة، بل ينبغي أن يظهر أثرها في حياة المسلم؛ فيراقب الله في أقواله وأعماله، ويحرص على الطاعة، ويبتعد عن الظلم والمعصية.',
+              'قال الله تعالى: إِنَّ اللَّهَ كَانَ عَلَيْكُمْ رَقِيبًا.',
+            ],
+            translations: {
+              en: [
+                'Knowing Allah is not merely a collection of information. Its effect should appear in a Muslim’s life: being mindful of Allah in words and actions, striving to obey Him, and avoiding wrongdoing and disobedience.',
+                'Allah says: “Indeed, Allah is ever Watchful over you.”',
+              ],
+              sw: [
+                'Kumjua Allah si kukusanya taarifa tu. Athari yake inapaswa kuonekana katika maisha ya Muislamu: kumcha Allah katika maneno na matendo, kujitahidi kumtii na kujiepusha na dhulma na maasi.',
+                'Allah amesema: “Hakika Allah daima ni Mwenye kuwaangalia.”',
+              ],
+              fr: [
+                'Connaître Allah ne consiste pas seulement à accumuler des informations. Cette connaissance doit apparaître dans la vie du musulman : être conscient d’Allah dans ses paroles et ses actes, chercher à Lui obéir et éviter l’injustice et la désobéissance.',
+                'Allah dit : « Certes, Allah vous observe constamment. »',
+              ],
+            },
+          },
+        ],
+        sources: [
+          { type: 'quran', reference: 'Qur’an 7:180' },
+          { type: 'quran', reference: 'Qur’an 39:2' },
+          { type: 'quran', reference: 'Qur’an 8:2' },
+          { type: 'quran', reference: 'Qur’an 5:23' },
+          { type: 'quran', reference: 'Qur’an 4:1' },
+        ],
+      },
+      translations: {
+        en: { title: 'The Effects of Knowing Allah in a Muslim’s Life' },
+        sw: { title: 'Athari ya Kumjua Allah katika Maisha ya Muislamu' },
+        fr: { title: 'Les effets de la connaissance d’Allah dans la vie du musulman' },
+      },
     },
     {
       slug: 'prophethood-and-revelation',
