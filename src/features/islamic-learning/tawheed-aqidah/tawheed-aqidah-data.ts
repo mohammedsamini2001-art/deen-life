@@ -1270,8 +1270,138 @@ export const TAWHEED_AQIDAH_COURSE: {
     },
     {
       slug: 'prophethood-and-revelation',
-      title: 'Prophethood and Revelation',
       number: 6,
+      source: {
+        arabicTitle: 'النبوة والوحي',
+        arabicIntroduction: [
+          'أرسل الله تعالى رسله إلى خلقه ليهدوهم إلى توحيده وعبادته، ويبينوا لهم ما شرعه الله لهم، ويبلغوا عن ربهم ما أوحاه إليهم.',
+          'والوحي هو الطريق الذي يعرّف الله به أنبياءه ورسله بما يريد إبلاغه إلى الناس، فلا تكون معرفة الغيب والشرع بمجرد الرأي، بل بما جاء به الوحي الصحيح.',
+        ],
+        sections: [
+          {
+            arabicTitle: 'الله أرسل الرسل لهداية الناس',
+            arabicText: [
+              'أرسل الله تعالى الرسل إلى الأمم يدعونهم إلى عبادة الله وحده واجتناب عبادة ما سواه، ويبينون لهم طريق الحق.',
+              'قال الله تعالى: وَلَقَدْ بَعَثْنَا فِي كُلِّ أُمَّةٍ رَسُولًا أَنِ اعْبُدُوا اللَّهَ وَاجْتَنِبُوا الطَّاغُوتَ.',
+            ],
+            translations: {
+              en: [
+                'Allah sent messengers to the nations calling them to worship Allah alone, avoid the worship of anything besides Him, and follow the path of truth.',
+                'Allah says: “We certainly sent into every nation a messenger, saying: Worship Allah and avoid false gods.”',
+              ],
+              sw: [
+                'Allah aliwatuma Mitume kwa mataifa wakiwaita wamuabudu Allah peke Yake, waepuke kuabudu chochote kisichokuwa Yeye, na waifuate njia ya haki.',
+                'Allah amesema: “Na kwa hakika tuliutuma katika kila umma Mtume: Muabuduni Allah na jiepusheni na twaghut.”',
+              ],
+              fr: [
+                'Allah a envoyé des messagers aux peuples pour les appeler à adorer Allah seul, à éviter l’adoration de tout autre que Lui et à suivre le chemin de la vérité.',
+                'Allah dit : « Nous avons certes envoyé dans chaque communauté un messager : Adorez Allah et écartez-vous du Taghout. »',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'الرسل بشر مصطفون',
+            arabicText: [
+              'الرسل عليهم الصلاة والسلام بشر من خلق الله، اصطفاهم الله لحمل رسالته وتبليغ وحيه إلى الناس، فلا يُعبدون من دون الله.',
+              'قال الله تعالى: قُلْ إِنَّمَا أَنَا بَشَرٌ مِثْلُكُمْ يُوحَىٰ إِلَيَّ أَنَّمَا إِلَٰهُكُمْ إِلَٰهٌ وَاحِدٌ.',
+            ],
+            translations: {
+              en: [
+                'The messengers, peace be upon them, were human beings created by Allah. Allah chose them to carry His message and convey His revelation to people, so they are not worshipped besides Allah.',
+                'Allah says: “Say: I am only a human being like you, to whom it has been revealed that your God is One God.”',
+              ],
+              sw: [
+                'Mitume, amani iwe juu yao, walikuwa wanadamu walioumbwa na Allah. Allah aliwachagua kubeba ujumbe Wake na kuwafikishia watu Wahyi Wake, kwa hiyo hawaabudiwi badala ya Allah.',
+                'Allah amesema: “Sema: Hakika mimi ni binadamu kama nyinyi, ninafunuliwa kwamba Mungu wenu ni Mungu Mmoja.”',
+              ],
+              fr: [
+                'Les messagers, paix sur eux, étaient des êtres humains créés par Allah. Allah les a choisis pour porter Son message et transmettre Sa révélation aux gens ; ils ne sont donc pas adorés en dehors d’Allah.',
+                'Allah dit : « Dis : Je ne suis qu’un être humain comme vous, à qui il est révélé que votre divinité est une divinité unique. »',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'الوحي مصدر الهداية والشرع',
+            arabicText: [
+              'الوحي الذي أنزله الله هو مصدر الهداية في أمور الدين، ومنه القرآن الكريم وما صح من سنة النبي ﷺ، فيرجع المسلم إليهما فيما يحتاج إليه من الاعتقاد والعبادة والأحكام.',
+              'قال الله تعالى: وَأَنزَلْنَا إِلَيْكَ الذِّكْرَ لِتُبَيِّنَ لِلنَّاسِ مَا نُزِّلَ إِلَيْهِمْ.',
+            ],
+            translations: {
+              en: [
+                'The revelation sent down by Allah is the source of guidance in matters of religion. It includes the Qur’an and the authentic Sunnah of the Prophet ﷺ, to which a Muslim returns for matters of belief, worship, and rulings.',
+                'Allah says: “And We sent down to you the Reminder so that you may explain to the people what was sent down to them.”',
+              ],
+              sw: [
+                'Wahyi aliouteremshwa na Allah ni chanzo cha uongofu katika mambo ya dini. Unajumuisha Qur’ani na Sunnah sahihi ya Mtume ﷺ, ambazo Muislamu huzirejea katika masuala ya itikadi, ibada na hukumu.',
+                'Allah amesema: “Na Tumekuteremshia Ukumbusho ili uwabainishie watu yale waliyoteremshiwa.”',
+              ],
+              fr: [
+                'La révélation descendue par Allah est la source de la guidée dans les affaires de la religion. Elle comprend le Coran et la Sunna authentique du Prophète ﷺ, auxquels le musulman revient pour les questions de croyance, d’adoration et de règles.',
+                'Allah dit : « Et Nous avons fait descendre vers toi le Rappel afin que tu expliques aux gens ce qui leur a été descendu. »',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'الإيمان بالرسل جميعًا',
+            arabicText: [
+              'يؤمن المسلم بجميع رسل الله الذين سمّاهم الله في كتابه، ولا يفرّق بينهم في أصل الإيمان برسالتهم، ويؤمن أن محمدًا ﷺ خاتم النبيين.',
+              'قال الله تعالى: لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِّن رُّسُلِهِۦ.',
+              'وقال الله تعالى: وَلَٰكِن رَّسُولَ اللَّهِ وَخَاتَمَ النَّبِيِّينَ.',
+            ],
+            translations: {
+              en: [
+                'A Muslim believes in all of Allah’s messengers named in His Book. In the basic matter of believing in their messengership, Muslims do not reject some while accepting others, and they believe that Muhammad ﷺ is the seal of the prophets.',
+                'Allah says: “We make no distinction between any of them.”',
+                'Allah says: “But he is the Messenger of Allah and the seal of the prophets.”',
+              ],
+              sw: [
+                'Muislamu huwaamini Mitume wote wa Allah waliotajwa katika Kitabu Chake. Katika msingi wa kuwaamini kuwa ni Mitume, Muislamu hawakatai baadhi na kuwakubali wengine, na anaamini kwamba Muhammad ﷺ ni muhuri wa Manabii.',
+                'Allah amesema: “Hatutofautishi baina ya yeyote miongoni mwao.”',
+                'Allah amesema: “Lakini ni Mtume wa Allah na muhuri wa Manabii.”',
+              ],
+              fr: [
+                'Le musulman croit en tous les messagers d’Allah mentionnés dans Son Livre. Dans le principe de croire en leur mission, il ne rejette pas certains tout en en acceptant d’autres, et il croit que Muhammad ﷺ est le sceau des prophètes.',
+                'Allah dit : « Nous ne faisons aucune distinction entre eux. »',
+                'Allah dit : « Mais il est le Messager d’Allah et le sceau des prophètes. »',
+              ],
+            },
+          },
+          {
+            arabicTitle: 'اتباع الرسول من تمام الإيمان',
+            arabicText: [
+              'الإيمان بالرسول ﷺ لا يكون بمجرد معرفة اسمه، بل يكون بتصديقه فيما أخبر، وطاعته فيما أمر، واجتناب ما نهى عنه وزجر، وعبادة الله بما شرع.',
+              'قال الله تعالى: مَّن يُطِعِ الرَّسُولَ فَقَدْ أَطَاعَ اللَّهَ.',
+            ],
+            translations: {
+              en: [
+                'Believing in the Messenger ﷺ is not merely knowing his name. It includes believing what he conveyed, obeying what he commanded, avoiding what he prohibited, and worshipping Allah according to what He legislated.',
+                'Allah says: “Whoever obeys the Messenger has truly obeyed Allah.”',
+              ],
+              sw: [
+                'Kumuamini Mtume ﷺ si kujua jina lake tu. Kunahusisha kusadikisha aliyoyafikisha, kumtii katika aliyoamrisha, kujiepusha na aliyoyakataza, na kumuabudu Allah kwa mujibu wa aliyoyaweka kuwa ni sheria.',
+                'Allah amesema: “Anayemtii Mtume, kwa hakika amemtii Allah.”',
+              ],
+              fr: [
+                'Croire au Messager ﷺ ne consiste pas seulement à connaître son nom. Cela comprend le fait de croire ce qu’il a transmis, de lui obéir dans ce qu’il a ordonné, d’éviter ce qu’il a interdit et d’adorer Allah selon ce qu’Il a légiféré.',
+                'Allah dit : « Quiconque obéit au Messager obéit certainement à Allah. »',
+              ],
+            },
+          },
+        ],
+        sources: [
+          { type: 'quran', reference: 'Qur’an 16:36' },
+          { type: 'quran', reference: 'Qur’an 18:110' },
+          { type: 'quran', reference: 'Qur’an 16:44' },
+          { type: 'quran', reference: 'Qur’an 2:285' },
+          { type: 'quran', reference: 'Qur’an 33:40' },
+          { type: 'quran', reference: 'Qur’an 4:80' },
+        ],
+      },
+      translations: {
+        en: { title: 'Prophethood and Revelation' },
+        sw: { title: 'Unabii na Wahyi' },
+        fr: { title: 'La prophétie et la révélation' },
+      },
     },
     {
       slug: 'aqidah-in-the-life-of-a-muslim',
