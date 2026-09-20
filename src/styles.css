@@ -3112,15 +3112,16 @@ button.secondary:active {
   padding: 2px 4px 8px;
   border: 0;
   background: transparent;
-  color: var(--text-color, #1f2937);
+  color: inherit;
   text-align: left;
   cursor: pointer;
 }
 
 .tawheed-course-back {
   margin: 18px 0 10px;
-  color: var(--text-color, #1f2937);
-  background: transparent;
+  color: var(--gold-300);
+  background: rgba(212, 168, 79, 0.08);
+  border: 1px solid rgba(212, 168, 79, 0.42);
 }
 
 .tawheed-selected-chapter {
@@ -3159,7 +3160,7 @@ button.secondary:active {
   border: 1px solid transparent;
   border-radius: 14px;
   background: transparent;
-  color: var(--text-color, #1f2937);
+  color: inherit;
   text-align: left;
   cursor: pointer;
 }
@@ -3315,6 +3316,11 @@ button.secondary:active {
   border-radius: inherit;
   background: currentColor;
   transition: width 0.25s ease;
+}
+
+.tawheed-lesson-navigation button.primary,
+.tawheed-lesson-navigation button.secondary {
+  color: var(--gold-300);
 }
 
 .tawheed-lesson-navigation {
