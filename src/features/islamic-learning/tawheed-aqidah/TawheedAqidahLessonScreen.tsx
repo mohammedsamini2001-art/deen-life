@@ -31,25 +31,70 @@ export default function TawheedAqidahLessonScreen({
   const sourcePairs = useMemo(() => {
     if (!lesson) return []
 
+    const lessonUnitIds = new Set<number>(lesson.sourceUnits)
+    const renderedMappings = new Set<number>()
+
     return lesson.sourceUnits.flatMap((unitId) => {
       const arabic = TAHAWIYYAH_SOURCE_UNITS.find(
         (sourceUnit) => sourceUnit.id === unitId,
       )
 
-      const mapping = TAHAWIYYAH_TRANSLATION_MAP.find((entry) =>
+      const mappingIndex = TAHAWIYYAH_TRANSLATION_MAP.findIndex((entry) =>
         entry.arabicSourceUnits.includes(unitId),
       )
 
-      if (!mapping) {
-        return [{ arabic, english: undefined }]
+      if (mappingIndex === -1) {
+        return [
+          {
+            key: `arabic-${unitId}`,
+            arabicUnits: arabic ? [arabic] : [],
+            englishParagraphs: [],
+          },
+        ]
       }
 
-      return mapping.englishParagraphs.map((englishParagraphId) => ({
-        arabic,
-        english: TAHAWIYYAH_ENGLISH_SOURCE.find(
-          (paragraph) => paragraph.sourceParagraph === englishParagraphId,
-        ),
-      }))
+      if (renderedMappings.has(mappingIndex)) {
+        return []
+      }
+
+      const mapping = TAHAWIYYAH_TRANSLATION_MAP[mappingIndex]
+      renderedMappings.add(mappingIndex)
+
+      const arabicUnits = mapping.arabicSourceUnits
+        .filter((sourceUnitId) => lessonUnitIds.has(sourceUnitId))
+        .map((sourceUnitId) =>
+          TAHAWIYYAH_SOURCE_UNITS.find(
+            (sourceUnit) => sourceUnit.id === sourceUnitId,
+          ),
+        )
+        .filter(
+          (
+            sourceUnit,
+          ): sourceUnit is (typeof TAHAWIYYAH_SOURCE_UNITS)[number] =>
+            Boolean(sourceUnit),
+        )
+
+      const englishParagraphs = mapping.englishParagraphs
+        .map((englishParagraphId) =>
+          TAHAWIYYAH_ENGLISH_SOURCE.find(
+            (paragraph) =>
+              paragraph.sourceParagraph === englishParagraphId,
+          ),
+        )
+        .filter(
+          (
+            paragraph,
+          ): paragraph is (typeof TAHAWIYYAH_ENGLISH_SOURCE)[number] =>
+            Boolean(paragraph),
+        )
+
+      return [
+        {
+          key: `mapping-${mappingIndex}`,
+          arabicUnits,
+          englishParagraphs,
+        },
+      ]
     })
   }, [lesson])
 
@@ -99,7 +144,7 @@ export default function TawheedAqidahLessonScreen({
         <div className="tawheed-aqidah-source-list">
           {sourcePairs.map((pair, index) => (
             <div
-              key={pair.arabic?.id ?? index}
+              key={pair.key}
               className="tawheed-aqidah-source-unit"
             >
               <span
@@ -107,23 +152,39 @@ export default function TawheedAqidahLessonScreen({
                 dir="rtl"
                 lang="ar"
               >
-                {String(pair.arabic?.id ?? index + 1).replace(
+                {String(
+                  pair.arabicUnits[0]?.id ?? index + 1,
+                ).replace(
                   /[0-9]/g,
                   (digit) => ARABIC_SOURCE_NUMBERS[Number(digit)],
                 )}
               </span>
 
-              {pair.arabic ? (
-                <p dir="rtl" lang="ar">
-                  {pair.arabic.arabic}
-                </p>
-              ) : null}
+              <div className="tawheed-aqidah-source-content">
+                {pair.arabicUnits.map((sourceUnit) => (
+                  <p
+                    key={sourceUnit.id}
+                    dir="rtl"
+                    lang="ar"
+                  >
+                    {sourceUnit.arabic}
+                  </p>
+                ))}
 
-              {pair.english ? (
-                <p dir="ltr" lang="en">
-                  {pair.english.text}
-                </p>
-              ) : null}
+                {pair.englishParagraphs.length > 0 ? (
+                  <div className="tawheed-aqidah-english-translation">
+                    {pair.englishParagraphs.map((paragraph) => (
+                      <p
+                        key={paragraph.sourceParagraph}
+                        dir="ltr"
+                        lang="en"
+                      >
+                        {paragraph.text}
+                      </p>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
             </div>
           ))}
         </div>
