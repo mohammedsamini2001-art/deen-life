@@ -5,6 +5,11 @@ export interface TahawiyyahSourceUnit {
   arabic: string
 }
 
+export interface TahawiyyahTranslation {
+  sourceUnitId: number
+  text: Record<Exclude<TawheedLanguage, 'ar'>, string>
+}
+
 export interface TahawiyyahLesson {
   number: number
   slug: string
@@ -17,7 +22,7 @@ export interface TahawiyyahLesson {
   }
 
   title: Record<Exclude<TawheedLanguage, 'ar'>, string>
-  translation: Record<Exclude<TawheedLanguage, 'ar'>, string>
+  translations: TahawiyyahTranslation[]
   explanation: Record<Exclude<TawheedLanguage, 'ar'>, string>
 
   quranReferences: string[]
