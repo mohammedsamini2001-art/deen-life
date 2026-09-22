@@ -155,24 +155,6 @@ export default function TawheedAqidahLessonScreen({
             ))}
           </div>
 
-          <div
-            className="tawheed-aqidah-english-section"
-            dir="ltr"
-            lang="en"
-          >
-            <span className="eyebrow">English translation</span>
-            <div className="tawheed-aqidah-english-translation">
-              {englishParagraphs.map((paragraph) => (
-                <p
-                  key={paragraph.sourceParagraph}
-                  dir="ltr"
-                  lang="en"
-                >
-                  {paragraph.text}
-                </p>
-              ))}
-            </div>
-          </div>
         </div>
       </article>
     </section>
