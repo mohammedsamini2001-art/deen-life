@@ -8,6 +8,17 @@ export const TAHAWIYYAH_SOURCE_MANIFEST = {
   sourceUrl: 'https://islamhouse.com/ar/books/1899',
   sourceLanguage: 'ar',
   sourceType: 'classical-creed-text',
+  translations: {
+    en: {
+      translator: 'Suhaib Hasan AbdulGhaffar',
+      title: "The Muslim Creed - 'Aqeedatut-Tahaawiyyah",
+      publisher: 'IslamHouse',
+      sourceUrl: 'https://islamhouse.com/en/books/52960',
+      sourceLanguage: 'ar',
+      translationLanguage: 'en',
+      status: 'verified-reference',
+    },
+  },
   verificationNote:
     'IslamHouse describes this edition as reviewed against multiple manuscript copies.',
   curriculumRule:

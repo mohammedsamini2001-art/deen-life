@@ -136,6 +136,7 @@ function App() {
         {page === 'tawheed-aqidah-lesson' && (
           <TawheedAqidahLessonScreen
             lessonNumber={selectedTawheedLesson}
+            language={learningLanguage}
             onBack={() => navigateTo('tawheed-aqidah')}
           />
         )}
