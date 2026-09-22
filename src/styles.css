@@ -3494,6 +3494,17 @@ button.secondary:active {
   min-width: 0;
 }
 
+.tawheed-aqidah-arabic-unit {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.tawheed-aqidah-arabic-unit + .tawheed-aqidah-arabic-unit {
+  margin-top: 10px;
+}
+
 .tawheed-aqidah-english-translation {
   margin-top: 18px;
   padding-top: 16px;

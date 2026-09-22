@@ -147,28 +147,27 @@ export default function TawheedAqidahLessonScreen({
               key={pair.key}
               className="tawheed-aqidah-source-unit"
             >
-              <span
-                className="tawheed-aqidah-source-number"
-                dir="rtl"
-                lang="ar"
-              >
-                {String(
-                  pair.arabicUnits[0]?.id ?? index + 1,
-                ).replace(
-                  /[0-9]/g,
-                  (digit) => ARABIC_SOURCE_NUMBERS[Number(digit)],
-                )}
-              </span>
-
               <div className="tawheed-aqidah-source-content">
                 {pair.arabicUnits.map((sourceUnit) => (
-                  <p
+                  <div
                     key={sourceUnit.id}
-                    dir="rtl"
-                    lang="ar"
+                    className="tawheed-aqidah-arabic-unit"
                   >
-                    {sourceUnit.arabic}
-                  </p>
+                    <span
+                      className="tawheed-aqidah-source-number"
+                      dir="rtl"
+                      lang="ar"
+                    >
+                      {String(sourceUnit.id).replace(
+                        /[0-9]/g,
+                        (digit) =>
+                          ARABIC_SOURCE_NUMBERS[Number(digit)],
+                      )}
+                    </span>
+                    <p dir="rtl" lang="ar">
+                      {sourceUnit.arabic}
+                    </p>
+                  </div>
                 ))}
 
                 {pair.englishParagraphs.length > 0 ? (
