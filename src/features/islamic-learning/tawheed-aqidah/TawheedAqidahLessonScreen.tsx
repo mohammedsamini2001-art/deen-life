@@ -28,53 +28,50 @@ export default function TawheedAqidahLessonScreen({
     [lessonNumber],
   )
 
-  const sourcePairs = useMemo(() => {
+  const sourceUnits = useMemo(() => {
+    if (!lesson) return []
+
+    return lesson.sourceUnits
+      .map((unitId) =>
+        TAHAWIYYAH_SOURCE_UNITS.find(
+          (sourceUnit) => sourceUnit.id === unitId,
+        ),
+      )
+      .filter(
+        (
+          sourceUnit,
+        ): sourceUnit is (typeof TAHAWIYYAH_SOURCE_UNITS)[number] =>
+          Boolean(sourceUnit),
+      )
+  }, [lesson])
+
+  const englishParagraphs = useMemo(() => {
     if (!lesson) return []
 
     const lessonUnitIds = new Set<number>(lesson.sourceUnits)
     const renderedMappings = new Set<number>()
 
     return lesson.sourceUnits.flatMap((unitId) => {
-      const arabic = TAHAWIYYAH_SOURCE_UNITS.find(
-        (sourceUnit) => sourceUnit.id === unitId,
-      )
-
       const mappingIndex = TAHAWIYYAH_TRANSLATION_MAP.findIndex((entry) =>
         entry.arabicSourceUnits.includes(unitId),
       )
 
-      if (mappingIndex === -1) {
-        return [
-          {
-            key: `arabic-${unitId}`,
-            arabicUnits: arabic ? [arabic] : [],
-            englishParagraphs: [],
-          },
-        ]
-      }
-
-      if (renderedMappings.has(mappingIndex)) {
+      if (mappingIndex === -1 || renderedMappings.has(mappingIndex)) {
         return []
       }
 
       const mapping = TAHAWIYYAH_TRANSLATION_MAP[mappingIndex]
       renderedMappings.add(mappingIndex)
 
-      const arabicUnits = mapping.arabicSourceUnits
-        .filter((sourceUnitId) => lessonUnitIds.has(sourceUnitId))
-        .map((sourceUnitId) =>
-          TAHAWIYYAH_SOURCE_UNITS.find(
-            (sourceUnit) => sourceUnit.id === sourceUnitId,
-          ),
-        )
-        .filter(
-          (
-            sourceUnit,
-          ): sourceUnit is (typeof TAHAWIYYAH_SOURCE_UNITS)[number] =>
-            Boolean(sourceUnit),
-        )
+      const mappedArabicUnits = mapping.arabicSourceUnits.filter((sourceUnitId) =>
+        lessonUnitIds.has(sourceUnitId),
+      )
 
-      const englishParagraphs = mapping.englishParagraphs
+      if (mappedArabicUnits.length === 0) {
+        return []
+      }
+
+      return mapping.englishParagraphs
         .map((englishParagraphId) =>
           TAHAWIYYAH_ENGLISH_SOURCE.find(
             (paragraph) =>
@@ -87,14 +84,6 @@ export default function TawheedAqidahLessonScreen({
           ): paragraph is (typeof TAHAWIYYAH_ENGLISH_SOURCE)[number] =>
             Boolean(paragraph),
         )
-
-      return [
-        {
-          key: `mapping-${mappingIndex}`,
-          arabicUnits,
-          englishParagraphs,
-        },
-      ]
     })
   }, [lesson])
 
@@ -142,50 +131,48 @@ export default function TawheedAqidahLessonScreen({
         </p>
 
         <div className="tawheed-aqidah-source-list">
-          {sourcePairs.map((pair, index) => (
-            <div
-              key={pair.key}
-              className="tawheed-aqidah-source-unit"
-            >
-              <div className="tawheed-aqidah-source-content">
-                {pair.arabicUnits.map((sourceUnit) => (
-                  <div
-                    key={sourceUnit.id}
-                    className="tawheed-aqidah-arabic-unit"
-                  >
-                    <span
-                      className="tawheed-aqidah-source-number"
-                      dir="rtl"
-                      lang="ar"
-                    >
-                      {String(sourceUnit.id).replace(
-                        /[0-9]/g,
-                        (digit) =>
-                          ARABIC_SOURCE_NUMBERS[Number(digit)],
-                      )}
-                    </span>
-                    <p dir="rtl" lang="ar">
-                      {sourceUnit.arabic}
-                    </p>
-                  </div>
-                ))}
-
-                {pair.englishParagraphs.length > 0 ? (
-                  <div className="tawheed-aqidah-english-translation">
-                    {pair.englishParagraphs.map((paragraph) => (
-                      <p
-                        key={paragraph.sourceParagraph}
-                        dir="ltr"
-                        lang="en"
-                      >
-                        {paragraph.text}
-                      </p>
-                    ))}
-                  </div>
-                ) : null}
+          <div className="tawheed-aqidah-arabic-section" dir="rtl" lang="ar">
+            {sourceUnits.map((sourceUnit) => (
+              <div
+                key={sourceUnit.id}
+                className="tawheed-aqidah-arabic-unit"
+              >
+                <span
+                  className="tawheed-aqidah-source-number"
+                  dir="rtl"
+                  lang="ar"
+                >
+                  {String(sourceUnit.id).replace(
+                    /[0-9]/g,
+                    (digit) =>
+                      ARABIC_SOURCE_NUMBERS[Number(digit)],
+                  )}
+                </span>
+                <p dir="rtl" lang="ar">
+                  {sourceUnit.arabic}
+                </p>
               </div>
+            ))}
+          </div>
+
+          <div
+            className="tawheed-aqidah-english-section"
+            dir="ltr"
+            lang="en"
+          >
+            <span className="eyebrow">English translation</span>
+            <div className="tawheed-aqidah-english-translation">
+              {englishParagraphs.map((paragraph) => (
+                <p
+                  key={paragraph.sourceParagraph}
+                  dir="ltr"
+                  lang="en"
+                >
+                  {paragraph.text}
+                </p>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </article>
     </section>
