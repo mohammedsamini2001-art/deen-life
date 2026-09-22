@@ -5,6 +5,7 @@ import {
   TAHAWIYYAH_SOURCE_UNITS,
 } from './source/tahawiyyah-curriculum'
 import { TAHAWIYYAH_LESSON_MAP } from './source/tahawiyyah-lesson-map'
+import { TAHAWIYYAH_TRANSLATION_MAP } from './source/tahawiyyah-translation-map'
 
 const TAHAWIYYAH_SOURCE_TITLE_ARABIC =
   TAHAWIYYAH_CURRICULUM.source.titleArabic
@@ -30,20 +31,25 @@ export default function TawheedAqidahLessonScreen({
   const sourcePairs = useMemo(() => {
     if (!lesson) return []
 
-    return lesson.sourceUnits.map((unitId, index) => {
+    return lesson.sourceUnits.flatMap((unitId) => {
       const arabic = TAHAWIYYAH_SOURCE_UNITS.find(
         (sourceUnit) => sourceUnit.id === unitId,
       )
 
-      const englishParagraphId = lesson.englishParagraphs[index]
-      const english = TAHAWIYYAH_ENGLISH_SOURCE.find(
-        (paragraph) => paragraph.sourceParagraph === englishParagraphId,
+      const mapping = TAHAWIYYAH_TRANSLATION_MAP.find((entry) =>
+        entry.arabicSourceUnits.includes(unitId),
       )
 
-      return {
-        arabic,
-        english,
+      if (!mapping) {
+        return [{ arabic, english: undefined }]
       }
+
+      return mapping.englishParagraphs.map((englishParagraphId) => ({
+        arabic,
+        english: TAHAWIYYAH_ENGLISH_SOURCE.find(
+          (paragraph) => paragraph.sourceParagraph === englishParagraphId,
+        ),
+      }))
     })
   }, [lesson])
 
