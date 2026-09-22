@@ -3477,12 +3477,30 @@ button.secondary:active {
 
 .tawheed-aqidah-source-unit p {
   margin: 0;
+  min-width: 0;
   color: var(--text-primary);
+}
+
+.tawheed-aqidah-source-unit p[lang="ar"] {
+  grid-column: 2;
   font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(1.35rem, 3.5vw, 1.75rem);
   line-height: 2.15;
   text-align: right;
   direction: rtl;
+}
+
+.tawheed-aqidah-source-unit p[lang="en"] {
+  grid-column: 2;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(212, 168, 79, 0.14);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: left;
+  direction: ltr;
+  color: var(--text-secondary);
 }
 
 @media (max-width: 640px) {
