@@ -6,8 +6,6 @@ import {
 } from './source/tahawiyyah-curriculum'
 import { TAHAWIYYAH_LESSON_MAP } from './source/tahawiyyah-lesson-map'
 
-type Language = 'ar' | 'en' | 'sw' | 'fr'
-
 const TAHAWIYYAH_SOURCE_TITLE_ARABIC =
   TAHAWIYYAH_CURRICULUM.source.titleArabic
 
@@ -18,11 +16,10 @@ const ARABIC_SOURCE_NUMBERS = '٠١٢٣٤٥٦٧٨٩'
 
 export default function TawheedAqidahLessonScreen({
   lessonNumber,
-  language,
   onBack,
 }: {
   lessonNumber: number
-  language: Language
+  language: 'ar' | 'en' | 'sw' | 'fr'
   onBack: () => void
 }) {
   const lesson = useMemo(
@@ -30,50 +27,41 @@ export default function TawheedAqidahLessonScreen({
     [lessonNumber],
   )
 
-  const sourceUnits = useMemo(
-    () =>
-      lesson?.sourceUnits
-        .map((unitId) =>
-          TAHAWIYYAH_SOURCE_UNITS.find(
-            (sourceUnit) => sourceUnit.id === unitId,
-          ),
-        )
-        .filter(Boolean) ?? [],
-    [lesson],
-  )
+  const sourcePairs = useMemo(() => {
+    if (!lesson) return []
 
-  const englishParagraphs = useMemo(
-    () =>
-      lesson?.englishParagraphs
-        .map((paragraphId) =>
-          TAHAWIYYAH_ENGLISH_SOURCE.find(
-            (paragraph) => paragraph.sourceParagraph === paragraphId,
-          ),
-        )
-        .filter(Boolean) ?? [],
-    [lesson],
-  )
+    return lesson.sourceUnits.map((unitId, index) => {
+      const arabic = TAHAWIYYAH_SOURCE_UNITS.find(
+        (sourceUnit) => sourceUnit.id === unitId,
+      )
+
+      const englishParagraphId = lesson.englishParagraphs[index]
+      const english = TAHAWIYYAH_ENGLISH_SOURCE.find(
+        (paragraph) => paragraph.sourceParagraph === englishParagraphId,
+      )
+
+      return {
+        arabic,
+        english,
+      }
+    })
+  }, [lesson])
 
   if (!lesson) {
     return null
   }
 
-  const showEnglish = language === 'en'
-  const isArabic = language === 'ar'
-
   return (
     <section
       className="duas-reader islamic-learning-page tawheed-aqidah-page"
-      dir={isArabic ? 'rtl' : 'ltr'}
-      lang={language}
+      dir="ltr"
+      lang="en"
     >
       <div className="quran-toolbar">
         <button className="back" onClick={onBack}>
-          {isArabic ? '← التوحيد والعقيدة' : '← Tawheed & Aqidah'}
+          ← Tawheed & Aqidah
         </button>
-        <span className="eyebrow">
-          {isArabic ? 'التوحيد والعقيدة' : 'TAWHEED & AQIDAH'}
-        </span>
+        <span className="eyebrow">TAWHEED & AQIDAH</span>
       </div>
 
       <article className="tawheed-aqidah-source-card">
@@ -88,78 +76,51 @@ export default function TawheedAqidahLessonScreen({
         <h2>{lesson.teachingTitle}</h2>
 
         <div className="tawheed-aqidah-original-header">
-          <span className="eyebrow" dir={isArabic ? 'rtl' : 'ltr'} lang={language}>
-            {showEnglish
-              ? 'English — published translation'
-              : 'العربية — المصدر الأصلي'}
+          <span className="eyebrow" dir="rtl" lang="ar">
+            العربية — المصدر الأصلي
           </span>
-
-          <strong dir={isArabic ? 'rtl' : 'ltr'} lang={language}>
-            {showEnglish
-              ? TAHAWIYYAH_CURRICULUM.source.titleEnglish
-              : TAHAWIYYAH_SOURCE_TITLE_ARABIC}
+          <strong dir="rtl" lang="ar">
+            {TAHAWIYYAH_SOURCE_TITLE_ARABIC}
           </strong>
-
-          <span>
-            {showEnglish
-              ? 'Translator: Suhaib Hasan AbdulGhaffar'
-              : TAHAWIYYAH_SOURCE_AUTHOR_ARABIC}
-          </span>
+          <span>{TAHAWIYYAH_SOURCE_AUTHOR_ARABIC}</span>
+          <span>English translation: Suhaib Hasan AbdulGhaffar</span>
         </div>
 
-        <p
-          className="tawheed-aqidah-source-note"
-          dir={isArabic ? 'rtl' : 'ltr'}
-          lang={language}
-        >
-          {showEnglish
-            ? 'English text is shown from the published source translation.'
-            : 'النص العربي أدناه محفوظ من المصدر المحقق.'}
+        <p className="tawheed-aqidah-source-note">
+          Arabic original followed by the published English translation.
         </p>
 
-        {showEnglish ? (
-          <div className="tawheed-aqidah-source-list">
-            {englishParagraphs.map((paragraph) =>
-              paragraph ? (
-                <div
-                  key={paragraph.sourceParagraph}
-                  className="tawheed-aqidah-source-unit"
-                >
-                  <span className="tawheed-aqidah-source-number">
-                    {paragraph.sourceParagraph}
-                  </span>
-                  <p lang="en">{paragraph.text}</p>
-                </div>
-              ) : null,
-            )}
-          </div>
-        ) : (
-          <div className="tawheed-aqidah-source-list">
-            {sourceUnits.map((unit) =>
-              unit ? (
-                <div
-                  key={unit.id}
-                  className="tawheed-aqidah-source-unit"
-                >
-                  <span
-                    className="tawheed-aqidah-source-number"
-                    dir="rtl"
-                    lang="ar"
-                  >
-                    {String(unit.id).replace(
-                      /[0-9]/g,
-                      (digit) => ARABIC_SOURCE_NUMBERS[Number(digit)],
-                    )}
-                  </span>
+        <div className="tawheed-aqidah-source-list">
+          {sourcePairs.map((pair, index) => (
+            <div
+              key={pair.arabic?.id ?? index}
+              className="tawheed-aqidah-source-unit"
+            >
+              <span
+                className="tawheed-aqidah-source-number"
+                dir="rtl"
+                lang="ar"
+              >
+                {String(pair.arabic?.id ?? index + 1).replace(
+                  /[0-9]/g,
+                  (digit) => ARABIC_SOURCE_NUMBERS[Number(digit)],
+                )}
+              </span>
 
-                  <p dir="rtl" lang="ar">
-                    {unit.arabic}
-                  </p>
-                </div>
-              ) : null,
-            )}
-          </div>
-        )}
+              {pair.arabic ? (
+                <p dir="rtl" lang="ar">
+                  {pair.arabic.arabic}
+                </p>
+              ) : null}
+
+              {pair.english ? (
+                <p dir="ltr" lang="en">
+                  {pair.english.text}
+                </p>
+              ) : null}
+            </div>
+          ))}
+        </div>
       </article>
     </section>
   )
