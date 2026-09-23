@@ -128,11 +128,18 @@ export default function TawheedAqidahLessonScreen({
 
 
         <div className="tawheed-aqidah-source-list">
-          <div className="tawheed-aqidah-arabic-section" dir="rtl" lang="ar">
-            {sourceUnits.map((sourceUnit) => (
+          {sourceUnits.map((sourceUnit) => {
+            const englishUnit =
+              lesson.lesson === 1
+                ? TAHAWIYYAH_ENGLISH_LESSON_1.find(
+                    (unit) => unit.sourceUnit === sourceUnit.id,
+                  )
+                : undefined
+
+            return (
               <div
                 key={sourceUnit.id}
-                className="tawheed-aqidah-arabic-unit"
+                className="tawheed-aqidah-source-unit"
               >
                 <span
                   className="tawheed-aqidah-source-number"
@@ -145,43 +152,31 @@ export default function TawheedAqidahLessonScreen({
                       ARABIC_SOURCE_NUMBERS[Number(digit)],
                   )}
                 </span>
-                <p dir="rtl" lang="ar">
-                  {sourceUnit.arabic}
-                </p>
-              </div>
-            ))}
-          </div>
 
-          {lesson.lesson === 1 && (
-            <div className="tawheed-aqidah-english-section" lang="en">
-              <div className="tawheed-aqidah-language-heading">
-                <span className="eyebrow">ENGLISH</span>
-                <strong>Direct translation from the Arabic source</strong>
-              </div>
+                <div className="tawheed-aqidah-source-content">
+                  <p dir="rtl" lang="ar">
+                    {sourceUnit.arabic}
+                  </p>
 
-              {TAHAWIYYAH_ENGLISH_LESSON_1.map((unit) => (
-                <div
-                  key={unit.sourceUnit}
-                  className="tawheed-aqidah-english-unit"
-                >
-                  <span className="tawheed-aqidah-source-number">
-                    {unit.sourceUnit}
-                  </span>
+                  {englishUnit && (
+                    <div
+                      className="tawheed-aqidah-english-content"
+                      lang="en"
+                    >
+                      <p className="tawheed-aqidah-translation">
+                        {englishUnit.translation}
+                      </p>
 
-                  <div className="tawheed-aqidah-english-content">
-                    <p className="tawheed-aqidah-translation">
-                      {unit.translation}
-                    </p>
-
-                    <div className="tawheed-aqidah-explanation">
-                      <span className="eyebrow">EXPLANATION</span>
-                      <p>{unit.explanation}</p>
+                      <div className="tawheed-aqidah-explanation">
+                        <span className="eyebrow">EXPLANATION</span>
+                        <p>{englishUnit.explanation}</p>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
-              ))}
-            </div>
-          )}
+              </div>
+            )
+          })}
         </div>
       </article>
     </section>
