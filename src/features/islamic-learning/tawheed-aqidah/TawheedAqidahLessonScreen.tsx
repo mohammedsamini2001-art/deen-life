@@ -6,6 +6,7 @@ import {
 } from './source/tahawiyyah-curriculum'
 import { TAHAWIYYAH_LESSON_MAP } from './source/tahawiyyah-lesson-map'
 import { TAHAWIYYAH_TRANSLATION_MAP } from './source/tahawiyyah-translation-map'
+import { TAHAWIYYAH_ENGLISH_LESSON_1 } from './source/tahawiyyah-english-lessons'
 
 const TAHAWIYYAH_SOURCE_TITLE_ARABIC =
   TAHAWIYYAH_CURRICULUM.source.titleArabic
@@ -151,6 +152,36 @@ export default function TawheedAqidahLessonScreen({
             ))}
           </div>
 
+          {lesson.lesson === 1 && (
+            <div className="tawheed-aqidah-english-section" lang="en">
+              <div className="tawheed-aqidah-language-heading">
+                <span className="eyebrow">ENGLISH</span>
+                <strong>Direct translation from the Arabic source</strong>
+              </div>
+
+              {TAHAWIYYAH_ENGLISH_LESSON_1.map((unit) => (
+                <div
+                  key={unit.sourceUnit}
+                  className="tawheed-aqidah-english-unit"
+                >
+                  <span className="tawheed-aqidah-source-number">
+                    {unit.sourceUnit}
+                  </span>
+
+                  <div className="tawheed-aqidah-english-content">
+                    <p className="tawheed-aqidah-translation">
+                      {unit.translation}
+                    </p>
+
+                    <div className="tawheed-aqidah-explanation">
+                      <span className="eyebrow">EXPLANATION</span>
+                      <p>{unit.explanation}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </article>
     </section>

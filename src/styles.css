@@ -3511,6 +3511,75 @@ button.secondary:active {
   border-top: 1px solid rgba(212, 168, 79, 0.14);
 }
 
+/* DEEN LIFE custom English translation layer */
+.tawheed-aqidah-english-section {
+  margin-top: 18px;
+  border-top: 1px solid rgba(212, 168, 79, 0.16);
+  padding: 24px 18px 18px;
+  direction: ltr;
+  text-align: left;
+}
+
+.tawheed-aqidah-language-heading {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 22px;
+  text-align: left;
+  direction: ltr;
+}
+
+.tawheed-aqidah-language-heading strong {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.tawheed-aqidah-english-unit {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.tawheed-aqidah-english-unit + .tawheed-aqidah-english-unit {
+  margin-top: 20px;
+}
+
+.tawheed-aqidah-english-content {
+  min-width: 0;
+  text-align: left;
+  direction: ltr;
+}
+
+.tawheed-aqidah-translation {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.75;
+  text-align: left;
+  direction: ltr;
+}
+
+.tawheed-aqidah-explanation {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-left: 2px solid rgba(212, 168, 79, 0.35);
+  background: rgba(212, 168, 79, 0.04);
+  text-align: left;
+  direction: ltr;
+}
+
+.tawheed-aqidah-explanation p {
+  margin: 5px 0 0;
+  color: var(--text-secondary);
+  font-size: 0.94rem;
+  line-height: 1.7;
+  text-align: left;
+  direction: ltr;
+}
+
 .tawheed-aqidah-source-unit p[lang="en"] {
   grid-column: 2;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
