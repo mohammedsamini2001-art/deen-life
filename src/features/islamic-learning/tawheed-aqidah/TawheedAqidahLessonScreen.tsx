@@ -129,22 +129,14 @@ export default function TawheedAqidahLessonScreen({
 
 
         <div className="tawheed-aqidah-source-list">
-          {sourceUnits.map((sourceUnit) => {
-            const englishUnit =
-              lesson.lesson === 1
-                ? TAHAWIYYAH_ENGLISH_LESSON_1.find(
-                    (unit) => unit.sourceUnit === sourceUnit.id,
-                  )
-                : undefined
+          <section className="tawheed-aqidah-language-section">
+            <div className="tawheed-aqidah-section-heading">
+              <span className="eyebrow" dir="rtl" lang="ar">
+                العربية — المصدر الأصلي
+              </span>
+            </div>
 
-            const swahiliUnit =
-              lesson.lesson === 1
-                ? TAHAWIYYAH_SWAHILI_LESSON_1.find(
-                    (unit) => unit.sourceUnit === sourceUnit.id,
-                  )
-                : undefined
-
-            return (
+            {sourceUnits.map((sourceUnit) => (
               <div
                 key={sourceUnit.id}
                 className="tawheed-aqidah-source-unit"
@@ -165,39 +157,165 @@ export default function TawheedAqidahLessonScreen({
                   <p dir="rtl" lang="ar">
                     {sourceUnit.arabic}
                   </p>
-
-                  {englishUnit && (
-                    <div
-                      className="tawheed-aqidah-english-content"
-                      lang="en"
-                    >
-                      <p className="tawheed-aqidah-translation">
-                        {englishUnit.translation}
-                      </p>
-                    </div>
-                  )}
-
-                  {swahiliUnit && (
-                    <div
-                      className="tawheed-aqidah-swahili-content"
-                      lang="sw"
-                    >
-                      <p className="tawheed-aqidah-translation">
-                        {swahiliUnit.translation}
-                      </p>
-                    </div>
-                  )}
-
-                  {swahiliUnit && (
-                    <div className="tawheed-aqidah-explanation">
-                      <span className="eyebrow">EXPLANATION</span>
-                      <p>{swahiliUnit.explanation}</p>
-                    </div>
-                  )}
                 </div>
               </div>
-            )
-          })}
+            ))}
+          </section>
+
+          {lesson.lesson === 1 && (
+            <>
+              <section
+                className="tawheed-aqidah-language-section"
+                lang="en"
+              >
+                <div className="tawheed-aqidah-section-heading">
+                  <span className="eyebrow">
+                    ENGLISH TRANSLATION
+                  </span>
+                </div>
+
+                {sourceUnits.map((sourceUnit) => {
+                  const englishUnit =
+                    TAHAWIYYAH_ENGLISH_LESSON_1.find(
+                      (unit) => unit.sourceUnit === sourceUnit.id,
+                    )
+
+                  if (!englishUnit) return null
+
+                  return (
+                    <div
+                      key={sourceUnit.id}
+                      className="tawheed-aqidah-source-unit"
+                    >
+                      <span className="tawheed-aqidah-source-number">
+                        {sourceUnit.id}
+                      </span>
+
+                      <div className="tawheed-aqidah-source-content">
+                        <p
+                          className="tawheed-aqidah-reference-arabic"
+                          dir="rtl"
+                          lang="ar"
+                        >
+                          {sourceUnit.arabic}
+                        </p>
+
+                        <div className="tawheed-aqidah-translation-content">
+                          <p className="tawheed-aqidah-translation">
+                            {englishUnit.translation}
+                          </p>
+
+                          <div className="tawheed-aqidah-explanation">
+                            <span className="eyebrow">
+                              EXPLANATION
+                            </span>
+                            <p>{englishUnit.explanation}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </section>
+
+              <section
+                className="tawheed-aqidah-language-section"
+                lang="sw"
+              >
+                <div className="tawheed-aqidah-section-heading">
+                  <span className="eyebrow">
+                    TAFSIRI YA KISWAHILI
+                  </span>
+                </div>
+
+                {sourceUnits.map((sourceUnit) => {
+                  const swahiliUnit =
+                    TAHAWIYYAH_SWAHILI_LESSON_1.find(
+                      (unit) => unit.sourceUnit === sourceUnit.id,
+                    )
+
+                  if (!swahiliUnit) return null
+
+                  return (
+                    <div
+                      key={sourceUnit.id}
+                      className="tawheed-aqidah-source-unit"
+                    >
+                      <span className="tawheed-aqidah-source-number">
+                        {sourceUnit.id}
+                      </span>
+
+                      <div className="tawheed-aqidah-source-content">
+                        <p
+                          className="tawheed-aqidah-reference-arabic"
+                          dir="rtl"
+                          lang="ar"
+                        >
+                          {sourceUnit.arabic}
+                        </p>
+
+                        <div className="tawheed-aqidah-translation-content">
+                          <p className="tawheed-aqidah-translation">
+                            {swahiliUnit.translation}
+                          </p>
+
+                          <div className="tawheed-aqidah-explanation">
+                            <span className="eyebrow">
+                              MAELEZO
+                            </span>
+                            <p>{swahiliUnit.explanation}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </section>
+
+              <section
+                className="tawheed-aqidah-language-section tawheed-aqidah-french-section"
+                lang="fr"
+              >
+                <div className="tawheed-aqidah-section-heading">
+                  <span className="eyebrow">
+                    FRENCH TRANSLATION
+                  </span>
+                  <p className="tawheed-aqidah-section-placeholder">
+                    French translation will be added from the Arabic source.
+                  </p>
+                </div>
+              </section>
+
+              <section className="tawheed-aqidah-explanations">
+                <div className="tawheed-aqidah-section-heading">
+                  <span className="eyebrow">
+                    EXPLANATIONS
+                  </span>
+                </div>
+
+                {sourceUnits.map((sourceUnit) => {
+                  const englishUnit =
+                    TAHAWIYYAH_ENGLISH_LESSON_1.find(
+                      (unit) => unit.sourceUnit === sourceUnit.id,
+                    )
+
+                  if (!englishUnit) return null
+
+                  return (
+                    <div
+                      key={sourceUnit.id}
+                      className="tawheed-aqidah-explanation"
+                    >
+                      <span className="tawheed-aqidah-source-number">
+                        {sourceUnit.id}
+                      </span>
+                      <p>{englishUnit.explanation}</p>
+                    </div>
+                  )
+                })}
+              </section>
+            </>
+          )}
         </div>
       </article>
     </section>
