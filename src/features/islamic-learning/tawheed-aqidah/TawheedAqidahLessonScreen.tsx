@@ -7,6 +7,7 @@ import {
 import { TAHAWIYYAH_LESSON_MAP } from './source/tahawiyyah-lesson-map'
 import { TAHAWIYYAH_TRANSLATION_MAP } from './source/tahawiyyah-translation-map'
 import { TAHAWIYYAH_ENGLISH_LESSON_1 } from './source/tahawiyyah-english-lessons'
+import { TAHAWIYYAH_SWAHILI_LESSON_1 } from './source/tahawiyyah-swahili-lessons'
 
 const TAHAWIYYAH_SOURCE_TITLE_ARABIC =
   TAHAWIYYAH_CURRICULUM.source.titleArabic
@@ -136,6 +137,13 @@ export default function TawheedAqidahLessonScreen({
                   )
                 : undefined
 
+            const swahiliUnit =
+              lesson.lesson === 1
+                ? TAHAWIYYAH_SWAHILI_LESSON_1.find(
+                    (unit) => unit.sourceUnit === sourceUnit.id,
+                  )
+                : undefined
+
             return (
               <div
                 key={sourceUnit.id}
@@ -166,11 +174,24 @@ export default function TawheedAqidahLessonScreen({
                       <p className="tawheed-aqidah-translation">
                         {englishUnit.translation}
                       </p>
+                    </div>
+                  )}
 
-                      <div className="tawheed-aqidah-explanation">
-                        <span className="eyebrow">EXPLANATION</span>
-                        <p>{englishUnit.explanation}</p>
-                      </div>
+                  {swahiliUnit && (
+                    <div
+                      className="tawheed-aqidah-swahili-content"
+                      lang="sw"
+                    >
+                      <p className="tawheed-aqidah-translation">
+                        {swahiliUnit.translation}
+                      </p>
+                    </div>
+                  )}
+
+                  {swahiliUnit && (
+                    <div className="tawheed-aqidah-explanation">
+                      <span className="eyebrow">EXPLANATION</span>
+                      <p>{swahiliUnit.explanation}</p>
                     </div>
                   )}
                 </div>
