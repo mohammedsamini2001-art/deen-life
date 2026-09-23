@@ -123,12 +123,8 @@ export default function TawheedAqidahLessonScreen({
             {TAHAWIYYAH_SOURCE_TITLE_ARABIC}
           </strong>
           <span>{TAHAWIYYAH_SOURCE_AUTHOR_ARABIC}</span>
-          <span>English translation: Suhaib Hasan AbdulGhaffar</span>
         </div>
 
-        <p className="tawheed-aqidah-source-note">
-          Arabic original followed by the published English translation.
-        </p>
 
         <div className="tawheed-aqidah-source-list">
           <div className="tawheed-aqidah-arabic-section" dir="rtl" lang="ar">
