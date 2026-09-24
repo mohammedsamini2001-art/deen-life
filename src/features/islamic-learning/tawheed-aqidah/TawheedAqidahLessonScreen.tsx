@@ -101,9 +101,9 @@ export default function TawheedAqidahLessonScreen({
     >
       <div className="quran-toolbar">
         <button className="back" onClick={onBack}>
-          ← Tawheed & Aqidah
+          ← التوحيد والعقيدة
         </button>
-        <span className="eyebrow">TAWHEED & AQIDAH</span>
+        <span className="eyebrow">التوحيد والعقيدة</span>
       </div>
 
       <article className="tawheed-aqidah-source-card">
@@ -115,7 +115,6 @@ export default function TawheedAqidahLessonScreen({
           )}
         </p>
 
-        <h2>{lesson.teachingTitle}</h2>
 
 
         <div className="tawheed-aqidah-source-list">
