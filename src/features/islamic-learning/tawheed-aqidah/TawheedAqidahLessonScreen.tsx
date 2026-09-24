@@ -130,12 +130,6 @@ export default function TawheedAqidahLessonScreen({
 
         <div className="tawheed-aqidah-source-list">
           <section className="tawheed-aqidah-language-section">
-            <div className="tawheed-aqidah-section-heading">
-              <span className="eyebrow" dir="rtl" lang="ar">
-                العربية — المصدر الأصلي
-              </span>
-            </div>
-
             {sourceUnits.map((sourceUnit) => (
               <div
                 key={sourceUnit.id}
