@@ -8,6 +8,7 @@ import { TAHAWIYYAH_LESSON_MAP } from './source/tahawiyyah-lesson-map'
 import { TAHAWIYYAH_TRANSLATION_MAP } from './source/tahawiyyah-translation-map'
 import { TAHAWIYYAH_ENGLISH_LESSON_1 } from './source/tahawiyyah-english-lessons'
 import { TAHAWIYYAH_SWAHILI_LESSON_1 } from './source/tahawiyyah-swahili-lessons'
+import { TAHAWIYYAH_FRENCH_LESSON_1 } from './source/tahawiyyah-french-lessons'
 
 const TAHAWIYYAH_SOURCE_TITLE_ARABIC =
   TAHAWIYYAH_CURRICULUM.source.titleArabic
@@ -267,12 +268,55 @@ export default function TawheedAqidahLessonScreen({
                 >
                 <div className="tawheed-aqidah-section-heading">
                   <span className="eyebrow">
-                    FRENCH TRANSLATION
+                    TRADUCTION FRANÇAISE
                   </span>
-                  <p className="tawheed-aqidah-section-placeholder">
-                    French translation will be added from the Arabic source.
-                  </p>
                 </div>
+
+                {sourceUnits.map((sourceUnit) => {
+                  const frenchUnit =
+                    TAHAWIYYAH_FRENCH_LESSON_1.find(
+                      (unit) => unit.sourceUnit === sourceUnit.id,
+                    )
+
+                  if (!frenchUnit) return null
+
+                  return (
+                    <div
+                      key={sourceUnit.id}
+                      className="tawheed-aqidah-source-unit"
+                    >
+                      <span className="tawheed-aqidah-source-number">
+                        {sourceUnit.id}
+                      </span>
+
+                      <div className="tawheed-aqidah-source-content">
+                        <p
+                          className="tawheed-aqidah-reference-arabic"
+                          dir="rtl"
+                          lang="ar"
+                        >
+                          {sourceUnit.arabic}
+                        </p>
+
+                        <div className="tawheed-aqidah-translation-content">
+                          <p
+                            className="tawheed-aqidah-translation"
+                            lang="fr"
+                          >
+                            {frenchUnit.translation}
+                          </p>
+
+                          <div className="tawheed-aqidah-explanation">
+                            <span className="eyebrow">
+                              EXPLICATION
+                            </span>
+                            <p lang="fr">{frenchUnit.explanation}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
                 </section>
               )}
 
