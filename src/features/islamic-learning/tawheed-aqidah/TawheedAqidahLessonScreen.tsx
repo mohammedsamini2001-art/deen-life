@@ -117,13 +117,6 @@ export default function TawheedAqidahLessonScreen({
 
         <h2>{lesson.teachingTitle}</h2>
 
-        <div className="tawheed-aqidah-original-header">
-          <strong dir="rtl" lang="ar">
-            {TAHAWIYYAH_SOURCE_TITLE_ARABIC}
-          </strong>
-          <span>{TAHAWIYYAH_SOURCE_AUTHOR_ARABIC}</span>
-        </div>
-
 
         <div className="tawheed-aqidah-source-list">
           <section className="tawheed-aqidah-language-section">
