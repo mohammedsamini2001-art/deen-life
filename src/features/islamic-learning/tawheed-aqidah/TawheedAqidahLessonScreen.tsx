@@ -19,6 +19,7 @@ const ARABIC_SOURCE_NUMBERS = '٠١٢٣٤٥٦٧٨٩'
 
 export default function TawheedAqidahLessonScreen({
   lessonNumber,
+  language,
   onBack,
 }: {
   lessonNumber: number
@@ -147,10 +148,11 @@ export default function TawheedAqidahLessonScreen({
 
           {lesson.lesson === 1 && (
             <>
-              <section
-                className="tawheed-aqidah-language-section"
-                lang="en"
-              >
+              {language === 'en' && (
+                <section
+                  className="tawheed-aqidah-language-section"
+                  lang="en"
+                >
                 <div className="tawheed-aqidah-section-heading">
                   <span className="eyebrow">
                     ENGLISH TRANSLATION
@@ -199,12 +201,14 @@ export default function TawheedAqidahLessonScreen({
                     </div>
                   )
                 })}
-              </section>
+                </section>
+              )}
 
-              <section
-                className="tawheed-aqidah-language-section"
-                lang="sw"
-              >
+              {language === 'sw' && (
+                <section
+                  className="tawheed-aqidah-language-section"
+                  lang="sw"
+                >
                 <div className="tawheed-aqidah-section-heading">
                   <span className="eyebrow">
                     TAFSIRI YA KISWAHILI
@@ -253,12 +257,14 @@ export default function TawheedAqidahLessonScreen({
                     </div>
                   )
                 })}
-              </section>
+                </section>
+              )}
 
-              <section
-                className="tawheed-aqidah-language-section tawheed-aqidah-french-section"
-                lang="fr"
-              >
+              {language === 'fr' && (
+                <section
+                  className="tawheed-aqidah-language-section tawheed-aqidah-french-section"
+                  lang="fr"
+                >
                 <div className="tawheed-aqidah-section-heading">
                   <span className="eyebrow">
                     FRENCH TRANSLATION
@@ -267,36 +273,10 @@ export default function TawheedAqidahLessonScreen({
                     French translation will be added from the Arabic source.
                   </p>
                 </div>
-              </section>
+                </section>
+              )}
 
-              <section className="tawheed-aqidah-explanations">
-                <div className="tawheed-aqidah-section-heading">
-                  <span className="eyebrow">
-                    EXPLANATIONS
-                  </span>
-                </div>
 
-                {sourceUnits.map((sourceUnit) => {
-                  const englishUnit =
-                    TAHAWIYYAH_ENGLISH_LESSON_1.find(
-                      (unit) => unit.sourceUnit === sourceUnit.id,
-                    )
-
-                  if (!englishUnit) return null
-
-                  return (
-                    <div
-                      key={sourceUnit.id}
-                      className="tawheed-aqidah-explanation"
-                    >
-                      <span className="tawheed-aqidah-source-number">
-                        {sourceUnit.id}
-                      </span>
-                      <p>{englishUnit.explanation}</p>
-                    </div>
-                  )
-                })}
-              </section>
             </>
           )}
         </div>
