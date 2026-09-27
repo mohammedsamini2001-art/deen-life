@@ -615,3 +615,41 @@ export const TAHAWIYYAH_ENGLISH_LESSON_14 = [
       "This affirms Hajj and Jihad as established obligations and connects their administration with the authority of Muslim leadership.",
   },
 ] as const
+
+export const TAHAWIYYAH_ENGLISH_LESSON_15 = [
+  {
+    sourceUnit: 85,
+    translation:
+      "We believe in the noble recording angels, and that Allah Almighty has appointed them as protectors over us.",
+    explanation:
+      "This affirms belief in the angels who record what people say and do and in their appointed role as protectors.",
+  },
+  {
+    sourceUnit: 86,
+    translation:
+      "We believe in the Angel of Death who is commissioned to take away the souls of everyone.",
+    explanation:
+      "This affirms belief in the Angel of Death and his appointed task of taking the souls of creation.",
+  },
+  {
+    sourceUnit: 87,
+    translation:
+      "We believe in the chastisement of the grave for those who deserve it, and we believe that Munkar and Nakir question everyone in their graves about their Creator, religion, and Prophet, according to the reports from the Prophet ﷺ and his Companions.",
+    explanation:
+      "These statements affirm the punishment of the grave and the questioning of the deceased as transmitted in the reports from the Prophet ﷺ and his Companions.",
+  },
+  {
+    sourceUnit: 88,
+    translation:
+      "We believe in the questioning of the deceased in the grave by Munkar and Nakir concerning their Creator, religion, and Prophet, according to the reports transmitted from the Messenger of Allah ﷺ and all of his Companions.",
+    explanation:
+      "This emphasizes the questioning of the deceased in the grave concerning fundamental matters of faith.",
+  },
+  {
+    sourceUnit: 89,
+    translation:
+      "The grave is either a garden from the gardens of Paradise or a pit from the pits of Hell.",
+    explanation:
+      "This describes the grave as having either a state of blessing or a state of punishment.",
+  },
+] as const

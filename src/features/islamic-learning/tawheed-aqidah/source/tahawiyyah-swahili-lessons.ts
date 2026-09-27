@@ -600,3 +600,41 @@ export const TAHAWIYYAH_SWAHILI_LESSON_14 = [
       "Hii inathibitisha Hija na Jihadi kuwa ni faradhi zilizoendelea, na inaeleza utekelezaji wake chini ya uongozi wa wenye mamlaka miongoni mwa Waislamu.",
   },
 ] as const
+
+export const TAHAWIYYAH_SWAHILI_LESSON_15 = [
+  {
+    sourceUnit: 85,
+    translation:
+      "Tunaamini Malaika watukufu waandikaji, na kwamba Allah Aliyetukuka amewafanya kuwa walinzi juu yetu.",
+    explanation:
+      "Hii inathibitisha kuamini Malaika wanaoandika yale ambayo watu husema na kutenda, pamoja na jukumu lao la kuwa walinzi.",
+  },
+  {
+    sourceUnit: 86,
+    translation:
+      "Tunaamini Malaika wa Mauti ambaye amepewa jukumu la kuzichukua roho za kila mmoja.",
+    explanation:
+      "Hii inathibitisha kuamini Malaika wa Mauti na jukumu lake alilopewa la kuzichukua roho za viumbe.",
+  },
+  {
+    sourceUnit: 87,
+    translation:
+      "Tunaamini adhabu ya kaburi kwa wale wanaostahili, na tunaamini kwamba Malaika wawili, Munkar na Nakir, humhoji kila mtu katika kaburi lake kuhusu Muumba wake, dini yake na Nabii wake, kwa mujibu wa riwaya kutoka kwa Mtume ﷺ na Maswahaba wake.",
+    explanation:
+      "Haya yanathibitisha adhabu ya kaburi na mahojiano ya maiti kama yalivyopokelewa katika riwaya kutoka kwa Mtume ﷺ na Maswahaba wake.",
+  },
+  {
+    sourceUnit: 88,
+    translation:
+      "Tunaamini mahojiano ya maiti kaburini na Munkar na Nakir kuhusu Muumba wake, dini yake na Nabii wake, kwa mujibu wa riwaya zilizopokelewa kutoka kwa Mtume wa Allah ﷺ na Maswahaba wake wote.",
+    explanation:
+      "Hii inasisitiza mahojiano ya maiti kaburini kuhusu mambo ya msingi ya imani.",
+  },
+  {
+    sourceUnit: 89,
+    translation:
+      "Kaburi ni bustani miongoni mwa bustani za Peponi au shimo miongoni mwa mashimo ya Motoni.",
+    explanation:
+      "Hii inaeleza hali ya kaburi kuwa inaweza kuwa ya neema au ya adhabu.",
+  },
+] as const

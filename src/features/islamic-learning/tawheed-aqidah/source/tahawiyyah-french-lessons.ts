@@ -597,3 +597,41 @@ export const TAHAWIYYAH_FRENCH_LESSON_14 = [
       "Cela affirme le caractère obligatoire du Hajj et du Jihad et leur accomplissement sous l'autorité des dirigeants musulmans.",
   },
 ] as const
+
+export const TAHAWIYYAH_FRENCH_LESSON_15 = [
+  {
+    sourceUnit: 85,
+    translation:
+      "Nous croyons aux nobles anges scribes et au fait qu'Allah le Très-Haut les a chargés de nous protéger.",
+    explanation:
+      "Cela affirme la croyance aux anges qui consignent ce que les gens disent et font, ainsi que leur rôle de protection.",
+  },
+  {
+    sourceUnit: 86,
+    translation:
+      "Nous croyons à l'Ange de la Mort, chargé de prendre les âmes de tous.",
+    explanation:
+      "Cela affirme la croyance en l'Ange de la Mort et la mission qui lui a été confiée de prendre les âmes des créatures.",
+  },
+  {
+    sourceUnit: 87,
+    translation:
+      "Nous croyons au châtiment de la tombe pour ceux qui le méritent, et nous croyons que les deux anges, Munkar et Nakir, interrogent chacun dans sa tombe au sujet de son Créateur, de sa religion et de son Prophète, conformément aux récits rapportés du Prophète ﷺ et de ses Compagnons.",
+    explanation:
+      "Ces affirmations établissent la croyance au châtiment de la tombe et à l'interrogatoire du défunt selon les récits transmis du Prophète ﷺ et de ses Compagnons.",
+  },
+  {
+    sourceUnit: 88,
+    translation:
+      "Nous croyons à l'interrogatoire du défunt dans sa tombe par Munkar et Nakir au sujet de son Créateur, de sa religion et de son Prophète, conformément aux récits transmis du Messager d'Allah ﷺ et de l'ensemble de ses Compagnons.",
+    explanation:
+      "Cela souligne l'interrogatoire du défunt dans la tombe au sujet des fondements de la foi.",
+  },
+  {
+    sourceUnit: 89,
+    translation:
+      "La tombe est soit un jardin parmi les jardins du Paradis, soit une fosse parmi les fosses de l'Enfer.",
+    explanation:
+      "Cela décrit la tombe comme pouvant être un lieu de bienfait ou un lieu de châtiment.",
+  },
+] as const
