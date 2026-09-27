@@ -6,9 +6,22 @@ import {
 } from './source/tahawiyyah-curriculum'
 import { TAHAWIYYAH_LESSON_MAP } from './source/tahawiyyah-lesson-map'
 import { TAHAWIYYAH_TRANSLATION_MAP } from './source/tahawiyyah-translation-map'
-import { TAHAWIYYAH_ENGLISH_LESSON_1 } from './source/tahawiyyah-english-lessons'
-import { TAHAWIYYAH_SWAHILI_LESSON_1 } from './source/tahawiyyah-swahili-lessons'
-import { TAHAWIYYAH_FRENCH_LESSON_1 } from './source/tahawiyyah-french-lessons'
+import {
+  TAHAWIYYAH_ENGLISH_LESSON_1,
+  TAHAWIYYAH_ENGLISH_LESSON_2,
+  TAHAWIYYAH_ENGLISH_LESSON_3,
+  TAHAWIYYAH_ENGLISH_LESSON_4,
+} from './source/tahawiyyah-english-lessons'
+import {
+  TAHAWIYYAH_SWAHILI_LESSON_1,
+  TAHAWIYYAH_SWAHILI_LESSON_2,
+  TAHAWIYYAH_SWAHILI_LESSON_3,
+} from './source/tahawiyyah-swahili-lessons'
+import {
+  TAHAWIYYAH_FRENCH_LESSON_1,
+  TAHAWIYYAH_FRENCH_LESSON_2,
+  TAHAWIYYAH_FRENCH_LESSON_3,
+} from './source/tahawiyyah-french-lessons'
 
 const TAHAWIYYAH_SOURCE_TITLE_ARABIC =
   TAHAWIYYAH_CURRICULUM.source.titleArabic
@@ -121,16 +134,35 @@ export default function TawheedAqidahLessonScreen({
 
         <div className="tawheed-aqidah-source-list">
           {sourceUnits.map((sourceUnit) => {
+            const englishLessons = {
+              1: TAHAWIYYAH_ENGLISH_LESSON_1,
+              2: TAHAWIYYAH_ENGLISH_LESSON_2,
+              3: TAHAWIYYAH_ENGLISH_LESSON_3,
+              4: TAHAWIYYAH_ENGLISH_LESSON_4,
+            } as const
+
+            const swahiliLessons = {
+              1: TAHAWIYYAH_SWAHILI_LESSON_1,
+              2: TAHAWIYYAH_SWAHILI_LESSON_2,
+              3: TAHAWIYYAH_SWAHILI_LESSON_3,
+            } as const
+
+            const frenchLessons = {
+              1: TAHAWIYYAH_FRENCH_LESSON_1,
+              2: TAHAWIYYAH_FRENCH_LESSON_2,
+              3: TAHAWIYYAH_FRENCH_LESSON_3,
+            } as const
+
             const englishUnit =
-              TAHAWIYYAH_ENGLISH_LESSON_1.find(
+              englishLessons[lesson.lesson as 1 | 2 | 3 | 4]?.find(
                 (unit) => unit.sourceUnit === sourceUnit.id,
               )
             const swahiliUnit =
-              TAHAWIYYAH_SWAHILI_LESSON_1.find(
+              swahiliLessons[lesson.lesson as 1 | 2 | 3]?.find(
                 (unit) => unit.sourceUnit === sourceUnit.id,
               )
             const frenchUnit =
-              TAHAWIYYAH_FRENCH_LESSON_1.find(
+              frenchLessons[lesson.lesson as 1 | 2 | 3]?.find(
                 (unit) => unit.sourceUnit === sourceUnit.id,
               )
 
