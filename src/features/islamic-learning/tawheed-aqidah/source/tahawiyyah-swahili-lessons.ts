@@ -583,3 +583,20 @@ export const TAHAWIYYAH_SWAHILI_LESSON_13 = [
       "Hii inafundisha unyenyekevu tunapokosa uhakika wa elimu na kukiri kwamba elimu kamili iko kwa Allah.",
   },
 ] as const
+
+export const TAHAWIYYAH_SWAHILI_LESSON_14 = [
+  {
+    sourceUnit: 83,
+    translation:
+      "Tunaona kuwa inafaa kupangusa juu ya khufu wakati wa kutawadha, iwe safarini au nyumbani, kwa mujibu wa Hadithi.",
+    explanation:
+      "Hii inathibitisha uhalali wa kupangusa juu ya khufu wakati wa kutawadha, katika safari na nyumbani, kwa mujibu wa Hadithi.",
+  },
+  {
+    sourceUnit: 84,
+    translation:
+      "Hija na Jihadi ni faradhi zilizoendelea kutekelezwa chini ya uongozi wa wenye mamlaka miongoni mwa viongozi wa Waislamu, wawe wema au wakosefu. Hakuna chochote kinachozisitisha au kuzibatilisha.",
+    explanation:
+      "Hii inathibitisha Hija na Jihadi kuwa ni faradhi zilizoendelea, na inaeleza utekelezaji wake chini ya uongozi wa wenye mamlaka miongoni mwa Waislamu.",
+  },
+] as const

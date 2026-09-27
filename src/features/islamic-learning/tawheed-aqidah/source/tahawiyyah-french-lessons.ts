@@ -580,3 +580,20 @@ export const TAHAWIYYAH_FRENCH_LESSON_13 = [
       "Cela enseigne l'humilité lorsque notre connaissance est incertaine et reconnaît que la connaissance parfaite appartient à Allah.",
   },
 ] as const
+
+export const TAHAWIYYAH_FRENCH_LESSON_14 = [
+  {
+    sourceUnit: 83,
+    translation:
+      "Nous affirmons la légitimité de passer les mains mouillées sur les khuff lors des ablutions, aussi bien en voyage qu'à domicile, conformément au Hadith.",
+    explanation:
+      "Cela établit la légitimité de passer les mains mouillées sur les khuff lors des ablutions, en voyage comme à domicile, conformément au Hadith.",
+  },
+  {
+    sourceUnit: 84,
+    translation:
+      "Le Hajj et le Jihad sont deux obligations établies qui doivent être accomplis sous l'autorité des dirigeants musulmans, qu'ils soient pieux ou pécheurs. Rien ne les suspend ni ne les annule.",
+    explanation:
+      "Cela affirme le caractère obligatoire du Hajj et du Jihad et leur accomplissement sous l'autorité des dirigeants musulmans.",
+  },
+] as const

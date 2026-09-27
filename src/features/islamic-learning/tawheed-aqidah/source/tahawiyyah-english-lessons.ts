@@ -598,3 +598,20 @@ export const TAHAWIYYAH_ENGLISH_LESSON_13 = [
       "This teaches humility when knowledge is uncertain and acknowledges that complete knowledge belongs to Allah.",
   },
 ] as const
+
+export const TAHAWIYYAH_ENGLISH_LESSON_14 = [
+  {
+    sourceUnit: 83,
+    translation:
+      "We affirm wiping over leather footwear during ablution, both while travelling and when at home, in accordance with the Hadith.",
+    explanation:
+      "This states the established practice of wiping over the khuff during ablution in both travel and residence, based on the Hadith.",
+  },
+  {
+    sourceUnit: 84,
+    translation:
+      "Hajj and Jihad are established obligations carried out under the guidance of those in authority among the Muslim leaders, whether they are pious or wrongdoers. Nothing suspends or nullifies them.",
+    explanation:
+      "This affirms Hajj and Jihad as established obligations and connects their administration with the authority of Muslim leadership.",
+  },
+] as const
