@@ -541,6 +541,7 @@ export const TAHAWIYYAH_FRENCH_LESSON_12 = [
     explanation:
       "Cela décrit les croyants comme les alliés du Tout Miséricordieux et relie leur honneur à l'obéissance et au suivi du Coran.",
   },
+
 ] as const
 
 export const TAHAWIYYAH_FRENCH_LESSON_13 = [
@@ -702,5 +703,29 @@ export const TAHAWIYYAH_FRENCH_LESSON_17 = [
       "Toute chose se produit par la Volonté, la Connaissance, le Décret et la Prédestination d'Allah. Sa Volonté domine toutes les volontés, et Son Décret l'emporte sur tous les plans. Il fait ce qu'Il veut et n'est jamais injuste. Il est exalté au-dessus de tout mal, défaut et imperfection.",
     explanation:
       "Cela affirme la Volonté, la Connaissance, le Décret et la Prédestination parfaits d'Allah, tout en affirmant qu'Allah n'est jamais injuste et qu'Il est exempt de toute imperfection.",
+  },
+] as const
+
+export const TAHAWIYYAH_FRENCH_LESSON_18 = [
+  {
+    sourceUnit: 99,
+    translation:
+      "Les vivants peuvent faire bénéficier les morts par leurs invocations et leurs aumônes.",
+    explanation:
+      "Cela affirme le bénéfice qui parvient aux morts grâce aux invocations et aux actes de charité des vivants.",
+  },
+  {
+    sourceUnit: 100,
+    translation:
+      "Allah répond aux invocations, satisfait les besoins et possède toute chose. Rien ne Le possède, et nul ne peut se passer d'Allah, même le temps d'un clignement d'œil. Celui qui se croit indépendant d'Allah, même un instant, tombe dans la mécréance et la perdition.",
+    explanation:
+      "Cela affirme qu'Allah possède toute chose, qu'Il répond aux invocations et que Ses serviteurs dépendent entièrement de Lui.",
+  },
+  {
+    sourceUnit: 101,
+    translation:
+      "Allah Se met en colère et est satisfait, mais non comme l'une de Ses créatures.",
+    explanation:
+      "Cela affirme les attributs de colère et de satisfaction d'Allah tout en rejetant toute ressemblance avec les qualités des créatures.",
   },
 ] as const

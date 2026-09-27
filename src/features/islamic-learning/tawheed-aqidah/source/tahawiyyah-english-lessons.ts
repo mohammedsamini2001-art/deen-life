@@ -559,6 +559,7 @@ export const TAHAWIYYAH_ENGLISH_LESSON_12 = [
     explanation:
       "This describes the believers as allies of the Most Merciful and connects their honor with obedience and following the Quran.",
   },
+
 ] as const
 
 export const TAHAWIYYAH_ENGLISH_LESSON_13 = [
@@ -720,5 +721,29 @@ export const TAHAWIYYAH_ENGLISH_LESSON_17 = [
       "Everything occurs by the Will, Knowledge, Decree, and Preestimation of Allah. His Will prevails over all wills, and His Decree overcomes all plans. He does whatever He wills, and He is never unjust. He is exalted above every evil, defect, and imperfection.",
     explanation:
       "This affirms Allah's complete Will, Knowledge, Decree, and Preestimation, while affirming that Allah is never unjust and is free from every imperfection.",
+  },
+] as const
+
+export const TAHAWIYYAH_ENGLISH_LESSON_18 = [
+  {
+    sourceUnit: 99,
+    translation:
+      "The living can benefit the deceased through their supplications and acts of charity.",
+    explanation:
+      "This affirms the benefit that reaches the deceased through the supplications and charitable acts of the living.",
+  },
+  {
+    sourceUnit: 100,
+    translation:
+      "Allah responds to supplications, fulfils needs, and owns everything. Nothing owns Him, and no one can be independent of Allah even for the blink of an eye. Whoever considers himself independent of Allah even for a moment has fallen into disbelief and ruin.",
+    explanation:
+      "This affirms Allah's ownership of everything, His response to supplications, and the complete dependence of His servants upon Him.",
+  },
+  {
+    sourceUnit: 101,
+    translation:
+      "Allah becomes angry and is pleased, but not like any of His creatures.",
+    explanation:
+      "This affirms Allah's attributes of anger and pleasure while rejecting any resemblance between them and the qualities of created beings.",
   },
 ] as const

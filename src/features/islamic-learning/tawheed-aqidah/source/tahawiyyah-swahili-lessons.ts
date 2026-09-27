@@ -544,6 +544,7 @@ export const TAHAWIYYAH_SWAHILI_LESSON_12 = [
     explanation:
       "Hii inaeleza kwamba Waumini wote ni waja na marafiki wa Ar-Rahman, na kwamba heshima yao inahusiana na utiifu na kufuata Qurani.",
   },
+
 ] as const
 
 export const TAHAWIYYAH_SWAHILI_LESSON_13 = [
@@ -705,5 +706,29 @@ export const TAHAWIYYAH_SWAHILI_LESSON_17 = [
       "Kila kitu hutokea kwa Matakwa, Elimu, Hukumu na Makadirio ya Allah. Matakwa Yake yanatawala matakwa yote, na Hukumu Yake inashinda mipango yote. Anafanya Anachotaka, na Yeye kamwe si dhalimu. Ametakasika na kila ubaya, kasoro na upungufu.",
     explanation:
       "Hii inathibitisha Matakwa, Elimu, Hukumu na Makadirio kamili ya Allah, huku ikithibitisha kwamba Allah kamwe si dhalimu na yuko mbali na kila upungufu.",
+  },
+] as const
+
+export const TAHAWIYYAH_SWAHILI_LESSON_18 = [
+  {
+    sourceUnit: 99,
+    translation:
+      "Watu walio hai wanaweza kuwafaidi waliokufa kupitia dua zao na sadaka zao.",
+    explanation:
+      "Hii inathibitisha manufaa yanayowafikia waliokufa kupitia dua na matendo ya sadaka ya walio hai.",
+  },
+  {
+    sourceUnit: 100,
+    translation:
+      "Allah Anajibu dua, Anatimiza mahitaji, na Anamiliki kila kitu. Hakuna kinachomiliki Yeye, na hakuna anayeweza kujitosheleza na Allah hata kwa kupepesa kwa jicho. Anayejiona hana haja na Allah hata kwa muda mfupi ameanguka katika ukafiri na maangamizi.",
+    explanation:
+      "Hii inathibitisha umiliki wa Allah juu ya kila kitu, kujibu Kwake dua, na utegemezi kamili wa waja Kwake.",
+  },
+  {
+    sourceUnit: 101,
+    translation:
+      "Allah Hukerwa na Huridhia, lakini si kama yeyote miongoni mwa viumbe Wake.",
+    explanation:
+      "Hii inathibitisha sifa za Allah za kukerwa na kuridhia huku ikikataa kumfananisha na viumbe katika sifa hizo.",
   },
 ] as const
