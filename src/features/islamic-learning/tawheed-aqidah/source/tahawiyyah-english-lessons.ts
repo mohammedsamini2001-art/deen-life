@@ -267,3 +267,253 @@ export const TAHAWIYYAH_ENGLISH_LESSON_4: TahawiyyahEnglishLessonUnit[] = [
       'The creed rejects any claim of prophethood after Muhammad ﷺ and affirms the universal scope of his message.',
   },
 ]
+
+export const TAHAWIYYAH_ENGLISH_LESSON_5: TahawiyyahEnglishLessonUnit[] = [
+  {
+    sourceUnit: 38,
+    translation:
+      'The Quran, undoubtedly, is the word of Allah. It reveals the sayings of Allah. Allah Almighty revealed this Book to His Messenger. The believers testify to it as the whole truth with a firm faith that it is the word of Allah and that it is not a created thing like the words of the creatures themselves.',
+    explanation:
+      'The creed affirms that the Quran is the word of Allah, revealed to His Messenger, and not a created thing like the speech of created beings.',
+  },
+  {
+    sourceUnit: 39,
+    translation:
+      'Whoever listens to this Book and thinks that it is a word of a human being commits infidelity. Allah Almighty condemns such a person and threatens him with chastisement in the Hell-fire. We believe that the Quran is the word of the Creator of human beings. It does not resemble the words of human beings.',
+    explanation:
+      'The source distinguishes the Quran from human speech and affirms that it is the word of the Creator and does not resemble the words of human beings.',
+  },
+  {
+    sourceUnit: 40,
+    translation:
+      'Whoever compares the attributes of Allah to those of human beings commits infidelity.',
+    explanation:
+      'The creed rejects comparing the attributes of Allah with the attributes of human beings.',
+  },
+  {
+    sourceUnit: 41,
+    translation:
+      'Whoever thinks deeply and escapes the onslaught of the thinking of the infidels will certainly realise that the attributes of Allah have no resemblance at all to those of a human being.',
+    explanation:
+      'The source emphasizes that the attributes of Allah have no resemblance to the attributes of human beings.',
+  },
+]
+
+
+export const TAHAWIYYAH_ENGLISH_LESSON_6: TahawiyyahEnglishLessonUnit[] = [
+  {
+    sourceUnit: 42,
+    translation:
+      'The dwellers of Paradise will see their Lord in accordance with the Quranic saying: "Some faces that day will beam (in brightness and beauty), looking towards their Lord." (75:22-23)',
+    explanation:
+      'The creed affirms the believers’ vision of Allah in Paradise as established by the Quran and authentic revelation.',
+  },
+  {
+    sourceUnit: 43,
+    translation:
+      'Whoever does not concede to the evidences produced by the Book and the Sunnah is no longer a Muslim. A man who indulges in the fundamentals of faith without proper knowledge and does not submit himself to these two sources will remain deprived of true faith, understanding of the religion, and pure belief in the Oneness of Allah.',
+    explanation:
+      'This section emphasizes submission to the Quran and Sunnah and warns against pursuing matters of faith without proper knowledge.',
+  },
+  {
+    sourceUnit: 44,
+    translation:
+      'Instead he will find himself swinging between faith and infidelity, belief and unbelief, submission and denial. He will always be confused and doubtful. He will neither be a believer who has a strong faith, nor a disbeliever who rejects wholeheartedly.',
+    explanation:
+      'The text describes the uncertainty that results when a person does not properly submit to the revealed sources.',
+  },
+  {
+    sourceUnit: 45,
+    translation:
+      'To imagine Allah in a certain form is not correct. The safest way for a Muslim is to believe in all the attributes of Allah without adding any interpretation. To negate the attributes of Allah altogether or to compare Him to someone is a deviation from the right path. Our Lord is unique and without any equal at all.',
+    explanation:
+      'The creed affirms Allah’s unique attributes while rejecting both negation of His attributes and comparison of Allah with creation.',
+  },
+  {
+    sourceUnit: 46,
+    translation:
+      'Allah Almighty is above all limits and anthropomorphic descriptions.',
+    explanation:
+      'The text declares Allah exalted above limits and descriptions that attribute created human characteristics to Him.',
+  },
+  {
+    sourceUnit: 47,
+    translation:
+      'Unlike other things He is not bound by the six directions.',
+    explanation:
+      'The creed distinguishes Allah from created things and rejects describing Him as being contained by the six directions.',
+  },
+]
+
+export const TAHAWIYYAH_ENGLISH_LESSON_7: TahawiyyahEnglishLessonUnit[] = [
+  {
+    sourceUnit: 48,
+    translation:
+      'Mi‘raj (the Prophet’s night journey to heaven) is true. Allah Almighty took His Prophet while he was awake on a splendid journey. Then his ascension took place in flesh. Allah took him as high as He wanted him in all respect and glory.',
+    explanation:
+      'The creed affirms the truth of the Prophet’s night journey and ascension as an event that took place while he was awake.',
+  },
+  {
+    sourceUnit: 49,
+    translation:
+      'The pool of Kauthar is true. Allah Almighty will let the Ummah quench its thirst from this exalted pool.',
+    explanation:
+      'The creed affirms the truth of the Hawd, the exalted pool from which the Ummah will drink.',
+  },
+  {
+    sourceUnit: 50,
+    translation:
+      'The intercession (Shafa‘a) for this Ummah by the Prophet is true in accordance with a number of Ahadith.',
+    explanation:
+      'The text affirms the Prophet’s intercession for this Ummah as established in authentic reports.',
+  },
+  {
+    sourceUnit: 51,
+    translation:
+      'The pledge that Allah took from Sayyidina Adam (A.S.) and his descendants is true.',
+    explanation:
+      'The creed affirms the covenant that Allah took from Adam and his descendants, as referenced in the Quran.',
+  },
+]
+
+export const TAHAWIYYAH_ENGLISH_LESSON_8: TahawiyyahEnglishLessonUnit[] = [
+  {
+    sourceUnit: 52,
+    translation:
+      'Allah Almighty has known since eternity those who will enter Paradise and those who will go to the Hell-Fire. No increase or decrease in this divine knowledge will occur at all.',
+    explanation:
+      'The creed affirms that Allah’s knowledge of His creatures and their ultimate destiny is eternal and does not increase or decrease.',
+  },
+  {
+    sourceUnit: 53,
+    translation:
+      'Allah Almighty knows all the actions that the people will undertake. The actions that are destined for each individual will be made easier to him. Actions are valued according to their ends. Fortunate is the one whose Taqdir is in his favour and wretched is the one whose Taqdir falls against him.',
+    explanation:
+      'The text affirms Allah’s complete knowledge of human actions and connects people’s actions with their destined outcomes.',
+  },
+  {
+    sourceUnit: 54,
+    translation:
+      'Taqdir is a secret placed by Allah Almighty among His creatures which is not known even by any close angel or by a Messenger. The more you think about it, the more you will find yourself depressed, deprived and arrogant. This is why a Muslim should abstain from thinking deeply about it.',
+    explanation:
+      'The text describes divine decree as knowledge hidden from creation and calls for restraint from speculation about what Allah has concealed.',
+  },
+  {
+    sourceUnit: 55,
+    translation:
+      'Allah has withdrawn the knowledge of Taqdir from His creatures and forbade them from arguing about it. He says: "He cannot be questioned for His acts, but they will be questioned for theirs". By asking why Allah did this, a man rejects one of the injunctions of the Quran.',
+    explanation:
+      'The text emphasizes that people should not dispute about matters of divine decree that Allah has kept beyond their knowledge.',
+  },
+  {
+    sourceUnit: 56,
+    translation:
+      'Only the friends of Allah whose hearts are lit by a light of Allah believe in the Shari‘a practically and dogmatically as revealed from Allah. People with deep knowledge receive such status.',
+    explanation:
+      'The text connects sound belief with accepting the revealed guidance of Allah and distinguishes genuine knowledge from speculation about the unseen.',
+  },
+  {
+    sourceUnit: 57,
+    translation:
+      'Knowledge is of two kinds: knowledge of the present, that of the Book of Allah and the Sunnah of the Prophet; and knowledge of the absent, that of Taqdir which is hidden from the creatures.',
+    explanation:
+      'The text distinguishes knowledge available through revelation from knowledge of divine decree that remains hidden from creation.',
+  },
+  {
+    sourceUnit: 58,
+    translation:
+      'We believe in the pen and the tablets and whatever is associated with the writing of Taqdir. What Allah has decreed must happen even though all the creatures may try their best to stop it happening.',
+    explanation:
+      'The creed affirms belief in the written decree and that what Allah has decreed to occur cannot be prevented.',
+  },
+  {
+    sourceUnit: 59,
+    translation:
+      'If Allah has decreed for anything not to happen, it will never happen though all the creatures will try their utmost to do it. Allah has decreed whatever is going to happen until the Day of Judgement.',
+    explanation:
+      'The text affirms that Allah’s decree encompasses what will and will not occur.',
+  },
+  {
+    sourceUnit: 60,
+    translation:
+      'Allah’s decree will never fail. Whoever does wrong would never have been able to do otherwise, and whoever does right would never have been able to do wrong. Whatever happens in this universe is known to Allah before it happens, and no one can change, overrule, increase or decrease what He has decreed.',
+    explanation:
+      'The section concludes by affirming Allah’s complete prior knowledge and the certainty of His decree.',
+  },
+]
+
+export const TAHAWIYYAH_ENGLISH_LESSON_9: TahawiyyahEnglishLessonUnit[] = [
+  {
+    sourceUnit: 61,
+    translation:
+      "The Divine Throne ('Arsh) and Chair (Kursi) are true. Allah Almighty is in no need of the Throne or anything beyond it. Allah Almighty is above everything. He dominates them all. Nothing can surpass Him.",
+    explanation:
+      "This section affirms the truth of the Divine Throne and Chair while affirming Allah's independence from His creation and His exaltedness above everything.",
+  },
+  {
+    sourceUnit: 62,
+    translation:
+      "We believe wholeheartedly that Allah Almighty declared Sayyidina Ibrahim (A.S.) as His Khalil (friend) and Sayyidina Musa (A.S.) as His Kalim (speaking directly to Him).",
+    explanation:
+      "This affirms the revealed descriptions of Ibrahim as Allah's Khalil and Musa as the one to whom Allah spoke directly.",
+  },
+  {
+    sourceUnit: 63,
+    translation:
+      "We believe in all those books which were revealed to the Prophets and the Messengers of Allah and bear witness that all of them spoke the truth.",
+    explanation:
+      "This affirms belief in the revealed Books and the truthfulness of the Prophets and Messengers who brought them.",
+  },
+]
+
+export const TAHAWIYYAH_ENGLISH_LESSON_10: TahawiyyahEnglishLessonUnit[] = [
+  {
+    sourceUnit: 64,
+    translation:
+      "We hold all those who turn their faces to the Ka'ba as Muslims and Mu'min as long as they accept the Shari'a of the Prophet Muhammad (Peace Be Upon Him) and all of his sayings with an open heart.",
+    explanation:
+      "This affirms the Muslim and believer status of the people of the Qibla who accept the Prophet's revealed guidance and affirm his teachings.",
+  },
+  {
+    sourceUnit: 65,
+    translation:
+      "We do not indulge in discussions about the essence of Almighty Allah, nor do we dispute in the matters of religion.",
+    explanation:
+      "The passage teaches restraint concerning matters beyond human knowledge and warns against disputing about the religion.",
+  },
+  {
+    sourceUnit: 66,
+    translation:
+      "We do not dispute concerning the words and meanings of the Quran. We bear witness that the Quran is the word of Allah Almighty. The Archangel Jibrail brought it to Muhammad (Peace Be Upon Him), the master of the messengers, through revelation. There is no doubt that it is the word of Allah. The words of human beings can never equal it.",
+    explanation:
+      "This affirms that the Quran is the word of Allah, revealed through Jibrail to Muhammad ﷺ, and that human speech cannot equal it.",
+  },
+  {
+    sourceUnit: 67,
+    translation:
+      "We do not regard the Quran as a created thing, and we do not disgrace with the Muslim Ummah in any of these issues.",
+    explanation:
+      "This continues the affirmation concerning the Quran and emphasizes remaining with the united Muslim community on these matters.",
+  },
+  {
+    sourceUnit: 68,
+    translation:
+      "We do not declare anyone from among the Muslims as an infidel because of a sin unless the person believes that it is not a sin. We do not believe that if a man has faith, his sins will not affect him.",
+    explanation:
+      "This distinguishes committing a sin from denying its status as a sin, and rejects the idea that faith makes a person's sins harmless.",
+  },
+  {
+    sourceUnit: 69,
+    translation:
+      "We hope that Allah Almighty will forgive all those who were good in their actions (i.e. Muhsinin) and will enter them into Paradise out of His mercy. We are hopeful of this but we do not testify that they will definitely enter Paradise. We seek forgiveness for all those who do wrong. Although we are scared of their end, we do not allow for despair either. Being regardless of the punishment of Allah or despairing of the mercy of Allah forces a person out of the pale of Islam. The people of the Qibla should adopt a middle way between those extremes.",
+    explanation:
+      "The passage describes a balanced position: hope in Allah's mercy for the righteous, seeking forgiveness for those who do wrong, and avoiding both false security and despair.",
+  },
+  {
+    sourceUnit: 70,
+    translation:
+      "A man does not come out of the bond of faith until he denies all that made him enter it.",
+    explanation:
+      "This states that departure from faith occurs through denial of what originally brought a person into faith.",
+  },
+]

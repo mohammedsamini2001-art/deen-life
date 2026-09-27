@@ -243,3 +243,235 @@ export const TAHAWIYYAH_FRENCH_LESSON_3: TahawiyyahFrenchLessonUnit[] = [
       'Le credo affirme une foi complète et une certitude que toutes ces choses viennent d’Allah.',
   },
 ]
+
+export const TAHAWIYYAH_FRENCH_LESSON_5: TahawiyyahFrenchLessonUnit[] = [
+  {
+    sourceUnit: 38,
+    translation:
+      'Le Coran est, sans aucun doute, la Parole d’Allah. Allah a révélé ce Livre à Son Messager. Les croyants en témoignent avec une foi ferme qu’il est véritablement la Parole d’Allah et qu’il n’est pas créé comme les paroles des créatures.',
+    explanation:
+      'La croyance affirme que le Coran est la Parole d’Allah, révélée à Son Messager, et qu’il n’est pas une création comme les paroles des créatures.',
+  },
+  {
+    sourceUnit: 39,
+    translation:
+      'Celui qui entend ce Livre et prétend qu’il est la parole d’un être humain commet une mécréance. Allah le condamne et le menace d’un châtiment en Enfer. Nous croyons que le Coran est la Parole du Créateur des êtres humains et qu’elle ne ressemble pas aux paroles des êtres humains.',
+    explanation:
+      'Le texte distingue le Coran de la parole humaine et affirme qu’il est la Parole du Créateur et qu’elle ne ressemble pas aux paroles des êtres humains.',
+  },
+  {
+    sourceUnit: 40,
+    translation:
+      'Celui qui compare les attributs d’Allah à ceux des êtres humains commet une mécréance.',
+    explanation:
+      'La croyance rejette la comparaison entre les attributs d’Allah et ceux des êtres humains.',
+  },
+  {
+    sourceUnit: 41,
+    translation:
+      'Celui qui réfléchit profondément et se préserve des pensées des mécréants comprendra certainement que les attributs d’Allah ne ressemblent absolument pas à ceux d’un être humain.',
+    explanation:
+      'Le texte souligne que les attributs d’Allah ne ressemblent en aucune manière aux attributs des êtres humains.',
+  },
+]
+
+
+export const TAHAWIYYAH_FRENCH_LESSON_6: TahawiyyahFrenchLessonUnit[] = [
+  {
+    sourceUnit: 42,
+    translation:
+      'Les habitants du Paradis verront leur Seigneur, conformément à la parole du Coran : « Ce jour-là, certains visages seront resplendissants, regardant leur Seigneur. » (75:22-23)',
+    explanation:
+      'La croyance affirme que les croyants verront Allah au Paradis, conformément au Coran et à la révélation authentique.',
+  },
+  {
+    sourceUnit: 43,
+    translation:
+      'Celui qui n’accepte pas les preuves apportées par le Livre et la Sunnah n’est plus musulman. Celui qui aborde les fondements de la foi sans connaissance correcte et sans se soumettre à ces deux sources sera privé de la vraie foi, de la compréhension de la religion et de la croyance pure en l’unicité d’Allah.',
+    explanation:
+      'Ce passage insiste sur la soumission au Coran et à la Sunnah et met en garde contre le fait d’aborder les questions de foi sans connaissance correcte.',
+  },
+  {
+    sourceUnit: 44,
+    translation:
+      'Il se retrouvera plutôt à osciller entre la foi et la mécréance, la croyance et le rejet, la soumission et le déni. Il demeurera toujours dans la confusion et le doute. Il ne sera ni un croyant doté d’une foi ferme, ni un négateur rejetant pleinement.',
+    explanation:
+      'Le texte décrit l’incertitude qui résulte du fait de ne pas se soumettre correctement aux sources révélées.',
+  },
+  {
+    sourceUnit: 45,
+    translation:
+      'Il n’est pas correct d’imaginer Allah sous une certaine forme. La voie la plus sûre pour le musulman est de croire en tous les attributs d’Allah sans y ajouter d’interprétation. Nier totalement les attributs d’Allah ou Le comparer à quelqu’un est une déviation de la voie droite. Notre Seigneur est unique et n’a aucun égal.',
+    explanation:
+      'La croyance affirme les attributs uniques d’Allah tout en rejetant leur négation et toute comparaison d’Allah avec les créatures.',
+  },
+  {
+    sourceUnit: 46,
+    translation:
+      'Allah le Très-Haut est au-dessus de toutes les limites et de toute description anthropomorphique.',
+    explanation:
+      'Le texte affirme qu’Allah est au-dessus des limites et des descriptions qui Lui attribueraient des caractéristiques humaines créées.',
+  },
+  {
+    sourceUnit: 47,
+    translation:
+      'Contrairement aux autres choses, Il n’est pas limité par les six directions.',
+    explanation:
+      'La croyance distingue Allah des créatures et rejette le fait de Le décrire comme étant contenu par les six directions.',
+  },
+]
+
+export const TAHAWIYYAH_FRENCH_LESSON_7: TahawiyyahFrenchLessonUnit[] = [
+  {
+    sourceUnit: 48,
+    translation:
+      'Le Mi‘raj (le voyage nocturne du Prophète vers le ciel) est une vérité. Allah le Très-Haut fit voyager Son Prophète alors qu’il était éveillé, lors d’un voyage magnifique. Puis son ascension eut lieu avec son corps. Allah l’éleva aussi haut qu’Il le voulut, avec tout honneur et toute gloire.',
+    explanation:
+      'La croyance affirme la réalité du Voyage nocturne et du Mi‘raj du Prophète ﷺ comme un événement qui eut lieu alors qu’il était éveillé.',
+  },
+  {
+    sourceUnit: 49,
+    translation:
+      'Le bassin de Kauthar est une vérité. Allah le Très-Haut permettra à la Ummah d’étancher sa soif à ce bassin élevé.',
+    explanation:
+      'La croyance affirme la réalité du Hawd, le bassin élevé auquel la Ummah aura accès pour étancher sa soif.',
+  },
+  {
+    sourceUnit: 50,
+    translation:
+      'L’intercession (Shafa‘a) du Prophète en faveur de cette Ummah est une vérité, conformément à plusieurs Hadiths.',
+    explanation:
+      'Le texte affirme l’intercession du Prophète ﷺ en faveur de cette Ummah conformément aux récits rapportés.',
+  },
+  {
+    sourceUnit: 51,
+    translation:
+      'L’engagement qu’Allah a pris de Sayyidina Adam (A.S.) et de ses descendants est une vérité.',
+    explanation:
+      'La croyance affirme le pacte qu’Allah a pris d’Adam et de ses descendants, comme cela est mentionné dans le Coran.',
+  },
+]
+
+export const TAHAWIYYAH_FRENCH_LESSON_8: TahawiyyahFrenchLessonUnit[] = [
+  {
+    sourceUnit: 52,
+    translation: 'Allah savait depuis toute éternité qui entrerait au Paradis et qui entrerait en Enfer, sans que rien de cette connaissance ne Lui soit caché.',
+    explanation: 'La croyance affirme la connaissance éternelle d’Allah concernant le destin final de Ses serviteurs.',
+  },
+  {
+    sourceUnit: 53,
+    translation: 'Allah connaît toutes les actions que Ses serviteurs accompliront. Chaque personne est facilitée vers ce pour quoi elle a été créée, et les œuvres sont jugées selon leur conclusion.',
+    explanation: 'Ce passage affirme la connaissance parfaite d’Allah et le fait que les actes des serviteurs sont compris dans Sa science et Son décret.',
+  },
+  {
+    sourceUnit: 54,
+    translation: 'La prédestination est un secret d’Allah dans Sa création. Aucun ange rapproché ni aucun Prophète envoyé n’en connaît la réalité complète. Il ne convient donc pas de s’engager dans des spéculations profondes à son sujet.',
+    explanation: 'Le passage enseigne à accepter ce qui a été révélé au sujet du destin et à éviter de prétendre connaître ce qu’Allah a gardé caché.',
+  },
+  {
+    sourceUnit: 55,
+    translation: 'Les croyants en Allah acceptent ce qui est présent et établi par le Livre et la Sunnah, et ils laissent à Allah la connaissance de ce qui leur est caché.',
+    explanation: 'La foi repose sur l’acceptation de la révélation et sur la reconnaissance des limites de la connaissance humaine concernant le destin.',
+  },
+  {
+    sourceUnit: 56,
+    translation: 'Nous croyons au Calame, à la Tablette et à ce qu’Allah y a écrit. Tout ce qu’Allah a décrété doit arriver, et ce qu’Il n’a pas décrété ne peut arriver.',
+    explanation: 'Ce passage affirme la croyance au Calame, à la Tablette et à l’écriture du décret divin.',
+  },
+  {
+    sourceUnit: 57,
+    translation: 'Le décret d’Allah demeure jusqu’au Jour de la Résurrection. Il ne manque jamais et ne fait jamais défaut.',
+    explanation: 'Le passage affirme la réalisation certaine du décret d’Allah jusqu’au Jour de la Résurrection.',
+  },
+  {
+    sourceUnit: 58,
+    translation: 'Tout ce qui arrive dans le monde est connu d’Allah avant son existence. Rien ne peut modifier, repousser ou augmenter ce qu’Allah a décrété.',
+    explanation: 'La croyance affirme que la science d’Allah précède tous les événements et que Son décret ne peut être annulé ou dominé.',
+  },
+  {
+    sourceUnit: 59,
+    translation: 'La croyance en cela constitue une foi ferme. Rien ne peut changer le décret d’Allah, et personne ne peut s’opposer à Sa volonté.',
+    explanation: 'Le passage appelle à une foi ferme dans le décret divin et à l’abandon des spéculations fondées sur les conjectures.',
+  },
+  {
+    sourceUnit: 60,
+    translation: 'Nous ne devons pas chercher à discuter de la prédestination par des suppositions ou des conjectures, car le destin est une connaissance qu’Allah a réservée à Lui-même.',
+    explanation: 'Le croyant accepte le décret divin avec foi et s’abstient de prétendre maîtriser ce qu’Allah a gardé caché.',
+  },
+]
+
+export const TAHAWIYYAH_FRENCH_LESSON_9: TahawiyyahFrenchLessonUnit[] = [
+  {
+    sourceUnit: 61,
+    translation:
+      "Le Trône divin ('Arsh) et le Kursi sont une vérité. Allah n'a besoin ni du Trône ni de ce qui est en dessous. Il embrasse toute chose de Sa connaissance et Il est au-dessus de toute chose. Rien ne peut Le surpasser.",
+    explanation:
+      "Ce passage affirme la réalité du Trône et du Kursi, tout en affirmant qu'Allah n'a besoin d'aucune de Ses créatures et qu'Il est au-dessus de toute chose.",
+  },
+  {
+    sourceUnit: 62,
+    translation:
+      "Nous disons qu'Allah a pris Ibrahim comme Khalil (ami intime) et qu'Il a parlé directement à Musa, avec foi, confirmation et soumission.",
+    explanation:
+      "Cela affirme ce qui a été révélé au sujet d'Ibrahim comme Khalil d'Allah et de Musa comme celui à qui Allah a parlé directement.",
+  },
+  {
+    sourceUnit: 63,
+    translation:
+      "Nous croyons aux Prophètes et aux Livres révélés aux Messagers, et nous attestons qu'ils étaient tous sur la vérité manifeste.",
+    explanation:
+      "Ce passage affirme la croyance aux Livres révélés et la vérité des Prophètes et des Messagers qui les ont transmis.",
+  },
+]
+
+export const TAHAWIYYAH_FRENCH_LESSON_10: TahawiyyahFrenchLessonUnit[] = [
+  {
+    sourceUnit: 64,
+    translation:
+      "Nous considérons comme musulmans et croyants tous ceux qui se tournent vers la Qibla, tant qu'ils acceptent la Charia du Prophète Muhammad ﷺ et reconnaissent avec un cœur ouvert tout ce qu'il a dit et transmis.",
+    explanation:
+      "Ce passage affirme le statut de musulman et de croyant pour les gens de la Qibla qui acceptent la guidance révélée du Prophète et ses enseignements.",
+  },
+  {
+    sourceUnit: 65,
+    translation:
+      "Nous ne nous engageons pas dans des discussions sur l'Essence d'Allah, et nous ne disputons pas au sujet de la religion d'Allah le Très-Haut.",
+    explanation:
+      "Ce passage enseigne la retenue concernant ce qui dépasse la connaissance humaine et met en garde contre les disputes dans la religion.",
+  },
+  {
+    sourceUnit: 66,
+    translation:
+      "Nous ne disputons pas au sujet des paroles et des significations du Coran. Nous attestons que le Coran est la Parole d'Allah, le Seigneur des mondes. L'Ange Jibril l'a apporté à Muhammad ﷺ, le maître des Messagers, par la révélation. Il ne fait aucun doute qu'il est la Parole d'Allah. Les paroles des êtres humains ne peuvent jamais lui être égales.",
+    explanation:
+      "Cela affirme que le Coran est la Parole d'Allah, révélée par Jibril à Muhammad ﷺ, et que la parole humaine ne peut lui être égale.",
+  },
+  {
+    sourceUnit: 67,
+    translation:
+      "Nous ne considérons pas le Coran comme une chose créée et nous ne nous séparons pas de la communauté des musulmans sur ces questions.",
+    explanation:
+      "Cela poursuit l'affirmation concernant le Coran et souligne l'attachement à la communauté musulmane sur ces questions.",
+  },
+  {
+    sourceUnit: 68,
+    translation:
+      "Nous ne déclarons pas mécréant quelqu'un parmi les musulmans à cause d'un péché, tant qu'il ne le considère pas comme licite. Nous ne disons pas non plus que les péchés d'une personne ne lui nuisent pas lorsqu'elle possède la foi.",
+    explanation:
+      "Ce passage distingue le fait de commettre un péché du fait de le considérer comme licite, et rejette l'idée que la foi rende les péchés sans conséquence.",
+  },
+  {
+    sourceUnit: 69,
+    translation:
+      "Nous espérons qu'Allah le Très-Haut pardonnera à ceux parmi les croyants qui ont été bons dans leurs œuvres et qu'Il les fera entrer au Paradis par Sa miséricorde. Nous l'espérons sans toutefois témoigner avec certitude qu'ils entreront au Paradis. Nous demandons pardon pour ceux qui ont mal agi. Bien que nous craignions leur fin, nous ne les faisons pas désespérer. Se croire à l'abri du châtiment d'Allah ou désespérer de Sa miséricorde fait sortir une personne de l'Islam. Les gens de la Qibla doivent suivre une voie médiane entre ces deux extrêmes.",
+    explanation:
+      "Ce passage décrit une position équilibrée : espérer la miséricorde d'Allah pour les vertueux, demander pardon pour ceux qui ont mal agi et éviter à la fois le sentiment d'être à l'abri du châtiment et le désespoir de la miséricorde.",
+  },
+  {
+    sourceUnit: 70,
+    translation:
+      "Le serviteur ne sort du lien de la foi que lorsqu'il renie ce qui l'y avait fait entrer.",
+    explanation:
+      "Cela indique que la sortie de la foi est liée au rejet de ce qui avait fait entrer la personne dans la foi.",
+  },
+]
