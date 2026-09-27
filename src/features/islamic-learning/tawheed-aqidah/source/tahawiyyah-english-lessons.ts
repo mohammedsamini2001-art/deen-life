@@ -509,38 +509,24 @@ export const TAHAWIYYAH_ENGLISH_LESSON_10: TahawiyyahEnglishLessonUnit[] = [
     explanation:
       "The passage describes a balanced position: hope in Allah's mercy for the righteous, seeking forgiveness for those who do wrong, and avoiding both false security and despair.",
   },
-  {
+
+
+]
+
+export const TAHAWIYYAH_ENGLISH_LESSON_11: TahawiyyahEnglishLessonUnit[] = [
+{
     sourceUnit: 70,
     translation:
       "A man does not come out of the bond of faith until he denies all that made him enter it.",
     explanation:
       "This states that departure from faith occurs through denial of what originally brought a person into faith.",
   },
-
-
-]
-
-export const TAHAWIYYAH_ENGLISH_LESSON_11: TahawiyyahEnglishLessonUnit[] = [
   {
     sourceUnit: 71,
     translation:
       "Faith is affirmation with the tongue and conviction in the heart. Everything that Allah revealed in the Quran, and everything authentically reported from the Prophet ﷺ concerning the law and explanation, is all true.",
     explanation:
       "This describes faith as verbal affirmation and conviction in the heart, while affirming the truth of Allah's revelation and the authentic guidance of the Prophet ﷺ.",
-  },
-  {
-    sourceUnit: 72,
-    translation:
-      "Faith is one, and its people are equal in its foundation. Their excellence over one another is according to piety and their opposition to their desires.",
-    explanation:
-      "This states that faith has one foundation, while distinction among believers is connected to piety and resisting sinful desires.",
-  },
-  {
-    sourceUnit: 73,
-    translation:
-      "All believers are allies of the Most Merciful. The most honored among them are those who are most obedient and most closely follow the Quran.",
-    explanation:
-      "This identifies believers as allies of Allah and connects their honor with obedience and adherence to the Quran.",
   },
   {
     sourceUnit: 74,
@@ -557,3 +543,20 @@ export const TAHAWIYYAH_ENGLISH_LESSON_11: TahawiyyahEnglishLessonUnit[] = [
       "This affirms belief in all of Allah's Messengers and acceptance of the truth of the message they brought.",
   },
 ]
+
+export const TAHAWIYYAH_ENGLISH_LESSON_12 = [
+  {
+    sourceUnit: 72,
+    translation:
+      "Faith is one, and its people are equal in its foundation. They differ in rank according to piety and in opposing their desires.",
+    explanation:
+      "This explains that believers share the same foundation of faith, while their ranks differ according to piety and resistance to desires.",
+  },
+  {
+    sourceUnit: 73,
+    translation:
+      "All believers are allies of the Most Merciful. The most honored among them are those who are most obedient and who follow the Quran most closely.",
+    explanation:
+      "This describes the believers as allies of the Most Merciful and connects their honor with obedience and following the Quran.",
+  },
+] as const

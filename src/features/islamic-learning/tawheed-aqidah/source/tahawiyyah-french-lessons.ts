@@ -467,13 +467,6 @@ export const TAHAWIYYAH_FRENCH_LESSON_10: TahawiyyahFrenchLessonUnit[] = [
     explanation:
       "Ce passage décrit une position équilibrée : espérer la miséricorde d'Allah pour les vertueux, demander pardon pour ceux qui ont mal agi et éviter à la fois le sentiment d'être à l'abri du châtiment et le désespoir de la miséricorde.",
   },
-  {
-    sourceUnit: 70,
-    translation:
-      "Le serviteur ne sort du lien de la foi que lorsqu'il renie ce qui l'y avait fait entrer.",
-    explanation:
-      "Cela indique que la sortie de la foi est liée au rejet de ce qui avait fait entrer la personne dans la foi.",
-  },
 ]
 
 export const TAHAWIYYAH_FRENCH_LESSON_4: TahawiyyahFrenchLessonUnit[] = [
@@ -503,26 +496,19 @@ export const TAHAWIYYAH_FRENCH_LESSON_4: TahawiyyahFrenchLessonUnit[] = [
 ]
 
 export const TAHAWIYYAH_FRENCH_LESSON_11: TahawiyyahFrenchLessonUnit[] = [
+{
+    sourceUnit: 70,
+    translation:
+      "Le serviteur ne sort du lien de la foi que lorsqu'il renie ce qui l'y avait fait entrer.",
+    explanation:
+      "Cela indique que la sortie de la foi est liée au rejet de ce qui avait fait entrer la personne dans la foi.",
+  },
   {
     sourceUnit: 71,
     translation:
       "La foi consiste à l'affirmer par la langue et à en avoir la conviction dans le cœur. Tout ce qu'Allah a révélé dans le Coran, ainsi que tout ce qui est authentiquement rapporté du Prophète ﷺ concernant la Loi et l'explication, est entièrement vrai.",
     explanation:
       "Ce passage décrit la foi comme une affirmation verbale et une conviction du cœur, tout en affirmant la vérité de la révélation d'Allah et de la guidance authentique du Prophète ﷺ.",
-  },
-  {
-    sourceUnit: 72,
-    translation:
-      "La foi est une, et ses adeptes sont égaux dans son fondement. Leur distinction les uns par rapport aux autres se fait selon la piété et la résistance aux passions.",
-    explanation:
-      "Ce passage affirme un fondement commun de la foi et relie la distinction entre les croyants à la piété et à la résistance aux passions pécheresses.",
-  },
-  {
-    sourceUnit: 73,
-    translation:
-      "Tous les croyants sont les alliés du Tout Miséricordieux. Les plus honorés parmi eux sont ceux qui Lui obéissent le plus et suivent le plus fidèlement le Coran.",
-    explanation:
-      "Ce passage présente les croyants comme les alliés d'Allah et lie leur honneur à l'obéissance et à l'attachement au Coran.",
   },
   {
     sourceUnit: 74,
@@ -539,3 +525,20 @@ export const TAHAWIYYAH_FRENCH_LESSON_11: TahawiyyahFrenchLessonUnit[] = [
       "Ce passage affirme la croyance en tous les Messagers d'Allah et en la vérité du message qu'ils ont apporté.",
   },
 ]
+
+export const TAHAWIYYAH_FRENCH_LESSON_12 = [
+  {
+    sourceUnit: 72,
+    translation:
+      "La foi est une, et ses adeptes sont égaux dans son fondement. Ils se distinguent dans leurs degrés selon la piété et la résistance aux passions.",
+    explanation:
+      "Cela explique que les croyants partagent le même fondement de la foi, mais que leurs degrés diffèrent selon leur piété et leur résistance aux passions.",
+  },
+  {
+    sourceUnit: 73,
+    translation:
+      "Tous les croyants sont les alliés du Tout Miséricordieux. Les plus honorés parmi eux sont ceux qui Lui obéissent le plus et suivent le plus fidèlement le Coran.",
+    explanation:
+      "Cela décrit les croyants comme les alliés du Tout Miséricordieux et relie leur honneur à l'obéissance et au suivi du Coran.",
+  },
+] as const

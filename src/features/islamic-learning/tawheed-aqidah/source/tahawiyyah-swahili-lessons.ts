@@ -470,13 +470,6 @@ export const TAHAWIYYAH_SWAHILI_LESSON_10: TahawiyyahSwahiliLessonUnit[] = [
     explanation:
       'Sehemu hii inaeleza msimamo wa kati: kutumaini rehema ya Allah kwa wema, kuwaombea wenye makosa msamaha, na kuepuka kujiona salama dhidi ya adhabu au kukata tamaa na rehema ya Allah.',
   },
-  {
-    sourceUnit: 70,
-    translation:
-      'Mja hatoki katika kifungo cha imani mpaka akanushe yale yaliyomuingiza ndani yake.',
-    explanation:
-      'Hii inaeleza kwamba kutoka katika imani kunahusishwa na kukataa yale yaliyomuingiza mtu katika imani.',
-  },
 ]
 
 export const TAHAWIYYAH_SWAHILI_LESSON_4: TahawiyyahSwahiliLessonUnit[] = [
@@ -506,26 +499,19 @@ export const TAHAWIYYAH_SWAHILI_LESSON_4: TahawiyyahSwahiliLessonUnit[] = [
 ]
 
 export const TAHAWIYYAH_SWAHILI_LESSON_11: TahawiyyahSwahiliLessonUnit[] = [
+{
+    sourceUnit: 70,
+    translation:
+      'Mja hatoki katika kifungo cha imani mpaka akanushe yale yaliyomuingiza ndani yake.',
+    explanation:
+      'Hii inaeleza kwamba kutoka katika imani kunahusishwa na kukataa yale yaliyomuingiza mtu katika imani.',
+  },
   {
     sourceUnit: 71,
     translation:
       "Imani ni kukiri kwa ulimi na kusadikisha moyoni. Kila alichokiteremsha Allah katika Qurani, na kila kilichothibiti kwa usahihi kutoka kwa Mtume ﷺ kuhusu Sharia na maelezo, yote ni haki.",
     explanation:
       "Sehemu hii inaeleza imani kuwa ni kukiri kwa ulimi na kusadikisha moyoni, pamoja na kuthibitisha ukweli wa ufunuo wa Allah na mwongozo sahihi wa Mtume ﷺ.",
-  },
-  {
-    sourceUnit: 72,
-    translation:
-      "Imani ni moja, na watu wake wako sawa katika msingi wake. Ubora wao juu ya wengine unatokana na uchamungu na kupinga matamanio ya nafsi.",
-    explanation:
-      "Sehemu hii inathibitisha msingi mmoja wa imani na inaeleza kuwa tofauti ya daraja kati ya Waumini inahusiana na uchamungu na kujiepusha na matamanio maovu.",
-  },
-  {
-    sourceUnit: 73,
-    translation:
-      "Waumini wote ni marafiki na waja wa Rahman. Aliyeheshimiwa zaidi miongoni mwao ni yule aliye mtiifu zaidi na anayefuata Qurani zaidi.",
-    explanation:
-      "Sehemu hii inawaeleza Waumini kuwa ni watu wa ulinzi na urafiki wa Rahman, na inaunganisha heshima yao na utiifu na kufuata Qurani.",
   },
   {
     sourceUnit: 74,
@@ -542,3 +528,20 @@ export const TAHAWIYYAH_SWAHILI_LESSON_11: TahawiyyahSwahiliLessonUnit[] = [
       "Sehemu hii inathibitisha kuwa tunawaamini Mitume wote wa Allah na tunakubali ukweli wa ujumbe waliouleta.",
   },
 ]
+
+export const TAHAWIYYAH_SWAHILI_LESSON_12 = [
+  {
+    sourceUnit: 72,
+    translation:
+      "Imani ni moja, na watu wake wako sawa katika msingi wake. Wanatofautiana katika daraja kwa mujibu wa uchamungu na kwa kupinga matamanio ya nafsi.",
+    explanation:
+      "Hii inaeleza kwamba Waumini wanashirikiana katika msingi wa imani, lakini wanatofautiana katika daraja kwa mujibu wa uchamungu na kujizuia na matamanio.",
+  },
+  {
+    sourceUnit: 73,
+    translation:
+      "Waumini wote ni waja na marafiki wa Ar-Rahman. Aliyeheshimiwa zaidi miongoni mwao ni yule aliye mtiifu zaidi na anayefuata Qurani zaidi.",
+    explanation:
+      "Hii inaeleza kwamba Waumini wote ni waja na marafiki wa Ar-Rahman, na kwamba heshima yao inahusiana na utiifu na kufuata Qurani.",
+  },
+] as const
