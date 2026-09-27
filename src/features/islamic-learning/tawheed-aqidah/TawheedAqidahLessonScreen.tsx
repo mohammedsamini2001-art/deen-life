@@ -17,6 +17,7 @@ import {
   TAHAWIYYAH_ENGLISH_LESSON_8,
   TAHAWIYYAH_ENGLISH_LESSON_9,
   TAHAWIYYAH_ENGLISH_LESSON_10,
+  TAHAWIYYAH_ENGLISH_LESSON_11,
 } from './source/tahawiyyah-english-lessons'
 import {
   TAHAWIYYAH_SWAHILI_LESSON_1,
@@ -29,6 +30,7 @@ import {
   TAHAWIYYAH_SWAHILI_LESSON_8,
   TAHAWIYYAH_SWAHILI_LESSON_9,
   TAHAWIYYAH_SWAHILI_LESSON_10,
+  TAHAWIYYAH_SWAHILI_LESSON_11,
 } from './source/tahawiyyah-swahili-lessons'
 import {
   TAHAWIYYAH_FRENCH_LESSON_1,
@@ -41,6 +43,7 @@ import {
   TAHAWIYYAH_FRENCH_LESSON_8,
   TAHAWIYYAH_FRENCH_LESSON_9,
   TAHAWIYYAH_FRENCH_LESSON_10,
+  TAHAWIYYAH_FRENCH_LESSON_11,
 } from './source/tahawiyyah-french-lessons'
 
 const TAHAWIYYAH_SOURCE_TITLE_ARABIC =
@@ -165,6 +168,7 @@ export default function TawheedAqidahLessonScreen({
               8: TAHAWIYYAH_ENGLISH_LESSON_8,
               9: TAHAWIYYAH_ENGLISH_LESSON_9,
               10: TAHAWIYYAH_ENGLISH_LESSON_10,
+              11: TAHAWIYYAH_ENGLISH_LESSON_11,
             } as const
 
             const swahiliLessons = {
@@ -178,6 +182,7 @@ export default function TawheedAqidahLessonScreen({
               8: TAHAWIYYAH_SWAHILI_LESSON_8,
               9: TAHAWIYYAH_SWAHILI_LESSON_9,
               10: TAHAWIYYAH_SWAHILI_LESSON_10,
+              11: TAHAWIYYAH_SWAHILI_LESSON_11,
             } as const
 
             const frenchLessons = {
@@ -191,6 +196,7 @@ export default function TawheedAqidahLessonScreen({
               8: TAHAWIYYAH_FRENCH_LESSON_8,
               9: TAHAWIYYAH_FRENCH_LESSON_9,
               10: TAHAWIYYAH_FRENCH_LESSON_10,
+              11: TAHAWIYYAH_FRENCH_LESSON_11,
             } as const
 
             const englishUnit =

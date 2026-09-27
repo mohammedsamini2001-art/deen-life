@@ -498,4 +498,44 @@ export const TAHAWIYYAH_FRENCH_LESSON_4: TahawiyyahFrenchLessonUnit[] = [
     explanation:
       "Ce passage affirme la clôture de la prophétie avec Muhammad ﷺ et l'universalité de son message pour les djinns et les êtres humains.",
   },
+
+
+]
+
+export const TAHAWIYYAH_FRENCH_LESSON_11: TahawiyyahFrenchLessonUnit[] = [
+  {
+    sourceUnit: 71,
+    translation:
+      "La foi consiste à l'affirmer par la langue et à en avoir la conviction dans le cœur. Tout ce qu'Allah a révélé dans le Coran, ainsi que tout ce qui est authentiquement rapporté du Prophète ﷺ concernant la Loi et l'explication, est entièrement vrai.",
+    explanation:
+      "Ce passage décrit la foi comme une affirmation verbale et une conviction du cœur, tout en affirmant la vérité de la révélation d'Allah et de la guidance authentique du Prophète ﷺ.",
+  },
+  {
+    sourceUnit: 72,
+    translation:
+      "La foi est une, et ses adeptes sont égaux dans son fondement. Leur distinction les uns par rapport aux autres se fait selon la piété et la résistance aux passions.",
+    explanation:
+      "Ce passage affirme un fondement commun de la foi et relie la distinction entre les croyants à la piété et à la résistance aux passions pécheresses.",
+  },
+  {
+    sourceUnit: 73,
+    translation:
+      "Tous les croyants sont les alliés du Tout Miséricordieux. Les plus honorés parmi eux sont ceux qui Lui obéissent le plus et suivent le plus fidèlement le Coran.",
+    explanation:
+      "Ce passage présente les croyants comme les alliés d'Allah et lie leur honneur à l'obéissance et à l'attachement au Coran.",
+  },
+  {
+    sourceUnit: 74,
+    translation:
+      "La foi consiste à croire en Allah, en Ses Anges, en Ses Livres, en Ses Messagers, au Jour dernier, à la résurrection après la mort et au destin, son bien et son mal, son doux et son amer, tout venant d'Allah le Très-Haut.",
+    explanation:
+      "Ce passage résume les éléments inclus dans la foi, notamment la croyance au destin et au fait que tout vient d'Allah.",
+  },
+  {
+    sourceUnit: 75,
+    translation:
+      "Nous croyons à tout cela et nous ne faisons aucune distinction entre Ses Messagers. Nous croyons en eux tous ainsi qu'en ce qu'ils ont apporté.",
+    explanation:
+      "Ce passage affirme la croyance en tous les Messagers d'Allah et en la vérité du message qu'ils ont apporté.",
+  },
 ]

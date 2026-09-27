@@ -501,4 +501,44 @@ export const TAHAWIYYAH_SWAHILI_LESSON_4: TahawiyyahSwahiliLessonUnit[] = [
     explanation:
       "Sehemu hii inasisitiza mwisho wa Utume kwa Muhammad ﷺ na kwamba ujumbe wake ulitumwa kwa majini na wanadamu wote.",
   },
+
+
+]
+
+export const TAHAWIYYAH_SWAHILI_LESSON_11: TahawiyyahSwahiliLessonUnit[] = [
+  {
+    sourceUnit: 71,
+    translation:
+      "Imani ni kukiri kwa ulimi na kusadikisha moyoni. Kila alichokiteremsha Allah katika Qurani, na kila kilichothibiti kwa usahihi kutoka kwa Mtume ﷺ kuhusu Sharia na maelezo, yote ni haki.",
+    explanation:
+      "Sehemu hii inaeleza imani kuwa ni kukiri kwa ulimi na kusadikisha moyoni, pamoja na kuthibitisha ukweli wa ufunuo wa Allah na mwongozo sahihi wa Mtume ﷺ.",
+  },
+  {
+    sourceUnit: 72,
+    translation:
+      "Imani ni moja, na watu wake wako sawa katika msingi wake. Ubora wao juu ya wengine unatokana na uchamungu na kupinga matamanio ya nafsi.",
+    explanation:
+      "Sehemu hii inathibitisha msingi mmoja wa imani na inaeleza kuwa tofauti ya daraja kati ya Waumini inahusiana na uchamungu na kujiepusha na matamanio maovu.",
+  },
+  {
+    sourceUnit: 73,
+    translation:
+      "Waumini wote ni marafiki na waja wa Rahman. Aliyeheshimiwa zaidi miongoni mwao ni yule aliye mtiifu zaidi na anayefuata Qurani zaidi.",
+    explanation:
+      "Sehemu hii inawaeleza Waumini kuwa ni watu wa ulinzi na urafiki wa Rahman, na inaunganisha heshima yao na utiifu na kufuata Qurani.",
+  },
+  {
+    sourceUnit: 74,
+    translation:
+      "Imani ni kumuamini Allah, Malaika Wake, Vitabu Vyake, Mitume Wake, Siku ya Mwisho, kufufuliwa baada ya kifo, na Qadar, kheri yake na shari yake, utamu wake na uchungu wake, yote yakitoka kwa Allah Aliyetukuka.",
+    explanation:
+      "Sehemu hii inafupisha mambo yanayojumuishwa katika imani, ikiwa ni pamoja na kuamini Qadar na kwamba yote yanatoka kwa Allah.",
+  },
+  {
+    sourceUnit: 75,
+    translation:
+      "Na sisi tunaamini yote hayo, wala hatutofautishi kati ya yeyote miongoni mwa Mitume Wake, na tunawaamini wote pamoja na yale waliyokuja nayo.",
+    explanation:
+      "Sehemu hii inathibitisha kuwa tunawaamini Mitume wote wa Allah na tunakubali ukweli wa ujumbe waliouleta.",
+  },
 ]

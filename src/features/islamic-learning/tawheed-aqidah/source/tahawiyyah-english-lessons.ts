@@ -516,4 +516,44 @@ export const TAHAWIYYAH_ENGLISH_LESSON_10: TahawiyyahEnglishLessonUnit[] = [
     explanation:
       "This states that departure from faith occurs through denial of what originally brought a person into faith.",
   },
+
+
+]
+
+export const TAHAWIYYAH_ENGLISH_LESSON_11: TahawiyyahEnglishLessonUnit[] = [
+  {
+    sourceUnit: 71,
+    translation:
+      "Faith is affirmation with the tongue and conviction in the heart. Everything that Allah revealed in the Quran, and everything authentically reported from the Prophet ﷺ concerning the law and explanation, is all true.",
+    explanation:
+      "This describes faith as verbal affirmation and conviction in the heart, while affirming the truth of Allah's revelation and the authentic guidance of the Prophet ﷺ.",
+  },
+  {
+    sourceUnit: 72,
+    translation:
+      "Faith is one, and its people are equal in its foundation. Their excellence over one another is according to piety and their opposition to their desires.",
+    explanation:
+      "This states that faith has one foundation, while distinction among believers is connected to piety and resisting sinful desires.",
+  },
+  {
+    sourceUnit: 73,
+    translation:
+      "All believers are allies of the Most Merciful. The most honored among them are those who are most obedient and most closely follow the Quran.",
+    explanation:
+      "This identifies believers as allies of Allah and connects their honor with obedience and adherence to the Quran.",
+  },
+  {
+    sourceUnit: 74,
+    translation:
+      "Faith is belief in Allah, His Angels, His Books, His Messengers, the Last Day, the Resurrection after death, and divine decree, its good and its bad, its sweet and its bitter, all being from Allah Almighty.",
+    explanation:
+      "This summarizes the matters included in faith, including belief in Allah's decree and that all of it is from Him.",
+  },
+  {
+    sourceUnit: 75,
+    translation:
+      "We believe in all of this. We do not differentiate between any of His Messengers, and we affirm all of them and what they brought.",
+    explanation:
+      "This affirms belief in all of Allah's Messengers and acceptance of the truth of the message they brought.",
+  },
 ]
