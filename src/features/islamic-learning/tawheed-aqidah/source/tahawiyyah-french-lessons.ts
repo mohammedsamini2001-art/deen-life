@@ -635,3 +635,34 @@ export const TAHAWIYYAH_FRENCH_LESSON_15 = [
       "Cela décrit la tombe comme pouvant être un lieu de bienfait ou un lieu de châtiment.",
   },
 ] as const
+
+export const TAHAWIYYAH_FRENCH_LESSON_16 = [
+  {
+    sourceUnit: 90,
+    translation:
+      "Nous croyons à la résurrection et à la rétribution des œuvres au Jour du Jugement. Nous croyons à la présentation des œuvres à Allah, au compte, à la lecture du registre de chacun, à la récompense, au châtiment, au pont au-dessus de l'Enfer et à la Balance.",
+    explanation:
+      "Cela affirme la résurrection et les grands événements du Jour du Jugement, notamment le compte, les registres des œuvres, la récompense et le châtiment, le pont et la Balance.",
+  },
+  {
+    sourceUnit: 91,
+    translation:
+      "La Balance sert à peser les œuvres des croyants, bonnes et mauvaises, l'obéissance et la désobéissance.",
+    explanation:
+      "Cela affirme la pesée des œuvres et la distinction entre les bonnes et les mauvaises œuvres ainsi qu'entre l'obéissance et la désobéissance.",
+  },
+  {
+    sourceUnit: 92,
+    translation:
+      "Le Paradis et l'Enfer sont tous deux créés. Ils ne périront ni ne prendront fin.",
+    explanation:
+      "Cela affirme que le Paradis et l'Enfer ont déjà été créés et qu'ils ne cesseront pas d'exister.",
+  },
+  {
+    sourceUnit: 93,
+    translation:
+      "Allah a créé le Paradis et l'Enfer et a créé leurs habitants. Il fait entrer au Paradis qui Il veut par Sa grâce, et en Enfer qui Il veut par Sa justice. Chacun accomplit ce qui lui a été décrété et se dirige vers ce pour quoi il a été créé. Le bien et le mal ont été décrétés pour les hommes.",
+    explanation:
+      "Cela affirme la création du Paradis et de l'Enfer ainsi que le décret d'Allah concernant les voies et les œuvres des hommes, tout en distinguant Sa grâce de Sa justice.",
+  },
+] as const

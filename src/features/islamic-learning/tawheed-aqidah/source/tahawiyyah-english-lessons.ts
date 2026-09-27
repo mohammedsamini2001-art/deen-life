@@ -653,3 +653,34 @@ export const TAHAWIYYAH_ENGLISH_LESSON_15 = [
       "This describes the grave as having either a state of blessing or a state of punishment.",
   },
 ] as const
+
+export const TAHAWIYYAH_ENGLISH_LESSON_16 = [
+  {
+    sourceUnit: 90,
+    translation:
+      "We believe in the resurrection and the requital of deeds on the Day of Judgment. We believe in the presentation of deeds to Allah, the account, the reading of everyone's record, the reward, the punishment, the bridge over Hell, and the scale.",
+    explanation:
+      "This affirms the resurrection and the major events of the Day of Judgment, including accountability, the records of deeds, reward and punishment, the bridge, and the scale.",
+  },
+  {
+    sourceUnit: 91,
+    translation:
+      "The scale is used to weigh the deeds of the believers, both good and evil, obedience and disobedience.",
+    explanation:
+      "This affirms the weighing of people's deeds and the distinction between good and evil deeds and between obedience and disobedience.",
+  },
+  {
+    sourceUnit: 92,
+    translation:
+      "Both Paradise and Hell are created. They will never perish or come to an end.",
+    explanation:
+      "This affirms that Paradise and Hell have already been created and will not cease to exist.",
+  },
+  {
+    sourceUnit: 93,
+    translation:
+      "Allah created Paradise and Hell and created their inhabitants. He admits whom He wills into Paradise by His Grace, and whom He wills into Hell by His Justice. Everyone does what has been decreed for them and proceeds toward what they were created for. Good and evil have been decreed for people.",
+    explanation:
+      "This affirms Allah's creation of Paradise and Hell and His decree concerning people's paths and deeds, while distinguishing His Grace from His Justice.",
+  },
+] as const

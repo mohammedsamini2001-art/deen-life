@@ -638,3 +638,34 @@ export const TAHAWIYYAH_SWAHILI_LESSON_15 = [
       "Hii inaeleza hali ya kaburi kuwa inaweza kuwa ya neema au ya adhabu.",
   },
 ] as const
+
+export const TAHAWIYYAH_SWAHILI_LESSON_16 = [
+  {
+    sourceUnit: 90,
+    translation:
+      "Tunaamini kufufuliwa na malipo ya matendo Siku ya Kiyama. Tunaamini kuwasilishwa kwa matendo mbele ya Allah, hesabu, kusomwa kwa kumbukumbu ya kila mtu, thawabu, adhabu, Sirat juu ya Moto, na Mizani.",
+    explanation:
+      "Hii inathibitisha kufufuliwa na matukio makuu ya Siku ya Kiyama, ikiwa ni pamoja na hesabu, kumbukumbu za matendo, thawabu na adhabu, Sirat na Mizani.",
+  },
+  {
+    sourceUnit: 91,
+    translation:
+      "Mizani hutumika kupimia matendo ya Waumini, mema na mabaya, utiifu na maasi.",
+    explanation:
+      "Hii inathibitisha kupimwa kwa matendo ya watu na kutofautishwa kwa matendo mema na mabaya, pamoja na utiifu na maasi.",
+  },
+  {
+    sourceUnit: 92,
+    translation:
+      "Pepo na Moto vimeumbwa. Havitatoweka wala havitaisha.",
+    explanation:
+      "Hii inathibitisha kwamba Pepo na Moto tayari vimeumbwa na havitaacha kuwepo.",
+  },
+  {
+    sourceUnit: 93,
+    translation:
+      "Allah ameumba Pepo na Moto na akaumba wakaazi wake. Humwingiza anayemtaka Peponi kwa fadhila Zake, na anayemtaka Motoni kwa uadilifu Wake. Kila mtu hufanya yale aliyokadiriwa na huelekea kwenye yale aliyoamuliwa kuyaendea. Kheri na shari vimekadiriwa kwa watu.",
+    explanation:
+      "Hii inathibitisha kuumbwa kwa Pepo na Moto na qadari ya Allah kuhusu njia na matendo ya watu, huku ikitofautisha kati ya Fadhila Zake na Uadilifu Wake.",
+  },
+] as const
