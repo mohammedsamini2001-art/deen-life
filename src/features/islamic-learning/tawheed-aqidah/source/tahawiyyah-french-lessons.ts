@@ -475,3 +475,27 @@ export const TAHAWIYYAH_FRENCH_LESSON_10: TahawiyyahFrenchLessonUnit[] = [
       "Cela indique que la sortie de la foi est liée au rejet de ce qui avait fait entrer la personne dans la foi.",
   },
 ]
+
+export const TAHAWIYYAH_FRENCH_LESSON_4: TahawiyyahFrenchLessonUnit[] = [
+  {
+    sourceUnit: 35,
+    translation:
+      "Muhammad est Son serviteur choisi, Son Prophète élu et Son Messager agréé.",
+    explanation:
+      "Ce passage présente Muhammad ﷺ comme le serviteur choisi d'Allah, Son Prophète élu et Son Messager agréé.",
+  },
+  {
+    sourceUnit: 36,
+    translation:
+      "Il est le Sceau des Prophètes, le chef des pieux, le maître des Messagers et le bien-aimé du Seigneur des mondes.",
+    explanation:
+      "Ce passage affirme les titres et la position de Muhammad ﷺ parmi les Prophètes et les Messagers.",
+  },
+  {
+    sourceUnit: 37,
+    translation:
+      "Toute prétention à la prophétie après lui est égarement et faux désir. Il a été envoyé à tous les djinns et à toute l'humanité avec la vérité et la guidée, ainsi qu'avec la lumière et l'illumination.",
+    explanation:
+      "Ce passage affirme la clôture de la prophétie avec Muhammad ﷺ et l'universalité de son message pour les djinns et les êtres humains.",
+  },
+]

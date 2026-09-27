@@ -478,3 +478,27 @@ export const TAHAWIYYAH_SWAHILI_LESSON_10: TahawiyyahSwahiliLessonUnit[] = [
       'Hii inaeleza kwamba kutoka katika imani kunahusishwa na kukataa yale yaliyomuingiza mtu katika imani.',
   },
 ]
+
+export const TAHAWIYYAH_SWAHILI_LESSON_4: TahawiyyahSwahiliLessonUnit[] = [
+  {
+    sourceUnit: 35,
+    translation:
+      "Muhammad ni mja Wake mteule, Nabii Wake aliyechaguliwa, na Mtume Wake anayekubaliwa.",
+    explanation:
+      "Sehemu hii inamtaja Muhammad ﷺ kuwa mja mteule wa Allah, Nabii Wake aliyechaguliwa, na Mtume Wake aliyekubaliwa.",
+  },
+  {
+    sourceUnit: 36,
+    translation:
+      "Yeye ni Mhuri wa Manabii, kiongozi wa wachamungu, bwana wa Mitume, na kipenzi cha Mola wa walimwengu.",
+    explanation:
+      "Sehemu hii inathibitisha cheo cha Muhammad ﷺ kama Mhuri wa Manabii na nafasi yake miongoni mwa Manabii na Mitume.",
+  },
+  {
+    sourceUnit: 37,
+    translation:
+      "Madai yoyote ya Utume baada yake ni upotovu na matamanio ya batili. Alitumwa kwa majini wote na kwa wanadamu wote kwa haki na uongofu, na kwa nuru na mwangaza.",
+    explanation:
+      "Sehemu hii inasisitiza mwisho wa Utume kwa Muhammad ﷺ na kwamba ujumbe wake ulitumwa kwa majini na wanadamu wote.",
+  },
+]
