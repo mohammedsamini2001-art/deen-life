@@ -781,3 +781,48 @@ export const TAHAWIYYAH_FRENCH_LESSON_19 = [
       "Cela affirme la croyance dans les récits authentiques concernant les prodiges accordés aux serviteurs pieux d'Allah.",
   },
 ] as const
+
+export const TAHAWIYYAH_FRENCH_LESSON_20 = [
+  {
+    sourceUnit: 109,
+    translation:
+      "Nous croyons aux signes de l'Heure, notamment l'apparition du Dajjal, la descente de 'Isa ibn Maryam, sur lui la paix, du ciel, le lever du soleil depuis l'ouest et l'apparition de la Bête de la Terre depuis son lieu.",
+    explanation:
+      "Cela affirme la croyance aux signes de l'Heure mentionnés dans le texte de la croyance.",
+  },
+  {
+    sourceUnit: 110,
+    translation:
+      "Nous ne croyons ni au devin ni au voyant, ni à celui qui prétend quelque chose qui contredit le Livre, la Sunnah et le consensus de la communauté.",
+    explanation:
+      "Cela rejette les prétentions qui contredisent les sources fondamentales de la religion et le consensus de la communauté musulmane.",
+  },
+  {
+    sourceUnit: 111,
+    translation:
+      "Nous considérons que le rassemblement autour de la Jama'ah est vérité et justesse, et que la division et la séparation sont égarement et châtiment.",
+    explanation:
+      "Cela souligne l'importance de l'unité autour de la vérité et de l'évitement de la division nuisible.",
+  },
+  {
+    sourceUnit: 112,
+    translation:
+      "La religion d'Allah sur la terre et dans le ciel est une seule religion : l'Islam. Elle se situe entre l'excès et la négligence, entre l'assimilation d'Allah à Ses créatures et la négation de Ses attributs, entre la contrainte et le décret divin, et entre le sentiment de sécurité et le désespoir.",
+    explanation:
+      "Cela présente l'Islam comme une voie équilibrée entre plusieurs extrêmes opposés mentionnés dans la croyance.",
+  },
+  {
+    sourceUnit: 113,
+    translation:
+      "Telle est notre religion et notre croyance, extérieurement et intérieurement. Nous nous désavouons devant Allah de quiconque contredit ce que nous avons mentionné et expliqué.",
+    explanation:
+      "Cela résume la croyance comme une foi tenue extérieurement et intérieurement, en se distinguant des positions qui la contredisent.",
+  },
+  {
+    sourceUnit: 114,
+    translation:
+      "Nous demandons à Allah le Très-Haut de nous affermir dans la foi, de nous accorder une bonne fin dans celle-ci et de nous préserver des passions diverses, des opinions divergentes et des doctrines égarées, telles que ceux qui assimilent Allah à Ses créatures, les Mu'tazilah, les Jahmiyyah, les Jabriyyah, les Qadariyyah et autres qui ont contredit la Sunnah et la Jama'ah. Nous nous désavouons de l'égarement et demandons à Allah la protection et la réussite.",
+    explanation:
+      "Cette conclusion demande à Allah la fermeté dans la foi, la protection contre l'égarement, ainsi que la guidance et la réussite.",
+  },
+] as const

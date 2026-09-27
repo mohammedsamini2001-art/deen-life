@@ -799,3 +799,48 @@ export const TAHAWIYYAH_ENGLISH_LESSON_19 = [
       "This affirms belief in authentic reports concerning the extraordinary honors granted to righteous servants of Allah.",
   },
 ] as const
+
+export const TAHAWIYYAH_ENGLISH_LESSON_20 = [
+  {
+    sourceUnit: 109,
+    translation:
+      "We believe in the signs of the Hour, including the emergence of the Dajjal, the descent of Isa ibn Maryam, peace be upon him, from heaven, the rising of the sun from the west, and the emergence of the Beast of the Earth from its place.",
+    explanation:
+      "This affirms belief in the signs of the Hour mentioned in the source text.",
+  },
+  {
+    sourceUnit: 110,
+    translation:
+      "We do not believe a soothsayer or diviner, nor anyone who claims something that contradicts the Book, the Sunnah, and the consensus of the Ummah.",
+    explanation:
+      "This rejects claims that contradict the established sources and consensus of the Muslim community.",
+  },
+  {
+    sourceUnit: 111,
+    translation:
+      "We regard unity and the Jama'ah as truth and correctness, and disunity as deviation and punishment.",
+    explanation:
+      "This emphasizes the importance of remaining united upon the truth and avoiding harmful division.",
+  },
+  {
+    sourceUnit: 112,
+    translation:
+      "The religion of Allah in the earth and heaven is one, and it is the religion of Islam. It is between excess and deficiency, between likening Allah to His creation and denying His attributes, between compulsion and divine decree, and between feeling secure and despairing.",
+    explanation:
+      "This describes Islam as the balanced path between several opposing extremes mentioned in the creed.",
+  },
+  {
+    sourceUnit: 113,
+    translation:
+      "This is our religion and our belief, outwardly and inwardly. We declare ourselves free before Allah from everyone who contradicts what we have mentioned and explained.",
+    explanation:
+      "This summarizes the creed as a belief held both outwardly and inwardly and distinguishes it from contradictory positions.",
+  },
+  {
+    sourceUnit: 114,
+    translation:
+      "We ask Allah Almighty to make us firm upon faith and to grant us a good ending upon it, and to protect us from the various desires, divided opinions, and corrupt sects, such as those who liken Allah to His creation, the Mu'tazilah, the Jahmiyyah, the Jabriyyah, the Qadariyyah, and others who oppose the Sunnah and the Jama'ah. We disassociate ourselves from deviation and ask Allah for protection and success.",
+    explanation:
+      "The conclusion asks Allah for steadfastness upon faith, protection from deviation, and guidance and success.",
+  },
+] as const

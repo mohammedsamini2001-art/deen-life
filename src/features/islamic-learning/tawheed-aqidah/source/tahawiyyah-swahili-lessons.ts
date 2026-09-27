@@ -784,3 +784,48 @@ export const TAHAWIYYAH_SWAHILI_LESSON_19 = [
       "Hii inathibitisha kuamini taarifa sahihi kuhusu karama za waja wema wa Allah.",
   },
 ] as const
+
+export const TAHAWIYYAH_SWAHILI_LESSON_20 = [
+  {
+    sourceUnit: 109,
+    translation:
+      "Tunaamini alama za Saa, miongoni mwao ni kutokea kwa Dajjal, kushuka kwa Isa bin Maryam, amani iwe juu yake, kutoka mbinguni, kuchomoza kwa jua kutoka magharibi, na kutokea kwa Dabba ya ardhini kutoka mahali pake.",
+    explanation:
+      "Hii inathibitisha kuamini alama za Saa zilizotajwa katika matini ya Aqidah.",
+  },
+  {
+    sourceUnit: 110,
+    translation:
+      "Hatuamini kwa kahini wala mpiga ramli, wala yeyote anayedai jambo linalopingana na Kitabu, Sunnah na Ijmaa ya Ummah.",
+    explanation:
+      "Hii inakataa madai yanayopingana na vyanzo vya msingi vya dini na makubaliano ya Ummah.",
+  },
+  {
+    sourceUnit: 111,
+    translation:
+      "Tunaona kuwa Jamaa ni haki na usahihi, na faraka na mgawanyiko ni upotovu na adhabu.",
+    explanation:
+      "Hii inasisitiza umuhimu wa kushikamana na umoja juu ya haki na kuepuka mgawanyiko wenye madhara.",
+  },
+  {
+    sourceUnit: 112,
+    translation:
+      "Dini ya Allah katika ardhi na mbinguni ni moja, nayo ni Dini ya Uislamu. Nayo iko baina ya kupindukia na kupunguza, baina ya kumfananisha Allah na viumbe Wake na kukanusha sifa Zake, baina ya kulazimishwa na kadari, na baina ya kujisikia salama na kukata tamaa.",
+    explanation:
+      "Hii inaeleza Uislamu kuwa ni njia ya kati baina ya misimamo miwili iliyokithiri iliyotajwa katika Aqidah.",
+  },
+  {
+    sourceUnit: 113,
+    translation:
+      "Hii ndiyo Dini yetu na itikadi yetu, kwa dhahiri na kwa ndani ya moyo. Tunajitenga mbele ya Allah na kila anayepingana na yale tuliyoyataja na kuyaeleza.",
+    explanation:
+      "Hii inafupisha Aqidah kama imani inayoshikiliwa kwa dhahiri na kwa ndani, na kujitenga na misimamo inayopingana nayo.",
+  },
+  {
+    sourceUnit: 114,
+    translation:
+      "Tunamuomba Allah Aliyetukuka atuthibitishe juu ya imani na atuhitimishie maisha yetu juu yake, na atulinde kutokana na matamanio mbalimbali, rai zilizogawanyika na madhehebu potovu, kama wale wanaomfananisha Allah na viumbe Wake, Mu'tazilah, Jahmiyyah, Jabriyyah, Qadariyyah na wengine waliokwenda kinyume na Sunnah na Jamaa. Tunajitenga na upotovu na tunamuomba Allah atupe ulinzi na tawfiki.",
+    explanation:
+      "Hitimisho hili linamuomba Allah atupe uthabiti juu ya imani, atulinde kutokana na upotovu, na atupe uongofu na tawfiki.",
+  },
+] as const
