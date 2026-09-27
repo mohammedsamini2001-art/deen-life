@@ -542,3 +542,41 @@ export const TAHAWIYYAH_FRENCH_LESSON_12 = [
       "Cela décrit les croyants comme les alliés du Tout Miséricordieux et relie leur honneur à l'obéissance et au suivi du Coran.",
   },
 ] as const
+
+export const TAHAWIYYAH_FRENCH_LESSON_13 = [
+  {
+    sourceUnit: 78,
+    translation:
+      "Nous permettons la prière derrière toute personne pieuse ou pécheresse parmi les gens de la Qibla, et nous accomplissons la prière funéraire sur ceux d'entre eux qui meurent. Nous ne déclarons aucun d'eux comme étant au Paradis ou en Enfer, et nous ne témoignons pas contre eux de mécréance, de polythéisme ou d'hypocrisie, sauf si l'une de ces choses apparaît clairement chez eux. Nous laissons leurs affaires cachées à Allah le Très-Haut.",
+    explanation:
+      "Cela enseigne une attitude équilibrée envers les gens de la Qibla : nous considérons ce qui est apparent et laissons leurs affaires cachées à Allah.",
+  },
+  {
+    sourceUnit: 79,
+    translation:
+      "Nous n'approuvons pas que l'on tue quelqu'un parmi la communauté de Muhammad ﷺ, sauf celui dont la loi a établi qu'il doit être mis à mort.",
+    explanation:
+      "Cela affirme que la vie d'un musulman ne doit pas être violée sauf lorsqu'un fondement légitime est établi par la Loi.",
+  },
+  {
+    sourceUnit: 80,
+    translation:
+      "Nous n'approuvons pas la rébellion contre nos dirigeants et ceux qui détiennent l'autorité, même s'ils commettent une injustice. Nous ne prions pas contre eux et nous ne retirons pas notre obéissance. Nous considérons que leur obéissance fait partie de l'obéissance à Allah, tant qu'ils n'ordonnent pas de désobéir. Nous prions pour leur droiture et leur bien-être.",
+    explanation:
+      "Cela présente l'enseignement concernant l'autorité, l'obéissance et les invocations en faveur des dirigeants, avec la limite indiquée lorsqu'ils ordonnent une désobéissance.",
+  },
+  {
+    sourceUnit: 81,
+    translation:
+      "Nous suivons la Sunnah et nous nous attachons à la communauté. Nous évitons l'irrégularité, la divergence et la division. Nous aimons les gens de justice et de loyauté et nous détestons les gens d'injustice et de trahison.",
+    explanation:
+      "Cela souligne l'attachement à la Sunnah et à la communauté, l'éloignement de la division et l'importance de la justice et de la loyauté.",
+  },
+  {
+    sourceUnit: 82,
+    translation:
+      "Nous disons : 'Allah sait mieux', concernant ce dont la connaissance nous est obscure.",
+    explanation:
+      "Cela enseigne l'humilité lorsque notre connaissance est incertaine et reconnaît que la connaissance parfaite appartient à Allah.",
+  },
+] as const

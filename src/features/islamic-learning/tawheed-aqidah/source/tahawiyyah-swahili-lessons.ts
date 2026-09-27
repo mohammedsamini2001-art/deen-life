@@ -545,3 +545,41 @@ export const TAHAWIYYAH_SWAHILI_LESSON_12 = [
       "Hii inaeleza kwamba Waumini wote ni waja na marafiki wa Ar-Rahman, na kwamba heshima yao inahusiana na utiifu na kufuata Qurani.",
   },
 ] as const
+
+export const TAHAWIYYAH_SWAHILI_LESSON_13 = [
+  {
+    sourceUnit: 78,
+    translation:
+      "Tunaruhusu kuswali nyuma ya kila mtu mwema au mwenye madhambi miongoni mwa watu wa Qibla, na tunamswalia swala ya jeneza anayefariki miongoni mwao. Hatumhukumu yeyote miongoni mwao kuwa ni wa Peponi au Motoni, wala hatusemi kuwa ni kafiri, mshirikina au mnafiki isipokuwa ikiwa jambo hilo limeonekana wazi kwake. Tunaziacha siri zao kwa Allah Aliyetukuka.",
+    explanation:
+      "Hii inafundisha mtazamo wenye usawa kwa watu wa Qibla: tunahukumu kwa yale yanayoonekana, huku mambo yao ya siri tukiyaacha kwa Allah.",
+  },
+  {
+    sourceUnit: 79,
+    translation:
+      "Hatuoni kuwa inafaa kumuua yeyote kutoka katika Umma wa Muhammad ﷺ isipokuwa yule ambaye Sharia imemuwajibishia kuuawa.",
+    explanation:
+      "Hii inaeleza kwamba maisha ya Muislamu hayapaswi kuvunjwa isipokuwa pale Sharia inapoweka msingi halali wa hilo.",
+  },
+  {
+    sourceUnit: 80,
+    translation:
+      "Hatuoni kuwa inafaa kuasi dhidi ya viongozi wetu na wenye mamlaka juu yetu, hata kama watadhulumu. Hatuwaombei mabaya, wala hatuondoi mkono wa utiifu kwao. Tunaona kuwatii kuwa ni sehemu ya kumtii Allah, maadamu hawatuamrishi kufanya maasi. Na tunawaombea wema na afya njema.",
+    explanation:
+      "Hii inaeleza mafundisho kuhusu viongozi, utiifu na kuwaombea wema, huku ikiweka mpaka wa kutowatii katika maasi.",
+  },
+  {
+    sourceUnit: 81,
+    translation:
+      "Tunafuata Sunnah na kushikamana na Jamaa, na tunaepuka upotovu, mfarakano, tofauti na mgawanyiko. Tunawapenda watu wa uadilifu na uaminifu, na tunawachukia watu wa dhuluma na usaliti.",
+    explanation:
+      "Hii inasisitiza kushikamana na Sunnah na umoja, kuepuka mgawanyiko, na kuthamini uadilifu na uaminifu.",
+  },
+  {
+    sourceUnit: 82,
+    translation:
+      "Na tunasema: Allah ndiye anayejua zaidi, kuhusu yale ambayo elimu yake imekuwa haieleweki kwetu.",
+    explanation:
+      "Hii inafundisha unyenyekevu tunapokosa uhakika wa elimu na kukiri kwamba elimu kamili iko kwa Allah.",
+  },
+] as const

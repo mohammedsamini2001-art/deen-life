@@ -560,3 +560,41 @@ export const TAHAWIYYAH_ENGLISH_LESSON_12 = [
       "This describes the believers as allies of the Most Merciful and connects their honor with obedience and following the Quran.",
   },
 ] as const
+
+export const TAHAWIYYAH_ENGLISH_LESSON_13 = [
+  {
+    sourceUnit: 78,
+    translation:
+      "We allow prayer behind every pious or sinful person among the people of the Qibla, and we pray the funeral prayer over those who die among them. We do not declare any of them to be in Paradise or Hell, nor do we testify that they are disbelievers, polytheists, or hypocrites unless something of that becomes apparent from them. We leave their hidden affairs to Allah Almighty.",
+    explanation:
+      "This teaches a balanced approach toward the people of the Qibla: their outward status is treated according to what is apparent, while their hidden affairs are left to Allah.",
+  },
+  {
+    sourceUnit: 79,
+    translation:
+      "We do not approve of killing anyone from the community of Muhammad ﷺ except one upon whom the law has made killing obligatory.",
+    explanation:
+      "This states that the life of a Muslim is not to be violated except where the revealed law establishes a legitimate basis.",
+  },
+  {
+    sourceUnit: 80,
+    translation:
+      "We do not approve of rebellion against our leaders and those entrusted with authority, even if they act unjustly. We do not supplicate against them, nor do we withdraw our obedience. We regard obedience to them as part of obedience to Allah, as long as they do not command disobedience. We pray for their righteousness and well-being.",
+    explanation:
+      "This presents the creed's teaching concerning leadership, obedience, and supplication for those in authority, while maintaining the stated limit concerning disobedience.",
+  },
+  {
+    sourceUnit: 81,
+    translation:
+      "We follow the Sunnah and the community, avoid irregularity, disagreement, and division, love the people of justice and trustworthiness, and hate the people of oppression and betrayal.",
+    explanation:
+      "This emphasizes adherence to the Sunnah and community, avoidance of division, and the importance of justice and trustworthiness.",
+  },
+  {
+    sourceUnit: 82,
+    translation:
+      "We say, 'Allah knows best,' concerning matters whose knowledge is unclear to us.",
+    explanation:
+      "This teaches humility when knowledge is uncertain and acknowledges that complete knowledge belongs to Allah.",
+  },
+] as const
