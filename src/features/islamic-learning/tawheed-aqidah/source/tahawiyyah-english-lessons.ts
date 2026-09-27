@@ -684,3 +684,41 @@ export const TAHAWIYYAH_ENGLISH_LESSON_16 = [
       "This affirms Allah's creation of Paradise and Hell and His decree concerning people's paths and deeds, while distinguishing His Grace from His Justice.",
   },
 ] as const
+
+export const TAHAWIYYAH_ENGLISH_LESSON_17 = [
+  {
+    sourceUnit: 94,
+    translation:
+      "The ability required for an action, such as the divine enabling of Tawfiq, accompanies the action and cannot be attributed to the created being. As for the ability based on sound health, capacity, available means, access to them, and sound faculties, it exists before the action. Responsibility is connected to this ability, as Allah says: Allah does not burden a soul beyond its capacity.",
+    explanation:
+      "This distinguishes between Allah's enabling grace that accompanies an action and the physical and practical ability that exists before an action and upon which responsibility is based.",
+  },
+  {
+    sourceUnit: 95,
+    translation:
+      "The actions of the servants are created by Allah, while the servants acquire and perform them.",
+    explanation:
+      "This affirms Allah's creation of people's actions while affirming that people themselves acquire and perform those actions.",
+  },
+  {
+    sourceUnit: 96,
+    translation:
+      "Allah has only charged people with what they are able to bear, and they are not able to do except what He has enabled them to do. This is the meaning of: There is no power or strength except through Allah.",
+    explanation:
+      "This connects responsibility with ability and explains the meaning of relying upon Allah for strength and power.",
+  },
+  {
+    sourceUnit: 97,
+    translation:
+      "We say that no one can turn away from disobedience to Allah except with Allah's assistance, and no one has the power to establish obedience to Allah and remain firm upon it except through Allah's Tawfiq.",
+    explanation:
+      "This emphasizes that avoiding sin and remaining steadfast in obedience require Allah's assistance and enabling.",
+  },
+  {
+    sourceUnit: 98,
+    translation:
+      "Everything occurs by the Will, Knowledge, Decree, and Preestimation of Allah. His Will prevails over all wills, and His Decree overcomes all plans. He does whatever He wills, and He is never unjust. He is exalted above every evil, defect, and imperfection.",
+    explanation:
+      "This affirms Allah's complete Will, Knowledge, Decree, and Preestimation, while affirming that Allah is never unjust and is free from every imperfection.",
+  },
+] as const

@@ -669,3 +669,41 @@ export const TAHAWIYYAH_SWAHILI_LESSON_16 = [
       "Hii inathibitisha kuumbwa kwa Pepo na Moto na qadari ya Allah kuhusu njia na matendo ya watu, huku ikitofautisha kati ya Fadhila Zake na Uadilifu Wake.",
   },
 ] as const
+
+export const TAHAWIYYAH_SWAHILI_LESSON_17 = [
+  {
+    sourceUnit: 94,
+    translation:
+      "Uwezo unaohitajika kwa ajili ya kutenda, kama Tawfiq kutoka kwa Allah, huambatana na tendo na hauhusishwi na kiumbe. Ama uwezo unaotokana na afya njema, uwezo wa kumudu, kuwepo kwa njia na vyombo, kuvipata, na kuwa na viungo vilivyo salama, huwa kabla ya tendo. Uwajibikaji unahusiana na uwezo huu, kama Allah Anavyosema: Allah hamkalifishi mtu zaidi ya uwezo wake.",
+    explanation:
+      "Hii inatofautisha kati ya Tawfiq ya Allah inayomwezesha mtu kutenda na uwezo wa kimwili na wa kivitendo unaokuwepo kabla ya tendo na ambao uwajibikaji unahusiana nao.",
+  },
+  {
+    sourceUnit: 95,
+    translation:
+      "Matendo ya waja yameumbwa na Allah, na waja ndio wanaoyapata na kuyatenda.",
+    explanation:
+      "Hii inathibitisha kwamba Allah ndiye Muumba wa matendo ya watu, huku ikithibitisha kwamba watu wenyewe huyapata na kuyatenda.",
+  },
+  {
+    sourceUnit: 96,
+    translation:
+      "Allah amewakalifisha watu yale tu wanayoweza kuyamudu, na hawawezi kufanya isipokuwa yale ambayo Allah amewawezesha kuyafanya. Hii ndiyo maana ya: Hakuna nguvu wala uwezo isipokuwa kwa Allah.",
+    explanation:
+      "Hii inaunganisha uwajibikaji na uwezo na inaeleza maana ya kumtegemea Allah kwa nguvu na uwezo.",
+  },
+  {
+    sourceUnit: 97,
+    translation:
+      "Tunasema kwamba hakuna mtu anayeweza kujiepusha na kumuasi Allah isipokuwa kwa msaada wa Allah, na hakuna mwenye uwezo wa kusimamisha utiifu kwa Allah na kubaki imara juu yake isipokuwa kwa Tawfiq ya Allah.",
+    explanation:
+      "Hii inasisitiza kwamba kujiepusha na maasi na kudumu katika utiifu kunahitaji msaada na kuwezeshwa na Allah.",
+  },
+  {
+    sourceUnit: 98,
+    translation:
+      "Kila kitu hutokea kwa Matakwa, Elimu, Hukumu na Makadirio ya Allah. Matakwa Yake yanatawala matakwa yote, na Hukumu Yake inashinda mipango yote. Anafanya Anachotaka, na Yeye kamwe si dhalimu. Ametakasika na kila ubaya, kasoro na upungufu.",
+    explanation:
+      "Hii inathibitisha Matakwa, Elimu, Hukumu na Makadirio kamili ya Allah, huku ikithibitisha kwamba Allah kamwe si dhalimu na yuko mbali na kila upungufu.",
+  },
+] as const

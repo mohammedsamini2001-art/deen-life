@@ -666,3 +666,41 @@ export const TAHAWIYYAH_FRENCH_LESSON_16 = [
       "Cela affirme la création du Paradis et de l'Enfer ainsi que le décret d'Allah concernant les voies et les œuvres des hommes, tout en distinguant Sa grâce de Sa justice.",
   },
 ] as const
+
+export const TAHAWIYYAH_FRENCH_LESSON_17 = [
+  {
+    sourceUnit: 94,
+    translation:
+      "La capacité nécessaire pour accomplir une action, comme le Tawfiq accordé par Allah, accompagne l'action et ne peut être attribuée à la créature. Quant à la capacité liée à la bonne santé, à la possibilité, à la disponibilité des moyens, à leur accès et à l'intégrité des facultés, elle existe avant l'action. La responsabilité est liée à cette capacité, comme Allah le dit : Allah n'impose à aucune âme une charge supérieure à sa capacité.",
+    explanation:
+      "Cela distingue entre le Tawfiq d'Allah qui accompagne l'action et la capacité physique et pratique qui existe avant l'action et à laquelle la responsabilité est liée.",
+  },
+  {
+    sourceUnit: 95,
+    translation:
+      "Les actes des serviteurs sont créés par Allah, tandis que les serviteurs les acquièrent et les accomplissent.",
+    explanation:
+      "Cela affirme qu'Allah est le Créateur des actes des hommes, tout en affirmant que les hommes eux-mêmes les acquièrent et les accomplissent.",
+  },
+  {
+    sourceUnit: 96,
+    translation:
+      "Allah n'a imposé aux hommes que ce qu'ils sont capables de supporter, et ils ne peuvent faire que ce qu'Il leur a permis de faire. C'est le sens de : Il n'y a de force ni de puissance qu'en Allah.",
+    explanation:
+      "Cela relie la responsabilité à la capacité et explique le sens du recours à Allah pour obtenir force et puissance.",
+  },
+  {
+    sourceUnit: 97,
+    translation:
+      "Nous disons que nul ne peut se détourner de la désobéissance à Allah si ce n'est avec l'aide d'Allah, et que nul n'a le pouvoir d'accomplir l'obéissance à Allah et d'y rester ferme si ce n'est par le Tawfiq d'Allah.",
+    explanation:
+      "Cela souligne que le fait d'éviter le péché et de rester ferme dans l'obéissance nécessite l'aide et le Tawfiq d'Allah.",
+  },
+  {
+    sourceUnit: 98,
+    translation:
+      "Toute chose se produit par la Volonté, la Connaissance, le Décret et la Prédestination d'Allah. Sa Volonté domine toutes les volontés, et Son Décret l'emporte sur tous les plans. Il fait ce qu'Il veut et n'est jamais injuste. Il est exalté au-dessus de tout mal, défaut et imperfection.",
+    explanation:
+      "Cela affirme la Volonté, la Connaissance, le Décret et la Prédestination parfaits d'Allah, tout en affirmant qu'Allah n'est jamais injuste et qu'Il est exempt de toute imperfection.",
+  },
+] as const
