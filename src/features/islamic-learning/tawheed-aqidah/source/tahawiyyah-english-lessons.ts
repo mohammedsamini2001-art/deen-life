@@ -747,3 +747,55 @@ export const TAHAWIYYAH_ENGLISH_LESSON_18 = [
       "This affirms Allah's attributes of anger and pleasure while rejecting any resemblance between them and the qualities of created beings.",
   },
 ] as const
+
+export const TAHAWIYYAH_ENGLISH_LESSON_19 = [
+  {
+    sourceUnit: 102,
+    translation:
+      "We love the Companions of the Messenger of Allah, and we do not go to excess in our love for any one of them, nor do we disassociate ourselves from any of them. We hate those who hate them or mention them without good. We speak of them only with good. We regard love for them as religion, faith, and excellence, and hatred for them as disbelief, hypocrisy, and transgression.",
+    explanation:
+      "This teaches love and respect for all of the Companions of the Messenger of Allah while avoiding both excess and rejection.",
+  },
+  {
+    sourceUnit: 103,
+    translation:
+      "We affirm the succession after the Messenger of Allah first for Abu Bakr al-Siddiq, giving him precedence over the entire Ummah; then for Umar ibn al-Khattab; then for Uthman ibn Affan; then for Ali ibn Abi Talib. They are the rightly guided Caliphs and the guided Imams.",
+    explanation:
+      "This affirms the order of the four rightly guided Caliphs as stated in the creed.",
+  },
+  {
+    sourceUnit: 104,
+    translation:
+      "We testify that the ten whom the Messenger of Allah named and gave glad tidings of Paradise are in Paradise, according to the testimony of the Messenger of Allah, whose word is true. They are Abu Bakr, Umar, Uthman, Ali, Talhah, al-Zubayr, Sa'd, Sa'id, Abd al-Rahman ibn Awf, and Abu Ubaydah ibn al-Jarrah, the trustworthy one of this Ummah. May Allah be pleased with them all.",
+    explanation:
+      "This records the testimony concerning the ten Companions whom the Messenger of Allah named and promised Paradise.",
+  },
+  {
+    sourceUnit: 105,
+    translation:
+      "Whoever speaks well of the Companions of the Messenger of Allah, his purified wives, and his purified descendants is free from hypocrisy.",
+    explanation:
+      "This emphasizes speaking respectfully about the Companions, the wives of the Prophet, and his descendants.",
+  },
+  {
+    sourceUnit: 106,
+    translation:
+      "The early scholars of the Salaf, those who came after them among the Tabi'in, the people of goodness and transmitted reports, and the people of jurisprudence and understanding are mentioned only with good. Whoever speaks of them with evil is not upon the correct path.",
+    explanation:
+      "This teaches respect for the early scholars and those who followed them in knowledge, transmission, and understanding.",
+  },
+  {
+    sourceUnit: 107,
+    translation:
+      "We do not give any one of the righteous saints precedence over any of the Prophets, peace be upon them. We say that one Prophet is better than all of the righteous saints.",
+    explanation:
+      "This establishes the precedence of the Prophets over the righteous servants of Allah.",
+  },
+  {
+    sourceUnit: 108,
+    translation:
+      "We believe in what has been authentically reported about their extraordinary honors and in the reports concerning them that have been reliably transmitted.",
+    explanation:
+      "This affirms belief in authentic reports concerning the extraordinary honors granted to righteous servants of Allah.",
+  },
+] as const

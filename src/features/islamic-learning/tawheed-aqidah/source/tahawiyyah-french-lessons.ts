@@ -729,3 +729,55 @@ export const TAHAWIYYAH_FRENCH_LESSON_18 = [
       "Cela affirme les attributs de colère et de satisfaction d'Allah tout en rejetant toute ressemblance avec les qualités des créatures.",
   },
 ] as const
+
+export const TAHAWIYYAH_FRENCH_LESSON_19 = [
+  {
+    sourceUnit: 102,
+    translation:
+      "Nous aimons les Compagnons du Messager d'Allah et nous n'exagérons pas dans l'amour de l'un d'entre eux, pas plus que nous ne désavouons l'un d'entre eux. Nous détestons ceux qui les détestent ou parlent d'eux sans bien. Nous ne parlons d'eux qu'en bien. Nous considérons que leur amour fait partie de la religion, de la foi et de l'excellence, et que leur haine est mécréance, hypocrisie et transgression.",
+    explanation:
+      "Cela enseigne l'amour et le respect de tous les Compagnons du Messager d'Allah, sans excès ni rejet de l'un d'entre eux.",
+  },
+  {
+    sourceUnit: 103,
+    translation:
+      "Nous affirmons la succession après le Messager d'Allah d'abord pour Abou Bakr as-Siddiq, en lui accordant la préférence sur toute la communauté ; puis pour Omar ibn al-Khattab ; puis pour Othman ibn Affan ; puis pour Ali ibn Abi Talib. Ils sont les califes bien guidés et les imams guidés.",
+    explanation:
+      "Cela affirme l'ordre des quatre califes bien guidés tel qu'il est exposé dans la croyance.",
+  },
+  {
+    sourceUnit: 104,
+    translation:
+      "Nous attestons que les dix Compagnons que le Messager d'Allah a nommés et auxquels il a annoncé le Paradis sont au Paradis, conformément au témoignage du Messager d'Allah, dont la parole est véridique. Ce sont Abou Bakr, Omar, Othman, Ali, Talha, az-Zubayr, Sa'd, Sa'id, Abd ar-Rahman ibn Awf et Abou Obeida ibn al-Jarrah, le dépositaire de cette communauté. Qu'Allah les agrée tous.",
+    explanation:
+      "Cela rapporte le témoignage concernant les dix Compagnons nommément désignés par le Messager d'Allah comme promis au Paradis.",
+  },
+  {
+    sourceUnit: 105,
+    translation:
+      "Celui qui parle en bien des Compagnons du Messager d'Allah, de ses épouses purifiées de toute souillure et de sa descendance purifiée de toute impureté est exempt d'hypocrisie.",
+    explanation:
+      "Cela souligne l'importance de parler avec respect des Compagnons, des épouses du Prophète et de sa descendance.",
+  },
+  {
+    sourceUnit: 106,
+    translation:
+      "Les savants des premières générations du Salaf, ceux qui sont venus après eux parmi les Tabi'in, les gens du bien et de la tradition rapportée, ainsi que les gens de la jurisprudence et de la réflexion, ne sont mentionnés qu'en bien. Celui qui parle d'eux en mal n'est pas sur la bonne voie.",
+    explanation:
+      "Cela enseigne le respect des premiers savants et de ceux qui les ont suivis dans la connaissance, la transmission et la compréhension.",
+  },
+  {
+    sourceUnit: 107,
+    translation:
+      "Nous ne donnons à aucun saint parmi les pieux une préférence sur l'un des Prophètes, sur eux la paix. Nous disons qu'un seul Prophète est meilleur que tous les saints.",
+    explanation:
+      "Cela établit la supériorité des Prophètes sur les serviteurs pieux d'Allah.",
+  },
+  {
+    sourceUnit: 108,
+    translation:
+      "Nous croyons à ce qui a été rapporté au sujet de leurs prodiges et à ce qui est authentiquement transmis par des personnes dignes de confiance à leur sujet.",
+    explanation:
+      "Cela affirme la croyance dans les récits authentiques concernant les prodiges accordés aux serviteurs pieux d'Allah.",
+  },
+] as const

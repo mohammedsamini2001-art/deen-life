@@ -732,3 +732,55 @@ export const TAHAWIYYAH_SWAHILI_LESSON_18 = [
       "Hii inathibitisha sifa za Allah za kukerwa na kuridhia huku ikikataa kumfananisha na viumbe katika sifa hizo.",
   },
 ] as const
+
+export const TAHAWIYYAH_SWAHILI_LESSON_19 = [
+  {
+    sourceUnit: 102,
+    translation:
+      "Tunawapenda Maswahaba wa Mtume wa Allah, na hatuzidishi katika kumpenda yeyote miongoni mwao, wala hatumkatai yeyote miongoni mwao. Tunawachukia wanaowachukia au kuwatukana. Tunawataja kwa wema tu. Tunaona kuwapenda ni dini, imani na ihsani, na kuwachukia ni ukafiri, unafiki na uasi.",
+    explanation:
+      "Hii inafundisha kuwapenda na kuwaheshimu Maswahaba wote wa Mtume wa Allah bila kupindukia katika mapenzi wala kumkataa yeyote miongoni mwao.",
+  },
+  {
+    sourceUnit: 103,
+    translation:
+      "Tunathibitisha ukhalifa baada ya Mtume wa Allah kwanza kwa Abu Bakr as-Siddiq, kwa kumpa ubora na kumtanguliza juu ya Ummah wote; kisha Umar bin al-Khattab; kisha Uthman bin Affan; kisha Ali bin Abi Talib. Hao ndio Makhalifa Waongofu na Maimamu Walioongoka.",
+    explanation:
+      "Hii inathibitisha mpangilio wa Makhalifa Wanne Waongofu kama ulivyoelezwa katika Aqidah.",
+  },
+  {
+    sourceUnit: 104,
+    translation:
+      "Tunashuhudia kwamba Maswahaba kumi ambao Mtume wa Allah aliwataja kwa majina na kuwapa bishara ya Pepo wako Peponi, kwa mujibu wa ushahidi wa Mtume wa Allah ambaye kauli yake ni ya kweli. Hao ni Abu Bakr, Umar, Uthman, Ali, Talhah, az-Zubayr, Sa'd, Sa'id, Abd ar-Rahman bin Awf na Abu Ubaydah bin al-Jarrah, mwaminifu wa Ummah huu. Allah Awawie radhi wote.",
+    explanation:
+      "Hii inataja ushahidi kuhusu Maswahaba kumi ambao Mtume wa Allah aliwataja kwa majina na kuwapa bishara ya Pepo.",
+  },
+  {
+    sourceUnit: 105,
+    translation:
+      "Anayesema mema kuhusu Maswahaba wa Mtume wa Allah, wake zake watakatifu na kizazi chake kilichotakaswa, amejitenga na unafiki.",
+    explanation:
+      "Hii inasisitiza kuzungumza kwa heshima kuhusu Maswahaba, wake za Mtume na kizazi chake.",
+  },
+  {
+    sourceUnit: 106,
+    translation:
+      "Wanazuoni wa Salaf waliotangulia, na waliokuja baada yao miongoni mwa Tabiina, watu wa kheri na mapokezi, na watu wa fiqhi na ufahamu, hawatajwi isipokuwa kwa wema. Anayewataja kwa ubaya hayuko juu ya njia iliyo sahihi.",
+    explanation:
+      "Hii inafundisha kuwaheshimu wanazuoni wa mwanzo na waliowafuata katika elimu, mapokezi na ufahamu.",
+  },
+  {
+    sourceUnit: 107,
+    translation:
+      "Hatumpi Wali yeyote ubora juu ya Nabii yeyote, rehema na amani ziwe juu yao. Tunasema Nabii mmoja ni bora kuliko Mawalii wote.",
+    explanation:
+      "Hii inaweka ubora wa Manabii juu ya watu wema na Mawalii.",
+  },
+  {
+    sourceUnit: 108,
+    translation:
+      "Tunaamini yale yaliyopokelewa kuhusu karama zao na yale yaliyothibiti kwa mapokezi ya watu wa kuaminika.",
+    explanation:
+      "Hii inathibitisha kuamini taarifa sahihi kuhusu karama za waja wema wa Allah.",
+  },
+] as const
