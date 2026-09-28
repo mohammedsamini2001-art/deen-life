@@ -14,6 +14,8 @@ export const SAHIH_BUKHARI_SOURCE = {
   titleEnglish: 'Sahih al-Bukhari',
   authorArabic: 'محمد بن إسماعيل البخاري',
   authorEnglish: 'Imam Muhammad ibn Isma‘il al-Bukhari',
+  sourceName: 'Sunnah.com — Sahih al-Bukhari',
+  sourceUrl: 'https://sunnah.com/bukhari',
 
   books: [
     {
