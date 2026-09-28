@@ -29,4 +29,14 @@ export const SAHIH_BUKHARI_TRANSLATION_SOURCES = [
     translationNote:
       'Arabic-French bilingual edition recorded by the Bibliothèque nationale de France. Translation attribution must be preserved.',
   },
+  {
+    language: 'sw',
+    title: 'Sahih Al-Bukhari: Swahili',
+    originalAuthor: 'Muhammad ibn Isma‘il al-Bukhari',
+    translator: 'Sheikh Abdullah Muhsin Al-Barwani',
+    publisher: 'Not established from the verified catalog record',
+    sourceUrl: 'https://www.noor-book.com/en/book/review/336018',
+    translationNote:
+      'Published Swahili translation identified in the available catalog record. Translator attribution is preserved; publisher details require further verification.',
+  },
 ] satisfies SahihBukhariTranslationSource[]
