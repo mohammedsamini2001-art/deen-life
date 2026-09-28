@@ -11,8 +11,9 @@ import IslamicLearningScreen from './features/islamic-learning/IslamicLearningSc
 import TasbihScreen from './features/tasbih/TasbihScreen'
 import DeenAiScreen from './features/ai/DeenAiScreen'
 import SahihBukhariScreen from './features/islamic-learning/hadith/SahihBukhariScreen'
+import SahihBukhariLessonScreen from './features/islamic-learning/hadith/SahihBukhariLessonScreen'
 
-type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai' | 'islamic-learning' | 'tawheed-aqidah' | 'tawheed-aqidah-lesson' | 'sahih-bukhari'
+type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai' | 'islamic-learning' | 'tawheed-aqidah' | 'tawheed-aqidah-lesson' | 'sahih-bukhari' | 'sahih-bukhari-lesson'
 
 const pages: { id: Page; label: string; icon: string }[] = [
   { id: 'home', label: 'Home', icon: '⌂' },
@@ -64,6 +65,7 @@ function App() {
   const [dailyMessage, setDailyMessage] = useState(DAILY_MESSAGES[0])
   const [learningLanguage, setLearningLanguage] = useState<'ar' | 'en' | 'sw' | 'fr'>('en')
   const [selectedTawheedLesson, setSelectedTawheedLesson] = useState(1)
+  const [selectedBukhariLesson, setSelectedBukhariLesson] = useState(1)
 
   useEffect(() => {
     const initialPage = getInitialPage()
@@ -149,6 +151,17 @@ function App() {
           <SahihBukhariScreen
             language={learningLanguage}
             onBack={() => navigateTo('islamic-learning')}
+            onOpenLesson={(lessonNumber) => {
+              setSelectedBukhariLesson(lessonNumber)
+              navigateTo('sahih-bukhari-lesson')
+            }}
+          />
+        )}
+        {page === 'sahih-bukhari-lesson' && (
+          <SahihBukhariLessonScreen
+            lessonNumber={selectedBukhariLesson}
+            language={learningLanguage}
+            onBack={() => navigateTo('sahih-bukhari')}
           />
         )}
       </main>
