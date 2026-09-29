@@ -10,7 +10,11 @@ export interface SahihBukhariChapterLesson {
     sourceUnitIds: number[]
   }
   title: Record<Exclude<SahihBukhariLanguage, 'ar'>, string>
-  translations: []
+  translations: {
+    en: string
+    sw: string
+    fr: string
+  }
   explanation: Record<Exclude<SahihBukhariLanguage, 'ar'>, string>
   quranReferences: string[]
   hadithReferences: string[]

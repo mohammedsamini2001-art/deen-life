@@ -22,7 +22,11 @@ const chapterLessons: SahihBukhariChapterLesson[] =
       sw: chapter.titleArabic,
       fr: chapter.titleArabic,
     },
-    translations: [],
+    translations: {
+      en: '',
+      sw: '',
+      fr: '',
+    },
     explanation: {
       en: '',
       sw: '',

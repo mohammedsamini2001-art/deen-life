@@ -24,10 +24,10 @@ export const SAHIH_BUKHARI_TRANSLATION_SOURCES = [
     title: 'Le Sahîh al-Bukhârî',
     originalAuthor: 'Muhammad ibn Isma‘il al-Bukhari',
     translator: 'O. Houdas and W. Marçais',
-    publisher: 'Maison d’Ennour',
+    publisher: 'Maison d’Ennour (2007 edition)',
     sourceUrl: 'https://catalogue.bnf.fr/ark:/12148/cb41136161b',
     translationNote:
-      'Arabic-French bilingual edition recorded by the Bibliothèque nationale de France. Translation attribution must be preserved.',
+      'BnF records the 2007 Arabic-French bilingual edition translated by O. Houdas and W. Marçais, revised, corrected and annotated by Corentin Pabiot. Translation attribution must be preserved.',
   },
   {
     language: 'sw',
