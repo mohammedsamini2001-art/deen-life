@@ -1,4 +1,5 @@
 import { SAHIH_BUKHARI_SOURCE } from './source/sahih-bukhari-source'
+import { SAHIH_BUKHARI_ENGLISH_SOURCE } from './source/sahih-bukhari-english-source'
 
 type Language = 'ar' | 'en' | 'sw' | 'fr'
 
@@ -40,7 +41,12 @@ export default function SahihBukhariLessonScreen({
 }) {
   const text = UI_TEXT[language]
 
-  const book = SAHIH_BUKHARI_SOURCE.books.find(
+  const source =
+    language === 'en'
+      ? SAHIH_BUKHARI_ENGLISH_SOURCE
+      : SAHIH_BUKHARI_SOURCE
+
+  const book = source.books.find(
     (item) => item.bookNumber === bookNumber,
   )
 
@@ -74,7 +80,7 @@ export default function SahihBukhariLessonScreen({
             {text.book} {book.bookNumber}
           </span>
           <h3>
-            {book.titleArabic ?? `${text.book} ${book.bookNumber}`}
+            {text.book} {book.bookNumber}
           </h3>
         </header>
 
@@ -87,7 +93,7 @@ export default function SahihBukhariLessonScreen({
               {text.hadith} {hadith.hadithNumber}
             </small>
 
-            <p dir="rtl" lang="ar">
+            <p dir={language === 'ar' ? 'rtl' : 'ltr'} lang={language}>
               {hadith.text}
             </p>
           </section>
