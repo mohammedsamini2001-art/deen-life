@@ -1,5 +1,4 @@
 import { SAHIH_BUKHARI_SOURCE } from './source/sahih-bukhari-source'
-import { SAHIH_BUKHARI_BOOK_1 } from './source/sahih-bukhari-book-1'
 
 type Language = 'ar' | 'en' | 'sw' | 'fr'
 
@@ -9,7 +8,6 @@ const UI_TEXT = {
     section: 'الحديث',
     source: 'المصدر الأصلي',
     book: 'الكتاب',
-    chapters: 'أبواب',
     hadiths: 'أحاديث',
   },
   en: {
@@ -17,7 +15,6 @@ const UI_TEXT = {
     section: 'HADITH',
     source: 'CLASSICAL HADITH SOURCE',
     book: 'Book',
-    chapters: 'Chapters',
     hadiths: 'Hadiths',
   },
   sw: {
@@ -25,7 +22,6 @@ const UI_TEXT = {
     section: 'HADITHI',
     source: 'CHANZO CHA HADITHI',
     book: 'Kitabu',
-    chapters: 'Milango',
     hadiths: 'Hadithi',
   },
   fr: {
@@ -33,7 +29,6 @@ const UI_TEXT = {
     section: 'HADITH',
     source: 'SOURCE CLASSIQUE DU HADITH',
     book: 'Livre',
-    chapters: 'Chapitres',
     hadiths: 'Hadiths',
   },
 } as const
@@ -48,10 +43,7 @@ export default function SahihBukhariScreen({
   onOpenLesson: (lessonNumber: number) => void
 }) {
   const text = UI_TEXT[language]
-  const book = SAHIH_BUKHARI_BOOK_1
-  const hadithNumbers = book.hadithReferences.map((reference) => reference.hadithNumber)
-  const hadithStart = Math.min(...hadithNumbers)
-  const hadithEnd = Math.max(...hadithNumbers)
+  const books = SAHIH_BUKHARI_SOURCE.books
 
   return (
     <section
@@ -74,50 +66,24 @@ export default function SahihBukhariScreen({
       </header>
 
       <div className="islamic-learning-subject-list">
-        <div className="islamic-learning-subject-card">
-          <span className="islamic-learning-subject-number">
-            {book.bookNumber}
-          </span>
-
-          <span className="islamic-learning-subject-info">
-            <strong>
-              {text.book} {book.bookNumber}: {book.titleEnglish}
-            </strong>
-            <small>
-              {book.titleArabic} · {hadithStart}–{hadithEnd}{' '}
-              {text.hadiths}
-            </small>
-          </span>
-
-          <span className="continue-arrow">→</span>
-        </div>
-      </div>
-
-      <div className="islamic-learning-subject-list">
-        {book.chapters.map((chapter) => (
-          <button
-            key={chapter.chapterNumber}
-            type="button"
+        {books.map((book) => (
+          <div
+            key={book.bookNumber}
             className="islamic-learning-subject-card"
-            onClick={() => onOpenLesson(chapter.chapterNumber)}
           >
             <span className="islamic-learning-subject-number">
-              {chapter.chapterNumber}
+              {book.bookNumber}
             </span>
 
             <span className="islamic-learning-subject-info">
               <strong>
-                {language === 'ar'
-                  ? chapter.titleArabic
-                  : chapter.titleEnglish ?? chapter.titleArabic}
+                {text.book} {book.bookNumber}
               </strong>
               <small>
-                {chapter.hadithNumbers.length} {text.hadiths}
+                {book.hadithCount} {text.hadiths}
               </small>
             </span>
-
-            <span className="continue-arrow">→</span>
-          </button>
+          </div>
         ))}
       </div>
     </section>
