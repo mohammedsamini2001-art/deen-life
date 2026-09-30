@@ -36,11 +36,11 @@ const UI_TEXT = {
 export default function SahihBukhariScreen({
   language,
   onBack,
-  onOpenLesson,
+  onOpenBook,
 }: {
   language: Language
   onBack: () => void
-  onOpenLesson: (lessonNumber: number) => void
+  onOpenBook: (bookNumber: number) => void
 }) {
   const text = UI_TEXT[language]
   const books = SAHIH_BUKHARI_SOURCE.books
@@ -67,9 +67,11 @@ export default function SahihBukhariScreen({
 
       <div className="islamic-learning-subject-list">
         {books.map((book) => (
-          <div
+          <button
             key={book.bookNumber}
+            type="button"
             className="islamic-learning-subject-card"
+            onClick={() => onOpenBook(book.bookNumber)}
           >
             <span className="islamic-learning-subject-number">
               {book.bookNumber}
@@ -83,7 +85,7 @@ export default function SahihBukhariScreen({
                 {book.hadithCount} {text.hadiths}
               </small>
             </span>
-          </div>
+          </button>
         ))}
       </div>
     </section>

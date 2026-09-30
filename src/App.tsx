@@ -65,7 +65,7 @@ function App() {
   const [dailyMessage, setDailyMessage] = useState(DAILY_MESSAGES[0])
   const [learningLanguage, setLearningLanguage] = useState<'ar' | 'en' | 'sw' | 'fr'>('en')
   const [selectedTawheedLesson, setSelectedTawheedLesson] = useState(1)
-  const [selectedBukhariLesson, setSelectedBukhariLesson] = useState(1)
+  const [selectedBukhariBook, setSelectedBukhariBook] = useState(1)
 
   useEffect(() => {
     const initialPage = getInitialPage()
@@ -151,15 +151,15 @@ function App() {
           <SahihBukhariScreen
             language={learningLanguage}
             onBack={() => navigateTo('islamic-learning')}
-            onOpenLesson={(lessonNumber) => {
-              setSelectedBukhariLesson(lessonNumber)
+            onOpenBook={(bookNumber) => {
+              setSelectedBukhariBook(bookNumber)
               navigateTo('sahih-bukhari-lesson')
             }}
           />
         )}
         {page === 'sahih-bukhari-lesson' && (
           <SahihBukhariLessonScreen
-            lessonNumber={selectedBukhariLesson}
+            bookNumber={selectedBukhariBook}
             language={learningLanguage}
             onBack={() => navigateTo('sahih-bukhari')}
           />
