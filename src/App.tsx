@@ -12,6 +12,7 @@ import TasbihScreen from './features/tasbih/TasbihScreen'
 import DeenAiScreen from './features/ai/DeenAiScreen'
 import SahihBukhariScreen from './features/islamic-learning/hadith/SahihBukhariScreen'
 import SahihBukhariLessonScreen from './features/islamic-learning/hadith/SahihBukhariLessonScreen'
+import SahihBukhariKiswahiliScreen from './features/islamic-learning/hadith/SahihBukhariKiswahiliScreen'
 
 type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai' | 'islamic-learning' | 'tawheed-aqidah' | 'tawheed-aqidah-lesson' | 'sahih-bukhari' | 'sahih-bukhari-lesson'
 
@@ -147,7 +148,7 @@ function App() {
             onBack={() => navigateTo('tawheed-aqidah')}
           />
         )}
-        {page === 'sahih-bukhari' && (
+        {page === 'sahih-bukhari' && learningLanguage !== 'sw' && (
           <SahihBukhariScreen
             language={learningLanguage}
             onBack={() => navigateTo('islamic-learning')}
@@ -155,6 +156,12 @@ function App() {
               setSelectedBukhariBook(bookNumber)
               navigateTo('sahih-bukhari-lesson')
             }}
+          />
+        )}
+
+        {page === 'sahih-bukhari' && learningLanguage === 'sw' && (
+          <SahihBukhariKiswahiliScreen
+            onBack={() => navigateTo('islamic-learning')}
           />
         )}
         {page === 'sahih-bukhari-lesson' && (
