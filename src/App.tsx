@@ -147,7 +147,7 @@ function App() {
             onBack={() => navigateTo('tawheed-aqidah')}
           />
         )}
-        {page === 'sahih-bukhari' && learningLanguage !== 'sw' && (
+        {page === 'sahih-bukhari' && (
           <SahihBukhariScreen
             language={learningLanguage}
             onBack={() => navigateTo('islamic-learning')}
