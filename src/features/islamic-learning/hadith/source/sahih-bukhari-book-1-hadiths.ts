@@ -1,5 +1,8 @@
 import type { SahihBukhariHadith } from './sahih-bukhari-hadith-types'
 
+const source_name = 'DEEN LIFE — Original Kiswahili Translation'
+const source_url = 'https://mohammedsamini2001-art.github.io/deen-life/'
+
 export const SAHIH_BUKHARI_BOOK_1_HADITHS = [
   {
     hadithNumber: 1,
@@ -32,7 +35,20 @@ export const SAHIH_BUKHARI_BOOK_1_HADITHS = [
       language: 'ar',
       text: 'حَدَّثَنَا عَبْدُ اللَّهِ بْنُ يُوسُفَ ، قَالَ أَخْبَرَنَا مَالِكٌ ، عَنْ هِشَامِ بْنِ عُرْوَةَ ، عَنْ أَبِيهِ ، عَنْ عَائِشَةَ أُمِّ الْمُؤْمِنِينَ ـ رضى الله عنها ـ أَنَّ الْحَارِثَ بْنَ هِشَامٍ ـ رضى الله عنه ـ سَأَلَ رَسُولَ اللَّهِ صلى الله عليه وسلم فَقَالَ يَا رَسُولَ اللَّهِ كَيْفَ يَأْتِيكَ الْوَحْىُ فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ أَحْيَانًا يَأْتِينِي مِثْلَ صَلْصَلَةِ الْجَرَسِ ـ وَهُوَ أَشَدُّهُ عَلَىَّ ـ فَيُفْصَمُ عَنِّي وَقَدْ وَعَيْتُ عَنْهُ مَا قَالَ، وَأَحْيَانًا يَتَمَثَّلُ لِيَ الْمَلَكُ رَجُلاً فَيُكَلِّمُنِي فَأَعِي مَا يَقُولُ ‏"‏‏.‏ قَالَتْ عَائِشَةُ رضى الله عنها وَلَقَدْ رَأَيْتُهُ يَنْزِلُ عَلَيْهِ الْوَحْىُ فِي الْيَوْمِ الشَّدِيدِ الْبَرْدِ، فَيَفْصِمُ عَنْهُ وَإِنَّ جَبِينَهُ لَيَتَفَصَّدُ عَرَقًا‏.‏',
     },
-    translations: [],
+    translations: [
+      {
+        language: 'sw',
+        text: `‘Aisha, Mama wa Waumini (Radhi za Allah ziwe juu yake), anasimulia kwamba Al-Harith bin Hisham (Radhi za Allah ziwe juu yake) alimuuliza Mtume wa Allah (Swalla Allahu ‘alayhi wa sallam): “Ewe Mtume wa Allah, wahyi unakujaje?”
+
+Mtume wa Allah (Swalla Allahu ‘alayhi wa sallam) akasema:
+
+“Wakati mwingine hunijia kama mlio wa kengele, na hiyo ndiyo hali nzito zaidi kwangu. Kisha hali hiyo huondoka kwangu, nami huwa nimehifadhi katika kumbukumbu yangu yale aliyoyasema. Na wakati mwingine Malaika hujitokeza kwangu katika sura ya mtu, kisha huzungumza nami, nami huhifadhi yale anayoyasema.”
+
+‘Aisha (Radhi za Allah ziwe juu yake) akasema: Nilimwona akiteremshiwa wahyi siku ambayo kulikuwa na baridi kali sana, na wahyi ulipoondoka kutoka kwake, niliona jasho likimtoka kwenye paji la uso.`,
+        sourceName: source_name,
+        sourceUrl: source_url,
+      },
+    ],
     references: [
       {
         sourceName: 'Sunnah.com — Sahih al-Bukhari 2',
@@ -48,7 +64,54 @@ export const SAHIH_BUKHARI_BOOK_1_HADITHS = [
       language: 'ar',
       text: 'حَدَّثَنَا يَحْيَى بْنُ بُكَيْرٍ ، قَالَ حَدَّثَنَا اللَّيْثُ ، عَنْ عُقَيْلٍ ، عَنِ ابْنِ شِهَابٍ ، عَنْ عُرْوَةَ بْنِ الزُّبَيْرِ ، عَنْ عَائِشَةَ أُمِّ الْمُؤْمِنِينَ، أَنَّهَا قَالَتْ أَوَّلُ مَا بُدِئَ بِهِ رَسُولُ اللَّهِ صلى الله عليه وسلم مِنَ الْوَحْىِ الرُّؤْيَا الصَّالِحَةُ فِي النَّوْمِ، فَكَانَ لاَ يَرَى رُؤْيَا إِلاَّ جَاءَتْ مِثْلَ فَلَقِ الصُّبْحِ، ثُمَّ حُبِّبَ إِلَيْهِ الْخَلاَءُ، وَكَانَ يَخْلُو بِغَارِ حِرَاءٍ فَيَتَحَنَّثُ فِيهِ ـ وَهُوَ التَّعَبُّدُ ـ اللَّيَالِيَ ذَوَاتِ الْعَدَدِ قَبْلَ أَنْ يَنْزِعَ إِلَى أَهْلِهِ، وَيَتَزَوَّدُ لِذَلِكَ، ثُمَّ يَرْجِعُ إِلَى خَدِيجَةَ، فَيَتَزَوَّدُ لِمِثْلِهَا، حَتَّى جَاءَهُ الْحَقُّ وَهُوَ فِي غَارِ حِرَاءٍ، فَجَاءَهُ الْمَلَكُ فَقَالَ اقْرَأْ‏.‏ قَالَ ‏"‏ مَا أَنَا بِقَارِئٍ ‏"‏‏.‏ قَالَ ‏"‏ فَأَخَذَنِي فَغَطَّنِي حَتَّى بَلَغَ مِنِّي الْجَهْدَ، ثُمَّ أَرْسَلَنِي فَقَالَ اقْرَأْ‏.‏ قُلْتُ مَا أَنَا بِقَارِئٍ‏.‏ فَأَخَذَنِي فَغَطَّنِي الثَّانِيَةَ حَتَّى بَلَغَ مِنِّي الْجَهْدَ، ثُمَّ أَرْسَلَنِي فَقَالَ اقْرَأْ‏.‏ فَقُلْتُ مَا أَنَا بِقَارِئٍ‏.‏ فَأَخَذَنِي فَغَطَّنِي الثَّالِثَةَ، ثُمَّ أَرْسَلَنِي فَقَالَ ‏‏{‏اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ * خَلَقَ الإِنْسَانَ مِنْ عَلَقٍ * اقْرَأْ وَرَبُّكَ الأَكْرَمُ‏}‏ ‏"‏‏.‏ فَرَجَعَ بِهَا رَسُولُ اللَّهِ صلى الله عليه وسلم يَرْجُفُ فُؤَادُهُ، فَدَخَلَ عَلَى خَدِيجَةَ بِنْتِ خُوَيْلِدٍ رضى الله عنها فَقَالَ ‏"‏ زَمِّلُونِي زَمِّلُونِي ‏"‏‏.‏ فَزَمَّلُوهُ حَتَّى ذَهَبَ عَنْهُ الرَّوْعُ، فَقَالَ لِخَدِيجَةَ وَأَخْبَرَهَا الْخَبَرَ ‏"‏ لَقَدْ خَشِيتُ عَلَى نَفْسِي ‏"‏‏.‏ فَقَالَتْ خَدِيجَةُ كَلاَّ وَاللَّهِ مَا يُخْزِيكَ اللَّهُ أَبَدًا، إِنَّكَ لَتَصِلُ الرَّحِمَ، وَتَحْمِلُ الْكَلَّ، وَتَكْسِبُ الْمَعْدُومَ، وَتَقْرِي الضَّيْفَ، وَتُعِينُ عَلَى نَوَائِبِ الْحَقِّ‏.‏ فَانْطَلَقَتْ بِهِ خَدِيجَةُ حَتَّى أَتَتْ بِهِ وَرَقَةَ بْنَ نَوْفَلِ بْنَ أَسَدِ بْنَ عَبْدِ الْعُزَّى ابْنَ عَمِّ خَدِيجَةَ ـ وَكَانَ امْرَأً تَنَصَّرَ فِي الْجَاهِلِيَّةِ، وَكَانَ يَكْتُبُ الْكِتَابَ الْعِبْرَانِيَّ، فَيَكْتُبُ مِنَ الإِنْجِيلِ بِالْعِبْرَانِيَّةِ مَا شَاءَ اللَّهُ أَنْ يَكْتُبَ، وَكَانَ شَيْخًا كَبِيرًا قَدْ عَمِيَ ـ فَقَالَتْ لَهُ خَدِيجَةُ يَا ابْنَ عَمِّ اسْمَعْ مِنَ ابْنِ أَخِيكَ‏.‏ فَقَالَ لَهُ وَرَقَةُ يَا ابْنَ أَخِي مَاذَا تَرَى فَأَخْبَرَهُ رَسُولُ اللَّهِ صلى الله عليه وسلم خَبَرَ مَا رَأَى‏.‏ فَقَالَ لَهُ وَرَقَةُ هَذَا النَّامُوسُ الَّذِي نَزَّلَ اللَّهُ عَلَى مُوسَى صلى الله عليه وسلم يَا لَيْتَنِي فِيهَا جَذَعًا، لَيْتَنِي أَكُونُ حَيًّا إِذْ يُخْرِجُكَ قَوْمُكَ‏.‏ فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ أَوَمُخْرِجِيَّ هُمْ ‏"‏‏.‏ قَالَ نَعَمْ، لَمْ يَأْتِ رَجُلٌ قَطُّ بِمِثْلِ مَا جِئْتَ بِهِ إِلاَّ عُودِيَ، وَإِنْ يُدْرِكْنِي يَوْمُكَ أَنْصُرْكَ نَصْرًا مُؤَزَّرًا‏.‏ ثُمَّ لَمْ يَنْشَبْ وَرَقَةُ أَنْ تُوُفِّيَ وَفَتَرَ الْوَحْىُ‏.‏',
     },
-    translations: [],
+    translations: [
+      {
+        language: 'sw',
+        text: `‘Aisha, Mama wa Waumini (Radhi za Allah ziwe juu yake), alisema:
+
+“Mwanzo wa wahyi aliouanza nao Mtume wa Allah (Swalla Allahu ‘alayhi wa sallam) ulikuwa ni ndoto njema usingizini. Kila aliyoiona katika ndoto ilitimia kama mwanga wa asubuhi. Kisha akapendezeshwa na upweke, na alikuwa akijitenga katika pango la Hira na kufanya ibada humo kwa usiku kadhaa, kabla ya kurejea kwa familia yake. Alikuwa akijitayarishia chakula cha safari kwa ajili hiyo, kisha humrudia Khadijah na kuchukua chakula kingine kwa ajili ya safari kama hiyo, mpaka haki ilipomjia akiwa katika pango la Hira.”
+
+Malaika akamjia na kumwambia: “Soma.”
+
+Akasema: “Mimi si msomaji.”
+
+Akaniambia: “Soma.” Kisha akanikamata na kunifinya mpaka nikafikia hali ya kuchoka sana, kisha akaniachia na kusema: “Soma.”
+
+Nikasema: “Mimi si msomaji.”
+
+Akanikamata tena na kunifinya mara ya pili mpaka nikafikia hali ya kuchoka sana, kisha akaniachia na kusema: “Soma.”
+
+Nikasema: “Mimi si msomaji.”
+
+Akanikamata na kunifinya mara ya tatu, kisha akaniachia na kusema:
+
+“Soma kwa jina la Mola wako Aliyeumba. Amemuumba mwanadamu kutokana na pande la damu. Soma, na Mola wako ndiye Mkarimu zaidi.”
+
+Mtume wa Allah (Swalla Allahu ‘alayhi wa sallam) akarudi akiwa moyo wake ukitetemeka, akaingia kwa Khadijah bint Khuwaylid (Radhi za Allah ziwe juu yake) na kusema: “Nifunikeni! Nifunikeni!”
+
+Wakamfunika mpaka hofu ikamuondoka. Kisha akamwambia Khadijah yaliyotokea na kusema: “Hakika nimehofia nafsi yangu.”
+
+Khadijah akasema: “Hapana, Wallahi! Allah hatakudhalilisha kamwe. Hakika wewe unaunga undugu, unabeba mzigo wa wasioweza kujisaidia, unawasaidia wasiokuwa na kitu, unamkaribisha mgeni, na unasaidia katika misiba ya haki.”
+
+Kisha Khadijah akaenda naye mpaka kwa Waraqah bin Nawfal bin Asad bin ‘Abd Al-‘Uzza, binamu yake Khadijah. Alikuwa mtu aliyekuwa amekuwa Mkristo katika kipindi cha Jahiliyyah, na alikuwa akiandika maandishi ya Kiebrania na kuandika kutoka Injili kwa Kiebrania kwa kiasi ambacho Allah alitaka aandike. Alikuwa mzee sana na alikuwa amepoteza uwezo wa kuona.
+
+Khadijah akamwambia: “Ewe binamu yangu, msikilize mwana wa ndugu yako.”
+
+Waraqah akamwambia: “Ewe mwana wa ndugu yangu, unaona nini?”
+
+Mtume wa Allah (Swalla Allahu ‘alayhi wa sallam) akamweleza yaliyotokea.
+
+Waraqah akamwambia: “Huyu ndiye An-Namus aliyeteremshwa na Allah kwa Musa. Laiti ningekuwa kijana wakati huo! Laiti ningekuwa hai wakati watu wako watakapokufukuza!”
+
+Mtume wa Allah (Swalla Allahu ‘alayhi wa sallam) akasema: “Je, watanikufukuza?”
+
+Akasema: “Ndiyo. Hakuna mtu aliyewahi kuja na mfano wa yale uliyokuja nayo isipokuwa alipata uadui. Na nikifika siku yako, nitakusaidia kwa msaada mkubwa.”
+
+Kisha muda haukupita sana kabla Waraqah hajafariki, na wahyi ukakatika kwa muda.`,
+        sourceName: source_name,
+        sourceUrl: source_url,
+      },
+    ],
     references: [
       {
         sourceName: 'Sunnah.com — Sahih al-Bukhari 3',
@@ -64,7 +127,26 @@ export const SAHIH_BUKHARI_BOOK_1_HADITHS = [
       language: 'ar',
       text: 'قَالَ ابْنُ شِهَابٍ وَأَخْبَرَنِي أَبُو سَلَمَةَ بْنُ عَبْدِ الرَّحْمَنِ ، أَنَّ جَابِرَ بْنَ عَبْدِ اللَّهِ الأَنْصَارِيَّ ، قَالَ ـ وَهُوَ يُحَدِّثُ عَنْ فَتْرَةِ الْوَحْىِ، فَقَالَ ـ فِي حَدِيثِهِ ‏"‏ بَيْنَا أَنَا أَمْشِي، إِذْ سَمِعْتُ صَوْتًا، مِنَ السَّمَاءِ، فَرَفَعْتُ بَصَرِي فَإِذَا الْمَلَكُ الَّذِي جَاءَنِي بِحِرَاءٍ جَالِسٌ عَلَى كُرْسِيٍّ بَيْنَ السَّمَاءِ وَالأَرْضِ، فَرُعِبْتُ مِنْهُ، فَرَجَعْتُ فَقُلْتُ زَمِّلُونِي‏.‏ فَأَنْزَلَ اللَّهُ تَعَالَى ‏‏{‏يَا أَيُّهَا الْمُدَّثِّرُ * قُمْ فَأَنْذِرْ‏}‏ إِلَى قَوْلِهِ ‏‏{‏وَالرُّجْزَ فَاهْجُرْ}‏ فَحَمِيَ الْوَحْىُ وَتَتَابَعَ ‏"‏‏.‏ تَابَعَهُ عَبْدُ اللَّهِ بْنُ يُوسُفَ وَأَبُو صَالِحٍ ‏.‏ وَتَابَعَهُ هِلاَلُ بْنُ رَدَّادٍ عَنِ الزُّهْرِيِّ ‏.‏ وَقَالَ يُونُسُ وَمَعْمَرٌ ‏"‏ بَوَادِرُهُ ‏"‏‏.‏',
     },
-    translations: [],
+    translations: [
+      {
+        language: 'sw',
+        text: `Ibn Shihab alisema: Abu Salamah bin ‘Abd Ar-Rahman aliniambia kwamba Jabir bin ‘Abdullah Al-Ansariy alisema, akieleza kuhusu kipindi ambacho wahyi ulikatika:
+
+“Nilipokuwa nikitembea, ghafla nikasikia sauti kutoka mbinguni. Nikainua macho yangu, nikamuona yule Malaika aliyenijia huko Hira akiwa amekaa juu ya kiti kati ya mbingu na ardhi. Niliingiwa na hofu kwa kumuona, nikarudi na kusema: Nifunikeni!”
+
+Kisha Allah Mtukufu akateremsha:
+
+“Ewe uliyejifunika! Simama uonye!”
+
+mpaka kwenye kauli Yake:
+
+“Na uchafu uepuke.”
+
+“Basi wahyi ukawa mkali na ukaendelea kushuka mfululizo.”`,
+        sourceName: source_name,
+        sourceUrl: source_url,
+      },
+    ],
     references: [
       {
         sourceName: 'Sunnah.com — Sahih al-Bukhari 4',
@@ -80,7 +162,44 @@ export const SAHIH_BUKHARI_BOOK_1_HADITHS = [
       language: 'ar',
       text: 'حَدَّثَنَا مُوسَى بْنُ إِسْمَاعِيلَ ، قَالَ حَدَّثَنَا أَبُو عَوَانَةَ ، قَالَ حَدَّثَنَا مُوسَى بْنُ أَبِي عَائِشَةَ ، قَالَ حَدَّثَنَا سَعِيدُ بْنُ جُبَيْرٍ ، عَنِ ابْنِ عَبَّاسٍ ، فِي قَوْلِهِ تَعَالَى ‏‏{‏لاَ تُحَرِّكْ بِهِ لِسَانَكَ لِتَعْجَلَ بِهِ‏}‏ قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم يُعَالِجُ مِنَ التَّنْزِيلِ شِدَّةً، وَكَانَ مِمَّا يُحَرِّكُ شَفَتَيْهِ ـ فَقَالَ ابْنُ عَبَّاسٍ فَأَنَا أُحَرِّكُهُمَا لَكُمْ كَمَا كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم يُحَرِّكُهُمَا‏.‏ وَقَالَ سَعِيدٌ أَنَا أُحَرِّكُهُمَا كَمَا رَأَيْتُ ابْنَ عَبَّاسٍ يُحَرِّكُهُمَا‏.‏ فَحَرَّكَ شَفَتَيْهِ ـ فَأَنْزَلَ اللَّهُ تَعَالَى ‏‏{‏لاَ تُحَرِّكْ بِهِ لِسَانَكَ لِتَعْجَلَ بِهِ* إِنَّ عَلَيْنَا جَمْعَهُ وَقُرْآنَهُ‏}‏ قَالَ جَمْعُهُ لَهُ فِي صَدْرِكَ، وَتَقْرَأَهُ ‏‏{‏فَإِذَا قَرَأْنَاهُ فَاتَّبِعْ قُرْآنَهُ‏}‏ قَالَ فَاسْتَمِعْ لَهُ وَأَنْصِتْ ‏‏{‏ثُمَّ إِنَّ عَلَيْنَا بَيَانَهُ‏}‏ ثُمَّ إِنَّ عَلَيْنَا أَنْ تَقْرَأَهُ‏.‏ فَكَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم بَعْدَ ذَلِكَ إِذَا أَتَاهُ جِبْرِيلُ اسْتَمَعَ، فَإِذَا انْطَلَقَ جِبْرِيلُ قَرَأَهُ النَّبِيُّ صلى الله عليه وسلم كَمَا قَرَأَهُ‏.‏',
     },
-    translations: [],
+    translations: [
+      {
+        language: 'sw',
+        text: `Ibn ‘Abbas alisema kuhusu kauli ya Allah:
+
+“Usiutikise ulimi wako kwa ajili yake ili uharakishe kuipokea.”
+
+Alisema: Mtume wa Allah (Swalla Allahu ‘alayhi wa sallam) alikuwa akipata uzito katika kupokea wahyi, na miongoni mwa alivyokuwa akifanya ni kuutikisa midomo yake.
+
+Ibn ‘Abbas akasema: “Kwa hiyo mimi ninaiutikisa midomo yangu mbele yenu kama Mtume wa Allah (Swalla Allahu ‘alayhi wa sallam) alivyokuwa akiutikisa.”
+
+Sa‘id akasema: “Mimi naiutikisa midomo yangu kama nilivyomwona Ibn ‘Abbas akiutikisa.”
+
+Kisha akaitikisa midomo yake.
+
+Basi Allah Mtukufu akateremsha:
+
+“Usiutikise ulimi wako kwa ajili yake ili uharakishe kuipokea. Hakika ni juu Yetu kuikusanya na kuisoma.”
+
+Ibn ‘Abbas akasema: “Kuikusanya kwake ndani ya kifua chako na kuisoma.”
+
+Na:
+
+“Basi tunapoisoma, fuata usomaji wake.”
+
+Akasema: “Basi isikilize na unyamaze.”
+
+Na:
+
+“Kisha hakika ni juu Yetu kuibainisha.”
+
+Akasema: “Kisha ni juu Yetu kukufanya uisome.”
+
+Baada ya hapo, Mtume wa Allah (Swalla Allahu ‘alayhi wa sallam), Jibril alipomjia, alikuwa akimsikiliza. Jibril alipoondoka, Mtume (Swalla Allahu ‘alayhi wa sallam) alikuwa akiisoma kama Jibril alivyokuwa ameisoma.`,
+        sourceName: source_name,
+        sourceUrl: source_url,
+      },
+    ],
     references: [
       {
         sourceName: 'Sunnah.com — Sahih al-Bukhari 5',
@@ -96,7 +215,16 @@ export const SAHIH_BUKHARI_BOOK_1_HADITHS = [
       language: 'ar',
       text: 'حَدَّثَنَا عَبْدَانُ ، قَالَ أَخْبَرَنَا عَبْدُ اللَّهِ ، قَالَ أَخْبَرَنَا يُونُسُ ، عَنِ الزُّهْرِيِّ ، ح وَحَدَّثَنَا بِشْرُ بْنُ مُحَمَّدٍ ، قَالَ أَخْبَرَنَا عَبْدُ اللَّهِ ، قَالَ أَخْبَرَنَا يُونُسُ ، وَمَعْمَرٌ ، عَنِ الزُّهْرِيِّ ، نَحْوَهُ قَالَ أَخْبَرَنِي عُبَيْدُ اللَّهِ بْنُ عَبْدِ اللَّهِ ، عَنِ ابْنِ عَبَّاسٍ ، قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم أَجْوَدَ النَّاسِ، وَكَانَ أَجْوَدُ مَا يَكُونُ فِي رَمَضَانَ حِينَ يَلْقَاهُ جِبْرِيلُ، وَكَانَ يَلْقَاهُ فِي كُلِّ لَيْلَةٍ مِنْ رَمَضَانَ فَيُدَارِسُهُ الْقُرْآنَ، فَلَرَسُولُ اللَّهِ صلى الله عليه وسلم أَجْوَدُ بِالْخَيْرِ مِنَ الرِّيحِ الْمُرْسَلَةِ‏.‏',
     },
-    translations: [],
+    translations: [
+      {
+        language: 'sw',
+        text: `Ibn ‘Abbas alisema:
+
+“Mtume wa Allah (Swalla Allahu ‘alayhi wa sallam) alikuwa mkarimu kuliko watu wote, na alikuwa mkarimu zaidi katika mwezi wa Ramadhani alipokutana na Jibril. Jibril alikuwa akikutanana naye kila usiku wa Ramadhani na kumfundisha Qur’ani. Kwa hakika Mtume wa Allah (Swalla Allahu ‘alayhi wa sallam) alikuwa mkarimu zaidi katika kufanya kheri kuliko upepo unaotumwa.”`,
+        sourceName: source_name,
+        sourceUrl: source_url,
+      },
+    ],
     references: [
       {
         sourceName: 'Sunnah.com — Sahih al-Bukhari 6',
