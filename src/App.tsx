@@ -12,8 +12,9 @@ import TasbihScreen from './features/tasbih/TasbihScreen'
 import DeenAiScreen from './features/ai/DeenAiScreen'
 import SahihBukhariScreen from './features/islamic-learning/hadith/SahihBukhariScreen'
 import SahihBukhariLessonScreen from './features/islamic-learning/hadith/SahihBukhariLessonScreen'
+import FiqhScreen from './features/islamic-learning/fiqh/FiqhScreen'
 
-type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai' | 'islamic-learning' | 'tawheed-aqidah' | 'tawheed-aqidah-lesson' | 'sahih-bukhari' | 'sahih-bukhari-lesson'
+type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai' | 'islamic-learning' | 'fiqh' | 'tawheed-aqidah' | 'tawheed-aqidah-lesson' | 'sahih-bukhari' | 'sahih-bukhari-lesson'
 
 const pages: { id: Page; label: string; icon: string }[] = [
   { id: 'home', label: 'Home', icon: '⌂' },
@@ -127,7 +128,17 @@ function App() {
                 setLearningLanguage(language as 'ar' | 'en' | 'sw' | 'fr')
                 navigateTo('sahih-bukhari')
               }
+              if (slug === 'fiqh') {
+                setLearningLanguage(language as 'ar' | 'en' | 'sw' | 'fr')
+                navigateTo('fiqh')
+              }
             }}
+          />
+        )}
+        {page === 'fiqh' && (
+          <FiqhScreen
+            language={learningLanguage}
+            onBack={() => navigateTo('islamic-learning')}
           />
         )}
         {page === 'tawheed-aqidah' && (
