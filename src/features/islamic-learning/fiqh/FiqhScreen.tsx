@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { FIQH_CURRICULUM, type FiqhLanguage } from './source/fiqh-curriculum'
 import { FIQH_SOURCE_MANIFEST } from './source/source-manifest'
+import { FIQH_LESSON_01 } from './source/lessons/lesson-01-purification'
 
 const UI_TEXT = {
   ar: {
@@ -131,6 +132,29 @@ export default function FiqhScreen({
         <article className="tawheed-aqidah-source-card fiqh-lesson-detail">
           <h3>{selectedLesson.title[language]}</h3>
           <p>{selectedLesson.summary[language]}</p>
+
+          {selectedLesson.id === 'purification' && language === 'ar' && (
+            <div className="fiqh-arabic-lesson" dir="rtl" lang="ar">
+              <h3>{FIQH_LESSON_01.title}</h3>
+              <p>{FIQH_LESSON_01.introduction}</p>
+
+              {FIQH_LESSON_01.sections.map((section, index) => (
+                <section key={index}>
+                  <h4>{section.heading}</h4>
+                  {section.paragraphs.map((paragraph, paragraphIndex) => (
+                    <p key={paragraphIndex}>{paragraph}</p>
+                  ))}
+                </section>
+              ))}
+
+              <h3>أسئلة المراجعة</h3>
+              <ol>
+                {FIQH_LESSON_01.reviewQuestions.map((question, index) => (
+                  <li key={index}>{question}</li>
+                ))}
+              </ol>
+            </div>
+          )}
 
           <h3>{text.evidence}</h3>
           <div className="fiqh-evidence-list">

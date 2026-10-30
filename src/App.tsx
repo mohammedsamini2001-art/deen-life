@@ -13,8 +13,10 @@ import DeenAiScreen from './features/ai/DeenAiScreen'
 import SahihBukhariScreen from './features/islamic-learning/hadith/SahihBukhariScreen'
 import SahihBukhariLessonScreen from './features/islamic-learning/hadith/SahihBukhariLessonScreen'
 import FiqhScreen from './features/islamic-learning/fiqh/FiqhScreen'
+import SeerahScreen from './features/islamic-learning/seerah/SeerahScreen'
+import SeerahLessonScreen from './features/islamic-learning/seerah/SeerahLessonScreen'
 
-type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai' | 'islamic-learning' | 'fiqh' | 'tawheed-aqidah' | 'tawheed-aqidah-lesson' | 'sahih-bukhari' | 'sahih-bukhari-lesson'
+type Page = 'home' | 'quran' | 'prayer' | 'duas' | 'qibla' | 'knowledge' | 'premium' | 'tasbih' | 'ai' | 'islamic-learning' | 'fiqh' | 'tawheed-aqidah' | 'tawheed-aqidah-lesson' | 'sahih-bukhari' | 'sahih-bukhari-lesson' | 'seerah' | 'seerah-lesson'
 
 const pages: { id: Page; label: string; icon: string }[] = [
   { id: 'home', label: 'Home', icon: '⌂' },
@@ -67,6 +69,7 @@ function App() {
   const [learningLanguage, setLearningLanguage] = useState<'ar' | 'en' | 'sw' | 'fr'>('en')
   const [selectedTawheedLesson, setSelectedTawheedLesson] = useState(1)
   const [selectedBukhariBook, setSelectedBukhariBook] = useState(1)
+  const [selectedSeerahLesson, setSelectedSeerahLesson] = useState(1)
 
   useEffect(() => {
     const initialPage = getInitialPage()
@@ -132,6 +135,10 @@ function App() {
                 setLearningLanguage(language as 'ar' | 'en' | 'sw' | 'fr')
                 navigateTo('fiqh')
               }
+              if (slug === 'seerah') {
+                setLearningLanguage(language as 'ar' | 'en' | 'sw' | 'fr')
+                navigateTo('seerah')
+              }
             }}
           />
         )}
@@ -139,6 +146,22 @@ function App() {
           <FiqhScreen
             language={learningLanguage}
             onBack={() => navigateTo('islamic-learning')}
+          />
+        )}
+        {page === 'seerah' && (
+          <SeerahScreen
+            language={learningLanguage}
+            onBack={() => navigateTo('islamic-learning')}
+            onOpenLesson={(lessonNumber) => {
+              setSelectedSeerahLesson(lessonNumber)
+              navigateTo('seerah-lesson')
+            }}
+          />
+        )}
+        {page === 'seerah-lesson' && (
+          <SeerahLessonScreen
+            lessonNumber={selectedSeerahLesson}
+            onBack={() => navigateTo('seerah')}
           />
         )}
         {page === 'tawheed-aqidah' && (
